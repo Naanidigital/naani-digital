@@ -218,22 +218,22 @@ export function ogPrerender(): Plugin {
             if (routePath.startsWith('/projects/')) {
               const slug = routePath.replace('/projects/', '');
               const cleanTitle = formatSlugTitle(slug);
-              title = `${cleanTitle} | Luxury Apartments & Villas in Hyderabad | Naani Projects`;
-              description = `Explore ${cleanTitle} in Hyderabad. Discover floor plans, pricing, amenities, location advantages, and book site visits on Naani Projects.`;
+              title = `${cleanTitle} | Residential Project in Hyderabad | Naani Projects`;
+              description = `Explore project details for ${cleanTitle} in Hyderabad. Review floor plans, location connectivity, and developer information on Naani Projects.`;
             } else if (routePath.startsWith('/projects-in-')) {
               const loc = formatSlugTitle(routePath.replace('/projects-in-', ''));
-              title = `Projects in ${loc} Hyderabad | Real Estate & Flats for Sale | Naani Projects`;
-              description = `Find apartments, villas, and new launches for sale in ${loc}, Hyderabad. Compare verified projects and prices on Naani Projects.`;
+              title = `Projects in ${loc}, Hyderabad | Apartments & Homes | Naani Projects`;
+              description = `Compare residential projects, apartments, and gated layouts in ${loc}, Hyderabad. View floor plans, location advantages, and project details.`;
             } else if (routePath.endsWith('-projects-hyderabad')) {
               const builder = formatSlugTitle(
                 routePath.replace(/^\//, '').replace('-projects-hyderabad', '')
               );
-              title = `${builder} Projects in Hyderabad | New Launches & Apartments | Naani Projects`;
-              description = `Explore all residential real estate projects by ${builder} in Hyderabad. Get instant project brochures and pricing on Naani.`;
+              title = `${builder} Projects in Hyderabad | Residential Developments | Naani Projects`;
+              description = `Explore residential developments by ${builder} in Hyderabad. Compare floor plans, project locations, and available configurations on Naani Projects.`;
             } else if (routePath.startsWith('/hyderabad/')) {
               const sub = formatSlugTitle(routePath.replace('/hyderabad/', ''));
-              title = `${sub} for Sale in Hyderabad | Naani Projects`;
-              description = `Browse ${sub} for sale in Hyderabad. Compare top locations, prices, builders and floor plans with Naani Projects.`;
+              title = `${sub} in Hyderabad | Naani Projects`;
+              description = `Browse ${sub} in Hyderabad. Compare project locations, floor plans, and developer details with Naani Projects.`;
             }
 
             allRoutesMap.set(routePath, {

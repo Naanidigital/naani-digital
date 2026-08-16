@@ -87,7 +87,7 @@ export const BrochureGateModal = ({ open, onOpenChange, brochureUrl, projectName
           <DialogDescription className="text-xs text-slate-300 font-medium max-w-sm mx-auto">
             {unlocked
               ? `Your digital brochure for ${projectName} is ready for download.`
-              : `Enter your details to instant access floor plans, master plan and pricing brochure for ${projectName}.`}
+              : `Enter your details to view floor plans, layout details, and project details for ${projectName}.`}
           </DialogDescription>
         </DialogHeader>
 

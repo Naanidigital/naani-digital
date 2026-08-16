@@ -98,7 +98,7 @@ export const getSeoPageData = (type: "hub" | "bhk-2" | "bhk-3" | "location-bhk",
       isIndexable: true,
       projects,
       allBhkProjects: projects,
-      intro: "Hyderabad is India's fastest-growing IT and real estate destination. From high-rise apartments in Kokapet and Tellapur to luxury gated communities in Gachibowli and Kondapur, Naani Projects provides verified property listings directly from top RERA-registered builders.",
+      intro: "Hyderabad is a major IT and real estate hub in South India. From high-rise apartments in Kokapet and Tellapur to gated communities in Gachibowli and Kondapur, Naani Projects helps buyers explore verified property listings from RERA-registered developers.",
       faqs: [
         { q: "Which are the best locations to buy flats in Hyderabad?", a: "Kokapet, Tellapur, Narsingi, Gachibowli, Kondapur, Miyapur, and Bachupally are among the top residential locations in Hyderabad for self-use and investment." },
         { q: "What is the average price of 2 BHK and 3 BHK flats in Hyderabad?", a: "2 BHK flats range from ₹50 Lakhs to ₹1.2 Cr depending on location, while 3 BHK flats in prime corridors range from ₹90 Lakhs to ₹2.5 Cr+." },

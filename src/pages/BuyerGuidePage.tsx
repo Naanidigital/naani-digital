@@ -26,12 +26,12 @@ const BuyerGuidePage = () => {
 
   const faqs = is3Bhk
     ? [
-        { q: "What should I look for when buying a 3 BHK in Hyderabad?", a: "Focus on developer track record, RERA registration, floor layout efficiency (less corridor space wastage), clubhouse size, parking allocations, and distance to Financial District/HITEC City." },
-        { q: "What is the expected maintenance fee for a 3 BHK gated community?", a: "Maintenance fees typically range from ₹3.5 to ₹5.0 per sq.ft per month in modern high-rise gated communities in West Hyderabad." },
+        { q: "What should I look for when buying a 3 BHK in Hyderabad?", a: "Focus on developer track record, RERA registration, floor layout efficiency (less corridor space wastage), clubhouse facilities, parking allocations, and commute distance to Financial District/HITEC City." },
+        { q: "What is the expected maintenance fee for a 3 BHK gated community?", a: "Maintenance fees vary by community amenities and tower density, typically charged on a per-square-foot monthly basis in modern high-rise gated communities in West Hyderabad." },
       ]
     : [
-        { q: "Is a 2 BHK flat a good investment in Hyderabad?", a: "Yes, 2 BHK flats offer higher rental yields (3.5% - 4.2%) and faster liquidity compared to larger configurations in IT corridors like Miyapur, Bachupally, and Tellapur." },
-        { q: "How much loan can I get for a 2 BHK property in Hyderabad?", a: "Banks generally finance 80% to 90% of the agreement value for RERA-registered properties based on your income eligibility." },
+        { q: "What are the advantages of a 2 BHK flat in Hyderabad?", a: "2 BHK flats offer manageable budgets, lower monthly maintenance overheads, and steady rental demand from working professionals in IT corridors like Miyapur, Bachupally, and Tellapur." },
+        { q: "How much loan can I get for a 2 BHK property in Hyderabad?", a: "Banks generally finance up to 80% to 90% of the property value for RERA-registered projects based on your income eligibility and documentation." },
       ];
 
   const structuredData = {
@@ -69,7 +69,7 @@ const BuyerGuidePage = () => {
               {h1}
             </h1>
             <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-              Everything you need to know before investing in a {is3Bhk ? "3 BHK" : "2 BHK"} flat in Hyderabad: pricing trends, RERA verification checklist, top locations, and step-by-step process.
+              Everything you need to know before evaluating a {is3Bhk ? "3 BHK" : "2 BHK"} flat in Hyderabad: floor plans, RERA verification checklist, key locations, and step-by-step process.
             </p>
           </div>
         </section>
@@ -79,19 +79,19 @@ const BuyerGuidePage = () => {
           <div className="container mx-auto max-w-4xl space-y-12">
             {/* Section 1 */}
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">1. Why Choose a {is3Bhk ? "3 BHK" : "2 BHK"} Flat in Hyderabad?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">1. Evaluating a {is3Bhk ? "3 BHK" : "2 BHK"} Flat in Hyderabad</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Hyderabad's residential market is booming driven by expansion along the Outer Ring Road (ORR). {is3Bhk ? "3 BHK flats offer ample space for growing families, home offices, and luxury living amenities." : "2 BHK flats offer optimal affordability, lower maintenance overheads, and excellent rental demand from IT professionals."}
+                Hyderabad's residential market offers choices across multiple budget levels and locations along the Outer Ring Road (ORR). {is3Bhk ? "3 BHK flats provide comfortable room for families and dedicated workspace." : "2 BHK flats offer practical living space with manageable maintenance overheads and steady demand."}
               </p>
             </div>
 
             {/* Section 2 */}
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">2. Top Locations to Consider</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">2. Key Residential Zones</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-5 rounded-2xl bg-card border border-border">
-                  <h3 className="font-bold text-lg text-primary mb-2">West Hyderabad (IT Corridor)</h3>
-                  <p className="text-sm text-muted-foreground">Kokapet, Tellapur, Narsingi, Gachibowli, Kondapur. Highest capital appreciation and proximity to Financial District.</p>
+                  <h3 className="font-bold text-lg text-primary mb-2">West Hyderabad Corridors</h3>
+                  <p className="text-sm text-muted-foreground">Kokapet, Tellapur, Narsingi, Gachibowli, Kondapur. Direct access to Financial District office parks and Outer Ring Road junctions.</p>
                 </div>
                 <div className="p-5 rounded-2xl bg-card border border-border">
                   <h3 className="font-bold text-lg text-primary mb-2">North-West Hyderabad</h3>

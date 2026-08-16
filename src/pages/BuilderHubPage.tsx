@@ -19,13 +19,13 @@ const WA = "https://wa.me/919705080909";
 const TEL = "tel:+919705080909";
 
 const BUILDER_BLURB: Record<string, string> = {
-  "aparna-constructions": "Aparna Constructions is one of Hyderabad's most trusted developers — known for premium gated communities across Kondapur, Tellapur, Bachupally and Kompally.",
-  "prestige-group": "Prestige Group brings Bangalore's premium standards to Hyderabad with landmark launches in Bachupally, Rajendra Nagar and the Financial District corridor.",
-  "brigade-group": "Brigade Group is renowned for premium high-rise communities — including Brigade Gateway Neopolis at Kokapet, one of Hyderabad's most-watched launches.",
-  "my-home-group": "My Home Group is Hyderabad's flagship developer — over 30+ delivered communities across Madhapur, Tellapur, Kondapur and Kokapet.",
-  "rajapushpa-properties": "Rajapushpa Properties delivers premium 3 & 4 BHK communities in Tellapur, Manikonda and the western ORR belt.",
-  "candeur-constructions": "Candeur Constructions is known for spacious premium homes in Bachupally and Tellapur with strong post-handover service.",
-  "godrej-properties": "Godrej Properties brings its trusted national brand to Hyderabad with premium launches in Kukatpally and the Western corridor.",
+  "aparna-constructions": "Aparna Constructions develops residential gated communities across Hyderabad, with major projects in Kondapur, Tellapur, Bachupally, and Kompally.",
+  "prestige-group": "Prestige Group develops multi-tower apartment projects and townships in Hyderabad, including active developments in Tellapur, Bachupally, and Rajendra Nagar.",
+  "brigade-group": "Brigade Group develops residential high-rise communities in Hyderabad, including high-rise tower developments in Kokapet and financial hubs.",
+  "my-home-group": "My Home Group is a major Hyderabad real estate developer with multiple completed and ongoing residential projects in Madhapur, Tellapur, Kondapur, and Kokapet.",
+  "rajapushpa-properties": "Rajapushpa Properties develops 2, 3, and 4 BHK residential communities across Tellapur, Manikonda, and the western ORR corridor.",
+  "candeur-constructions": "Candeur Constructions develops high-rise apartment projects in Bachupally and Tellapur.",
+  "godrej-properties": "Godrej Properties develops residential communities in Hyderabad, including multi-tower developments in Kukatpally and West Hyderabad.",
 };
 
 const BuilderHubPage = () => {
@@ -53,19 +53,19 @@ const BuilderHubPage = () => {
   }, [matching, rawSlug]);
 
   const blurb = BUILDER_BLURB[rawSlug.toLowerCase()] ??
-    `${displayName} is among Hyderabad's noted developers. Browse their active and upcoming projects below — all curated and verified by Naani Projects.`;
+    `${displayName} has active and completed residential developments in Hyderabad. Explore their projects and floor plans below.`;
 
   const canonical = `${SITE}/${builderSeoSlug}`;
-  const title = `${displayName} Projects in Hyderabad | Active & Upcoming | Naani Projects`;
-  const description = `Explore all ${displayName} projects in Hyderabad — RERA-verified, builder-direct pricing, expert guidance from Naani Projects. WhatsApp +91 97050 80909.`;
+  const title = `${displayName} Projects in Hyderabad | Residential Developments | Naani Projects`;
+  const description = `Explore residential developments by ${displayName} in Hyderabad. Review RERA details, floor plans, and project locations with Naani Projects.`;
 
   const faqs = [
-    { question: `How many ongoing projects does ${displayName} have in Hyderabad?`, answer: `${displayName} currently has ${matching.length || "multiple"} active and upcoming residential projects across Hyderabad, all listed on Naani Projects.` },
-    { question: `Are ${displayName} projects RERA-approved?`, answer: `Yes. Every ${displayName} project listed on Naani Projects is RERA-approved. Share the project on WhatsApp at +91 97050 80909 to receive the RERA number instantly.` },
-    { question: `What is the price range of ${displayName} apartments?`, answer: `${displayName} pricing typically ranges from ₹1.2 Cr to ₹4.5 Cr depending on configuration, tower views and amenities. Naani Projects negotiates the best builder-direct deal.` },
-    { question: `Where can I see floor plans and brochures of ${displayName}?`, answer: `Click any ${displayName} project below to view configurations, floor plans, master plan and pricing. For full brochures, message us on WhatsApp.` },
-    { question: `Does Naani Projects charge anything to buyers?`, answer: `No. Buyers pay nothing. Naani Projects is paid by builders — you get unbiased ${displayName} recommendations at the best on-ground price.` },
-    { question: `How do I book a site visit for a ${displayName} project?`, answer: `Tap WhatsApp on any ${displayName} project page or message +91 97050 80909. Free cab pickup is available for shortlisted premium tours.` },
+    { question: `How many projects does ${displayName} have listed in Hyderabad?`, answer: `${displayName} has ${matching.length || "several"} active and upcoming residential projects listed on Naani Projects across Hyderabad.` },
+    { question: `Are ${displayName} projects RERA-approved?`, answer: `Yes. Every ${displayName} project listed on Naani Projects is RERA-registered. Contact us on WhatsApp at +91 97050 80909 for specific RERA registration numbers.` },
+    { question: `What is the general price range for ${displayName} apartments?`, answer: `Pricing for ${displayName} developments varies by location, floor plan size, and project stage. Contact Naani Projects on WhatsApp for updated pricing.` },
+    { question: `Where can I find floor plans and brochures for ${displayName} projects?`, answer: `Select any ${displayName} project listed below to view floor plan options, layout details, and pricing breakdowns.` },
+    { question: `Do homebuyers pay advisory fees to Naani Projects?`, answer: `No, our property discovery and advisory services are free for homebuyers.` },
+    { question: `How do I schedule a site visit for a ${displayName} project?`, answer: `Message +91 97050 80909 on WhatsApp with your preferred project and visit timing to arrange a site visit.` },
   ];
 
   const breadcrumbSchema = {
