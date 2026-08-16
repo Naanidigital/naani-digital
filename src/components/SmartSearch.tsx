@@ -77,7 +77,7 @@ const SmartSearch = ({ projects, onQueryChange, className = "" }: Props) => {
   const showDropdown = open && (q.trim() ? results.length >= 0 : true);
 
   return (
-    <div ref={wrapRef} className={`relative ${className}`}>
+    <div ref={wrapRef} className={`relative ${open ? "z-50" : "z-20"} ${className}`}>
       <div className="relative flex items-center bg-card/80 backdrop-blur-xl border border-primary/20 rounded-2xl p-2 shadow-xl focus-within:border-primary/60 transition-colors">
         <Search className="text-primary ml-3 shrink-0" size={20} />
         <Input

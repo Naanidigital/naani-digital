@@ -129,7 +129,7 @@ const Index = () => {
           </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-[#090D16]/90 via-[#090D16]/80 to-[#090D16]" />
 
-          <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
+          <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-40">
             <div className="w-full text-center space-y-7">
               <div className="bg-[#111726]/90 backdrop-blur-md border border-amber-500/40 px-5 py-2.5 rounded-full inline-flex items-center gap-2 shadow-lg">
                 <Sparkles size={16} className="text-amber-400 animate-pulse" />

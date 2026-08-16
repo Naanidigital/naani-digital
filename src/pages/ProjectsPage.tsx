@@ -126,8 +126,8 @@ const ProjectsPage = () => {
       <ProjectsHeader />
 
       {/* Hero */}
-      <section className="relative min-h-[45vh] flex items-center justify-center bg-[#090D16] pt-24 pb-12">
-        <div className="w-full px-4 sm:px-8 lg:px-12 text-center relative z-10">
+      <section className="relative z-40 min-h-[45vh] flex items-center justify-center bg-[#090D16] pt-24 pb-12">
+        <div className="w-full px-4 sm:px-8 lg:px-12 text-center relative z-40">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="inline-block px-5 py-2 rounded-full bg-[#111726] text-amber-400 text-xs md:text-sm font-extrabold mb-4 border border-amber-500/30 shadow-md">
               Naani Projects · {projects.length}+ Premium Properties

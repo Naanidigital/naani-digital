@@ -144,7 +144,7 @@ const HomeSmartSearch = () => {
   let runningIdx = -1;
 
   return (
-    <div ref={wrapRef} className="w-full max-w-4xl mx-auto text-left">
+    <div ref={wrapRef} className={`w-full max-w-4xl mx-auto text-left relative ${open ? "z-50" : "z-20"}`}>
       {/* Search input */}
       <div className="relative flex items-center bg-card/70 backdrop-blur-xl border border-primary/25 rounded-2xl p-2.5 shadow-2xl focus-within:border-primary/70 focus-within:shadow-gold-lg transition-all">
         <Search className="text-primary ml-3 shrink-0" size={22} />
