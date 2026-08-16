@@ -80,18 +80,18 @@ const AboutPage = () => {
         <section className="py-20 bg-[#0B101D]">
           <div className="w-full px-4 sm:px-8 lg:px-12">
             <div className="max-w-4xl mx-auto glass-card p-8 md:p-12 space-y-5 shadow-xl">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white">How We Help Buyers</h2>
               <p className="text-slate-200 font-medium leading-relaxed text-lg">
-                Naani Projects was born out of a simple frustration that every property buyer in Hyderabad knows too well — endless calls from random brokers, outdated listings, inflated prices, and no clear answers. We believed buying a home should feel exciting, not exhausting.
+                Finding a property in Hyderabad often involves sifting through repetitive listings, conflicting prices, and persistent sales calls. At Naani Projects, we aim to make property discovery simpler, clearer, and more transparent.
               </p>
               <p className="text-slate-300 font-medium leading-relaxed">
-                We built Naani Projects as a smart property discovery platform that puts the buyer first. Instead of forcing you to scroll through hundreds of irrelevant listings, our team listens to what you actually want — your budget, your preferred location, your lifestyle, your investment goals — and then handpicks verified projects that genuinely match.
+                We operate as a focused real estate advisory service. When you reach out with your budget, location preference, and housing requirements, we review active developments across Hyderabad and share a curated list of relevant project options directly on WhatsApp.
               </p>
               <p className="text-slate-300 font-medium leading-relaxed">
-                Every recommendation is RERA-checked, every project is visited and re-verified by our team, and every conversation happens where you already are: WhatsApp. From a young couple booking their first 2 BHK in Miyapur to NRI investors building wealth through luxury villas in Kokapet and Tellapur, we help buyers across every life stage make confident, informed decisions about Hyderabad real estate.
+                We track projects across established developers like Rajapushpa, Prestige, Brigade, Aparna, My Home, and Team4. Each recommendation includes clear layout details, possession timelines, floor plan efficiency, and total cost considerations so you can evaluate options comfortably.
               </p>
               <p className="text-slate-300 font-medium leading-relaxed">
-                Today, Naani Projects partners with India's most trusted builders — Rajapushpa, Prestige, Brigade, Aparna, My Home, Team4 and many more — to bring you the best of Hyderabad's premium residential market in one curated, transparent place.
+                Our goal is to help you compare properties objectively and find a home or investment that genuinely fits your requirements.
               </p>
             </div>
           </div>
@@ -105,14 +105,14 @@ const AboutPage = () => {
                 <Sparkles className="text-amber-400" size={26} />
               </div>
               <h3 className="text-2xl font-bold text-white">Our Mission</h3>
-              <p className="text-slate-300 font-medium leading-relaxed">To simplify property buying through smart technology, personalized WhatsApp assistance, and trusted real estate guidance — so every buyer can find the right home without the noise.</p>
+              <p className="text-slate-300 font-medium leading-relaxed">To simplify real estate discovery by providing homebuyers with clear project details, transparent cost breakdowns, and straightforward advisor support on WhatsApp.</p>
             </div>
             <div className="glass-card p-8 space-y-4 shadow-xl hover:-translate-y-1 transition-all">
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center border border-amber-500/30">
                 <TrendingUp className="text-amber-400" size={26} />
               </div>
-              <h3 className="text-2xl font-bold text-white">Our Vision</h3>
-              <p className="text-slate-300 font-medium leading-relaxed">To become one of the most trusted real estate discovery platforms for premium apartments, villas, and investment properties in India — known for transparency, expertise and a buyer-first approach.</p>
+              <h3 className="text-2xl font-bold text-white">Our Focus</h3>
+              <p className="text-slate-300 font-medium leading-relaxed">To build a trusted, buyer-first property advisory in Hyderabad known for objective comparisons, local neighborhood knowledge, and reliable project verification.</p>
             </div>
           </div>
         </section>

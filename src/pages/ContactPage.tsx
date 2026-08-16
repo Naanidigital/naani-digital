@@ -83,9 +83,9 @@ const ContactPage = () => {
           <div className="w-full px-4 sm:px-8 lg:px-12 relative">
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
               <span className="inline-block px-4 py-1.5 rounded-full bg-[#111726] border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em] shadow-md">Contact Naani Projects</span>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">Let's Find Your <span className="text-gold-gradient">Perfect Property</span></h1>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">Talk to a <span className="text-gold-gradient">Property Advisor</span></h1>
               <p className="text-lg md:text-xl text-slate-300 font-medium leading-relaxed max-w-3xl mx-auto">
-                Connect with Naani Projects for premium property recommendations, WhatsApp assistance, brochures, and free site visits across Hyderabad and Tirupati.
+                Have questions about a project, budget limits, or site visits? Connect with us directly on WhatsApp or share your requirements below.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                 <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-6 py-6 rounded-xl shadow-md" onClick={() => window.open(WA_URL, "_blank")}>

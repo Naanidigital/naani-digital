@@ -212,7 +212,7 @@ const ListYourPropertyPage = () => {
               List Your Property on <span className="text-gold-gradient">Naani Projects</span>
             </h1>
             <p className="text-slate-300 text-base sm:text-lg font-medium mt-4 max-w-3xl mx-auto leading-relaxed">
-              Professional multi-step submission engine. Auto-generated SEO canonical page, AI description writer, gated brochure lead capture, and instant distribution across BHK &amp; Location hubs.
+              Submit your property details to reach active homebuyers and tenants across Hyderabad. Provide structured information to help buyers evaluate your listing quickly.
             </p>
           </div>
         </section>

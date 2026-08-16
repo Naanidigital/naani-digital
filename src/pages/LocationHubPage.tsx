@@ -20,28 +20,28 @@ const TEL = "tel:+919705080909";
 
 // Curated long-tail locations with extra context. Any other location still works dynamically.
 const LOCATION_INTRO: Record<string, string> = {
-  "kokapet": "Kokapet is Hyderabad's most premium emerging hub — home to Financial District, Neopolis SEZ, and ₹3 Cr+ luxury launches by Brigade, Aparna and My Home.",
-  "gachibowli": "Gachibowli is the IT heartbeat of Hyderabad — minutes from Microsoft, Wipro and the Outer Ring Road, with strong rental yields for 2 & 3 BHK apartments.",
-  "tellapur": "Tellapur is the fastest-growing western corridor with seamless ORR connectivity, top schools and large gated communities by Rajapushpa, MyHome and Aparna.",
-  "financial-district": "Financial District is Hyderabad's banking & fintech hub — premium gated towers, walkable office access and strong long-term appreciation.",
-  "narsingi": "Narsingi offers a calm residential pocket on the ORR — strong builder presence, easy airport access and balanced 2/3 BHK pricing.",
-  "kondapur": "Kondapur is a mature IT-adjacent neighborhood — ready-to-move stock, excellent social infra and tested rental demand.",
-  "miyapur": "Miyapur is a metro-connected family corridor — value 2 & 3 BHK options with Aparna, Team4 and Anuhar launches.",
-  "bachupally": "Bachupally is the new growth pocket on NH-65 — affordable luxury launches by Prestige, Candeur and Aspire Spaces, with strong upcoming infra.",
-  "shamshabad": "Shamshabad is the airport-corridor investment story — villa plots, plotted developments and high land appreciation.",
-  "tukkuguda": "Tukkuguda is the premium villa belt near RGIA — 4 BHK villas, gated layouts and excellent ORR/airport access.",
+  "kokapet": "Kokapet is a major residential hub in West Hyderabad, located close to the Financial District and Neopolis SEZ, featuring multi-tower apartment developments and gated communities.",
+  "gachibowli": "Gachibowli serves as an established IT and business corridor in Hyderabad, offering residential options close to major office parks and the Outer Ring Road.",
+  "tellapur": "Tellapur is a growing residential corridor in West Hyderabad, popular with families seeking gated communities with access to the ORR and nearby international schools.",
+  "financial-district": "Financial District is Hyderabad's primary financial hub, featuring high-rise apartment towers with convenient access to major corporate offices.",
+  "narsingi": "Narsingi is located along the Outer Ring Road, offering easy connectivity to Gachibowli, Financial District, and the International Airport.",
+  "kondapur": "Kondapur is a central residential neighborhood between HITEC City and Gachibowli, featuring established commercial infrastructure and apartments.",
+  "miyapur": "Miyapur is a well-connected residential pocket along the metro corridor, offering a wide range of 2 and 3 BHK apartment options.",
+  "bachupally": "Bachupally is a developing residential area in North-West Hyderabad, featuring new apartment launches and educational institutions.",
+  "shamshabad": "Shamshabad is located near Rajiv Gandhi International Airport, featuring plotted layouts, land developments, and highway connectivity.",
+  "tukkuguda": "Tukkuguda offers gated villa developments and plotted communities with quick access to the Outer Ring Road and airport corridor.",
 };
 
 const slug = (s: string) => slugify(s);
 
 const buildFaqs = (loc: string) => [
-  { question: `Why invest in property in ${loc}, Hyderabad?`, answer: `${loc} offers strong appreciation, proximity to IT hubs, ORR connectivity and a fast-improving social infrastructure — making it one of Hyderabad's most search-driven micro-markets in 2026.` },
-  { question: `What is the price range for apartments in ${loc}?`, answer: `Prices in ${loc} typically range from ₹1.2 Cr to ₹4.5 Cr depending on builder reputation, configuration (2/3/4 BHK), tower views and amenity quality. Naani Projects gets you the best on-ground negotiated rates.` },
-  { question: `Which are the top builders launching projects in ${loc}?`, answer: `Top builders active in ${loc} include Aparna, Brigade, Prestige, My Home, Rajapushpa, Candeur, Anuhar and Team4 — all available on Naani Projects with verified RERA details.` },
-  { question: `Are ready-to-move flats available in ${loc}?`, answer: `Yes. We list both Ready-to-Move and Under-Construction inventory in ${loc}. Filter on the listing or message us on WhatsApp at +91 97050 80909 for handpicked options.` },
-  { question: `Is ${loc} good for rental investment?`, answer: `${loc} sees consistent rental demand from IT, BFSI and education professionals. Expected rental yield ranges from 3.2% to 4.5% depending on configuration and project amenities.` },
-  { question: `How do I book a site visit in ${loc}?`, answer: `Click any project, choose "Book Site Visit", or message +91 97050 80909 on WhatsApp. Free cab pickup is available for shortlisted premium projects.` },
-  { question: `Do you charge any brokerage to buyers?`, answer: `No. Naani Projects is a buyer-side advisor. We are paid by builders, never by buyers — you get unbiased recommendations at the best builder price.` },
+  { question: `Why consider buying property in ${loc}, Hyderabad?`, answer: `${loc} offers convenient access to IT corridors, Outer Ring Road connectivity, and growing social infrastructure, making it a popular choice for homebuyers and investors.` },
+  { question: `What is the price range for apartments in ${loc}?`, answer: `Property prices in ${loc} vary based on builder, BHK configuration, floor area, and amenities. Contact Naani Projects on WhatsApp for updated pricing on specific projects.` },
+  { question: `Which developers have active projects in ${loc}?`, answer: `Developers active in ${loc} include Aparna, Brigade, Prestige, My Home, Rajapushpa, Candeur, Anuhar, and Team4. You can compare their floor plans and status on Naani Projects.` },
+  { question: `Are ready-to-move flats available in ${loc}?`, answer: `Yes, ${loc} has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 97050 80909 to get matching options.` },
+  { question: `Is ${loc} suitable for rental income?`, answer: `${loc} sees regular rental interest due to its proximity to IT hubs and office corridors. Rental returns depend on unit size, furnishings, and project location.` },
+  { question: `How can I schedule a site visit in ${loc}?`, answer: `Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.` },
+  { question: `Do buyers pay any advisory fees to Naani Projects?`, answer: `No, our project discovery and advisory service is free for homebuyers.` },
 ];
 
 const SIMILAR: Record<string, string[]> = {

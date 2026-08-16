@@ -130,14 +130,14 @@ const ProjectsPage = () => {
         <div className="w-full px-4 sm:px-8 lg:px-12 text-center relative z-40">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="inline-block px-5 py-2 rounded-full bg-[#111726] text-amber-400 text-xs md:text-sm font-extrabold mb-4 border border-amber-500/30 shadow-md">
-              Naani Projects · {projects.length}+ Premium Properties
+              Naani Projects · {projects.length}+ Verified Properties
             </span>
             <h1 className="text-3xl md:text-6xl font-extrabold text-white mb-3 leading-tight">
-              Hyderabad's Curated<br />
-              <span className="text-gold-gradient">Luxury Real Estate Portal</span>
+              Explore Residential Projects<br />
+              <span className="text-gold-gradient">in Hyderabad</span>
             </h1>
             <p className="text-base md:text-xl text-slate-300 font-medium max-w-3xl mx-auto mb-8">
-              Explore premium apartments, villas &amp; plots from top builders — Tellapur, Kokapet, Miyapur, Gachibowli &amp; more.
+              Filter apartments, villas, and plots across Kokapet, Tellapur, Miyapur, Bachupally, and Gachibowli by location, budget, and BHK format.
             </p>
           </motion.div>
 

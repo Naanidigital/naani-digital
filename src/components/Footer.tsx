@@ -69,7 +69,7 @@ const Footer = () => {
               <span className="text-xl font-extrabold text-white">Naani <span className="text-amber-400">Projects</span></span>
             </Link>
             <p className="text-sm text-slate-300 leading-relaxed font-medium">
-              Find the right property — apartments, villas, gated communities and luxury homes in Hyderabad — smarter and faster on WhatsApp.
+              Explore verified apartments, villas, and gated communities across Hyderabad with direct property advice on WhatsApp.
             </p>
             <div className="flex gap-3 pt-2">
               {socials.map((s, i) => (

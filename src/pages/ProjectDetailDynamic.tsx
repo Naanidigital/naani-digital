@@ -43,9 +43,9 @@ const getFallbackProject = (slug: string): DBProject => {
       max_price_inr: 20400000,
       status: "Pre-Launch",
       possession: "March 2030",
-      usp: "28.7 Acres Township · 10 High-Rise Towers (3P+52 Floors) · 70% Open Green Spaces",
-      description: "Prestige Golden Grove is a landmark luxury residential township by Prestige Group spread across 28.7 acres in Tellapur, West Hyderabad. Featuring 5,120 premium 2, 3 and 4 BHK apartments with 50,000+ sq.ft. clubhouses, resort-style amenities, and 2-minute connectivity to ORR Exit 2.",
-      amenities: ["2 Clubhouses", "Temperature-Controlled Swimming Pool", "Fully Equipped Gym", "Jogging Track", "Tennis Court", "Kids Play Area", "24/7 Security"],
+      usp: "28.7 Acres Development · 10 Towers · Near ORR Exit 2",
+      description: "Prestige Golden Grove is a residential apartment project by Prestige Group spread across 28.7 acres in Tellapur, West Hyderabad. It offers 2, 3, and 4 BHK apartments with clubhouse facilities, open spaces, and access to ORR Exit 2.",
+      amenities: ["Clubhouse Facilities", "Swimming Pool", "Fitness Center", "Jogging Track", "Tennis Court", "Play Area", "24/7 Security"],
       faqs: [
         { q: "What is Prestige Golden Grove Hyderabad?", a: "Prestige Golden Grove is a premium luxury apartment township by Prestige Group, spread across 28.7 acres in Tellapur, near Kollur, West Hyderabad. It features 10 high-rise towers (3P+52 floors) with 5,120 luxury apartments in 2, 3, and 4 BHK configurations." },
         { q: "Where is Prestige Golden Grove located?", a: "Located in Tellapur, near Kollur off ORR Exit 2, West Hyderabad, just 15 minutes from Gachibowli and HITEC City IT hubs." },
