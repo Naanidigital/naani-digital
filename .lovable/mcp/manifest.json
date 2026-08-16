@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "sdk_version": "0.22.2",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://hadxpgwzmvxqslcyykyw.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "naani-projects-mcp",
+      "version": "0.1.0",
+      "title": "Naani Projects MCP"
+    },
+    "tools": [
+      {
+        "name": "search_projects",
+        "title": "Search Naani real estate projects",
+        "description": "Search published real estate projects on Naani by keyword (matches name, builder, location, city, or property type). Returns up to 20 results with slug, name, builder, location, price range, status and configuration.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Search text — project name, builder, location, BHK or property type. Use empty string to list featured projects."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991,
+              "description": "Maximum results to return (1-50). Defaults to 20 when unset."
+            }
+          },
+          "required": [
+            "query"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_project_details",
+        "title": "Get Naani project details",
+        "description": "Fetch the full published project record for a given slug — includes description, amenities, FAQs, pricing, possession, gallery URLs, and canonical page URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "description": "Project slug, e.g. 'aritha-gbr-dhanwin-towers-bowrampet-hyderabad'."
+            }
+          },
+          "required": [
+            "slug"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

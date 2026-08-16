@@ -1,0 +1,2 @@
+DELETE FROM public.project_submissions WHERE submitter_phone = '9705080909' AND submitter_name IN ('T','t');
+DELETE FROM public.projects WHERE slug = 'test-rls-x1' OR slug LIKE 'test-tower-kondapur-hyderabad-%';

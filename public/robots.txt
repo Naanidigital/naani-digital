@@ -1,0 +1,56 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /crm
+Disallow: /crm/
+Disallow: /api/
+Disallow: /functions/
+Disallow: /login
+Disallow: /auth
+Disallow: /thank-you
+Disallow: /.lovable/
+Disallow: /*?utm_
+Disallow: /*?s=
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /crm/
+Disallow: /api/
+Disallow: /functions/
+Disallow: /login
+Disallow: /auth
+Disallow: /thank-you
+Disallow: /.lovable/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /crm/
+Disallow: /api/
+Disallow: /functions/
+Disallow: /login
+Disallow: /auth
+Disallow: /thank-you
+Disallow: /.lovable/
+
+# AI / answer-engine crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://www.naani.in/sitemap.xml

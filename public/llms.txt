@@ -1,0 +1,30 @@
+# Naani Projects
+
+> Naani Projects helps you find the right property in Hyderabad — apartments, villas, gated communities, luxury homes and investment options — smarter and faster on WhatsApp.
+
+Naani Projects is a Hyderabad-focused real estate discovery platform. Buyers share location, budget and preferences on WhatsApp and receive curated, RERA-compliant project options from trusted builders such as Rajapushpa, Prestige, Godrej, Brigade, Candeur, Team4 and Tridasa.
+
+## Pages
+
+- [Home](/): Find the right property in Hyderabad, smarter and faster on WhatsApp.
+- [Projects](/projects): Browse premium apartments, villas and gated communities across Hyderabad.
+- [About Us](/about-us): Who we are, how we work and why buyers trust Naani Projects.
+- [Contact Us](/contact-us): Smart inquiry form and direct WhatsApp/call to our property advisors.
+
+## Featured Projects
+
+- [Candeur Eternia, Bachupally](/projects/candeur-eternia-bachupally-hyderabad): 7.7-acre premium 3 & 4 BHK community in Bachupally.
+- [Godrej Kukatpally](/projects/godrej-kukatpally-hyderabad): Pre-launch luxury residences in Kukatpally, Hyderabad.
+- [Rajapushpa Sierra](/projects/rajapushpa-sierra-kokapet-hyderabad): Ultra-luxury high-rise residences in Kokapet.
+- [Aspire Spaces A3](/projects/aspire-spaces-a3-kondapur-hyderabad): Premium homes in Kondapur, Hyderabad.
+- [Team4 Aria, Miyapur](/projects/team4-aria-miyapur-hyderabad): Contemporary apartments in Miyapur.
+- [Tridasa Rise](/projects/tridasa-rise-hyderabad): Modern gated community by Tridasa.
+- [Brigade Gateway Neopolis](/projects/brigade-gateway-neopolis-kokapet-hyderabad): Brigade Group's Neopolis-area development.
+- [Prestige Golden Grove](/projects/prestige-golden-grove-hyderabad): Prestige Group luxury residences in Hyderabad.
+- [Man Airport Residency](/projects/man-airport-residency-hyderabad): Premium homes near Hyderabad airport.
+- [Sri Soho Interiors](/projects/sri-soho-interiors-hyderabad): Modern interior-themed residences.
+- [Jaycon Gateway Tirupati](/projects/jaycon-gateway-tirupati): Premium plotted development in Tirupati.
+
+## Optional
+
+- [Thank You](/thank-you): Post-inquiry confirmation page.
