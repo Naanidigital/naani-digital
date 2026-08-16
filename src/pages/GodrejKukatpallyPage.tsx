@@ -387,7 +387,7 @@ const GodrejKukatpallyPage = () => {
             Book Your <span className="text-amber-400">Dream Home</span> Today
           </h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-base">
-            Experience elevated living at Godrej Kukatpally. Discover spacious 2, 3 & 4 BHK luxury homes, world-class amenities, and a vibrant community designed for modern lifestyles.
+            Explore Godrej Kukatpally. Discover 2, 3, and 4 BHK apartments with clubhouse facilities and convenient access to Gachibowli and HITEC City.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button data-lead-gate="sitevisit" onClick={() => openPopup("Schedule Site Visit")} className="lead-btn py-4 px-8 text-lg font-semibold rounded-lg shadow-lg bg-amber-600 hover:bg-amber-700 text-white transition-all hover:scale-105">

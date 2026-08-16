@@ -201,7 +201,7 @@ const BrigadeGatewayNeopolis = () => {
             </span>
           </h1>
           <p className="text-slate-800 font-medium text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
-            Hyderabad's most anticipated skyline address is here. Brigade Gateway Neopolis redefines luxury living with sky-high towers, 3–6 BHK residences, and world-class amenities in the heart of Kokapet's Neopolis — Hyderabad's fastest-rising real estate corridor.
+            Brigade Gateway Neopolis offers 3–6 BHK residences with high-rise views and clubhouse amenities in Neopolis, Kokapet.
           </p>
           <div className="flex flex-wrap gap-4">
             <button

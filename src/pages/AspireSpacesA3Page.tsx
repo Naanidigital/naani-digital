@@ -228,7 +228,7 @@ const AspireSpacesA3Page = () => {
             </div>
             <div className="mt-10 bg-white/5 border border-amber-400/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
               <p className="text-slate-300 leading-relaxed">
-                Aspire Spaces A3 is a premium residential project offering luxury 2 & 3 BHK apartments in Mallampet, Hyderabad. Spread across 3.7 acres, this high-rise gated community features 2 towers with 3C + Stilt + 34 floors, delivering spacious homes, world-class amenities, and thoughtfully planned layouts for modern families. Whether you are a homebuyer or investor looking for <strong className="text-white">flats in Mallampet Hyderabad</strong> or <strong className="text-white">apartments near Bachupally</strong>, this project provides an excellent opportunity in one of Hyderabad's fastest-growing residential locations.
+                Aspire Spaces A3 is a residential project offering 2 & 3 BHK apartments in Mallampet, Hyderabad. Spread across 3.7 acres, this high-rise community features 2 towers with 34 residential floors, offering floor plans, clubhouse facilities, and layout designs for families. Whether you are looking for <strong className="text-white">flats in Mallampet Hyderabad</strong> or <strong className="text-white">apartments near Bachupally</strong>, this project provides a residential option in North-West Hyderabad.
               </p>
             </div>
           </div>

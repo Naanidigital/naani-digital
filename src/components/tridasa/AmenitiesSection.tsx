@@ -95,7 +95,7 @@ const AmenitiesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-amber-500/10 text-amber-600 rounded-full text-sm font-medium mb-4">
-            World-Class Amenities
+            Project Amenities
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             40+ Premium Amenities

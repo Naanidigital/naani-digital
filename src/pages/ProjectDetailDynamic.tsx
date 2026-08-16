@@ -479,7 +479,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
       {project.amenities && project.amenities.length > 0 && (
         <section className="py-16 bg-[#0B101D] border-y border-amber-500/20">
           <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-            <h2 className="text-3xl font-extrabold text-white mb-3">World-Class Amenities</h2>
+            <h2 className="text-3xl font-extrabold text-white mb-3">Project Amenities</h2>
             <p className="text-slate-300 font-medium mb-8">Everything you need for a luxury lifestyle.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {project.amenities.map((a) => (

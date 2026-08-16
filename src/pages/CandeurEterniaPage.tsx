@@ -222,7 +222,7 @@ const CandeurEterniaPage = () => {
             <img src={towersImg} alt="Candeur Eternia 4 premium towers Bachupally Hyderabad architectural elevation" className="rounded-2xl border border-amber-500/20 cursor-pointer hover:scale-[1.02] transition-transform" loading="lazy" onClick={() => setLightboxImg(towersImg)} />
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                <strong className="text-white">Candeur Eternia</strong> is a landmark luxury residential community designed for modern urban families seeking comfort, connectivity and lifestyle excellence. Located in the fast-growing residential hub of Bachupally, Hyderabad, this premium high-rise development offers spacious apartments, world-class amenities and seamless access to IT hubs, educational institutions, healthcare and entertainment zones.
+                <strong className="text-white">Candeur Eternia</strong> is a residential apartment community located in Bachupally, Hyderabad. This project offers 2, 2.5, and 3 BHK apartments, clubhouse amenities, and access to nearby schools, hospitals, and IT corridors.
               </p>
               <div className="grid grid-cols-2 gap-3 pt-4">
                 {[

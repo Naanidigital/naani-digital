@@ -470,7 +470,7 @@ const RaghavaHaloPage = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="text-amber-500 text-sm font-semibold tracking-[0.3em] uppercase">World-Class Amenities</span>
+              <span className="text-amber-500 text-sm font-semibold tracking-[0.3em] uppercase">Project Amenities</span>
               <h2 className="text-3xl md:text-5xl font-bold mt-3">An Ecosystem of Well-Being</h2>
               <p className="text-muted-foreground mt-4">Four curated worlds — designed to elevate every facet of modern luxury living.</p>
             </div>

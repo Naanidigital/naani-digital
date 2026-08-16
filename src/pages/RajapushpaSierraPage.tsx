@@ -256,7 +256,7 @@ const RajapushpaSierraPage = () => {
       {/* AMENITIES */}
       <section className={sectionClass}>
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">World-Class Amenities for Premium Lifestyle</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Project Amenities &amp; Clubhouse Features</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Over 1,50,000 sft of clubhouse and sports complex thoughtfully crafted for recreation, wellness and community.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {amenityCategories.map(cat => (

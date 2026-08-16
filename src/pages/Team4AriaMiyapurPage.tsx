@@ -76,7 +76,7 @@ const faqs = [
   { q: "How many towers and floors does the project have?", a: "Team4 Aria features 7 high-rise towers with G+48 floors each, spread across a massive 12.35-acre campus with a 3.5-acre central courtyard." },
   { q: "Is Team4 Aria RERA approved?", a: "Yes, Team4 Aria Miyapur is RERA approved with registration number P02400010543." },
   { q: "What amenities does Team4 Aria offer?", a: "The project features dual clubhouses, Olympic & rooftop infinity pools, tennis & badminton courts, gym, spa, amphitheatre, jogging track, kids play area, and much more." },
-  { q: "Is Team4 Aria a good investment?", a: "Absolutely. Miyapur is one of Hyderabad's fastest-growing corridors with excellent metro connectivity, IT proximity, and strong rental demand. Pre-launch pricing offers significant appreciation potential." },
+  { q: "Is Team4 Aria a good investment?", a: "Absolutely. Miyapur is a well-connected residential corridor in West Hyderabad with metro access, IT proximity, and steady rental interest." },
 ];
 
 const Team4AriaMiyapurPage = () => {
@@ -297,8 +297,8 @@ const Team4AriaMiyapurPage = () => {
       {/* ===== AMENITIES ===== */}
       <section className={sectionClass}>
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">World-Class Amenities</h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">A complete lifestyle ecosystem designed for wellness, recreation, and community living.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Project Amenities</h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">A lifestyle ecosystem designed for wellness, recreation, and community living.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {amenityCategories.map(cat => (
               <div key={cat.title} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-amber-500/30 transition-colors">

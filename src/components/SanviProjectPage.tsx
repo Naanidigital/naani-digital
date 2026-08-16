@@ -493,7 +493,7 @@ const SanviProjectPage = ({ project: p }: Props) => {
       {/* ========================= AMENITIES ========================= */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-background to-amber-950/5">
         <div className="container mx-auto px-4">
-          <SectionHead eyebrow="Amenities" title={`${p.clubhouse} Of World-Class Amenities`} />
+          <SectionHead eyebrow="Amenities" title={`${p.clubhouse} Of Project Amenities`} />
           <div className="grid md:grid-cols-2 gap-6">
             {p.amenityGroups.map((g, i) => (
               <ScrollReveal key={g.title} delay={i * 0.05}>

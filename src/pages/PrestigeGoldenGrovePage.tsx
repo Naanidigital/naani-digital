@@ -196,7 +196,7 @@ const PrestigeGoldenGrovePage = () => {
             </span>
           </h1>
           <p className="text-slate-800 font-medium text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
-            Hyderabad's biggest luxury apartment launch of 2026 is here. Prestige Golden Grove by the renowned Prestige Group brings 5,120 premium 2, 3, and 4 BHK homes across 28.7 acres in Tellapur — West Hyderabad's fastest-growing real estate corridor.
+            Hyderabad's apartment launch is here. Prestige Golden Grove by the renowned Prestige Group brings 2, 3, and 4 BHK homes across 28.7 acres in Tellapur — West Hyderabad.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 w-full">
             <CTAButton text="Enquire on WhatsApp" className="!bg-emerald-600 hover:!bg-emerald-700 w-52 h-12 flex items-center justify-center !text-base !font-extrabold !shadow-md" onClick={() => openLead("Enquire on WhatsApp")} />
@@ -480,7 +480,7 @@ const PrestigeGoldenGrovePage = () => {
           </div>
 
           <p className="text-slate-300 text-base text-center max-w-3xl mx-auto mb-10 leading-relaxed">
-            Prestige Golden Grove offers an unmatched lifestyle with world-class amenities designed for every age group. Set amidst 70% green open spaces, the project features two grand clubhouses and an extensive range of recreational and wellness facilities.
+            Prestige Golden Grove offers amenities designed for every age group. Set amidst green open spaces, the project features two clubhouses and an extensive range of recreational and wellness facilities.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
