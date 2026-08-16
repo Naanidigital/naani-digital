@@ -183,18 +183,81 @@ export function ogPrerender(): Plugin {
       }
       const indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
-      // IMPORTANT: do NOT overwrite dist/index.html. It is the SPA fallback
-      // served by Vercel for every dynamic route (builder hubs, location
-      // hubs, /property/:slug). It must keep the Naani Projects homepage
-      // metadata so unlisted routes don't inherit stale per-page values.
-      for (const route of ogRoutes) {
+      // Dynamically discover all routes from public/sitemaps/*.xml
+      const allRoutesMap = new Map<string, OGRoute>();
+
+      // Handcrafted routes take precedence
+      for (const r of ogRoutes) {
+        allRoutesMap.set(r.path, r);
+      }
+
+      // Helper to format slug to Title Case: "aparna-cyber-heights" -> "Aparna Cyber Heights"
+      const formatSlugTitle = (slug: string) =>
+        slug
+          .replace(/-hyderabad$/, '')
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, (c) => c.toUpperCase());
+
+      // Parse XML sitemap files in public/sitemaps/
+      const sitemapsDir = path.resolve(process.cwd(), 'public/sitemaps');
+      if (fs.existsSync(sitemapsDir)) {
+        const files = fs.readdirSync(sitemapsDir);
+        for (const file of files) {
+          if (!file.endsWith('.xml')) continue;
+          const xmlContent = fs.readFileSync(path.join(sitemapsDir, file), 'utf-8');
+          const matches = xmlContent.matchAll(/<loc>(https:\/\/www\.naani\.in(\/[^<]*))<\/loc>/g);
+          for (const match of matches) {
+            const fullUrl = match[1];
+            const routePath = match[2];
+            if (!routePath || routePath === '/' || allRoutesMap.has(routePath)) continue;
+
+            let title = 'Naani Projects | Real Estate Hyderabad';
+            let description =
+              'Explore verified real estate properties, flats, villas and plots in Hyderabad with Naani Projects.';
+
+            if (routePath.startsWith('/projects/')) {
+              const slug = routePath.replace('/projects/', '');
+              const cleanTitle = formatSlugTitle(slug);
+              title = `${cleanTitle} | Luxury Apartments & Villas in Hyderabad | Naani Projects`;
+              description = `Explore ${cleanTitle} in Hyderabad. Discover floor plans, pricing, amenities, location advantages, and book site visits on Naani Projects.`;
+            } else if (routePath.startsWith('/projects-in-')) {
+              const loc = formatSlugTitle(routePath.replace('/projects-in-', ''));
+              title = `Projects in ${loc} Hyderabad | Real Estate & Flats for Sale | Naani Projects`;
+              description = `Find apartments, villas, and new launches for sale in ${loc}, Hyderabad. Compare verified projects and prices on Naani Projects.`;
+            } else if (routePath.endsWith('-projects-hyderabad')) {
+              const builder = formatSlugTitle(
+                routePath.replace(/^\//, '').replace('-projects-hyderabad', '')
+              );
+              title = `${builder} Projects in Hyderabad | New Launches & Apartments | Naani Projects`;
+              description = `Explore all residential real estate projects by ${builder} in Hyderabad. Get instant project brochures and pricing on Naani.`;
+            } else if (routePath.startsWith('/hyderabad/')) {
+              const sub = formatSlugTitle(routePath.replace('/hyderabad/', ''));
+              title = `${sub} for Sale in Hyderabad | Naani Projects`;
+              description = `Browse ${sub} for sale in Hyderabad. Compare top locations, prices, builders and floor plans with Naani Projects.`;
+            }
+
+            allRoutesMap.set(routePath, {
+              path: routePath,
+              title,
+              description,
+              url: fullUrl,
+              image: DEFAULT_OG,
+            });
+          }
+        }
+      }
+
+      // Pre-render static HTML file with route-specific canonical & OG tags for every route
+      let count = 0;
+      for (const route of allRoutesMap.values()) {
         if (route.path === '/') continue;
         const html = injectOGTags(indexHtml, route);
         const routeDir = path.join(distDir, route.path.replace(/^\//, ''));
         fs.mkdirSync(routeDir, { recursive: true });
         fs.writeFileSync(path.join(routeDir, 'index.html'), html);
-        console.log(`[og-prerender] ✅ ${route.path}`);
+        count++;
       }
+      console.log(`[og-prerender] ✅ Successfully pre-rendered ${count} pages with explicit canonical & OG tags.`);
     },
   };
 }

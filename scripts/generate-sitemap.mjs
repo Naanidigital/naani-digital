@@ -15,13 +15,8 @@ import { mkdirSync, writeFileSync, rmSync } from "fs";
 import { resolve } from "path";
 
 const SITE = "https://www.naani.in";
-const URL = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
-const KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY;
-
-if (!URL || !KEY) {
-  console.error("[sitemap] Missing Supabase env vars — skipping dynamic sitemap.");
-  process.exit(0);
-}
+const URL = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || "https://hadxpgwzmvxqslcyykyw.supabase.co";
+const KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhZHhwZ3d6bXZ4cXNsY3l5a3l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxMzM0MDAsImV4cCI6MjA5MzcwOTQwMH0.YKhaf3k4vtusmBi2HNbWh_OEnzaKozlD-DJYxVU2pes";
 
 const supabase = createClient(URL, KEY);
 
