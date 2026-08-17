@@ -1,7 +1,13 @@
-import { Facebook, Instagram, Youtube, Phone, MapPin, MessageCircle, ChevronDown } from "lucide-react";
+import { Facebook, Instagram, Youtube, Phone, MapPin, MessageCircle, ChevronDown, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchProjects, projectPath, type DBProject } from "@/lib/projectsApi";
+
+const PinterestIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+  </svg>
+);
 
 const Footer = () => {
   const [projectsOpen, setProjectsOpen] = useState(false);
@@ -11,9 +17,12 @@ const Footer = () => {
   }, []);
 
   const socials = [
-    { icon: Instagram, href: "https://www.instagram.com/naaniprojects/", label: "Instagram" },
+    { icon: Youtube, href: "https://www.youtube.com/@NaaniProjects?sub_confirmation=1", label: "YouTube" },
     { icon: Facebook, href: "https://www.facebook.com/NaaniProjects/", label: "Facebook" },
-    { icon: Youtube, href: "https://www.youtube.com/@NaaniProjects", label: "YouTube" },
+    { icon: Instagram, href: "https://www.instagram.com/naaniprojects/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/naaniprojects/", label: "LinkedIn" },
+    { icon: PinterestIcon, href: "https://in.pinterest.com/naaniprojects/", label: "Pinterest" },
+    { icon: MessageCircle, href: "https://wa.me/919705080909?text=Hi", label: "WhatsApp" },
   ];
 
   const locations = [
@@ -34,7 +43,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 w-full">
             <a
-              href="https://wa.me/919705080909?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad"
+              href="https://wa.me/919705080909?text=Hi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold w-56 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all hover:scale-105"
@@ -71,7 +80,7 @@ const Footer = () => {
             <p className="text-sm text-slate-300 leading-relaxed font-medium">
               Explore verified apartments, villas, and gated communities across Hyderabad with direct property advice on WhatsApp.
             </p>
-            <div className="flex gap-3 pt-2">
+            <div className="flex flex-wrap gap-2.5 pt-2">
               {socials.map((s, i) => (
                 <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-amber-500 text-amber-400 hover:text-slate-950 transition-all duration-300 hover:scale-110 flex items-center justify-center border border-amber-500/30"

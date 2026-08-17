@@ -45,11 +45,10 @@ const Contact = () => {
   ];
 
   const socials = [
-    { icon: Facebook, href: "https://www.facebook.com/naanidigitalagency/", label: "Facebook" },
-    { icon: Instagram, href: "https://www.instagram.com/naanidigitalagency/", label: "Instagram" },
-    { icon: Twitter, href: "https://x.com/Naanidigital", label: "Twitter" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/naanidigitalagency/", label: "LinkedIn" },
-    { icon: Youtube, href: "https://www.youtube.com/@naanidigitalagency", label: "YouTube" },
+    { icon: Youtube, href: "https://www.youtube.com/@NaaniProjects?sub_confirmation=1", label: "YouTube" },
+    { icon: Facebook, href: "https://www.facebook.com/NaaniProjects/", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/naaniprojects/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/naaniprojects/", label: "LinkedIn" },
   ];
 
   return (
@@ -101,7 +100,7 @@ const Contact = () => {
                       </div>
                     </a>
                   ))}
-                  <a href="https://in.pinterest.com/naanidigitalagency/" target="_blank" rel="noopener noreferrer"
+                  <a href="https://in.pinterest.com/naaniprojects/" target="_blank" rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-gold-purple p-[2px] hover:scale-110 transition-all duration-300 hover:shadow-gold"
                     aria-label="Visit our Pinterest page">
                     <div className="w-full h-full bg-card rounded-lg flex items-center justify-center">

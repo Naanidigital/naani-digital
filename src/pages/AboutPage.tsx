@@ -103,7 +103,9 @@ const AboutPage = () => {
     "sameAs": [
       "https://www.instagram.com/naaniprojects/",
       "https://www.facebook.com/NaaniProjects/",
-      "https://www.youtube.com/@NaaniProjects"
+      "https://www.youtube.com/@NaaniProjects?sub_confirmation=1",
+      "https://www.linkedin.com/company/naaniprojects/",
+      "https://in.pinterest.com/naaniprojects/"
     ]
   };
 
