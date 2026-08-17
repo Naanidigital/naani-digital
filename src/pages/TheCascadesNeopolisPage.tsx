@@ -28,7 +28,11 @@ import {
   FileText,
   ExternalLink,
 } from "lucide-react";
-import brigadeElevation from "@/assets/brigade/elevation.png";
+import elevationHero from "@/assets/cascades/the-cascades-neopolis-elevation-hero.jpg";
+import skyLoungeClouds from "@/assets/cascades/the-cascades-neopolis-sky-lounge-clouds.jpg";
+import clubhouseLakeside from "@/assets/cascades/the-cascades-neopolis-clubhouse-lakeside.jpg";
+import entranceDriveway from "@/assets/cascades/the-cascades-neopolis-grand-entrance-driveway.jpg";
+import nightFacadeLighting from "@/assets/cascades/the-cascades-neopolis-night-facade-lighting.jpg";
 
 const PROJECT_NAME = "The Cascades Neopolis";
 const RERA_NO = "P02400009538";
@@ -292,8 +296,8 @@ const TheCascadesNeopolisPage = () => {
               <div className="lg:col-span-5">
                 <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#0F1629]">
                   <img
-                    src={brigadeElevation}
-                    alt="The Cascades Neopolis Kokapet Hyderabad Architecture"
+                    src={elevationHero}
+                    alt="The Cascades Neopolis Kokapet 63 Storey High Rise Towers Architecture"
                     className="w-full h-80 sm:h-96 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#090D16] via-transparent to-transparent" />
@@ -540,6 +544,91 @@ const TheCascadesNeopolisPage = () => {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* Section: Official Architectural Visuals & Project Renders */}
+        <section className="py-12 md:py-20 bg-[#0B101D] border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs px-3 py-1 rounded-full font-semibold">
+                <Sparkles size={14} />
+                <span>Official Project Renders</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                The Cascades Neopolis Architecture & Visual Gallery
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base">
+                Explore the iconic 63-storey high-rise towers, sky lounge above clouds, 7-storey lakeside clubhouse, grand entrance drop-off, and glowing night facade.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Image 1: High Rise Towers */}
+              <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-[#0D1426] shadow-xl hover:border-amber-500/50 transition-all">
+                <img
+                  src={elevationHero}
+                  alt="The Cascades Neopolis 63 Storey Towers and Helipad View"
+                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-4 bg-[#0D1426] border-t border-slate-800/80">
+                  <h3 className="text-sm font-bold text-white">5 High-Rise Towers (216.23m)</h3>
+                  <p className="text-xs text-slate-400 mt-1">Iconic 63-storey towers with twin rooftop helipads designed by UHA London.</p>
+                </div>
+              </div>
+
+              {/* Image 2: Sky Lounge in Clouds */}
+              <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-[#0D1426] shadow-xl hover:border-amber-500/50 transition-all">
+                <img
+                  src={skyLoungeClouds}
+                  alt="The Cascades Neopolis Sky Lounge Sky Plunge Pool Above Clouds"
+                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-4 bg-[#0D1426] border-t border-slate-800/80">
+                  <h3 className="text-sm font-bold text-amber-400">Sky Lounge Above Clouds</h3>
+                  <p className="text-xs text-slate-400 mt-1">Level 6 & 7 sky lounges featuring sky plunge pool, infinity deck, and sunset views.</p>
+                </div>
+              </div>
+
+              {/* Image 3: 7-Storey Clubhouse & Podium */}
+              <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-[#0D1426] shadow-xl hover:border-amber-500/50 transition-all">
+                <img
+                  src={clubhouseLakeside}
+                  alt="The Cascades Neopolis 50,000 sq ft 7-Storey Clubhouse and Podium"
+                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-4 bg-[#0D1426] border-t border-slate-800/80">
+                  <h3 className="text-sm font-bold text-white">50,000+ sq.ft. Clubhouse & Podium</h3>
+                  <p className="text-xs text-slate-400 mt-1">7-storey clubhouse with lagoon pools, sports courts, and lush landscaped gardens.</p>
+                </div>
+              </div>
+
+              {/* Image 4: Grand Entrance Driveway */}
+              <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-[#0D1426] shadow-xl hover:border-amber-500/50 transition-all lg:col-span-1">
+                <img
+                  src={entranceDriveway}
+                  alt="The Cascades Neopolis Grand Entrance Drop-off Driveway"
+                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-4 bg-[#0D1426] border-t border-slate-800/80">
+                  <h3 className="text-sm font-bold text-white">Grand Entrance Plaza & Drop-Off</h3>
+                  <p className="text-xs text-slate-400 mt-1">Level 1 Groundscape featuring double-height lobby drop-off and green buffer zones.</p>
+                </div>
+              </div>
+
+              {/* Image 5: Night Facade Lighting */}
+              <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-[#0D1426] shadow-xl hover:border-amber-500/50 transition-all md:col-span-2 lg:col-span-2">
+                <img
+                  src={nightFacadeLighting}
+                  alt="The Cascades Neopolis Night Architectural Lighting Facade"
+                  className="w-full h-72 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-4 bg-[#0D1426] border-t border-slate-800/80">
+                  <h3 className="text-sm font-bold text-amber-400">Architectural Night Lighting Facade</h3>
+                  <p className="text-xs text-slate-400 mt-1">Dramatic vertical accent lighting outlining the 63-storey silhouette across Neopolis skyline.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
