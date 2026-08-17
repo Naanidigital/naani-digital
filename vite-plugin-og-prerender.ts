@@ -1173,7 +1173,7 @@ const ogRoutes: OGRoute[] = [
     prerenderHtml: CONTACT_US_PRERENDER_HTML,
   },
 
-  // ===== Kokapet Location Hub (Static Pre-render Target) =====
+  // ===== Location Hubs (Static Pre-render Targets) =====
   {
     path: '/projects-in-kokapet',
     title: 'Projects in Kokapet, Hyderabad | Apartments & Homes | Naani Projects',
@@ -1182,8 +1182,6 @@ const ogRoutes: OGRoute[] = [
     image: DEFAULT_OG,
     prerenderHtml: KOKAPET_PRERENDER_HTML,
   },
-
-  // ===== Tellapur Location Hub (Static Pre-render Target) =====
   {
     path: '/projects-in-tellapur',
     title: 'Projects in Tellapur, Hyderabad | Apartments & Homes | Naani Projects',
@@ -1191,6 +1189,86 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects-in-tellapur`,
     image: DEFAULT_OG,
     prerenderHtml: TELLAPUR_PRERENDER_HTML,
+  },
+  {
+    path: '/projects-in-gachibowli',
+    title: 'Projects in Gachibowli, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Gachibowli, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-gachibowli`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('gachibowli', 'Gachibowli'),
+  },
+  {
+    path: '/projects-in-financial-district',
+    title: 'Projects in Financial District, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Financial District, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-financial-district`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('financial-district', 'Financial District'),
+  },
+  {
+    path: '/projects-in-bachupally',
+    title: 'Projects in Bachupally, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Bachupally, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-bachupally`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('bachupally', 'Bachupally'),
+  },
+  {
+    path: '/projects-in-narsingi',
+    title: 'Projects in Narsingi, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Narsingi, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-narsingi`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('narsingi', 'Narsingi'),
+  },
+  {
+    path: '/projects-in-miyapur',
+    title: 'Projects in Miyapur, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Miyapur, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-miyapur`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('miyapur', 'Miyapur'),
+  },
+  {
+    path: '/projects-in-kukatpally',
+    title: 'Projects in Kukatpally, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Kukatpally, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-kukatpally`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('kukatpally', 'Kukatpally'),
+  },
+  {
+    path: '/projects-in-manikonda',
+    title: 'Projects in Manikonda, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Manikonda, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-manikonda`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('manikonda', 'Manikonda'),
+  },
+  {
+    path: '/projects-in-nanakramguda',
+    title: 'Projects in Nanakramguda, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Nanakramguda, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-nanakramguda`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('nanakramguda', 'Nanakramguda'),
+  },
+  {
+    path: '/projects-in-hi-tech-city',
+    title: 'Projects in HITEC City, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in HITEC City, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-hi-tech-city`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('hi-tech-city', 'HITEC City'),
+  },
+  {
+    path: '/projects-in-neopolis',
+    title: 'Projects in Neopolis, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Neopolis, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-neopolis`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('neopolis', 'Neopolis'),
   },
 
   // ===== SEO Hubs =====
