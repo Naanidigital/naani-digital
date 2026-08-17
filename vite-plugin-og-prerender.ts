@@ -15,7 +15,44 @@ const SITE = 'https://www.naani.in';
 const DEFAULT_OG = `${SITE}/naani-projects-logo.png`;
 
 // Static pre-rendered crawlable HTML content for /about-us
-const ABOUT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-slate-100">
+const ABOUT_US_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/about-us#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.naani.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://www.naani.in/about-us"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.naani.in/about-us#webpage",
+    "url": "https://www.naani.in/about-us",
+    "name": "About Naani Projects | Hyderabad Real Estate Experts",
+    "description": "Learn about Naani Projects, a Hyderabad-focused real estate platform helping buyers explore apartments, villas, plots and new residential projects across Hyderabad.",
+    "isPartOf": {
+      "@id": "https://www.naani.in/#website"
+    },
+    "about": {
+      "@id": "https://www.naani.in/#organization"
+    }
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
   <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
@@ -241,7 +278,44 @@ const ABOUT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-slat
 </div>`;
 
 // Static pre-rendered crawlable HTML content for /contact-us
-const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-slate-100">
+const CONTACT_US_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/contact-us#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.naani.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact Us",
+        "item": "https://www.naani.in/contact-us"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.naani.in/contact-us#webpage",
+    "url": "https://www.naani.in/contact-us",
+    "name": "Contact Naani Projects | Hyderabad Real Estate Experts",
+    "description": "Contact Naani Projects for apartments, villas, plots and new residential projects in Hyderabad. Get property details, compare projects or request a site visit.",
+    "isPartOf": {
+      "@id": "https://www.naani.in/#website"
+    },
+    "about": {
+      "@id": "https://www.naani.in/#organization"
+    }
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
   <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
@@ -326,6 +400,15 @@ const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-sl
 
     <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Send a Property Enquiry</h2>
+        <p class="text-slate-300 leading-relaxed">
+          Tell us what type of property you are looking for in Hyderabad and our team can help you explore relevant options, request project information or enquire about a site visit.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Why Contact Naani Projects?</h2>
         <p class="text-slate-300 leading-relaxed">
           Naani Projects provides specialized Hyderabad real estate discovery, multiple housing categories (apartments, villas, plots, gated communities), side-by-side project comparison, easy WhatsApp enquiry flows, and transparent buyer assistance.
@@ -333,14 +416,14 @@ const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-sl
       </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-white">How Our Property Enquiry Process Works</h2>
         <p class="text-slate-300">1. Share Requirements &nbsp;|&nbsp; 2. Explore Suitable Projects &nbsp;|&nbsp; 3. Compare Your Options &nbsp;|&nbsp; 4. Request Project Info &nbsp;|&nbsp; 5. Schedule a Site Visit</p>
       </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Hyderabad Areas We Serve</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm font-bold">
@@ -358,7 +441,7 @@ const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-sl
       </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Property Types You Can Explore</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold">
@@ -374,7 +457,7 @@ const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-sl
       </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Hyderabad Real Estate Enquiries</h2>
         <p class="text-slate-300 leading-relaxed">
@@ -383,7 +466,7 @@ const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-sl
       </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Frequently Asked Questions</h2>
         <div class="space-y-4">
@@ -403,7 +486,7 @@ const CONTACT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-sl
       </div>
     </section>
 
-    <section class="py-16 md:py-24 bg-[#0B101D]">
+    <section class="py-16 md:py-24 bg-[#090D16]">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Explore Hyderabad Properties</h2>
         <p class="text-slate-300">Browse active listings, compare locations, or speak directly with an advisor.</p>
