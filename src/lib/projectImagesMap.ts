@@ -9,6 +9,7 @@ import team4Hero from "@/assets/team4-aria/hero.png";
 import rajapushpaHero from "@/assets/rajapushpa-sierra/hero.webp";
 import tridasaBlock from "@/assets/tridasa/block-a-b.png";
 import cascadesHero from "@/assets/cascades/the-cascades-neopolis-elevation-hero.jpg";
+import riseHero from "@/assets/rise-with-9/rise-with-9-trilight-hero.jpg";
 
 export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove-hyderabad": prestigeElevation,
@@ -16,6 +17,8 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "brigade-gateway-neopolis-kokapet-hyderabad": brigadeElevation,
   "brigade-gateway-neopolis": brigadeElevation,
   "the-cascades-neopolis": cascadesHero,
+  "rise-with-9": riseHero,
+  "rise-with-9-neopolis-kokapet": riseHero,
   "candeur-eternia-bachupally-hyderabad": candeurHero,
   "candeur-eternia": candeurHero,
   "godrej-kukatpally-hyderabad": godrejHero,

@@ -1597,6 +1597,20 @@ const ogRoutes: OGRoute[] = [
     image: DEFAULT_OG,
   },
   {
+    path: '/projects/rise-with-9',
+    title: 'Rise With 9 Neopolis Kokapet Hyderabad | Luxury 3 & 4 BHK',
+    description: 'Explore Rise With 9 in Neopolis, Kokapet, Hyderabad. Discover its large-format luxury residences, double-height living, sky amenities, clubhouse, connectivity and RERA details.',
+    url: `${SITE}/projects/rise-with-9`,
+    image: DEFAULT_OG,
+  },
+  {
+    path: '/projects/rise-with-9-neopolis-kokapet',
+    title: 'Rise With 9 Neopolis Kokapet Hyderabad | Luxury 3 & 4 BHK',
+    description: 'Explore Rise With 9 in Neopolis, Kokapet, Hyderabad. Discover its large-format luxury residences, double-height living, sky amenities, clubhouse, connectivity and RERA details.',
+    url: `${SITE}/projects/rise-with-9-neopolis-kokapet`,
+    image: DEFAULT_OG,
+  },
+  {
     path: '/projects/prestige-golden-grove-hyderabad',
     title: 'Prestige Golden Grove Hyderabad | Luxury Apartments Near ORR',
     description: 'Prestige Golden Grove Hyderabad – premium 2, 3 & 4 BHK luxury apartments in Tellapur near ORR. 28.7 acres, 10 towers. Starting ₹93.5 Lakhs.',
