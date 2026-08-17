@@ -36,6 +36,23 @@ const HyderabadHubPage = lazy(() => import("./pages/HyderabadHubPage"));
 const BhkLandingPage = lazy(() => import("./pages/BhkLandingPage"));
 const BuyerGuidePage = lazy(() => import("./pages/BuyerGuidePage"));
 
+import { isBuilderSeoSlug } from "./lib/seoSlug";
+
+const SeoHubRouter = () => {
+  const { seoSlug = "" } = useParams<{ seoSlug: string }>();
+
+  if (seoSlug.startsWith("projects-in-")) {
+    const locationSlug = seoSlug.replace(/^projects-in-/, "");
+    return <LocationHubPage locationSlugOverride={locationSlug} />;
+  }
+
+  if (isBuilderSeoSlug(seoSlug)) {
+    return <BuilderHubPage builderSeoSlugOverride={seoSlug} />;
+  }
+
+  return <NotFound />;
+};
+
 // Minimal loading fallback
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -105,8 +122,8 @@ const App = () => (
         <Route path="/guides/:guideSlug" element={<BuyerGuidePage />} />
 
         {/* SEO hubs: location + builder landing pages */}
-        <Route path="/projects-in-:locationSlug" element={<LocationHubPage />} />
-        <Route path="/:builderSeoSlug" element={<BuilderHubPage />} />
+        <Route path="/projects-in-:locationSlug" element={<SeoHubRouter />} />
+        <Route path="/:seoSlug" element={<SeoHubRouter />} />
 
         {/* 301-style redirects: legacy agency routes → /projects */}
         <Route path="/services" element={<Navigate to="/projects" replace />} />

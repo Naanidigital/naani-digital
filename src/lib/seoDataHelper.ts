@@ -203,7 +203,7 @@ export const getSeoPageData = (type: "hub" | "bhk-2" | "bhk-3" | "location-bhk",
   const b = bhk || "2 BHK";
   const projects = getProjectsForLocationAndBhk(locationSlug, b);
   const allBhkProjects = getProjectsForLocationAndBhk(undefined, b);
-  const isIndexable = projects.length > 0;
+  const isIndexable = true;
   const canonicalUrl = `${SITE_URL}/hyderabad/${locationSlug}/${b === "2 BHK" ? "2-bhk-flats" : "3-bhk-flats"}`;
 
   return {
@@ -211,7 +211,7 @@ export const getSeoPageData = (type: "hub" | "bhk-2" | "bhk-3" | "location-bhk",
     description: `Explore verified ${b} flats and apartments for sale in ${locName}, Hyderabad. Compare project details, pricing, floor plans and amenities with Naani.`,
     h1: `${b} Flats for Sale in ${locName}, Hyderabad`,
     canonicalUrl,
-    robots: isIndexable ? "index,follow" : "noindex,follow",
+    robots: "index,follow",
     isIndexable,
     bhkType: b,
     locationName: locName,

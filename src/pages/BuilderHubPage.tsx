@@ -35,8 +35,13 @@ const BUILDER_BLURB: Record<string, string> = {
   "sri-soho-interiors": "Sri Soho Interiors delivers end-to-end luxury interior design solutions for residential and commercial properties in Hyderabad."
 };
 
-const BuilderHubPage = () => {
-  const { builderSeoSlug = "" } = useParams();
+interface BuilderHubPageProps {
+  builderSeoSlugOverride?: string;
+}
+
+const BuilderHubPage = ({ builderSeoSlugOverride }: BuilderHubPageProps = {}) => {
+  const params = useParams<{ builderSeoSlug?: string; seoSlug?: string }>();
+  const builderSeoSlug = builderSeoSlugOverride || params.builderSeoSlug || params.seoSlug || "";
   const [projects, setProjects] = useState<DBProject[]>([]);
   const [loading, setLoading] = useState(true);
 

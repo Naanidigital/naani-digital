@@ -73,8 +73,14 @@ const SIMILAR: Record<string, string[]> = {
   "nallagandla": ["tellapur", "gachibowli", "kondapur", "bhel"],
 };
 
-const LocationHubPage = () => {
-  const { locationSlug = "" } = useParams();
+interface LocationHubPageProps {
+  locationSlugOverride?: string;
+}
+
+const LocationHubPage = ({ locationSlugOverride }: LocationHubPageProps = {}) => {
+  const params = useParams<{ locationSlug?: string; seoSlug?: string }>();
+  const rawParam = locationSlugOverride || params.locationSlug || (params.seoSlug?.startsWith("projects-in-") ? params.seoSlug.replace(/^projects-in-/, "") : "");
+  const locationSlug = rawParam || "";
   const [projects, setProjects] = useState<DBProject[]>([]);
   const [loading, setLoading] = useState(true);
 
