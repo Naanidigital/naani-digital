@@ -11,6 +11,7 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   { name: "Brigade Gateway Neopolis", slug: "/projects/brigade-gateway-neopolis-kokapet-hyderabad", location: "Kokapet" },
   { name: "The Cascades Neopolis", slug: "/projects/the-cascades-neopolis", location: "Kokapet" },
   { name: "Rise With 9", slug: "/projects/rise-with-9", location: "Kokapet" },
+  { name: "LINQ by Raghava", slug: "/projects/linq-by-raghava", location: "Kokapet" },
   { name: "Prestige Golden Grove", slug: "/projects/prestige-golden-grove-hyderabad", location: "Kollur" },
   { name: "Jaycon Gateway Tirupati", slug: "/projects/jaycon-gateway-tirupati", location: "Tirupati" },
   { name: "Aspire Spaces A3", slug: "/projects/aspire-spaces-a3-bachupally", location: "Mallampet" },

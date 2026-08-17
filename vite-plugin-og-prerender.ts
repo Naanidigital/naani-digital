@@ -1611,6 +1611,20 @@ const ogRoutes: OGRoute[] = [
     image: DEFAULT_OG,
   },
   {
+    path: '/projects/linq-by-raghava',
+    title: 'LINQ by Raghava Neopolis Kokapet | Luxury 3 BHK Apartments',
+    description: 'Explore LINQ by Raghava in Kokapet, Neopolis, Hyderabad. Discover spacious 3 BHK residences, 5.5 lakh+ sq.ft. amenities, sky experiences, clubhouse facilities and connectivity.',
+    url: `${SITE}/projects/linq-by-raghava`,
+    image: DEFAULT_OG,
+  },
+  {
+    path: '/projects/linq-by-raghava-neopolis',
+    title: 'LINQ by Raghava Neopolis Kokapet | Luxury 3 BHK Apartments',
+    description: 'Explore LINQ by Raghava in Kokapet, Neopolis, Hyderabad. Discover spacious 3 BHK residences, 5.5 lakh+ sq.ft. amenities, sky experiences, clubhouse facilities and connectivity.',
+    url: `${SITE}/projects/linq-by-raghava-neopolis`,
+    image: DEFAULT_OG,
+  },
+  {
     path: '/projects/prestige-golden-grove-hyderabad',
     title: 'Prestige Golden Grove Hyderabad | Luxury Apartments Near ORR',
     description: 'Prestige Golden Grove Hyderabad – premium 2, 3 & 4 BHK luxury apartments in Tellapur near ORR. 28.7 acres, 10 towers. Starting ₹93.5 Lakhs.',
