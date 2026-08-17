@@ -8,19 +8,249 @@ interface OGRoute {
   description: string;
   url: string;
   image: string;
+  prerenderHtml?: string;
 }
 
 const SITE = 'https://www.naani.in';
 const DEFAULT_OG = `${SITE}/naani-projects-logo.png`;
 
-// Per-route pre-rendered HTML for social crawlers (WhatsApp / FB / Twitter /
-// LinkedIn / Telegram). Real-estate only — Naani Projects. We deliberately do
-// NOT pre-render `/` here; the static `index.html` already carries the correct
-// Naani Projects homepage metadata and is served as the SPA fallback for any
-// route not listed below (builder hubs, location hubs, /property/:slug, etc).
-// Per-page canonical/OG for those dynamic routes is applied client-side by
-// SEOHead (react-helmet-async) for JS-executing crawlers like Googlebot.
+// Static pre-rendered crawlable HTML content for /about-us
+const ABOUT_US_PRERENDER_HTML = `<div class="min-h-screen bg-[#090D16] text-slate-100">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/about-us" class="text-amber-400 font-semibold">About Us</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">Hyderabad Real Estate Discovery</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          About Naani Projects – <span class="text-amber-400">Hyderabad Real Estate Experts</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+          Naani Projects is a specialized Hyderabad-focused property discovery platform helping buyers explore residential properties across prime locations. Whether you are searching for apartments, luxury villas, gated community plots, or new residential projects, Naani Projects simplifies project evaluation, location comparison, and direct advisor connectivity.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 1 — Who We Are: Your Trusted Guide to Hyderabad Real Estate</h2>
+        <p class="text-slate-300 leading-relaxed">
+          Naani Projects is a specialized digital platform designed specifically for <strong>Hyderabad real estate</strong> discovery. We understand that finding the right <strong>properties in Hyderabad</strong> requires clear data, honest location insights, and trustworthy guidance rather than high-pressure sales calls.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          Our platform aggregates and organizes verified details on premium <strong>residential projects in Hyderabad</strong>, covering premier high-rise developments, gated communities, and luxury residential layouts. By focusing exclusively on Hyderabad's dynamic housing ecosystem, we empower <strong>Hyderabad homebuyers</strong>, first-time property seekers, and seasoned real estate buyers to research housing options efficiently before making a major financial commitment.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          We collaborate with established real estate developers and property advisory networks to bring up-to-date layout details, floor plan configurations, location connectivity maps, and pricing structures directly to your fingertips.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 2 — Why Naani Projects Exists: Simplifying Property Discovery in Hyderabad</h2>
+        <p class="text-slate-300 leading-relaxed">
+          Navigating the modern property market in Hyderabad can quickly become overwhelming for buyers due to hundreds of active projects, conflicting price quotes, and persistent sales calls. We built Naani Projects around one central mission: <strong>"Find the Right Property, Smarter &amp; Faster in Hyderabad."</strong>
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          Rather than forcing users through tedious registration walls or spamming their inboxes, Naani Projects delivers curated project brochures, floor plans, pricing estimates, and micro-market analysis directly via WhatsApp and on-demand advisory.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 3 — What We Do</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Property Discovery</h3>
+            <p class="text-slate-300 text-sm">Help buyers explore apartments, luxury villas, plots, and new residential projects across Hyderabad's prime locations.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Project Comparison</h3>
+            <p class="text-slate-300 text-sm">Enable buyers to evaluate projects based on location advantages, pricing structures, amenity packages, and configuration layouts.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Location Discovery</h3>
+            <p class="text-slate-300 text-sm">Provide in-depth neighborhood insights covering major residential growth corridors and IT hubs in Hyderabad.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Property Enquiries</h3>
+            <p class="text-slate-300 text-sm">Allow buyers to query project details instantly via WhatsApp, direct phone calls, or streamlined enquiry forms.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Site Visit Assistance</h3>
+            <p class="text-slate-300 text-sm">Help users schedule and coordinate guided property site visits with verified project representatives.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Buyer Guidance</h3>
+            <p class="text-slate-300 text-sm">Deliver actionable insights, buying guides, and micro-market data to assist buyers before making booking decisions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 4 — How We Evaluate Project Information</h2>
+        <p class="text-slate-300 leading-relaxed">
+          Project details on Naani Projects are compiled from official developer releases, public RERA documentation, architectural site plans, physical site visits, and direct updates from builder representatives.
+        </p>
+        <div class="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-sm leading-relaxed">
+          <strong>Naani Projects does not replace independent legal, financial or technical due diligence. Buyers should verify title, approvals, agreements and other legal documentation with qualified professionals before purchasing.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 5 — Hyderabad Areas We Cover</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm font-bold">
+          <a href="/projects-in-kokapet" class="text-amber-400 hover:underline">Kokapet Projects</a>
+          <a href="/projects-in-tellapur" class="text-amber-400 hover:underline">Tellapur Projects</a>
+          <a href="/projects-in-gachibowli" class="text-amber-400 hover:underline">Gachibowli Projects</a>
+          <a href="/projects-in-narsingi" class="text-amber-400 hover:underline">Narsingi Projects</a>
+          <a href="/projects-in-kondapur" class="text-amber-400 hover:underline">Kondapur Projects</a>
+          <a href="/projects-in-miyapur" class="text-amber-400 hover:underline">Miyapur Projects</a>
+          <a href="/projects-in-bachupally" class="text-amber-400 hover:underline">Bachupally Projects</a>
+          <a href="/projects-in-kollur" class="text-amber-400 hover:underline">Kollur Projects</a>
+          <a href="/projects-in-tukkuguda" class="text-amber-400 hover:underline">Tukkuguda Projects</a>
+          <a href="/projects-in-nallagandla" class="text-amber-400 hover:underline">Nallagandla Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 6 — Property Types You Can Explore</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold">
+          <a href="/hyderabad/2-bhk-flats" class="text-amber-400 hover:underline">2 BHK Flats in Hyderabad</a>
+          <a href="/hyderabad/3-bhk-flats" class="text-amber-400 hover:underline">3 BHK Flats in Hyderabad</a>
+          <a href="/projects" class="text-amber-400 hover:underline">Apartments in Hyderabad</a>
+          <a href="/projects" class="text-amber-400 hover:underline">Villas in Hyderabad</a>
+          <a href="/projects" class="text-amber-400 hover:underline">Plots in Hyderabad</a>
+          <a href="/projects" class="text-amber-400 hover:underline">New Residential Projects</a>
+          <a href="/projects" class="text-amber-400 hover:underline">Gated Community Projects</a>
+          <a href="/projects" class="text-amber-400 hover:underline">Luxury Homes in Hyderabad</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 7 — Who We Help</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Homebuyers</h3>
+            <p class="text-slate-300 text-xs mt-2">People looking for a home in Hyderabad based on budget, location, configuration and lifestyle requirements.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">First-Time Buyers</h3>
+            <p class="text-slate-300 text-xs mt-2">People who need help understanding project options, carpet areas, loan approvals, and site visit processes.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Property Investors</h3>
+            <p class="text-slate-300 text-xs mt-2">People researching Hyderabad growth corridors and residential developments objectively.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0F1629] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">NRI Buyers</h3>
+            <p class="text-slate-300 text-xs mt-2">Users living outside Hyderabad/India who want to research Hyderabad residential properties remotely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 8 — Our Approach to Property Discovery</h2>
+        <p class="text-slate-300">1. Explore Properties &nbsp;|&nbsp; 2. Shortlist Projects &nbsp;|&nbsp; 3. Compare Locations &amp; Projects &nbsp;|&nbsp; 4. Request Details / Schedule a Visit &nbsp;|&nbsp; 5. Make an Informed Decision</p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 9 — Meet the Naani Projects Team</h2>
+        <p class="text-slate-300">Naani Projects is powered by a dedicated team of Hyderabad real estate research analysts, property discovery advisors, and technology specialists committed to transparent, buyer-first guidance.</p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 10 — Why Choose Naani Projects</h2>
+        <p class="text-slate-300">We offer Hyderabad-focused property discovery, objective project and location comparison, easy WhatsApp enquiry flows, buyer-focused information, and local micro-market knowledge.</p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 11 — Transparency &amp; Buyer Due Diligence</h2>
+        <p class="text-slate-300">Project details, prices, availability, offers, and possession timelines can change over time. Buyers should verify information before booking, review legal documentation independently, and check RERA details through official government portals.</p>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Section 12 — Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">What is Naani Projects?</h3>
+            <p class="text-slate-300 text-sm mt-1">Naani Projects is a specialized Hyderabad-focused property discovery platform helping buyers explore residential properties across Hyderabad.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">What types of properties can I find on Naani Projects?</h3>
+            <p class="text-slate-300 text-sm mt-1">Explore 2 BHK and 3 BHK apartments, luxury villas, gated community plots, and new launch residential projects in Hyderabad.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
+            <h3 class="text-lg font-bold text-white">Which areas of Hyderabad does Naani Projects cover?</h3>
+            <p class="text-slate-300 text-sm mt-1">We cover Kokapet, Neopolis, Financial District, Gachibowli, Narsingi, Tellapur, Kondapur, HITECH City, Miyapur, Bachupally, Kollur, Tukkuguda, and Shamshabad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-[#0B101D]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Section 13 — Explore Hyderabad Properties</h2>
+        <p class="text-slate-300">Browse active listings, compare locations, or speak directly with an advisor.</p>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-amber-400">
+          <a href="/projects" class="hover:underline">Browse Projects</a>
+          <a href="/hyderabad" class="hover:underline">Hyderabad Real Estate Hub</a>
+          <a href="/hyderabad/2-bhk-flats" class="hover:underline">2 BHK Flats in Hyderabad</a>
+          <a href="/hyderabad/3-bhk-flats" class="hover:underline">3 BHK Flats in Hyderabad</a>
+          <a href="/list-your-property" class="hover:underline">List Your Property</a>
+          <a href="/contact-us" class="hover:underline">Contact Naani Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-[#090D16] border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <p>© Naani Projects. All rights reserved. Hyderabad Real Estate Experts.</p>
+  </footer>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
+  // ===== About Us (Static Pre-render Target) =====
+  {
+    path: '/about-us',
+    title: 'About Naani Projects | Hyderabad Real Estate Experts',
+    description: 'Learn about Naani Projects, a Hyderabad-focused real estate platform helping buyers explore apartments, villas, plots and new residential projects across Hyderabad.',
+    url: `${SITE}/about-us`,
+    image: `${SITE}/naani-projects-hyderabad-real-estate-team.webp`,
+    prerenderHtml: ABOUT_US_PRERENDER_HTML,
+  },
+
   // ===== SEO Hubs =====
   {
     path: '/hyderabad',
@@ -150,6 +380,7 @@ function injectOGTags(html: string, route: OGRoute): string {
   const ogTags = `
     <!-- Per-route SEO metadata (Naani Projects) -->
     <link rel="canonical" href="${u}" />
+    <meta name="robots" content="index,follow" />
     <meta property="og:title" content="${t}" />
     <meta property="og:description" content="${d}" />
     <meta property="og:url" content="${u}" />
@@ -167,6 +398,12 @@ function injectOGTags(html: string, route: OGRoute): string {
     <meta name="twitter:image" content="${img}" />`;
 
   result = result.replace('</head>', `${ogTags}\n  </head>`);
+
+  // If static HTML content is provided for pre-rendering, inject it inside <div id="root"></div>
+  if (route.prerenderHtml) {
+    result = result.replace('<div id="root"></div>', `<div id="root">${route.prerenderHtml}</div>`);
+  }
+
   return result;
 }
 
@@ -257,7 +494,7 @@ export function ogPrerender(): Plugin {
         fs.writeFileSync(path.join(routeDir, 'index.html'), html);
         count++;
       }
-      console.log(`[og-prerender] ✅ Successfully pre-rendered ${count} pages with explicit canonical & OG tags.`);
+      console.log(`[og-prerender] ✅ Successfully pre-rendered ${count} pages with explicit canonical, OG tags & HTML content.`);
     },
   };
 }
