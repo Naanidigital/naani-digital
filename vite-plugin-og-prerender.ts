@@ -1590,6 +1590,13 @@ const ogRoutes: OGRoute[] = [
     image: `${SITE}/og-brigade-gateway-neopolis.jpg`,
   },
   {
+    path: '/projects/the-cascades-neopolis',
+    title: 'The Cascades Neopolis Hyderabad | Price, Floor Plans & RERA',
+    description: 'Explore The Cascades Neopolis in Kokapet, Hyderabad. View 3 & 4 BHK sizes, prices, floor plans, amenities, RERA details, location and project highlights.',
+    url: `${SITE}/projects/the-cascades-neopolis`,
+    image: DEFAULT_OG,
+  },
+  {
     path: '/projects/prestige-golden-grove-hyderabad',
     title: 'Prestige Golden Grove Hyderabad | Luxury Apartments Near ORR',
     description: 'Prestige Golden Grove Hyderabad – premium 2, 3 & 4 BHK luxury apartments in Tellapur near ORR. 28.7 acres, 10 towers. Starting ₹93.5 Lakhs.',

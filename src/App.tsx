@@ -11,6 +11,7 @@ const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const TridasaRisePage = lazy(() => import("./pages/TridasaRisePage"));
 const ManAirportResidencyPage = lazy(() => import("./pages/ManAirportResidencyPage"));
 const BrigadeGatewayNeopolis = lazy(() => import("./pages/BrigadeGatewayNeopolis"));
+const TheCascadesNeopolisPage = lazy(() => import("./pages/TheCascadesNeopolisPage"));
 const PrestigeGoldenGrovePage = lazy(() => import("./pages/PrestigeGoldenGrovePage"));
 const JayconGatewayTirupatiPage = lazy(() => import("./pages/JayconGatewayTirupatiPage"));
 const AspireSpacesA3Page = lazy(() => import("./pages/AspireSpacesA3Page"));
@@ -86,6 +87,7 @@ const App = () => (
         <Route path="/projects/tridasa-rise" element={<TridasaRisePage />} />
         <Route path="/projects/man-airport-residency-4bhk-villas-near-me-tukkuguda-hyderabad" element={<ManAirportResidencyPage />} />
         <Route path="/projects/brigade-gateway-neopolis-kokapet-hyderabad" element={<BrigadeGatewayNeopolis />} />
+        <Route path="/projects/the-cascades-neopolis" element={<TheCascadesNeopolisPage />} />
         <Route path="/projects/prestige-golden-grove-hyderabad" element={<PrestigeGoldenGrovePage />} />
         <Route path="/projects/jaycon-gateway-tirupati" element={<JayconGatewayTirupatiPage />} />
         <Route path="/projects/aspire-spaces-a3-bachupally" element={<AspireSpacesA3Page />} />

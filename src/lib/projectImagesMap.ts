@@ -14,6 +14,7 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove": prestigeElevation,
   "brigade-gateway-neopolis-kokapet-hyderabad": brigadeElevation,
   "brigade-gateway-neopolis": brigadeElevation,
+  "the-cascades-neopolis": brigadeElevation,
   "candeur-eternia-bachupally-hyderabad": candeurHero,
   "candeur-eternia": candeurHero,
   "godrej-kukatpally-hyderabad": godrejHero,
