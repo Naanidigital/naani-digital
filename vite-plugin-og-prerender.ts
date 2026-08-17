@@ -1152,7 +1152,259 @@ function generateLocationPrerenderHtml(locationSlug: string, locName: string): s
 </div>`;
 }
 
+function generateBuilderPrerenderHtml(builderSlug: string, builderName: string): string {
+  const canonical = `${SITE}/${builderSlug}-projects-hyderabad`;
+  const intro = `${builderName} is a top real estate developer in Hyderabad delivering RERA-compliant residential developments, gated communities, and luxury apartments.`;
+
+  return `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "${canonical}#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE}/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "${SITE}/projects" },
+      { "@type": "ListItem", "position": 3, "name": "${builderName}", "item": "${canonical}" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "${canonical}#organization",
+    "name": "${builderName}",
+    "url": "${canonical}",
+    "description": "${intro}"
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/about-us" class="hover:text-amber-400">About Us</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav aria-label="Breadcrumb" class="w-full bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-amber-400">Home</a>
+      <span>/</span>
+      <a href="/projects" class="hover:text-amber-400">Projects</a>
+      <span>/</span>
+      <span class="text-amber-400 font-medium">${builderName}</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">Builder Spotlight</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          ${builderName} Projects in Hyderabad – <span class="text-amber-400">Luxury Apartments &amp; Homes</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+          ${intro}
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20all%20${encodeURIComponent(builderName)}%20projects%20in%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+            WhatsApp for ${builderName} Projects
+          </a>
+          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 97050 80909
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Why Choose ${builderName} in Hyderabad?</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            RERA-compliant construction standards and transparent booking terms.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Prime location selections in high-growth Hyderabad IT corridors.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Resort-style amenities, clubhouse facilities, and high resale demand.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Direct pricing advantages and instant floor plan assistance with Naani Projects.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-[#090D16] border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <p>© Naani Projects. All rights reserved. Hyderabad Real Estate Experts.</p>
+  </footer>
+</div>`;
+}
+
+function generateProjectPrerenderHtml(projectSlug: string, projectTitle: string): string {
+  const canonical = `${SITE}/projects/${projectSlug}`;
+  const intro = `${projectTitle} is a premier residential property in Hyderabad offering modern floor plans, gated community amenities, and strategic connectivity.`;
+
+  return `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "${canonical}#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE}/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "${SITE}/projects" },
+      { "@type": "ListItem", "position": 3, "name": "${projectTitle}", "item": "${canonical}" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "@id": "${canonical}#listing",
+    "name": "${projectTitle}",
+    "description": "${intro}",
+    "url": "${canonical}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    }
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/about-us" class="hover:text-amber-400">About Us</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav aria-label="Breadcrumb" class="w-full bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-amber-400">Home</a>
+      <span>/</span>
+      <a href="/projects" class="hover:text-amber-400">Projects</a>
+      <span>/</span>
+      <span class="text-amber-400 font-medium">${projectTitle}</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">Verified Project</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          ${projectTitle} – <span class="text-amber-400">Luxury Apartments in Hyderabad</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+          ${intro}
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="https://wa.me/919705080909?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(projectTitle)}.%20Please%20share%20price%20and%20floor%20plans." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+            WhatsApp for Floor Plans
+          </a>
+          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 97050 80909
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Project Overview &amp; Highlights</h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          ${projectTitle} is designed for homebuyers seeking luxury living, strategic location connectivity, and high potential rental yields. Review pricing, specifications, and site visit options with Naani Projects.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-[#090D16] border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <p>© Naani Projects. All rights reserved. Hyderabad Real Estate Experts.</p>
+  </footer>
+</div>`;
+}
+
+function generateCategoryPrerenderHtml(categoryPath: string, categoryTitle: string): string {
+  const canonical = `${SITE}${categoryPath}`;
+  const intro = `Explore verified residential properties, flats, and luxury apartments in ${categoryTitle} with Naani Projects.`;
+
+  return `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "${canonical}#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE}/" },
+      { "@type": "ListItem", "position": 2, "name": "Hyderabad", "item": "${SITE}/hyderabad" },
+      { "@type": "ListItem", "position": 3, "name": "${categoryTitle}", "item": "${canonical}" }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/about-us" class="hover:text-amber-400">About Us</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          ${categoryTitle} – <span class="text-amber-400">Properties &amp; Apartments</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+          ${intro}
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-[#090D16] border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <p>© Naani Projects. All rights reserved. Hyderabad Real Estate Experts.</p>
+  </footer>
+</div>`;
+}
+
 const ogRoutes: OGRoute[] = [
+  // ===== Homepage (Static Pre-render Target) =====
+  {
+    path: '/',
+    title: 'Naani Projects | Premium Real Estate & Apartments in Hyderabad',
+    description: 'Explore verified luxury apartments, gated communities, and new residential projects for sale in Hyderabad with Naani Projects.',
+    url: `${SITE}/`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/', 'Naani Projects – Real Estate & Apartments in Hyderabad'),
+  },
+
   // ===== About Us (Static Pre-render Target) =====
   {
     path: '/about-us',
@@ -1171,6 +1423,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/contact-us`,
     image: `${SITE}/naani-projects-contact-hyderabad-real-estate.webp`,
     prerenderHtml: CONTACT_US_PRERENDER_HTML,
+  },
+  {
+    path: '/list-your-property',
+    title: 'List Your Property in Hyderabad | Naani Projects',
+    description: 'List your apartment, villa or property for sale in Hyderabad with Naani Projects. Connect with serious buyers instantly.',
+    url: `${SITE}/list-your-property`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/list-your-property', 'List Your Property in Hyderabad'),
   },
 
   // ===== Location Hubs (Static Pre-render Targets) =====
@@ -1278,6 +1538,7 @@ const ogRoutes: OGRoute[] = [
     description: 'Explore verified 2 BHK & 3 BHK flats, luxury apartments, and new residential projects for sale in Hyderabad. Compare top locations, prices, and builders with Naani.',
     url: `${SITE}/hyderabad`,
     image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/hyderabad', 'Properties & Flats for Sale in Hyderabad'),
   },
   {
     path: '/hyderabad/2-bhk-flats',
@@ -1285,6 +1546,7 @@ const ogRoutes: OGRoute[] = [
     description: 'Explore 2 BHK flats and apartments for sale in Hyderabad. Compare verified projects, locations, builders, amenities and floor plans with Naani.',
     url: `${SITE}/hyderabad/2-bhk-flats`,
     image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/hyderabad/2-bhk-flats', '2 BHK Flats for Sale in Hyderabad'),
   },
   {
     path: '/hyderabad/3-bhk-flats',
@@ -1292,6 +1554,7 @@ const ogRoutes: OGRoute[] = [
     description: 'Explore 3 BHK luxury flats and apartments for sale in Hyderabad. Discover gated communities in Kokapet, Nallagandla, Tellapur & Gachibowli with Naani.',
     url: `${SITE}/hyderabad/3-bhk-flats`,
     image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/hyderabad/3-bhk-flats', '3 BHK Flats for Sale in Hyderabad'),
   },
 
   // ===== Projects hub =====
@@ -1301,6 +1564,7 @@ const ogRoutes: OGRoute[] = [
     description: 'Explore curated premium real estate projects in Hyderabad and beyond. Get instant project details on WhatsApp from Naani Projects.',
     url: `${SITE}/projects`,
     image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/projects', 'All Hyderabad Real Estate Projects'),
   },
 
   // ===== Individual project pages =====
@@ -1443,17 +1707,33 @@ export function ogPrerender(): Plugin {
       // Dynamically discover all routes from public/sitemaps/*.xml
       const allRoutesMap = new Map<string, OGRoute>();
 
-      // Handcrafted routes take precedence
-      for (const r of ogRoutes) {
-        allRoutesMap.set(r.path, r);
-      }
-
       // Helper to format slug to Title Case: "aparna-cyber-heights" -> "Aparna Cyber Heights"
       const formatSlugTitle = (slug: string) =>
         slug
           .replace(/-hyderabad$/, '')
           .replace(/-/g, ' ')
           .replace(/\b\w/g, (c) => c.toUpperCase());
+
+      // Handcrafted routes take precedence
+      for (const r of ogRoutes) {
+        let prerenderHtml = r.prerenderHtml;
+        if (!prerenderHtml) {
+          if (r.path.startsWith('/projects/')) {
+            const slug = r.path.replace('/projects/', '');
+            prerenderHtml = generateProjectPrerenderHtml(slug, formatSlugTitle(slug));
+          } else if (r.path.startsWith('/projects-in-')) {
+            const locationSlug = r.path.replace('/projects-in-', '');
+            prerenderHtml = generateLocationPrerenderHtml(locationSlug, formatSlugTitle(locationSlug));
+          } else if (r.path.endsWith('-projects-hyderabad')) {
+            const builderSlug = r.path.replace(/^\//, '').replace('-projects-hyderabad', '');
+            prerenderHtml = generateBuilderPrerenderHtml(builderSlug, formatSlugTitle(builderSlug));
+          } else if (r.path.startsWith('/hyderabad')) {
+            const sub = formatSlugTitle(r.path.replace('/hyderabad/', '').replace('/hyderabad', 'Properties in Hyderabad'));
+            prerenderHtml = generateCategoryPrerenderHtml(r.path, sub);
+          }
+        }
+        allRoutesMap.set(r.path, { ...r, prerenderHtml });
+      }
 
       // Parse XML sitemap files in public/sitemaps/
       const sitemapsDir = path.resolve(process.cwd(), 'public/sitemaps');
@@ -1471,38 +1751,31 @@ export function ogPrerender(): Plugin {
             let title = 'Naani Projects | Real Estate Hyderabad';
             let description =
               'Explore verified real estate properties, flats, villas and plots in Hyderabad with Naani Projects.';
+            let prerenderHtml: string | undefined;
 
             if (routePath.startsWith('/projects/')) {
               const slug = routePath.replace('/projects/', '');
               const cleanTitle = formatSlugTitle(slug);
               title = `${cleanTitle} | Residential Project in Hyderabad | Naani Projects`;
               description = `Explore project details for ${cleanTitle} in Hyderabad. Review floor plans, location connectivity, and developer information on Naani Projects.`;
+              prerenderHtml = generateProjectPrerenderHtml(slug, cleanTitle);
             } else if (routePath.startsWith('/projects-in-')) {
               const locationSlug = routePath.replace('/projects-in-', '');
               const loc = formatSlugTitle(locationSlug);
               title = `Projects in ${loc}, Hyderabad | Apartments & Homes | Naani Projects`;
               description = `Compare residential projects, apartments, and gated layouts in ${loc}, Hyderabad. View floor plans, location advantages, and project details.`;
-              
-              const prerenderHtml = generateLocationPrerenderHtml(locationSlug, loc);
-              allRoutesMap.set(routePath, {
-                path: routePath,
-                title,
-                description,
-                url: fullUrl,
-                image: DEFAULT_OG,
-                prerenderHtml,
-              });
-              continue;
+              prerenderHtml = generateLocationPrerenderHtml(locationSlug, loc);
             } else if (routePath.endsWith('-projects-hyderabad')) {
-              const builder = formatSlugTitle(
-                routePath.replace(/^\//, '').replace('-projects-hyderabad', '')
-              );
+              const builderSlug = routePath.replace(/^\//, '').replace('-projects-hyderabad', '');
+              const builder = formatSlugTitle(builderSlug);
               title = `${builder} Projects in Hyderabad | Residential Developments | Naani Projects`;
               description = `Explore residential developments by ${builder} in Hyderabad. Compare floor plans, project locations, and available configurations on Naani Projects.`;
+              prerenderHtml = generateBuilderPrerenderHtml(builderSlug, builder);
             } else if (routePath.startsWith('/hyderabad/')) {
               const sub = formatSlugTitle(routePath.replace('/hyderabad/', ''));
               title = `${sub} in Hyderabad | Naani Projects`;
               description = `Browse ${sub} in Hyderabad. Compare project locations, floor plans, and developer details with Naani Projects.`;
+              prerenderHtml = generateCategoryPrerenderHtml(routePath, sub);
             }
 
             allRoutesMap.set(routePath, {
@@ -1511,6 +1784,7 @@ export function ogPrerender(): Plugin {
               description,
               url: fullUrl,
               image: DEFAULT_OG,
+              prerenderHtml,
             });
           }
         }
@@ -1519,11 +1793,14 @@ export function ogPrerender(): Plugin {
       // Pre-render static HTML file with route-specific canonical & OG tags for every route
       let count = 0;
       for (const route of allRoutesMap.values()) {
-        if (route.path === '/') continue;
         const html = injectOGTags(indexHtml, route);
-        const routeDir = path.join(distDir, route.path.replace(/^\//, ''));
-        fs.mkdirSync(routeDir, { recursive: true });
-        fs.writeFileSync(path.join(routeDir, 'index.html'), html);
+        if (route.path === '/') {
+          fs.writeFileSync(indexPath, html);
+        } else {
+          const routeDir = path.join(distDir, route.path.replace(/^\//, ''));
+          fs.mkdirSync(routeDir, { recursive: true });
+          fs.writeFileSync(path.join(routeDir, 'index.html'), html);
+        }
         count++;
       }
       console.log(`[og-prerender] ✅ Successfully pre-rendered ${count} pages with explicit canonical, OG tags & HTML content.`);

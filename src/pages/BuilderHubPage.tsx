@@ -26,6 +26,13 @@ const BUILDER_BLURB: Record<string, string> = {
   "rajapushpa-properties": "Rajapushpa Properties develops 2, 3, and 4 BHK residential communities across Tellapur, Manikonda, and the western ORR corridor.",
   "candeur-constructions": "Candeur Constructions develops high-rise apartment projects in Bachupally and Tellapur.",
   "godrej-properties": "Godrej Properties develops residential communities in Hyderabad, including multi-tower developments in Kukatpally and West Hyderabad.",
+  "sanvi-constructions": "Sanvi Constructions develops premium residential projects and villa communities across Hyderabad.",
+  "jaycon-infrastructure": "Jaycon Infrastructure develops premium residential suites and mixed-use commercial projects.",
+  "team4-life-spaces": "Team4 Life Spaces develops luxury high-rise residential towers and apartments in Miyapur and West Hyderabad.",
+  "raghava-projects": "Raghava Projects develops iconic luxury skyscrapers and landmark residences across Hyderabad.",
+  "tridasa-developers": "Tridasa Developers designs IGBC Gold certified luxury gated communities in Nallagandla and West Hyderabad.",
+  "aritha-projects": "Aritha Projects builds modern residential towers with premium amenities across Hyderabad.",
+  "sri-soho-interiors": "Sri Soho Interiors delivers end-to-end luxury interior design solutions for residential and commercial properties in Hyderabad."
 };
 
 const BuilderHubPage = () => {
@@ -97,10 +104,6 @@ const BuilderHubPage = () => {
       name: p.name,
     })),
   } : null;
-
-  if (!loading && matching.length === 0 && !BUILDER_BLURB[rawSlug.toLowerCase()]) {
-    return <NotFound />;
-  }
 
   // Build location chip set for internal linking
   const locations = Array.from(new Set(matching.map((p) => p.location).filter(Boolean))) as string[];
