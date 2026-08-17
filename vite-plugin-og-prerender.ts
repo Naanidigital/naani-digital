@@ -452,7 +452,7 @@ const CONTACT_US_PRERENDER_HTML = `<script type="application/ld+json">
           <a href="/projects" class="text-amber-400 hover:underline">Plots in Hyderabad</a>
           <a href="/projects" class="text-amber-400 hover:underline">New Residential Projects</a>
           <a href="/projects" class="text-amber-400 hover:underline">Gated Community Projects</a>
-          <a href="/hyderabad" class="text-amber-400 hover:underline">Residential Projects</a>
+          <a href="/hyderabad" class="hover:underline">Residential Projects</a>
         </div>
       </div>
     </section>
@@ -749,6 +749,271 @@ const KOKAPET_PRERENDER_HTML = `<script type="application/ld+json">
   </footer>
 </div>`;
 
+// Static pre-rendered crawlable HTML content for /projects-in-tellapur
+const TELLAPUR_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects-in-tellapur#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.naani.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://www.naani.in/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Tellapur",
+        "item": "https://www.naani.in/projects-in-tellapur"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.naani.in/projects-in-tellapur#webpage",
+    "url": "https://www.naani.in/projects-in-tellapur",
+    "name": "Projects in Tellapur, Hyderabad | Apartments & Homes | Naani Projects",
+    "description": "Compare residential projects, apartments, and gated layouts in Tellapur, Hyderabad. View floor plans, location advantages, and project details.",
+    "isPartOf": {
+      "@id": "https://www.naani.in/#website"
+    },
+    "about": {
+      "@id": "https://www.naani.in/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://www.naani.in/projects-in-tellapur#itemlist",
+    "name": "Projects in Tellapur, Hyderabad",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://www.naani.in/projects/prestige-golden-grove-hyderabad",
+        "name": "Prestige Golden Grove"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://www.naani.in/projects/rajapushpa-sierra-tellapur-hyderabad",
+        "name": "Rajapushpa Sierra"
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/about-us" class="hover:text-amber-400">About Us</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav aria-label="Breadcrumb" class="w-full bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-amber-400">Home</a>
+      <span>/</span>
+      <a href="/projects" class="hover:text-amber-400">Projects</a>
+      <span>/</span>
+      <span class="text-amber-400 font-medium">Tellapur</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">Hyderabad Properties</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          Projects in Tellapur – <span class="text-amber-400">Luxury Apartments &amp; Homes</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+          Tellapur is a growing residential corridor in West Hyderabad, popular with families seeking gated communities with access to the ORR and nearby international schools.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20top%20projects%20in%20Tellapur%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+            WhatsApp for Tellapur Projects
+          </a>
+          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 97050 80909
+          </a>
+          <a href="https://wa.me/919705080909?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20Tellapur." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
+            Book Site Visit
+          </a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 text-center">
+          <div class="p-4 rounded-xl bg-[#0F1629] border border-slate-800">
+            <p class="text-xs text-slate-400">Active Projects</p>
+            <p class="font-bold text-amber-400 text-lg">2+</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0F1629] border border-slate-800">
+            <p class="text-xs text-slate-400">Configurations</p>
+            <p class="font-bold text-white text-lg">2/3/4 BHK</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0F1629] border border-slate-800">
+            <p class="text-xs text-slate-400">Location</p>
+            <p class="font-bold text-white text-lg">Tellapur, HYD</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0F1629] border border-slate-800">
+            <p class="text-xs text-slate-400">Possession</p>
+            <p class="font-bold text-white text-lg">2025–2028</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Featured Projects in Tellapur</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-4">
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-amber-400 uppercase">Tellapur, Hyderabad</span>
+              <h3 class="text-xl font-bold text-white">
+                <a href="/projects/prestige-golden-grove-hyderabad" class="hover:text-amber-400">Prestige Golden Grove</a>
+              </h3>
+              <p class="text-xs text-slate-400">By Prestige Group</p>
+            </div>
+            <p class="text-slate-300 text-sm">Premium 2, 3 &amp; 4 BHK luxury apartments in Tellapur near ORR. 28.7 acres, 10 towers, top-class clubhouse.</p>
+            <div class="pt-2">
+              <a href="/projects/prestige-golden-grove-hyderabad" class="inline-block px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-xs hover:bg-amber-500/20">
+                View Project Details →
+              </a>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-4">
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-amber-400 uppercase">Tellapur, Hyderabad</span>
+              <h3 class="text-xl font-bold text-white">
+                <a href="/projects/rajapushpa-sierra-tellapur-hyderabad" class="hover:text-amber-400">Rajapushpa Sierra</a>
+              </h3>
+              <p class="text-xs text-slate-400">By Rajapushpa Properties</p>
+            </div>
+            <p class="text-slate-300 text-sm">G+49 luxury 2 &amp; 3 BHK apartments in Tellapur, Hyderabad with 1.5 lakh sft clubhouse near Gachibowli.</p>
+            <div class="pt-2">
+              <a href="/projects/rajapushpa-sierra-tellapur-hyderabad" class="inline-block px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-xs hover:bg-amber-500/20">
+                View Project Details →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Why Buy Property in Tellapur?</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Strong builder presence and RERA-approved launches in Tellapur.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Excellent ORR / Metro / IT-corridor connectivity from Tellapur.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Strong appreciation and 3-4% rental yields for premium 2 &amp; 3 BHK stock.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Top schools, hospitals and retail catchment within 5 km of Tellapur.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Naani Projects gets you builder-direct pricing — no buyer brokerage.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Verified inventory, exclusive launch alerts and WhatsApp-first support.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Explore Similar Locations</h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="/projects-in-bachupally" class="px-4 py-2 rounded-full border border-amber-500/30 text-amber-400 font-medium text-sm hover:bg-amber-500/10">Projects in Bachupally</a>
+          <a href="/projects-in-kollur" class="px-4 py-2 rounded-full border border-amber-500/30 text-amber-400 font-medium text-sm hover:bg-amber-500/10">Projects in Kollur</a>
+          <a href="/projects-in-narsingi" class="px-4 py-2 rounded-full border border-amber-500/30 text-amber-400 font-medium text-sm hover:bg-amber-500/10">Projects in Narsingi</a>
+          <a href="/projects-in-gachibowli" class="px-4 py-2 rounded-full border border-amber-500/30 text-amber-400 font-medium text-sm hover:bg-amber-500/10">Projects in Gachibowli</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Frequently Asked Questions</h2>
+        <div class="space-y-4 max-w-4xl">
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">Why consider buying property in Tellapur, Hyderabad?</h3>
+            <p class="text-slate-300 text-sm">Tellapur offers convenient access to IT corridors, Outer Ring Road connectivity, and growing social infrastructure, making it a popular choice for homebuyers and investors.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">What is the price range for apartments in Tellapur?</h3>
+            <p class="text-slate-300 text-sm">Property prices in Tellapur vary based on builder, BHK configuration, floor area, and amenities. Contact Naani Projects on WhatsApp for updated pricing on specific projects.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">Which developers have active projects in Tellapur?</h3>
+            <p class="text-slate-300 text-sm">Developers active in Tellapur include Aparna, Brigade, Prestige, My Home, Rajapushpa, Candeur, Anuhar, and Team4. You can compare their floor plans and status on Naani Projects.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">Are ready-to-move flats available in Tellapur?</h3>
+            <p class="text-slate-300 text-sm">Yes, Tellapur has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 97050 80909 to get matching options.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">Is Tellapur suitable for rental income?</h3>
+            <p class="text-slate-300 text-sm">Tellapur sees regular rental interest due to its proximity to IT hubs and office corridors. Rental returns depend on unit size, furnishings, and project location.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">How can I schedule a site visit in Tellapur?</h3>
+            <p class="text-slate-300 text-sm">Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">Do buyers pay any advisory fees to Naani Projects?</h3>
+            <p class="text-slate-300 text-sm">No, our project discovery and advisory service is free for homebuyers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-[#0B101D]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Explore Hyderabad Properties</h2>
+        <p class="text-slate-300">Browse active listings, compare locations, or speak directly with an advisor.</p>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-amber-400">
+          <a href="/projects" class="hover:underline">Browse Projects</a>
+          <a href="/hyderabad" class="hover:underline">Hyderabad Properties</a>
+          <a href="/hyderabad/2-bhk-flats" class="hover:underline">2 BHK Flats in Hyderabad</a>
+          <a href="/hyderabad/3-bhk-flats" class="hover:underline">3 BHK Flats in Hyderabad</a>
+          <a href="/about-us" class="hover:underline">About Naani Projects</a>
+          <a href="/list-your-property" class="hover:underline">List Your Property</a>
+          <a href="/contact-us" class="hover:underline">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-[#090D16] border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <p>© Naani Projects. All rights reserved. Hyderabad Real Estate Experts.</p>
+  </footer>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== About Us (Static Pre-render Target) =====
   {
@@ -778,6 +1043,16 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects-in-kokapet`,
     image: DEFAULT_OG,
     prerenderHtml: KOKAPET_PRERENDER_HTML,
+  },
+
+  // ===== Tellapur Location Hub (Static Pre-render Target) =====
+  {
+    path: '/projects-in-tellapur',
+    title: 'Projects in Tellapur, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Tellapur, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-tellapur`,
+    image: DEFAULT_OG,
+    prerenderHtml: TELLAPUR_PRERENDER_HTML,
   },
 
   // ===== SEO Hubs =====
