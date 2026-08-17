@@ -1014,6 +1014,144 @@ const TELLAPUR_PRERENDER_HTML = `<script type="application/ld+json">
   </footer>
 </div>`;
 
+function generateLocationPrerenderHtml(locationSlug: string, locName: string): string {
+  const canonical = `${SITE}/projects-in-${locationSlug}`;
+  const intro = `Discover the best premium and luxury residential projects in ${locName}, Hyderabad — handpicked, RERA-verified and curated by Naani Projects.`;
+
+  return `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "${canonical}#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "${SITE}/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "${SITE}/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "${locName}",
+        "item": "${canonical}"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "${canonical}#webpage",
+    "url": "${canonical}",
+    "name": "Projects in ${locName}, Hyderabad | Apartments & Homes | Naani Projects",
+    "description": "Compare residential projects, apartments, and gated layouts in ${locName}, Hyderabad. View floor plans, location advantages, and project details.",
+    "isPartOf": {
+      "@id": "${SITE}/#website"
+    },
+    "about": {
+      "@id": "${SITE}/#organization"
+    }
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/about-us" class="hover:text-amber-400">About Us</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav aria-label="Breadcrumb" class="w-full bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto flex items-center gap-2">
+      <a href="/" class="hover:text-amber-400">Home</a>
+      <span>/</span>
+      <a href="/projects" class="hover:text-amber-400">Projects</a>
+      <span>/</span>
+      <span class="text-amber-400 font-medium">${locName}</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">Hyderabad Properties</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          Projects in ${locName} – <span class="text-amber-400">Luxury Apartments &amp; Homes</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
+          ${intro}
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20top%20projects%20in%20${encodeURIComponent(locName)}%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+            WhatsApp for ${locName} Projects
+          </a>
+          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 97050 80909
+          </a>
+          <a href="https://wa.me/919705080909?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20${encodeURIComponent(locName)}." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
+            Book Site Visit
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Why Buy Property in ${locName}?</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Strong builder presence and RERA-approved launches in ${locName}.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Excellent ORR / Metro / IT-corridor connectivity from ${locName}.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Strong appreciation and 3-4% rental yields for premium 2 &amp; 3 BHK stock.
+          </div>
+          <div class="p-5 rounded-xl bg-[#0B101D] border border-slate-800 text-sm text-slate-300">
+            Top schools, hospitals and retail catchment within 5 km of ${locName}.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Frequently Asked Questions</h2>
+        <div class="space-y-4 max-w-4xl">
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">Why consider buying property in ${locName}, Hyderabad?</h3>
+            <p class="text-slate-300 text-sm">${locName} offers convenient access to IT corridors, Outer Ring Road connectivity, and growing social infrastructure, making it a popular choice for homebuyers and investors.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
+            <h3 class="text-lg font-bold text-white">How can I schedule a site visit in ${locName}?</h3>
+            <p class="text-slate-300 text-sm">Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 bg-[#090D16] border-t border-slate-800/80 text-center text-xs text-slate-500">
+    <p>© Naani Projects. All rights reserved. Hyderabad Real Estate Experts.</p>
+  </footer>
+</div>`;
+}
+
 const ogRoutes: OGRoute[] = [
   // ===== About Us (Static Pre-render Target) =====
   {
@@ -1262,9 +1400,21 @@ export function ogPrerender(): Plugin {
               title = `${cleanTitle} | Residential Project in Hyderabad | Naani Projects`;
               description = `Explore project details for ${cleanTitle} in Hyderabad. Review floor plans, location connectivity, and developer information on Naani Projects.`;
             } else if (routePath.startsWith('/projects-in-')) {
-              const loc = formatSlugTitle(routePath.replace('/projects-in-', ''));
+              const locationSlug = routePath.replace('/projects-in-', '');
+              const loc = formatSlugTitle(locationSlug);
               title = `Projects in ${loc}, Hyderabad | Apartments & Homes | Naani Projects`;
               description = `Compare residential projects, apartments, and gated layouts in ${loc}, Hyderabad. View floor plans, location advantages, and project details.`;
+              
+              const prerenderHtml = generateLocationPrerenderHtml(locationSlug, loc);
+              allRoutesMap.set(routePath, {
+                path: routePath,
+                title,
+                description,
+                url: fullUrl,
+                image: DEFAULT_OG,
+                prerenderHtml,
+              });
+              continue;
             } else if (routePath.endsWith('-projects-hyderabad')) {
               const builder = formatSlugTitle(
                 routePath.replace(/^\//, '').replace('-projects-hyderabad', '')

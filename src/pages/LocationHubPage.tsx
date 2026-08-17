@@ -30,6 +30,14 @@ const LOCATION_INTRO: Record<string, string> = {
   "bachupally": "Bachupally is a developing residential area in North-West Hyderabad, featuring new apartment launches and educational institutions.",
   "shamshabad": "Shamshabad is located near Rajiv Gandhi International Airport, featuring plotted layouts, land developments, and highway connectivity.",
   "tukkuguda": "Tukkuguda offers gated villa developments and plotted communities with quick access to the Outer Ring Road and airport corridor.",
+  "kukatpally": "Kukatpally is a major commercial and residential hub in West Hyderabad, offering vibrant retail hubs, metro access, and high-rise apartments.",
+  "manikonda": "Manikonda is a popular residential neighborhood near Gachibowli and Financial District, offering modern gated communities and urban amenities.",
+  "nanakramguda": "Nanakramguda is a premier IT & Financial District corridor in Hyderabad, featuring high-rise gated communities and proximity to corporate campuses.",
+  "hitech-city": "HITEC City is Hyderabad's premier IT & tech hub, featuring luxury high-rise apartments, grade-A commercial towers, and excellent social infrastructure.",
+  "hi-tech-city": "HITEC City is Hyderabad's premier IT & tech hub, featuring luxury high-rise apartments, grade-A commercial towers, and excellent social infrastructure.",
+  "neopolis": "Neopolis Kokapet is Hyderabad's ultra-luxury high-rise SEZ corridor, featuring landmark residential towers with world-class amenities.",
+  "kollur": "Kollur is a rapidly growing residential hub along the Outer Ring Road, popular for spacious 2, 3 and 4 BHK gated community apartments.",
+  "nallagandla": "Nallagandla is a prime residential pocket situated between BHEL and Financial District, popular for premium high-rise apartments and green surroundings.",
 };
 
 const slug = (s: string) => slugify(s);
@@ -55,6 +63,14 @@ const SIMILAR: Record<string, string[]> = {
   "bachupally": ["miyapur", "kukatpally", "pragathi-nagar", "tellapur"],
   "shamshabad": ["tukkuguda", "rajendra-nagar", "kothur", "adibatla"],
   "tukkuguda": ["shamshabad", "adibatla", "rajendra-nagar", "kothur"],
+  "manikonda": ["narsingi", "gachibowli", "puppalaguda", "financial-district"],
+  "nanakramguda": ["financial-district", "gachibowli", "kokapet", "khajaguda"],
+  "hitech-city": ["kondapur", "gachibowli", "madhapur", "kukatpally"],
+  "hi-tech-city": ["kondapur", "gachibowli", "madhapur", "kukatpally"],
+  "neopolis": ["kokapet", "financial-district", "narsingi", "gachibowli"],
+  "kukatpally": ["miyapur", "bachupally", "kondapur", "hitech-city"],
+  "kollur": ["tellapur", "bachupally", "narsingi", "gachibowli"],
+  "nallagandla": ["tellapur", "gachibowli", "kondapur", "bhel"],
 };
 
 const LocationHubPage = () => {
@@ -118,10 +134,7 @@ const LocationHubPage = () => {
 
   const similar = (SIMILAR[locationSlug.toLowerCase()] ?? []).slice(0, 6);
 
-  // If no projects AND no curated intro, treat as 404 (prevents thin pages indexing junk).
-  if (!loading && matching.length === 0 && !LOCATION_INTRO[locationSlug.toLowerCase()]) {
-    return <NotFound />;
-  }
+  // All location hub routes render the location hub page with indexable metadata.
 
   return (
     <>
