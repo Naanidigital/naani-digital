@@ -58,13 +58,13 @@ const CTAButton = ({
 );
 
 export default function RiseWith9Page() {
-  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState("Request Project Details");
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [popupSource, setPopupSource] = useState("Direct Click");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const openLeadModal = (title: string) => {
-    setModalTitle(title);
-    setIsLeadModalOpen(true);
+  const openLeadModal = (source: string) => {
+    setPopupSource(source);
+    setPopupOpen(true);
   };
 
   const toggleFaq = (idx: number) => {
@@ -1143,11 +1143,11 @@ export default function RiseWith9Page() {
 
         <ProjectsFooter />
 
-        {/* Lead Qualification Popup Modal */}
+        {/* Unified Lead Capture Popup */}
         <LeadCapturePopup
-          isOpen={isLeadModalOpen}
-          onClose={() => setIsLeadModalOpen(false)}
-          title={modalTitle}
+          open={popupOpen}
+          onOpenChange={setPopupOpen}
+          source={popupSource}
           projectName={PROJECT_NAME}
         />
 
