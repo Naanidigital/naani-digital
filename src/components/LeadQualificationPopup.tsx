@@ -33,6 +33,9 @@ interface Props {
   context: PageContext;
   leadSource: string;
   onCaptured: (profile: LeadProfile) => void;
+  titleOverride?: string;
+  subtitleOverride?: string;
+  ctaTextOverride?: string;
 }
 
 const LeadQualificationPopup = ({
@@ -41,6 +44,9 @@ const LeadQualificationPopup = ({
   context,
   leadSource,
   onCaptured,
+  titleOverride,
+  subtitleOverride,
+  ctaTextOverride,
 }: Props) => {
   const [form, setForm] = useState({
     name: "",
@@ -100,9 +106,13 @@ const LeadQualificationPopup = ({
 
         <DialogHeader className="pr-10 space-y-1">
           <DialogTitle className="text-xl sm:text-2xl font-extrabold text-center text-white">
-            Get Property Details
+            {titleOverride || "Get Property Details"}
           </DialogTitle>
-          {context.propertyName ? (
+          {subtitleOverride ? (
+            <DialogDescription className="text-center text-xs text-slate-300 font-medium">
+              {subtitleOverride}
+            </DialogDescription>
+          ) : context.propertyName ? (
             <DialogDescription className="text-center text-xs text-slate-300 font-medium">
               Enquiry for:{" "}
               <span className="font-extrabold text-amber-400">
@@ -190,7 +200,6 @@ const LeadQualificationPopup = ({
             )}
           </div>
 
-
           <Button
             type="submit"
             disabled={submitting}
@@ -199,7 +208,7 @@ const LeadQualificationPopup = ({
             {submitting ? (
               <Loader2 className="h-5 w-5 animate-spin" />
             ) : (
-              "Submit & Request Callback"
+              ctaTextOverride || "Submit & Request Callback"
             )}
           </Button>
 

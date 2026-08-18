@@ -48,6 +48,7 @@ const BHK_MAP: Record<string, string[]> = {
   "/projects/sanvis-kowsalya-vasudha-mallampet": ["2 BHK", "3 BHK"],
   "/projects/sanvi-kowsalya-manidweepa-shikaram-bachupally": ["2 BHK", "3 BHK"],
   "/projects/sanvi-kowsalya-avani-kristareddypet": ["2 BHK", "3 BHK"],
+  "/projects/neo-towers-neopolis-kokapet": ["3 BHK", "4 BHK"],
 };
 
 export const getProjectsForLocationAndBhk = (locationSlug?: string, bhk?: "2 BHK" | "3 BHK"): ProjectMetadataItem[] => {

@@ -24,5 +24,6 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   { name: "Aritha GBR Dhanwin Towers", slug: "/projects/aritha-gbr-dhanwin-towers-bowrampet-hyderabad", location: "Bowrampet" },
   { name: "Sanvi's Kowsalya Vasudha", slug: "/projects/sanvis-kowsalya-vasudha-mallampet", location: "Mallampet" },
   { name: "Sanvi Kowsalya Manidweepa Shikaram", slug: "/projects/sanvi-kowsalya-manidweepa-shikaram-bachupally", location: "Bachupally" },
+  { name: "Neo Towers", slug: "/projects/neo-towers-neopolis-kokapet", location: "Kokapet" },
   { name: "Sanvi Kowsalya Avani", slug: "/projects/sanvi-kowsalya-avani-kristareddypet", location: "Kristareddypet" },
 ];

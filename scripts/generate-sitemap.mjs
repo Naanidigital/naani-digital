@@ -45,6 +45,7 @@ const STATIC_URLS = [
   ["/guides/2-bhk-flats-in-hyderabad", "0.85", "monthly"],
   ["/guides/3-bhk-flats-in-hyderabad", "0.85", "monthly"],
   ["/projects", "0.90", "daily"],
+  ["/projects/neo-towers-neopolis-kokapet", "0.90", "weekly"],
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],
