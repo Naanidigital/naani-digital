@@ -1321,6 +1321,157 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
   </footer>
 </div>`;
 
+// Static pre-rendered crawlable HTML content for /projects/trump-towers-hyderabad-kokapet
+const TRUMP_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/trump-towers-hyderabad-kokapet#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Hyderabad", "item": "https://www.naani.in/hyderabad" },
+      { "@type": "ListItem", "position": 4, "name": "Kokapet", "item": "https://www.naani.in/projects-in-kokapet" },
+      { "@type": "ListItem", "position": 5, "name": "Trump Towers Hyderabad", "item": "https://www.naani.in/projects/trump-towers-hyderabad-kokapet" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/trump-towers-hyderabad-kokapet#project",
+    "name": "Trump Towers Hyderabad",
+    "url": "https://www.naani.in/projects/trump-towers-hyderabad-kokapet",
+    "image": "https://www.naani.in/assets/trump-towers/hero.jpg",
+    "description": "Explore Trump Towers Hyderabad in Kokapet's Golden Mile. Discover 65-storey twin towers, private elevators, large-format residences, the three-level Trump Club and West Hyderabad connectivity.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Golden Mile, Kokapet, Gandipet",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500075",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919705080909",
+    "developer": {
+      "@type": "Organization",
+      "name": "Ira The Edge Developers LLP"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/trump-towers-hyderabad-kokapet#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Trump Towers Hyderabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trump Towers Hyderabad is an ultra-luxury branded residential development located in Golden Mile, Kokapet, Hyderabad. Spanning approximately 4.04 acres, it features two iconic 65-storey towers offering 3.5, 4, 4.5, and 6 BHK sky residences with private elevators and a three-level floating Trump Club."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Trump Towers Hyderabad located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trump Towers Hyderabad is located in Golden Mile, Kokapet, Gandipet Mandal, Hyderabad, Telangana – 500075. It is situated adjacent to Neopolis and Financial District with direct connectivity to ORR Exit 1A."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is the developer and promoter of Trump Towers Hyderabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The official developer and promoter registered under Telangana RERA is Ira The Edge Developers LLP. Tribeca Developers is the official development and brand partner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Trump Towers Hyderabad owned or developed by Donald Trump?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Trump Towers Hyderabad is not owned, developed or sold by Donald J. Trump, The Trump Organization or any of their affiliates. Ira The Edge Developers LLP is the developer and promoter and uses the “Trump” name and mark under licence from DT Marks Hyderabad LLC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number for Trump Towers Hyderabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project is registered with Telangana RERA under registration number P02400010871 (HMDA permit no. 2128/HMDA/SWBP/2026)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA completion date?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The registered RERA completion date is 15 May 2031. Buyers should independently verify possession terms against official RERA filings and agreement documents."
+        }
+      }
+    ]
+  }
+]
+</script>
+
+<div class="min-h-screen bg-[#070A11] text-slate-100 font-sans">
+  <main className="pt-20">
+    <section class="relative py-16 bg-[#0B101D] border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <span class="px-3.5 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider">Ultra-Luxury Branded Residences</span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white">Trump Towers Hyderabad, Kokapet – Ultra-Luxury Branded Residences</h1>
+        <p class="text-xl font-semibold text-slate-200">Ultra-Luxury Branded Residences in Kokapet's Golden Mile</p>
+        <p class="text-slate-300 text-base max-w-3xl leading-relaxed">
+          A landmark twin-tower residential development rising up to 65 storeys, combining expansive residences, private elevators, private decks and a three-level floating Trump Club in one of West Hyderabad's premium residential corridors.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl pt-4">
+          <div class="bg-[#070A11] p-3.5 rounded-xl border border-slate-800 text-center"><span class="block text-lg font-bold text-amber-400">Up to 65 Storeys</span><span class="text-xs text-slate-400">Vertical Skyline Icon</span></div>
+          <div class="bg-[#070A11] p-3.5 rounded-xl border border-slate-800 text-center"><span class="block text-lg font-bold text-amber-400">Approx. 4.04 Acres</span><span class="text-xs text-slate-400">Master-Planned Site</span></div>
+          <div class="bg-[#070A11] p-3.5 rounded-xl border border-slate-800 text-center"><span class="block text-lg font-bold text-amber-400">2 Towers</span><span class="text-xs text-slate-400">Twin Architecture</span></div>
+          <div class="bg-[#070A11] p-3.5 rounded-xl border border-slate-800 text-center"><span class="block text-lg font-bold text-emerald-400">P02400010871</span><span class="text-xs text-slate-400">Telangana RERA</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-[#070A11]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <h2 class="text-3xl font-extrabold text-white">Trump Towers Hyderabad at a Glance</h2>
+        <table class="w-full text-left text-sm text-slate-300 border border-slate-800">
+          <tbody class="divide-y divide-slate-800">
+            <tr><td class="py-3 px-4 font-bold text-white">Project</td><td class="py-3 px-4">Trump Towers Hyderabad</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">Location</td><td class="py-3 px-4">Golden Mile, Kokapet, Hyderabad, Telangana – 500075</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">Promoter</td><td class="py-3 px-4">Ira The Edge Developers LLP</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">Development Partner</td><td class="py-3 px-4">Tribeca Developers</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">RERA No.</td><td class="py-3 px-4 font-mono font-bold text-emerald-400">P02400010871</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">RERA Completion Date</td><td class="py-3 px-4 font-bold text-amber-300">15 May 2031</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">Site Area</td><td class="py-3 px-4">16,389.76 sq.m. (Approx. 4.04 Acres)</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">Configurations</td><td class="py-3 px-4">3.5, 4, 4.5 &amp; 6 BHK Formats (3,600–12,000 sq.ft.)</td></tr>
+            <tr><td class="py-3 px-4 font-bold text-white">Residential Units</td><td class="py-3 px-4 font-bold text-amber-400">[Verify against current RERA certificate]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="py-16 bg-[#0B101D]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-6 text-slate-300 text-base leading-relaxed">
+        <h2 class="text-3xl font-extrabold text-white">Comprehensive Project Overview</h2>
+        <p>Trump Towers Hyderabad brings a global branded-residential concept to Kokapet's Golden Mile, placing a highly amenity-rich luxury development within West Hyderabad's premium residential corridor.</p>
+        <p>Spanning approximately 4.04 acres, Trump Towers Hyderabad features two iconic 65-storey residential towers designed to command an unmistakable presence on West Hyderabad's skyline. Developed by Ira The Edge Developers LLP in partnership with Tribeca Developers, the project introduces a high-elevation architectural form paired with large-format 3.5, 4, 4.5, and 6 BHK residences ranging from approximately 3,600 sq.ft. to 12,000 sq.ft.</p>
+        <p>Every residence is conceived around maximum privacy and grand living proportions. Highlights include dedicated private elevator entry directly into individual apartments, expansive floor-to-ceiling double-glazed window walls, private outdoor decks with panoramic vistas over the Golden Mile, and meticulously engineered room layouts designed for high-end bespoke interior customization.</p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-[#070A11] border-t border-slate-800 text-xs text-slate-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-2">
+        <p><strong>Official Brand Licensing Disclaimer:</strong> Trump Towers Hyderabad is not owned, developed or sold by Donald J. Trump, The Trump Organization or any of their affiliates. Ira The Edge Developers LLP is the developer and promoter of the property and uses the “Trump” name and mark under licence from DT Marks Hyderabad LLC, subject to the applicable agreement.</p>
+        <p><strong>RERA Notice:</strong> TG RERA Reg. No. P02400010871. RERA completion date: 15 May 2031. Contact sales support on 9705080909 for verified documentation.</p>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const KOKAPET_PRERENDER_HTML = `<script type="application/ld+json">
 [
   {
@@ -2417,6 +2568,22 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/neo-towers-neopolis-kokapet`,
     image: DEFAULT_OG,
     prerenderHtml: NEO_TOWERS_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/trump-towers-hyderabad-kokapet',
+    title: 'Trump Towers Hyderabad Kokapet | Luxury Branded Residences',
+    description: 'Explore Trump Towers Hyderabad in Kokapet\'s Golden Mile. Discover 65-storey twin towers, private elevators, large-format residences, the three-level Trump Club and West Hyderabad connectivity.',
+    url: `${SITE}/projects/trump-towers-hyderabad-kokapet`,
+    image: `${SITE}/assets/trump-towers/hero.jpg`,
+    prerenderHtml: TRUMP_TOWERS_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/trump-towers-hyderabad',
+    title: 'Trump Towers Hyderabad Kokapet | Luxury Branded Residences',
+    description: 'Explore Trump Towers Hyderabad in Kokapet\'s Golden Mile. Discover 65-storey twin towers, private elevators, large-format residences, the three-level Trump Club and West Hyderabad connectivity.',
+    url: `${SITE}/projects/trump-towers-hyderabad-kokapet`,
+    image: `${SITE}/assets/trump-towers/hero.jpg`,
+    prerenderHtml: TRUMP_TOWERS_PRERENDER_HTML,
   },
   {
     path: '/projects/rise-with-9',

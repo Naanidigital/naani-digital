@@ -28,6 +28,7 @@ const SanviKowsalyaVasudhaPage = lazy(() => import("./pages/SanviKowsalyaVasudha
 const SanviManidweepaShikaramPage = lazy(() => import("./pages/SanviManidweepaShikaramPage"));
 const SanviKowsalyaAvaniPage = lazy(() => import("./pages/SanviKowsalyaAvaniPage"));
 const NeoTowersPage = lazy(() => import("./pages/NeoTowersPage"));
+const TrumpTowersHyderabadPage = lazy(() => import("./pages/TrumpTowersHyderabadPage"));
 const ProjectDetailDynamic = lazy(() => import("./pages/ProjectDetailDynamic"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ThankYouPage = lazy(() => import("./pages/ThankYouPage"));
@@ -110,6 +111,8 @@ const App = () => (
         <Route path="/projects/sanvi-kowsalya-avani-kristareddypet" element={<SanviKowsalyaAvaniPage />} />
         <Route path="/projects/neo-towers-neopolis-kokapet" element={<NeoTowersPage />} />
         <Route path="/projects/neo-towers" element={<Navigate to="/projects/neo-towers-neopolis-kokapet" replace />} />
+        <Route path="/projects/trump-towers-hyderabad-kokapet" element={<TrumpTowersHyderabadPage />} />
+        <Route path="/projects/trump-towers-hyderabad" element={<Navigate to="/projects/trump-towers-hyderabad-kokapet" replace />} />
         {/* Dynamic catch-all for DB-driven projects (must come AFTER all custom project routes) */}
         <Route path="/projects/:slug" element={<ProjectDetailDynamic />} />
         {/* User-submitted property pages share the same renderer */}

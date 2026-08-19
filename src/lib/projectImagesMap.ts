@@ -12,6 +12,7 @@ import cascadesHero from "@/assets/cascades/the-cascades-neopolis-elevation-hero
 import riseHero from "@/assets/rise-with-9/rise-with-9-trilight-hero.jpg";
 import linqHero from "@/assets/linq-by-raghava/linq-by-raghava-elevation-hero.jpg";
 import neoHero from "@/assets/neo-towers/tower.webp";
+import trumpHero from "@/assets/trump-towers/hero.jpg";
 
 export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove-hyderabad": prestigeElevation,
@@ -25,6 +26,8 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "linq-by-raghava-neopolis": linqHero,
   "neo-towers": neoHero,
   "neo-towers-neopolis-kokapet": neoHero,
+  "trump-towers-hyderabad-kokapet": trumpHero,
+  "trump-towers-hyderabad": trumpHero,
   "candeur-eternia-bachupally-hyderabad": candeurHero,
   "candeur-eternia": candeurHero,
   "godrej-kukatpally-hyderabad": godrejHero,
