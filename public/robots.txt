@@ -12,13 +12,16 @@ Disallow: /login
 Disallow: /auth
 Disallow: /thank-you
 Disallow: /.lovable/
-Disallow: /*?utm_
-Disallow: /*?s=
+Disallow: /*?*utm_
+Disallow: /*?*s=
 
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
 Disallow: /admin/
+Disallow: /dashboard
 Disallow: /dashboard/
+Disallow: /crm
 Disallow: /crm/
 Disallow: /api/
 Disallow: /functions/
@@ -26,11 +29,16 @@ Disallow: /login
 Disallow: /auth
 Disallow: /thank-you
 Disallow: /.lovable/
+Disallow: /*?*utm_
+Disallow: /*?*s=
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin
 Disallow: /admin/
+Disallow: /dashboard
 Disallow: /dashboard/
+Disallow: /crm
 Disallow: /crm/
 Disallow: /api/
 Disallow: /functions/
@@ -38,19 +46,30 @@ Disallow: /login
 Disallow: /auth
 Disallow: /thank-you
 Disallow: /.lovable/
+Disallow: /*?*utm_
+Disallow: /*?*s=
 
 # AI / answer-engine crawlers
 User-agent: GPTBot
-Allow: /
 User-agent: ChatGPT-User
-Allow: /
 User-agent: PerplexityBot
-Allow: /
 User-agent: Google-Extended
-Allow: /
 User-agent: ClaudeBot
-Allow: /
 User-agent: anthropic-ai
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /crm
+Disallow: /crm/
+Disallow: /api/
+Disallow: /functions/
+Disallow: /login
+Disallow: /auth
+Disallow: /thank-you
+Disallow: /.lovable/
+Disallow: /*?*utm_
+Disallow: /*?*s=
 
 Sitemap: https://www.naani.in/sitemap.xml
