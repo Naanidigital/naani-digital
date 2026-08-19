@@ -32,8 +32,8 @@ const SECTION_ORDER: { kind: SuggestionKind; label: string }[] = [
 ];
 
 const HOME_POPULAR = [
-  "Kokapet", "Financial District", "Tellapur", "Bachupally", "Miyapur",
-  "Ready To Move", "Luxury Villas", "Apartments", "Under ₹1 Cr", "Near ORR",
+  "Trump Towers", "Neo Towers", "The Cascades", "Rise With 9", "LINQ",
+  "Kokapet", "Financial District", "Tellapur", "Bachupally", "Ready To Move",
 ];
 
 const HomeSmartSearch = () => {

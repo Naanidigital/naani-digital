@@ -1,6 +1,7 @@
 import Fuse from "fuse.js";
 import type { DBProject } from "./projectsApi";
 import { projectPath } from "./projectsApi";
+import { ALL_PROJECTS } from "@/data/projectsList";
 
 export type SuggestionKind = "project" | "builder" | "location" | "bhk" | "type" | "status" | "budget" | "keyword";
 
@@ -25,6 +26,29 @@ export const buildSuggestions = (projects: DBProject[]): Suggestion[] => {
     list.push(s);
   };
 
+  // 1. Curated static project pages from ALL_PROJECTS
+  ALL_PROJECTS.forEach((p) => {
+    push({
+      kind: "project",
+      label: p.name,
+      sub: p.location ? `${p.location} · Premier Project` : "Premier Project",
+      path: p.slug,
+    });
+  });
+
+  // Flagship project aliases to ensure user queries like "Cascades", "Rise 9", "Trump", "Linq", "Neo" match instantly
+  const FLAGSHIP_ALIASES: { label: string; sub: string; path: string }[] = [
+    { label: "The Cascades", sub: "Kokapet · Premier Project", path: "/projects/the-cascades-neopolis" },
+    { label: "Cascades Neopolis", sub: "Kokapet · Premier Project", path: "/projects/the-cascades-neopolis" },
+    { label: "Rise With 9 Neopolis", sub: "Kokapet · Premier Project", path: "/projects/rise-with-9-neopolis-kokapet" },
+    { label: "LINQ Neopolis", sub: "Kokapet · Premier Project", path: "/projects/linq-by-raghava" },
+    { label: "Neo Towers Neopolis", sub: "Kokapet · Premier Project", path: "/projects/neo-towers-neopolis-kokapet" },
+    { label: "Trump Towers", sub: "Golden Mile, Kokapet · Ultra-Luxury Residences", path: "/projects/trump-towers-hyderabad-kokapet" },
+    { label: "Trump Towers Kokapet", sub: "Golden Mile, Kokapet · Ultra-Luxury Residences", path: "/projects/trump-towers-hyderabad-kokapet" },
+  ];
+  FLAGSHIP_ALIASES.forEach((alias) => push({ kind: "project", ...alias }));
+
+  // 2. Dynamic DB projects
   projects.forEach((p) => {
     push({ kind: "project", label: p.name, sub: [p.builder, p.location].filter(Boolean).join(" · "), path: projectPath(p), project: p });
     if (p.builder) push({ kind: "builder", label: p.builder, sub: "Builder", path: `/projects?builder=${encodeURIComponent(p.builder)}` });
@@ -61,7 +85,7 @@ export const buildFuse = (entries: Suggestion[]) =>
     minMatchCharLength: 1,
   });
 
-export const POPULAR_SEARCHES = ["Ready to Move", "Under 1 Crore", "Villas", "Kokapet", "3 BHK", "Prestige"];
+export const POPULAR_SEARCHES = ["Trump Towers", "Neo Towers", "The Cascades", "Rise With 9", "Kokapet", "Ready to Move"];
 
 const RECENT_KEY = "naani:recent-searches";
 export const getRecent = (): string[] => {
