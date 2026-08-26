@@ -83,13 +83,13 @@ const AspireSpacesA3Page = () => {
     "@graph": [
       {
         "@type": "RealEstateListing",
-        name: "Aspire Spaces Aarna – Premium 2 & 3 BHK Apartments in Bachupally / Mallampet",
-        description: "Explore Aspire Spaces Aarna in Mallampet near Bachupally – premium 2 & 3 BHK apartments with modern amenities. Get exclusive ₹4500/sft offer.",
+        name: "Aspire Aarna – Premium 2 & 3 BHK Flats in Bachupally Near ORR Exit 4A",
+        description: "Discover Aspire Aarna, premium 2 & 3 BHK apartments in Bachupally near ORR Exit 4A. Experience high-rise living, a luxury clubhouse, rooftop pool and world-class amenities.",
         url: "https://www.naani.in/projects/aspire-spaces-a3-bachupally",
         image: "https://www.naani.in/aspire-a3-elevation.jpg",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Mallampet, Bachupally",
+          streetAddress: "Mallampet, Near ORR Exit 4A, Bachupally",
           addressLocality: "Hyderabad",
           addressRegion: "Telangana",
           addressCountry: "IN",
@@ -115,7 +115,7 @@ const AspireSpacesA3Page = () => {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://www.naani.in" },
           { "@type": "ListItem", position: 2, name: "Projects", item: "https://www.naani.in/projects" },
-          { "@type": "ListItem", position: 3, name: "Aspire Spaces Aarna Bachupally", item: "https://www.naani.in/projects/aspire-spaces-a3-bachupally" },
+          { "@type": "ListItem", position: 3, name: "Aspire Aarna Bachupally", item: "https://www.naani.in/projects/aspire-spaces-a3-bachupally" },
         ],
       },
     ],
@@ -161,10 +161,10 @@ const AspireSpacesA3Page = () => {
   return (
     <>
       <SEOHead
-        title="Aspire Spaces Aarna Bachupally | 2 & 3 BHK Apartments in Mallampet Hyderabad"
-        description="Explore Aspire Spaces Aarna in Mallampet near Bachupally – premium 2 & 3 BHK apartments with modern amenities. Get exclusive ₹4500/sft offer. Book site visit now!"
+        title="Aspire Aarna | Premium 2 & 3 BHK Flats in Bachupally Near ORR Exit 4A"
+        description="Discover Aspire Aarna, premium 2 & 3 BHK apartments in Bachupally near ORR Exit 4A. Experience high-rise living, a luxury clubhouse, rooftop pool and world-class amenities."
         canonicalUrl="https://www.naani.in/projects/aspire-spaces-a3-bachupally"
-        keywords="Aspire Spaces Aarna, flats in Mallampet Hyderabad, apartments near Bachupally, 2 BHK flats Hyderabad, 3 BHK apartments Mallampet, gated community Bachupally, new projects Bachupally Hyderabad"
+        keywords="Aspire Aarna, Aspire Aarna Bachupally, Aspire Aarna Mallampet, Aspire Aarna Hyderabad, Aspire Aarna 2 BHK, Aspire Aarna 3 BHK, 2 BHK flats in Bachupally, 3 BHK flats in Bachupally, Apartments for sale in Bachupally, Flats for sale in Bachupally, Premium apartments in Bachupally, Luxury apartments in Bachupally, New apartments in Bachupally, New launch projects in Bachupally, Apartments near ORR Exit 4A, Flats near ORR Exit 4A, 2 BHK flats near ORR Exit 4A, 3 BHK flats near ORR Exit 4A, Apartments in Mallampet, Flats for sale in Mallampet, Premium apartments in Mallampet, New launch projects in Mallampet, Apartments near Bachupally, Gated community apartments in Bachupally, Luxury gated community in Bachupally, 2 BHK apartments for sale in Bachupally, 3 BHK apartments for sale in Bachupally, Premium 2 BHK flats in Hyderabad, Premium 3 BHK flats in Hyderabad, Luxury apartments for sale in Hyderabad, High-rise apartments in Bachupally, High-rise apartments in Hyderabad, New residential projects in Hyderabad, Upcoming residential projects in Bachupally, Under construction apartments in Bachupally, Apartments with clubhouse in Bachupally, Apartments with swimming pool in Bachupally, Apartments with sports amenities in Bachupally, Luxury clubhouse apartments in Hyderabad, Apartments with rooftop swimming pool, Gated community flats with amenities in Hyderabad, Best 2 BHK apartments for sale in Bachupally, Best 3 BHK apartments for sale in Bachupally, Luxury flats near ORR Exit 4A, Premium apartments near Mallampet ORR, New launch apartments near ORR Exit 4A, High-rise gated community in Bachupally, Luxury residential project in Bachupally, Spacious 3 BHK flats in Bachupally, Premium apartments near Financial District Hyderabad, Apartments with luxury clubhouse in Bachupally"
         ogImage="https://www.naani.in/og/aspire-spaces-a3.png"
         structuredData={structuredData}
       />
@@ -180,7 +180,7 @@ const AspireSpacesA3Page = () => {
           <div className="relative">
             <img
               src={elevationImg}
-              alt="Aspire Spaces Aarna Project in Bachupally"
+              alt="Aspire Aarna Project in Bachupally"
               className="w-full h-[60vh] md:h-[80vh] object-cover"
               loading="eager"
             />
@@ -191,9 +191,9 @@ const AspireSpacesA3Page = () => {
                   Limited Units at Launch Price
                 </span>
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight">
-                  Aspire Spaces Aarna – Premium{" "}
+                  Aspire Aarna – Premium{" "}
                   <span className="text-amber-400">2 & 3 BHK Apartments</span>
-                  <br className="hidden md:block" /> in Bachupally / Mallampet
+                  <br className="hidden md:block" /> in Bachupally Near ORR Exit 4A
                 </h1>
                 <p className="text-lg md:text-xl text-slate-300 mb-6">
                   Starting <span className="text-amber-400 font-bold text-2xl">₹4,500/sft*</span> (All Inclusive) &bull; Mallampet, Hyderabad
@@ -215,7 +215,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-              Project <span className="text-amber-400">Overview</span>
+              Luxury High-Rise Living <span className="text-amber-400">in Bachupally</span>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {highlights.map((h) => (
@@ -238,7 +238,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4 bg-slate-900/50">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Pricing & <span className="text-amber-400">Offers</span>
+              Premium 2 & 3 BHK <span className="text-amber-400">Residences</span>
             </h2>
             <p className="text-slate-400 mb-8">Exclusive launch pricing for limited units</p>
             <div className="bg-gradient-to-br from-amber-900/30 to-slate-800/50 border border-amber-400/30 rounded-2xl p-8 md:p-12 max-w-lg mx-auto">
@@ -255,7 +255,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-              Floor Plans & <span className="text-amber-400">Configurations</span>
+              Explore Aspire Aarna <span className="text-amber-400">Floor Plans</span>
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {configs.map((c) => (
@@ -315,9 +315,9 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4 bg-slate-900/50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-              Amenities & <span className="text-amber-400">Clubhouse</span>
+              40,000 Sq. Ft. Luxury <span className="text-amber-400">Clubhouse & Amenities</span>
             </h2>
-            <p className="text-center text-slate-400 mb-10">40,000 Sft Clubhouse – Where Lifestyles Shine Through</p>
+            <p className="text-center text-slate-400 mb-10">World-Class Amenities for Elevated Living</p>
             <div className="mb-8">
               <img src={clubhouseImg} alt="Clubhouse of Aspire Spaces Aarna Project" className="w-full h-auto rounded-2xl border border-amber-400/20" loading="lazy" />
             </div>
@@ -336,7 +336,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-              Location <span className="text-amber-400">Advantages</span>
+              Location Advantages of <span className="text-amber-400">Aspire Aarna</span>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {locationAdvantages.map((l) => (
@@ -360,7 +360,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4 bg-slate-900/50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-              Why Invest in <span className="text-amber-400">Aspire Spaces Aarna</span>
+              Premium Apartments for Sale <span className="text-amber-400">in Bachupally</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -397,7 +397,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-[#01406D]/70 via-[hsl(205,50%,10%)] to-background border-t border-[#01B4BA]/30">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Book Your <span className="text-[#FF7A0F]">Dream Home</span> Today
+              Book Your Dream Home <span className="text-[#FF7A0F]">at Aspire Aarna</span>
             </h2>
             <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
               Experience elevated living at Aspire Spaces Aarna. Discover spacious homes, premium amenities, and a vibrant community designed for modern lifestyles.
