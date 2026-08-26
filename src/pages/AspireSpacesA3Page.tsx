@@ -10,7 +10,7 @@ import elevationImg from "@/assets/aspire-a3-elevation.jpg";
 import masterplanImg from "@/assets/aspire-a3-masterplan.jpg";
 import clubhouseImg from "@/assets/aspire-a3-clubhouse.jpg";
 
-const PROJECT_NAME = "Aspire Spaces A3";
+const PROJECT_NAME = "Aspire Spaces Aarna";
 
 const CTAButton = ({ text, className = "", onClick }: { text: string; className?: string; onClick?: () => void }) => (
   <button
@@ -24,31 +24,31 @@ const CTAButton = ({ text, className = "", onClick }: { text: string; className?
 
 const faqs = [
   {
-    q: "What is the price of Aspire Spaces A3?",
-    a: "Aspire Spaces A3 offers competitive pricing starting at ₹4,500/sft (all inclusive). Final pricing depends on the configuration, floor, and unit orientation. Contact us on WhatsApp at +91 9705080909 for the latest offers and payment plans.",
+    q: "What is the price of Aspire Spaces Aarna?",
+    a: "Aspire Spaces Aarna offers competitive pricing starting at ₹4,500/sft (all inclusive). Final pricing depends on the configuration, floor, and unit orientation. Contact us on WhatsApp at +91 9705080909 for the latest offers and payment plans.",
   },
   {
-    q: "Where is Aspire Spaces A3 located?",
-    a: "Aspire Spaces A3 is located in Mallampet, near Bachupally, Hyderabad. It enjoys excellent connectivity to the Outer Ring Road (ORR), Miyapur, Hitech City, and Gachibowli, making it one of the most accessible residential locations in Hyderabad.",
+    q: "Where is Aspire Spaces Aarna located?",
+    a: "Aspire Spaces Aarna is located in Mallampet, near Bachupally, Hyderabad. It enjoys excellent connectivity to the Outer Ring Road (ORR), Miyapur, Hitech City, and Gachibowli, making it one of the most accessible residential locations in Hyderabad.",
   },
   {
-    q: "What configurations are available at Aspire Spaces A3?",
+    q: "What configurations are available at Aspire Spaces Aarna?",
     a: "The project offers spacious 2 BHK apartments (1,350 sq.ft.) and 3 BHK apartments (1,560 to 2,115 sq.ft.). Every unit is designed for maximum ventilation, natural light, and optimal space utilization.",
   },
   {
-    q: "Is Aspire Spaces A3 a good investment?",
-    a: "Yes. Mallampet is one of Hyderabad's fastest-growing residential corridors with strong infrastructure development, proximity to IT hubs, and excellent rental demand. Aspire Spaces A3 offers competitive pricing with high appreciation potential, making it ideal for both end-users and investors.",
+    q: "Is Aspire Spaces Aarna a good investment?",
+    a: "Yes. Mallampet is one of Hyderabad's fastest-growing residential corridors with strong infrastructure development, proximity to IT hubs, and excellent rental demand. Aspire Spaces Aarna offers competitive pricing with high appreciation potential, making it ideal for both end-users and investors.",
   },
   {
-    q: "What amenities are provided at Aspire Spaces A3?",
-    a: "The project features a 36,000 sq.ft. clubhouse with swimming pool, gym, yoga studio, library, co-working spaces, conference room, preview theatre, children's play area, senior citizens' zone, jogging tracks, landscaped gardens, and much more.",
+    q: "What amenities are provided at Aspire Spaces Aarna?",
+    a: "The project features a 40,000 sq.ft. clubhouse with swimming pool, gym, yoga studio, library, co-working spaces, conference room, preview theatre, children's play area, senior citizens' zone, jogging tracks, landscaped gardens, and much more.",
   },
   {
-    q: "How far is Aspire Spaces A3 from ORR and Hitech City?",
-    a: "Aspire Spaces A3 has easy access to the Outer Ring Road and is approximately 30 minutes from Hitech City and Gachibowli IT hubs. Miyapur Metro Station is also nearby for convenient public transport.",
+    q: "How far is Aspire Spaces Aarna from ORR and Hitech City?",
+    a: "Aspire Spaces Aarna has easy access to the Outer Ring Road and is approximately 30 minutes from Hitech City and Gachibowli IT hubs. Miyapur Metro Station is also nearby for convenient public transport.",
   },
   {
-    q: "How do I book a site visit at Aspire Spaces A3?",
+    q: "How do I book a site visit at Aspire Spaces Aarna?",
     a: "Simply WhatsApp +91 9705080909 with your preferred date and time. Our team will confirm your slot and arrange a visit. You can also call the same number for instant assistance.",
   },
 ];
@@ -76,15 +76,15 @@ const AspireSpacesA3Page = () => {
 
   const openPopup = () => setPopupOpen(true);
 
-  const waLink = `https://wa.me/919705080909?text=${encodeURIComponent("Hi, I'm interested in Aspire Spaces A3 Bachupally. Please share price details and availability.")}`;
+  const waLink = `https://wa.me/919705080909?text=${encodeURIComponent("Hi, I'm interested in Aspire Spaces Aarna Bachupally. Please share price details and availability.")}`;
 
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "RealEstateListing",
-        name: "Aspire Spaces A3 – Premium 2 & 3 BHK Apartments in Bachupally / Mallampet",
-        description: "Explore Aspire Spaces A3 in Mallampet near Bachupally – premium 2 & 3 BHK apartments with modern amenities. Get exclusive ₹4500/sft offer.",
+        name: "Aspire Spaces Aarna – Premium 2 & 3 BHK Apartments in Bachupally / Mallampet",
+        description: "Explore Aspire Spaces Aarna in Mallampet near Bachupally – premium 2 & 3 BHK apartments with modern amenities. Get exclusive ₹4500/sft offer.",
         url: "https://www.naani.in/projects/aspire-spaces-a3-bachupally",
         image: "https://www.naani.in/aspire-a3-elevation.jpg",
         address: {
@@ -115,7 +115,7 @@ const AspireSpacesA3Page = () => {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://www.naani.in" },
           { "@type": "ListItem", position: 2, name: "Projects", item: "https://www.naani.in/projects" },
-          { "@type": "ListItem", position: 3, name: "Aspire Spaces A3 Bachupally", item: "https://www.naani.in/projects/aspire-spaces-a3-bachupally" },
+          { "@type": "ListItem", position: 3, name: "Aspire Spaces Aarna Bachupally", item: "https://www.naani.in/projects/aspire-spaces-a3-bachupally" },
         ],
       },
     ],
@@ -125,7 +125,7 @@ const AspireSpacesA3Page = () => {
     { icon: Building2, label: "2 Towers", sub: "34 Floors Each" },
     { icon: Layers, label: "3.7 Acres", sub: "Site Area" },
     { icon: Home, label: "2 & 3 BHK", sub: "1350–2115 Sft" },
-    { icon: Users, label: "36,000 Sft", sub: "Clubhouse" },
+    { icon: Users, label: "40,000 Sft", sub: "Clubhouse" },
     { icon: Shield, label: "Gated Community", sub: "24/7 Security" },
     { icon: Zap, label: "₹4,500/sft*", sub: "All Inclusive" },
   ];
@@ -161,10 +161,10 @@ const AspireSpacesA3Page = () => {
   return (
     <>
       <SEOHead
-        title="Aspire Spaces A3 Bachupally | 2 & 3 BHK Apartments in Mallampet Hyderabad"
-        description="Explore Aspire Spaces A3 in Mallampet near Bachupally – premium 2 & 3 BHK apartments with modern amenities. Get exclusive ₹4500/sft offer. Book site visit now!"
+        title="Aspire Spaces Aarna Bachupally | 2 & 3 BHK Apartments in Mallampet Hyderabad"
+        description="Explore Aspire Spaces Aarna in Mallampet near Bachupally – premium 2 & 3 BHK apartments with modern amenities. Get exclusive ₹4500/sft offer. Book site visit now!"
         canonicalUrl="https://www.naani.in/projects/aspire-spaces-a3-bachupally"
-        keywords="Aspire Spaces A3, flats in Mallampet Hyderabad, apartments near Bachupally, 2 BHK flats Hyderabad, 3 BHK apartments Mallampet, gated community Bachupally, new projects Bachupally Hyderabad"
+        keywords="Aspire Spaces Aarna, flats in Mallampet Hyderabad, apartments near Bachupally, 2 BHK flats Hyderabad, 3 BHK apartments Mallampet, gated community Bachupally, new projects Bachupally Hyderabad"
         ogImage="https://www.naani.in/og/aspire-spaces-a3.png"
         structuredData={structuredData}
       />
@@ -180,7 +180,7 @@ const AspireSpacesA3Page = () => {
           <div className="relative">
             <img
               src={elevationImg}
-              alt="Aspire Spaces A3 Project in Bachupally"
+              alt="Aspire Spaces Aarna Project in Bachupally"
               className="w-full h-[60vh] md:h-[80vh] object-cover"
               loading="eager"
             />
@@ -191,7 +191,7 @@ const AspireSpacesA3Page = () => {
                   Limited Units at Launch Price
                 </span>
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight">
-                  Aspire Spaces A3 – Premium{" "}
+                  Aspire Spaces Aarna – Premium{" "}
                   <span className="text-amber-400">2 & 3 BHK Apartments</span>
                   <br className="hidden md:block" /> in Bachupally / Mallampet
                 </h1>
@@ -228,7 +228,7 @@ const AspireSpacesA3Page = () => {
             </div>
             <div className="mt-10 bg-white/5 border border-amber-400/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
               <p className="text-slate-300 leading-relaxed">
-                Aspire Spaces A3 is a residential project offering 2 & 3 BHK apartments in Mallampet, Hyderabad. Spread across 3.7 acres, this high-rise community features 2 towers with 34 residential floors, offering floor plans, clubhouse facilities, and layout designs for families. Whether you are looking for <strong className="text-white">flats in Mallampet Hyderabad</strong> or <strong className="text-white">apartments near Bachupally</strong>, this project provides a residential option in North-West Hyderabad.
+                Aspire Spaces Aarna is a residential project offering 2 & 3 BHK apartments in Mallampet, Hyderabad. Spread across 3.7 acres, this high-rise community features 2 towers with 34 residential floors, offering floor plans, clubhouse facilities, and layout designs for families. Whether you are looking for <strong className="text-white">flats in Mallampet Hyderabad</strong> or <strong className="text-white">apartments near Bachupally</strong>, this project provides a residential option in North-West Hyderabad.
               </p>
             </div>
           </div>
@@ -282,11 +282,11 @@ const AspireSpacesA3Page = () => {
               Master <span className="text-amber-400">Plan</span>
             </h2>
             <div className="bg-white/5 border border-amber-400/20 rounded-2xl overflow-hidden">
-              <img src={masterplanImg} alt="Master plan of Aspire Spaces A3 Project" className="w-full h-auto" loading="lazy" />
+              <img src={masterplanImg} alt="Master plan of Aspire Spaces Aarna Project" className="w-full h-auto" loading="lazy" />
             </div>
             <div className="mt-6 bg-white/5 border border-amber-400/20 rounded-2xl p-6 backdrop-blur-sm">
               <p className="text-slate-300 leading-relaxed">
-                The master plan of Aspire Spaces A3 features a well-planned gated community with wide internal roads, pedestrian pathways, landscaped green spaces, a central 36,000 sq.ft. clubhouse, organized parking, and a safe, secure environment. Block A and Block B are positioned for maximum ventilation and privacy, with tot lots and open spaces strategically placed throughout.
+                The master plan of Aspire Spaces Aarna features a well-planned gated community with wide internal roads, pedestrian pathways, landscaped green spaces, a central 40,000 sq.ft. clubhouse, organized parking, and a safe, secure environment. Block A and Block B are positioned for maximum ventilation and privacy, with tot lots and open spaces strategically placed throughout.
               </p>
             </div>
           </div>
@@ -298,10 +298,10 @@ const AspireSpacesA3Page = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
               Project <span className="text-amber-400">Walkthrough</span>
             </h2>
-            <div className="relative rounded-2xl overflow-hidden border border-amber-400/20 aspect-video">
+            <div className="max-w-sm mx-auto relative rounded-2xl overflow-hidden border border-amber-400/20 aspect-[9/16] shadow-2xl">
               <iframe
-                src="https://www.youtube.com/embed/q3Co-JYDfW0"
-                title="Aspire Spaces A3 Bachupally Project Walkthrough"
+                src="https://www.youtube.com/embed/NRGfh83rtHI"
+                title="Aspire Spaces Aarna Bachupally Project Walkthrough"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
@@ -317,9 +317,9 @@ const AspireSpacesA3Page = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
               Amenities & <span className="text-amber-400">Clubhouse</span>
             </h2>
-            <p className="text-center text-slate-400 mb-10">36,000 Sft Clubhouse – Where Lifestyles Shine Through</p>
+            <p className="text-center text-slate-400 mb-10">40,000 Sft Clubhouse – Where Lifestyles Shine Through</p>
             <div className="mb-8">
-              <img src={clubhouseImg} alt="Clubhouse of Aspire Spaces A3 Project" className="w-full h-auto rounded-2xl border border-amber-400/20" loading="lazy" />
+              <img src={clubhouseImg} alt="Clubhouse of Aspire Spaces Aarna Project" className="w-full h-auto rounded-2xl border border-amber-400/20" loading="lazy" />
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
               {amenities.map((a) => (
@@ -360,7 +360,7 @@ const AspireSpacesA3Page = () => {
         <section className="py-16 md:py-20 px-4 bg-slate-900/50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-              Why Invest in <span className="text-amber-400">Aspire Spaces A3</span>
+              Why Invest in <span className="text-amber-400">Aspire Spaces Aarna</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -400,7 +400,7 @@ const AspireSpacesA3Page = () => {
               Book Your <span className="text-[#FF7A0F]">Dream Home</span> Today
             </h2>
             <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-              Experience elevated living at Aspire Spaces A3. Discover spacious homes, premium amenities, and a vibrant community designed for modern lifestyles.
+              Experience elevated living at Aspire Spaces Aarna. Discover spacious homes, premium amenities, and a vibrant community designed for modern lifestyles.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <CTAButton text="Schedule Site Visit" onClick={openPopup} className="py-4 px-8 text-lg bg-[#FF7A0F] hover:bg-[#e06800]" />
