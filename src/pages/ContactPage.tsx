@@ -38,7 +38,7 @@ const ContactPage = () => {
   const faqs = [
     {
       question: "How can I contact Naani Projects?",
-      answer: "You can easily contact Naani Projects via WhatsApp at +91 94939 43946, call us directly at +91 94939 43946, email digitalnaani@gmail.com, or submit a property enquiry through our online form. Our property discovery team responds promptly during business hours."
+      answer: "You can easily contact Naani Projects via WhatsApp at +91 94939 43946, call us directly at +91 94939 43946, email Naaniprojects@gmail.com, or submit a property enquiry through our online form. Our property discovery team responds promptly during business hours."
     },
     {
       question: "What types of properties can I enquire about?",
@@ -104,7 +104,7 @@ const ContactPage = () => {
     },
     "image": "https://www.naani.in/naani-projects-contact-hyderabad-real-estate.webp",
     "telephone": "+919493943946",
-    "email": "digitalnaani@gmail.com",
+    "email": "Naaniprojects@gmail.com",
     "description": "Contact Naani Projects for apartments, villas, plots and new residential projects in Hyderabad. Get property details, compare projects or request a site visit.",
     "address": {
       "@type": "PostalAddress",
@@ -290,12 +290,12 @@ const ContactPage = () => {
                 <p className="text-xs text-slate-400">Instant project details, floor plans &amp; pricing.</p>
               </a>
 
-              <a href="mailto:digitalnaani@gmail.com" className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3 group block">
+              <a href="mailto:Naaniprojects@gmail.com" className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3 group block">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
                   <Mail size={20} />
                 </div>
                 <h3 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors">Email</h3>
-                <p className="text-amber-400 font-bold text-sm break-all">digitalnaani@gmail.com</p>
+                <p className="text-amber-400 font-bold text-sm break-all">Naaniprojects@gmail.com</p>
                 <p className="text-xs text-slate-400">Send detailed project requirements &amp; queries.</p>
               </a>
 

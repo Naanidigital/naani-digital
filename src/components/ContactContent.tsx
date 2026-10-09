@@ -173,8 +173,8 @@ const ContactContent = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <p className="text-sm text-muted-foreground mb-1">Response within 24 hours</p>
-                    <a href="mailto:digitalnaani@gmail.com" className="text-accent hover:underline font-medium">
-                      digitalnaani@gmail.com
+                    <a href="mailto:Naaniprojects@gmail.com" className="text-accent hover:underline font-medium">
+                      Naaniprojects@gmail.com
                     </a>
                   </div>
                 </CardContent>

@@ -1,53 +1,57 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Phone, MapPin, ShieldCheck, Sparkles, Building2, Home, TrendingUp, Users, Award, CheckCircle2, ArrowRight, Search, CalendarCheck, Key, Send, Instagram, Facebook, Youtube, Compass, FileSearch, Scale, AlertTriangle, Layers, HelpCircle, Check, ExternalLink } from "lucide-react";
+import { 
+  MessageCircle, Phone, MapPin, ShieldCheck, Sparkles, Building2, Home, 
+  TrendingUp, Users, Award, CheckCircle2, ArrowRight, Search, CalendarCheck, 
+  HelpCircle, Check, Compass, FileSearch, Scale, AlertTriangle, Layers, UserCheck, Briefcase, GraduationCap, Globe
+} from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import { Button } from "../components/ui/button";
 
-const WA_URL = "https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.";
+const WA_URL = "https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I'm%20looking%20to%20buy%2Fsell%20a%20property%20in%20Hyderabad.";
 const TEL = "tel:+919493943946";
 
 const AboutPage = () => {
   const faqs = [
     {
       question: "What is Naani Projects?",
-      answer: "Naani Projects is a specialized Hyderabad-focused property discovery platform helping buyers explore residential properties, including 2 BHK and 3 BHK apartments, luxury villas, gated community plots, and new launch residential projects across Hyderabad's key growth corridors through curated listings and instant WhatsApp support."
+      answer: "Naani Projects is a Hyderabad-focused real estate property discovery and assistance platform built around one simple goal: connecting the right buyer with the right seller."
     },
     {
-      question: "What types of properties can I find on Naani Projects?",
-      answer: "You can discover a comprehensive range of residential properties in Hyderabad, including high-rise apartments, gated community flats, independent luxury villas, residential plots, new launch projects, under-construction developments, and ready-to-move properties."
+      question: "Who is the founder of Naani Projects?",
+      answer: "Naani Projects was founded by Shitish Kumar, who holds an MBA in Marketing from Osmania University and began his real estate journey in Hyderabad in 2017."
     },
     {
-      question: "Which areas of Hyderabad does Naani Projects cover?",
-      answer: "We cover major residential and commercial growth corridors across Hyderabad, including Kokapet, Neopolis, Financial District, Gachibowli, Narsingi, Tellapur, Kondapur, HITECH City, Miyapur, Bachupally, Kollur, Tukkuguda, and Shamshabad."
+      question: "What property sales track record is associated with Naani Projects?",
+      answer: "Across team and company sales activity, the experience behind Naani Projects includes more than 500 flats and 100 villas sold across Hyderabad since 2017. Note that these figures represent broader team/company sales performance and not the founder's individual sales count."
     },
     {
-      question: "Can I find new projects in Hyderabad on Naani?",
-      answer: "Yes. Naani Projects features curated new projects in Hyderabad from top developers such as Rajapushpa, Prestige, Brigade, Aparna, My Home, and Team4. Users can compare floor plans, amenities, pricing, and project locations."
+      question: "What types of properties does Naani Projects cover?",
+      answer: "We support enquiries and discovery for apartments, luxury villas, open plots, residential developments, resale properties, and commercial spaces across Hyderabad."
     },
     {
-      question: "Can I compare residential projects on Naani Projects?",
-      answer: "Absolutly. Naani Projects provides detailed project insights, location comparisons, floor plan layout efficiency notes, and pricing structures so property buyers in Hyderabad can compare developments objectively before scheduling visits."
+      question: "How does Naani Projects evaluate real estate projects?",
+      answer: "We check RERA registration details where applicable, review developer background and history, inspect project approvals and progress documents, communicate transparently, and encourage buyers to conduct independent legal and financial due diligence."
     },
     {
-      question: "Can I request a site visit through Naani Projects?",
-      answer: "Yes. Interested buyers can request free site visit coordination for shortlisted projects across Hyderabad. Our team coordinates convenient visit timings, transportation guidance, and project walkthroughs."
+      question: "Which areas in Hyderabad does Naani Projects follow?",
+      answer: "We follow established growth corridors including Kokapet, Tellapur, Kollur, Narsingi, Shankarpally, Shamshabad, Tukkuguda, Budvel, Rajendra Nagar, Adibatla, Kompally, Bachupally, Nizampet, Gundlapochampally, Medchal, Uppal, Pocharam, and Ghatkesar, as well as emerging areas like Mokila, Patancheru, Isnapur, Nandigama, Maheshwaram, Shadnagar, and Kothur."
     },
     {
-      question: "How can I contact Naani Projects?",
-      answer: "You can easily contact Naani Projects via WhatsApp at +91 94939 43946, call us directly, or send an enquiry through our official contact page. Our property discovery advisors respond promptly with customized project information."
+      question: "Can Naani Projects assist with home loans and payment plans?",
+      answer: "Yes. We help customers understand property payment arrangements and the general steps involved in securing a home loan, though final loan eligibility, interest rates, and approval are determined by financial institutions."
     },
     {
-      question: "Does Naani Projects verify project information?",
-      answer: "Naani Projects collects and reviews information from developer documentation, RERA public portals, official marketing collateral, and project site visits. However, pricing, offers, availability, and timelines can change, so we always encourage buyers to complete independent legal and financial due diligence."
+      question: "Does Naani Projects guarantee property appreciation or legal safety?",
+      answer: "No. Our evaluation process is intended to support informed decision-making. It is not a guarantee of legal title, construction quality, project completion, investment returns, or price appreciation. Buyers are encouraged to complete independent legal due diligence before committing."
     }
   ];
 
   const breadcrumbsSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/about-us#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -64,6 +68,30 @@ const AboutPage = () => {
     ]
   };
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.naani.in/#founder",
+    "name": "Shitish Kumar",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@id": "https://www.naani.in/#organization"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Osmania University"
+    },
+    "knowsAbout": [
+      "Hyderabad Real Estate",
+      "Property Discovery",
+      "Marketing Strategy",
+      "RERA Project Evaluation",
+      "Residential & Commercial Properties"
+    ],
+    "image": "https://www.naani.in/shitish-kumar.png",
+    "description": "Founder of Naani Projects. Holds an MBA in Marketing from Osmania University with real estate industry experience in Hyderabad dating back to 2017."
+  };
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": ["Organization", "RealEstateAgent"],
@@ -77,10 +105,13 @@ const AboutPage = () => {
       "url": "https://www.naani.in/naani-projects-logo.png",
       "caption": "Naani Projects Logo"
     },
+    "founder": {
+      "@id": "https://www.naani.in/#founder"
+    },
     "image": "https://www.naani.in/naani-projects-hyderabad-real-estate-team.webp",
     "telephone": "+919493943946",
-    "email": "info@naani.in",
-    "description": "Naani Projects is a specialized Hyderabad real estate discovery platform helping property buyers explore apartments, villas, plots, and new residential developments.",
+    "email": "Naaniprojects@gmail.com",
+    "description": "Naani Projects is a Hyderabad-focused real estate property discovery and assistance platform connecting the right buyer with the right seller.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kondapur",
@@ -111,34 +142,62 @@ const AboutPage = () => {
 
   const webpageSchema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "AboutPage",
     "@id": "https://www.naani.in/about-us#webpage",
     "url": "https://www.naani.in/about-us",
-    "name": "About Naani Projects | Hyderabad Real Estate Experts",
-    "description": "Learn about Naani Projects, a Hyderabad-focused real estate platform helping buyers explore apartments, villas, plots and new residential projects across Hyderabad.",
+    "name": "About Naani Projects | Hyderabad Real Estate",
+    "description": "Meet Naani Projects founder Shitish Kumar. Explore Hyderabad properties, learn about our project-checking approach, and connect with the right buyer or seller.",
     "isPartOf": {
       "@id": "https://www.naani.in/#website"
     },
-    "about": {
-      "@id": "https://www.naani.in/#organization"
-    },
+    "about": [
+      { "@id": "https://www.naani.in/#organization" },
+      { "@id": "https://www.naani.in/#founder" }
+    ],
     "breadcrumb": breadcrumbsSchema
   };
 
-  const structuredDataCombined = [breadcrumbsSchema, organizationSchema, webpageSchema];
+  const structuredDataCombined = [breadcrumbsSchema, personSchema, organizationSchema, webpageSchema];
+
+  const areasFollowed = [
+    { name: "Kokapet", path: "/projects-in-kokapet" },
+    { name: "Tellapur", path: "/projects-in-tellapur" },
+    { name: "Kollur", path: "/projects-in-kollur" },
+    { name: "Narsingi", path: "/projects-in-narsingi" },
+    { name: "Shankarpally", path: "/projects" },
+    { name: "Shamshabad", path: "/projects" },
+    { name: "Tukkuguda", path: "/projects-in-tukkuguda" },
+    { name: "Budvel", path: "/projects" },
+    { name: "Rajendra Nagar", path: "/projects" },
+    { name: "Adibatla", path: "/projects" },
+    { name: "Kompally", path: "/projects" },
+    { name: "Bachupally", path: "/projects-in-bachupally" },
+    { name: "Nizampet", path: "/projects" },
+    { name: "Gundlapochampally", path: "/projects" },
+    { name: "Medchal", path: "/projects" },
+    { name: "Uppal", path: "/projects" },
+    { name: "Pocharam", path: "/projects" },
+    { name: "Ghatkesar", path: "/projects" }
+  ];
+
+  const emergingLocations = [
+    "Mokila", "Patancheru", "Isnapur", "Nandigama", 
+    "Maheshwaram", "Shadnagar", "Kothur", "Pharma City Region", 
+    "Sagar Road Belt", "Keesara", "Bogaram", "Pocharam Extensions"
+  ];
 
   return (
     <>
       <SEOHead
-        title="About Naani Projects | Hyderabad Real Estate Experts"
-        description="Learn about Naani Projects, a Hyderabad-focused real estate platform helping buyers explore apartments, villas, plots and new residential projects across Hyderabad."
+        title="About Naani Projects | Hyderabad Real Estate"
+        description="Meet Naani Projects founder Shitish Kumar. Explore Hyderabad properties, learn about our project-checking approach, and connect with the right buyer or seller."
         canonicalUrl="https://www.naani.in/about-us"
-        keywords="about naani projects, hyderabad real estate, real estate in hyderabad, properties in hyderabad, residential projects in hyderabad, hyderabad homebuyers, buy property in hyderabad"
+        keywords="about naani projects, hyderabad real estate, shitish kumar, real estate in hyderabad, properties in hyderabad, residential projects in hyderabad, rera hyderabad, buy property in hyderabad"
         ogImage="https://www.naani.in/naani-projects-hyderabad-real-estate-team.webp"
         structuredData={structuredDataCombined}
       />
 
-      <div className="min-h-screen bg-[#090D16] text-slate-100">
+      <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans">
         <Header />
 
         {/* Breadcrumb Bar */}
@@ -154,57 +213,68 @@ const AboutPage = () => {
         <section className="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16] border-b border-slate-800/60">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">
-              <Sparkles size={14} /> Hyderabad Real Estate Discovery
+              <Sparkles size={14} /> Hyderabad Real Estate Discovery &amp; Assistance
             </div>
             
-            {/* PRIMARY H1 - EXACT SPECIFICATION */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-4xl mx-auto">
-              About Naani Projects – <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Hyderabad Real Estate Experts</span>
+              About Naani Projects – <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Hyderabad Real Estate</span>
             </h1>
 
-            {/* Introductory Paragraph */}
-            <p className="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
-              Naani Projects is a specialized Hyderabad-focused property discovery platform helping buyers explore residential properties across prime locations. Whether you are searching for apartments, luxury villas, gated community plots, or new residential projects, Naani Projects simplifies project evaluation, location comparison, and direct advisor connectivity.
+            <p className="text-xl sm:text-2xl font-semibold text-amber-300/90 max-w-3xl mx-auto">
+              Connecting the Right Buyer with the Right Property
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 max-w-md mx-auto">
+            <div className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto space-y-4 text-left sm:text-center">
+              <p>
+                Naani Projects is a Hyderabad-focused real estate property discovery and assistance platform built around one simple goal: connecting the right buyer with the right seller.
+              </p>
+              <p>
+                Whether you are looking to buy an apartment, purchase a villa, invest in an open plot, explore a commercial property, or sell a property you already own, we help you explore options based on your requirements, budget, preferred location, and property goals.
+              </p>
+              <p>
+                Our approach centres on practical property guidance, clear communication, and helping customers understand the information available before making an important real estate decision.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 max-w-md mx-auto">
               <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-6 rounded-xl shadow-lg hover:shadow-emerald-900/30 transition-all" onClick={() => window.open(WA_URL, "_blank")}>
-                <MessageCircle size={18} className="mr-2" /> Explore Deals on WhatsApp
+                <MessageCircle size={18} className="mr-2" /> Connect on WhatsApp (+91 94939 43946)
               </Button>
-              <Button size="lg" variant="outline" className="bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-amber-500/40 font-semibold px-6 py-6 rounded-xl" onClick={() => window.open(WA_URL, "_blank")}>
-                <CalendarCheck size={18} className="mr-2" /> Request Site Visit Assistance
+              <Button size="lg" variant="outline" className="bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-amber-500/40 font-semibold px-6 py-6 rounded-xl" onClick={() => window.location.href = TEL}>
+                <Phone size={18} className="mr-2" /> Call +91 94939 43946
               </Button>
             </div>
           </div>
         </section>
 
-        {/* SECTION 1: WHO WE ARE */}
+        {/* SECTION: OUR STORY */}
         <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5">
+            <div className="lg:col-span-7 space-y-6">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                <Users size={16} /> Section 1 — Who We Are
+                <Briefcase size={16} /> Our Story
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug">
-                Your Trusted Guide to Hyderabad Real Estate
+                Built on Real Estate Experience Since 2017
               </h2>
               <div className="space-y-4 text-slate-300 text-base leading-relaxed">
                 <p>
-                  Naani Projects is a specialized digital platform designed specifically for <strong>Hyderabad real estate</strong> discovery. We understand that finding the right <strong>properties in Hyderabad</strong> requires clear data, honest location insights, and trustworthy guidance rather than high-pressure sales calls.
+                  Naani Projects is built on real estate experience in Hyderabad dating back to 2017. Founder Shitish Kumar holds an MBA in Marketing from Osmania University and has developed an understanding of the property market through work with real estate teams and companies.
+                </p>
+                <p className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-slate-200">
+                  Across team and company sales activity, the experience behind Naani Projects includes more than <strong>500 flats</strong> and <strong>100 villas</strong> sold across Hyderabad. These figures represent the broader team/company track record and should not be interpreted as the founder's individual sales count.
                 </p>
                 <p>
-                  Our platform aggregates and organizes verified details on premium <strong>residential projects in Hyderabad</strong>, covering premier high-rise developments, gated communities, and luxury residential layouts. By focusing exclusively on Hyderabad's dynamic housing ecosystem, we empower <strong>Hyderabad homebuyers</strong>, first-time property seekers, and seasoned real estate buyers to research housing options efficiently before making a major financial commitment.
-                </p>
-                <p>
-                  We collaborate with established real estate developers and property advisory networks to bring up-to-date layout details, floor plan configurations, location connectivity maps, and pricing structures directly to your fingertips.
+                  This experience informs our focus on understanding buyer requirements, helping sellers reach relevant prospects, and making property information easier to explore.
                 </p>
               </div>
             </div>
-            <div className="lg:col-span-5">
+
+            <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-2xl overflow-hidden border border-amber-500/20 shadow-2xl bg-slate-900">
                 <img
                   src="/naani-projects-hyderabad-real-estate-team.webp"
-                  alt="Naani Projects Hyderabad real estate team and property discovery platform"
+                  alt="Naani Projects Hyderabad real estate property discovery team"
                   className="w-full h-80 object-cover object-center"
                   loading="lazy"
                   width="600"
@@ -213,484 +283,399 @@ const AboutPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 border border-slate-800 backdrop-blur-md">
                   <p className="text-xs text-amber-400 font-bold uppercase tracking-wider">Hyderabad Property Discovery Platform</p>
-                  <p className="text-sm font-semibold text-white mt-1">Connecting Homebuyers with Verified Projects Across Hyderabad</p>
+                  <p className="text-sm font-semibold text-white mt-1">Connecting Homebuyers &amp; Sellers Across Hyderabad</p>
+                </div>
+              </div>
+
+              {/* Track Record Stats Card */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-[#0F1629] border border-slate-800 text-center">
+                  <div className="text-2xl font-extrabold text-amber-400">500+</div>
+                  <div className="text-xs text-slate-400 mt-1">Flats Sold Across Hyderabad (Team/Company Sales)</div>
+                </div>
+                <div className="p-4 rounded-xl bg-[#0F1629] border border-slate-800 text-center">
+                  <div className="text-2xl font-extrabold text-amber-400">100+</div>
+                  <div className="text-xs text-slate-400 mt-1">Villas Sold Across Hyderabad (Team/Company Sales)</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 2: WHY NAANI PROJECTS EXISTS */}
+        {/* SECTION: MEET OUR FOUNDER - SHITISH KUMAR */}
         <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                <Compass size={16} /> Section 2 — Why Naani Projects Exists
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Simplifying Complex Real Estate Choices in Hyderabad
-              </h2>
-              <p className="text-slate-300 text-base md:text-lg">
-                Navigating the modern property market in Hyderabad can quickly become overwhelming for buyers.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Problem Card */}
-              <div className="p-8 rounded-2xl bg-[#0F1629] border border-red-500/20 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 font-bold">
-                  <AlertTriangle size={24} />
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-4 flex justify-center">
+                <div className="p-8 rounded-3xl bg-[#0F1629] border border-amber-500/30 text-center space-y-4 w-full max-w-sm shadow-xl relative overflow-hidden">
+                  <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-amber-500 via-amber-300 to-amber-500 p-1 shadow-lg shadow-amber-500/20">
+                    <img 
+                      src="/shitish-kumar.png" 
+                      alt="Shitish Kumar" 
+                      title="Shitish Kumar - Founder, Naani Projects"
+                      className="w-full h-full rounded-full object-cover object-top bg-slate-950" 
+                      width="144" 
+                      height="144"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-white">Shitish Kumar</h3>
+                    <p className="text-amber-400 text-sm font-semibold mt-1">Founder, Naani Projects</p>
+                  </div>
+                  <div className="pt-2 border-t border-slate-800 space-y-2 text-xs text-slate-300">
+                    <div className="flex items-center justify-center gap-2">
+                      <GraduationCap size={16} className="text-amber-400" />
+                      <span>MBA in Marketing, Osmania University</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <CalendarCheck size={16} className="text-amber-400" />
+                      <span>Real Estate Journey Since 2017</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <MapPin size={16} className="text-amber-400" />
+                      <span>Hyderabad Real Estate Market</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white">The Buyer's Challenge</h3>
-                <ul className="space-y-3 text-slate-300 text-sm leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">•</span> Hundreds of active residential projects spread across vast growth corridors.
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">•</span> Inconsistent pricing quotes, confusing carpet area versus super built-up metrics.
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">•</span> Persistent, unsolicited sales calls from unverified listing portals.
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">•</span> Difficulty comparing floor plan efficiency, amenities, and developer track records objectively.
-                  </li>
-                </ul>
               </div>
 
-              {/* Solution Card */}
-              <div className="p-8 rounded-2xl bg-[#0F1629] border border-amber-500/30 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold">
-                  <CheckCircle2 size={24} />
+              <div className="lg:col-span-8 space-y-6">
+                <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+                  <Users size={16} /> Meet Our Founder – Shitish Kumar
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                  Making Property Discovery &amp; Connections Straightforward
+                </h2>
+                <div className="space-y-4 text-slate-300 text-base leading-relaxed">
+                  <p>
+                    Shitish Kumar founded Naani Projects with the aim of making property discovery and buyer-seller connections more straightforward.
+                  </p>
+                  <p>
+                    With an MBA in Marketing from Osmania University and a real estate journey that began in 2017, he brings together marketing knowledge and practical exposure to Hyderabad's property market.
+                  </p>
+                  <p>
+                    His vision is to help people explore suitable property options while helping owners connect with prospective buyers. Naani Projects supports enquiries related to apartments, villas, open plots, residential properties, and commercial properties.
+                  </p>
+                  <p className="italic text-amber-200/90 bg-[#0F1629] p-4 rounded-xl border border-slate-800">
+                    "For Shitish, real estate is about more than presenting a listing. It is about understanding what a customer needs, sharing available information clearly, and helping them take the next step with greater confidence."
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white">The Naani Projects Solution</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  We built Naani Projects around one central mission: <strong className="text-amber-400 font-semibold">"Find the Right Property, Smarter &amp; Faster in Hyderabad."</strong>
-                </p>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Rather than forcing you through tedious registration forms or spamming your inbox, Naani Projects brings clear project brochures, floor plans, pricing estimates, and micro-market analysis directly to you. We help you narrow down your search based on your budget, configuration, and preferred location without pushy tactics.
-                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 3: WHAT WE DO */}
+        {/* SECTION: WHAT WE DO */}
         <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                <Layers size={16} /> Section 3 — What We Do
+                <Layers size={16} /> What We Do
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Comprehensive Property Discovery Services
+                Comprehensive Property Assistance Services
               </h2>
               <p className="text-slate-300 text-base">
-                Naani Projects provides end-to-end informational and discovery support for property buyers in Hyderabad.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: Search, title: "Property Discovery", desc: "Help buyers explore apartments, luxury villas, plots, and new residential projects across Hyderabad's prime locations." },
-                { icon: Scale, title: "Project Comparison", desc: "Enable buyers to evaluate projects based on location advantages, pricing structures, amenity packages, and configuration layouts." },
-                { icon: MapPin, title: "Location Discovery", desc: "Provide in-depth neighborhood insights covering major residential growth corridors and IT hubs in Hyderabad." },
-                { icon: MessageCircle, title: "Property Enquiries", desc: "Allow buyers to query project details instantly via WhatsApp, direct phone calls, or streamlined enquiry forms." },
-                { icon: CalendarCheck, title: "Site Visit Assistance", desc: "Help users schedule and coordinate guided property site visits with verified project representatives." },
-                { icon: FileSearch, title: "Buyer Guidance", desc: "Deliver actionable insights, buying guides, and micro-market data to assist buyers before making booking decisions." },
-              ].map((card, idx) => (
-                <div key={idx} className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all group space-y-3">
-                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:bg-amber-500/20 transition-colors">
-                    <card.icon size={22} />
-                  </div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">{card.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{card.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 4: HOW WE EVALUATE PROJECT INFORMATION (TRUST SECTION) */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
-            <div className="max-w-3xl space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                <ShieldCheck size={16} /> Section 4 — How We Evaluate Project Information
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Our Commitment to Data Verification &amp; Trust
-              </h2>
-              <p className="text-slate-300 text-base leading-relaxed">
-                Establishing trust and transparency is fundamental to our platform. We gather property details through structured evaluation processes to ensure high-quality information.
+                We support property buyers and sellers across Hyderabad with practical guidance and clear communication.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400" /> Information Sources
-                </h3>
+              {/* Card 1 */}
+              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <Search size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">Property Buying Assistance</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Project details on Naani Projects are compiled from official developer releases, public RERA documentation, architectural site plans, physical site visits, and direct updates from builder representatives.
+                  We help buyers explore property options based on their preferred location, budget, property type, configuration, and intended use. Available options may include new residential projects, apartments, villas, plots, resale properties, and commercial spaces.
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400" /> RERA Verification Guidelines
-                </h3>
+              {/* Card 2 */}
+              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <Building2 size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">Property Selling Assistance</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Where applicable, we reference Real Estate Regulatory Authority (RERA) registration numbers. We strongly encourage buyers to independently check official RERA Telangana portals for registered approvals.
+                  Property owners can contact Naani Projects to discuss selling their apartments, villas, plots, or other eligible properties. We help present property information and connect owners with relevant prospective buyers.
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400" /> Dynamic Pricing &amp; Offers
-                </h3>
+              {/* Card 3 */}
+              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <FileSearch size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">Project and Developer Information</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Base prices, launch discounts, payment plans, and floor-rise charges are subject to frequent developer revisions. All financial quotes should be re-confirmed prior to signing booking agreements.
+                  For applicable real estate projects, we prioritise checking RERA registration details and reviewing available information about the developer, project documents, progress, and expected possession. The extent of verification depends on the information and records available.
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-amber-400" /> Construction Timelines
-                </h3>
+              {/* Card 4 */}
+              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <Scale size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">Payment and Home-Loan Guidance</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Project completion dates, tower handovers, and possession schedules reflect estimates provided by developers and should be confirmed directly during site visits.
+                  We help customers understand the payment arrangements associated with a property and the general steps involved in a home-loan process. Loan eligibility, approval, interest rates, and final terms are determined by the relevant financial institution.
                 </p>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* MANDATORY LEGAL DUE DILIGENCE DISCLAIMER */}
+        {/* SECTION: OUR APPROACH TO PROPERTY AND PROJECT EVALUATION */}
+        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
+            <div className="max-w-3xl space-y-4">
+              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+                <ShieldCheck size={16} /> Our Evaluation Approach
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                Our Approach to Property and Project Evaluation
+              </h2>
+              <p className="text-slate-300 text-base leading-relaxed">
+                A property decision can have long-term financial implications. We therefore aim to make relevant information easier for customers to understand.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  num: "1",
+                  title: "RERA registration checks",
+                  desc: "Check relevant registration details for projects where registration is applicable."
+                },
+                {
+                  num: "2",
+                  title: "Developer background",
+                  desc: "Review available information about the developer's history, completed projects, reputation, and publicly available track record."
+                },
+                {
+                  num: "3",
+                  title: "Project information",
+                  desc: "Review available project documents, approvals, construction or development progress, and expected possession details."
+                },
+                {
+                  num: "4",
+                  title: "Clear communication",
+                  desc: "Distinguish information that has been checked from information supplied by a developer, seller, or other source."
+                },
+                {
+                  num: "5",
+                  title: "Customer due diligence",
+                  desc: "Encourage buyers to independently verify property documents, legal title, approvals, payment terms, and other matters relevant to their transaction before committing."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="p-5 rounded-xl bg-[#0F1629] border border-slate-800 flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center shrink-0">
+                    {item.num}
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-white">{item.title}</h3>
+                    <p className="text-slate-300 text-sm mt-1">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Evaluation Disclaimer Card */}
             <div className="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-slate-200 text-sm leading-relaxed space-y-2">
               <div className="font-bold text-amber-400 text-base flex items-center gap-2">
-                <AlertTriangle size={18} /> Important Legal Due Diligence Notice
+                <AlertTriangle size={18} /> Disclaimer on Evaluation Scope
               </div>
               <p>
-                <strong>Naani Projects does not replace independent legal, financial or technical due diligence. Buyers should verify title, approvals, agreements and other legal documentation with qualified professionals before purchasing.</strong>
+                Our evaluation process is intended to support informed decisions. It is not a guarantee of legal title, construction quality, project completion, investment returns, or future property appreciation. RERA registration, where applicable, should not be treated as a substitute for independent due diligence.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION 5: OUR HYDERABAD REAL ESTATE FOCUS */}
+        {/* SECTION: OUR FOCUS ON HYDERABAD */}
         <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="max-w-3xl space-y-4">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                <MapPin size={16} /> Section 5 — Hyderabad Areas We Cover
+                <MapPin size={16} /> Hyderabad Coverage
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Focusing on Hyderabad's Major Growth Corridors
+                Our Focus on Hyderabad
               </h2>
               <p className="text-slate-300 text-base leading-relaxed">
-                Hyderabad has emerged as one of India's premier real estate destinations. Naani Projects actively tracks residential developments across key residential hubs and IT corridors in Hyderabad:
+                Hyderabad includes established residential neighbourhoods, expanding development corridors, and locations attracting new buyer interest. We follow property opportunities across the city and surrounding areas, considering factors such as connectivity, available infrastructure, project information, budget, and customer requirements.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "Kokapet", path: "/projects-in-kokapet", desc: "Ultra-luxury high-rise corridor near Financial District." },
-                { name: "Tellapur", path: "/projects-in-tellapur", desc: "Fast-growing residential hub near Gachibowli & ORR." },
-                { name: "Gachibowli", path: "/projects-in-gachibowli", desc: "Established IT financial hub with premium apartments." },
-                { name: "Narsingi", path: "/projects-in-narsingi", desc: "Strategic junction connecting Financial District & ORR." },
-                { name: "Kondapur", path: "/projects-in-kondapur", desc: "Prime residential ecosystem close to HITECH City." },
-                { name: "Miyapur", path: "/projects-in-miyapur", desc: "Excellent metro connectivity and affordable gated flats." },
-                { name: "Bachupally", path: "/projects-in-bachupally", desc: "Educational & residential hub for families." },
-                { name: "Kollur", path: "/projects-in-kollur", desc: "Rapidly expanding township zone along the ORR." },
-                { name: "Tukkuguda", path: "/projects-in-tukkuguda", desc: "Villa and plot corridor near Hyderabad Airport." },
-                { name: "Nallagandla", path: "/projects-in-nallagandla", desc: "Premium family housing near HCU & Financial District." },
-                { name: "Bowrampet", path: "/projects-in-bowrampet", desc: "Emerging northern residential growth pocket." },
-                { name: "Mallampet", path: "/projects-in-mallampet", desc: "Affordable gated community project destination." },
-              ].map((loc, i) => (
-                <Link key={i} to={loc.path} className="p-4 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all space-y-1 group">
-                  <div className="flex items-center justify-between text-amber-400 font-bold">
-                    <span>{loc.name}</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </div>
-                  <p className="text-xs text-slate-400 leading-snug">{loc.desc}</p>
-                </Link>
-              ))}
+            {/* Areas We Follow */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-amber-400" /> Areas We Follow
+              </h3>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {areasFollowed.map((area, i) => (
+                  <Link 
+                    key={i} 
+                    to={area.path} 
+                    className="p-3.5 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 hover:text-amber-400 transition-all flex items-center justify-between text-sm font-semibold text-slate-200 group"
+                  >
+                    <span>{area.name}</span>
+                    <ArrowRight size={14} className="text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="pt-2 text-sm text-slate-400">
-              Looking for a specific micro-market? Explore our dedicated <Link to="/hyderabad" className="text-amber-400 hover:underline font-semibold">Hyderabad Real Estate Hub</Link> for complete area listings.
+            {/* Emerging Locations We Monitor */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <Compass size={18} className="text-amber-400" /> Emerging Locations We Monitor
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                {emergingLocations.map((loc, idx) => (
+                  <span key={idx} className="px-4 py-2 rounded-xl bg-[#0F1629] border border-slate-800 text-xs font-semibold text-slate-300 hover:border-amber-500/30 transition-colors">
+                    {loc}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+              These lists describe the areas we follow; they are not guarantees of price appreciation or investment performance. Suitability depends on individual requirements, property-specific facts, infrastructure, approvals, and prevailing market conditions.
             </div>
           </div>
         </section>
 
-        {/* SECTION 6: PROPERTY TYPES YOU CAN EXPLORE */}
+        {/* SECTION: OUR MISSION */}
         <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
-            <div className="max-w-3xl space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                <Home size={16} /> Section 6 — Property Types You Can Explore
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Diverse Housing Categories Across Hyderabad
-              </h2>
-              <p className="text-slate-300 text-base">
-                Whether you are seeking a compact 2 BHK apartment, a spacious 3 BHK family home, or an independent luxury villa, Naani Projects covers all major property types:
+          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">
+              <Award size={14} /> Our Core Mission
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white max-w-2xl mx-auto">
+              Connecting the Right Buyer with the Right Seller
+            </h2>
+            <div className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto space-y-4">
+              <p>
+                Our mission is to connect the right buyer with the right seller through clear communication, relevant property options, and responsible guidance.
               </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { title: "2 BHK Flats in Hyderabad", url: "/hyderabad/2-bhk-flats", badge: "Popular" },
-                { title: "3 BHK Flats in Hyderabad", url: "/hyderabad/3-bhk-flats", badge: "High Demand" },
-                { title: "Apartments in Hyderabad", url: "/projects", badge: "All Types" },
-                { title: "Villas in Hyderabad", url: "/projects", badge: "Luxury" },
-                { title: "Plots in Hyderabad", url: "/projects", badge: "Investment" },
-                { title: "New Residential Projects", url: "/projects", badge: "New Launch" },
-                { title: "Gated Community Projects", url: "/projects", badge: "Gated Layouts" },
-                { title: "Luxury Homes in Hyderabad", url: "/projects", badge: "Premium" },
-              ].map((item, idx) => (
-                <Link key={idx} to={item.url} className="p-5 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/50 hover:bg-[#131B32] transition-all flex items-center justify-between group">
-                  <div className="space-y-1">
-                    <span className="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-semibold">{item.badge}</span>
-                    <div className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors mt-1">{item.title}</div>
-                  </div>
-                  <ArrowRight size={16} className="text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all" />
-                </Link>
-              ))}
+              <p>
+                We aim to help buyers understand their options and help property owners reach potential customers without creating unrealistic expectations or promising outcomes we cannot control.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION 7: WHO WE HELP */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                <Users size={16} /> Section 7 — Who We Help
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Tailored Support for Every Buyer Persona
-              </h2>
-              <p className="text-slate-300 text-base">
-                Naani Projects serves diverse property search requirements across Hyderabad.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Home className="text-amber-400" size={20} /> Homebuyers
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Individuals and families looking for a residential home in Hyderabad based on budget, commute preferences, school proximity, and desired lifestyle amenities.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Sparkles className="text-amber-400" size={20} /> First-Time Buyers
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  First-time property buyers who benefit from straightforward guidance on carpet area, total pricing components, loan approvals, and site visit scheduling.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <TrendingUp className="text-amber-400" size={20} /> Property Investors
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Investors evaluating growth corridors in Hyderabad. We provide objective corridor data without offering guaranteed financial returns or speculative claims.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Compass className="text-amber-400" size={20} /> NRI Buyers
-                </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Non-Resident Indians living outside Hyderabad who require digital brochures, video walkthroughs, and trusted assistance to evaluate properties remotely.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 8: OUR APPROACH TO PROPERTY DISCOVERY */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                <CheckCircle2 size={16} /> Section 8 — Our Approach to Property Discovery
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Simple 5-Step Discovery Journey
-              </h2>
-              <p className="text-slate-300 text-base">
-                We put control back into the hands of the buyer through a transparent, 5-step process:
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-5 gap-4">
-              {[
-                { step: "01", title: "Explore Properties", desc: "Browse curated apartments, villas, and new launches across Hyderabad on our website." },
-                { step: "02", title: "Shortlist Projects", desc: "Select projects that match your budget, BHK configuration, and location requirements." },
-                { step: "03", title: "Compare Details", desc: "Review detailed floor plans, cost structures, and neighborhood connectivity side-by-side." },
-                { step: "04", title: "Request Visit", desc: "Schedule a free, guided site visit or connect with an advisor on WhatsApp." },
-                { step: "05", title: "Informed Decision", desc: "Complete independent due diligence and finalize your dream home with full confidence." },
-              ].map((s, i) => (
-                <div key={i} className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 text-center space-y-3 relative">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">Step {s.step}</span>
-                  <h3 className="text-base font-bold text-white">{s.title}</h3>
-                  <p className="text-slate-400 text-xs leading-relaxed">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 9: MEET THE NAANI PROJECTS TEAM */}
+        {/* SECTION: OUR COMMITMENT TO CUSTOMERS */}
         <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
             <div className="max-w-3xl space-y-4">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                <Users size={16} /> Section 9 — Meet the Naani Projects Team
+                <CheckCircle2 size={16} /> Customer Standards
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Local Market Knowledge &amp; Dedicated Support
+                Our Commitment to Customers
               </h2>
               <p className="text-slate-300 text-base leading-relaxed">
-                Naani Projects is powered by a dedicated team of real estate research analysts, property advisors, and digital technology specialists focused exclusively on the Hyderabad property market.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
-                  <Search size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-white">Real Estate Research Team</h3>
-                <p className="text-slate-300 text-xs leading-relaxed">
-                  Monitors active developments, RERA listings, construction progress updates, and infrastructure growth across Hyderabad's key residential corridors.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
-                  <MessageCircle size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-white">WhatsApp Advisory Specialists</h3>
-                <p className="text-slate-300 text-xs leading-relaxed">
-                  Assists property seekers with customized brochures, site visit arrangements, pricing breakdowns, and direct builder coordination.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
-                  <Building2 size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-white">Developer Network Coordinators</h3>
-                <p className="text-slate-300 text-xs leading-relaxed">
-                  Maintains active communication with leading Hyderabad builders like Rajapushpa, Prestige, Brigade, Aparna, My Home, and Team4.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 10: WHY CHOOSE NAANI PROJECTS */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                <Award size={16} /> Section 10 — Why Choose Naani Projects
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Honest Differentiators You Can Rely On
-              </h2>
-              <p className="text-slate-300 text-base">
-                We build user confidence through authentic platform advantages rather than sensational claims.
+                We believe that property decisions deserve careful consideration. We aim to:
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Hyderabad-Focused Expertise", desc: "Dedicated exclusively to Hyderabad residential real estate, giving buyers deeper micro-market knowledge." },
-                { title: "Objective Project Comparison", desc: "Clear floor plan breakdowns, cost structure comparisons, and location connectivity analysis." },
-                { title: "Instant WhatsApp Support", desc: "No unwanted spam. Speak with helpful advisors and get brochures directly on WhatsApp." },
-                { title: "Buyer-First Transparency", desc: "Honest project summaries including construction status, possession estimates, and RERA guidance." },
-                { title: "Wide Property Range", desc: "Coverage spanning affordable 2 BHKs, spacious 3 BHKs, luxury villas, and investment plots." },
-                { title: "Convenient Site Visit Booking", desc: "Hassle-free, free site visit coordination at times that fit your personal schedule." },
-              ].map((diff, i) => (
-                <div key={i} className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-2">
-                  <div className="flex items-center gap-2 text-amber-400 font-bold">
-                    <Check size={18} />
-                    <span className="text-white font-bold text-base">{diff.title}</span>
-                  </div>
-                  <p className="text-slate-300 text-xs leading-relaxed pl-6">{diff.desc}</p>
+                "Understand each customer's property requirements and budget.",
+                "Share relevant property details and identify information that still needs confirmation.",
+                "Check applicable RERA details and review available project and developer information.",
+                "Communicate clearly about pricing information, payment arrangements, and the home-loan process.",
+                "Encourage independent verification of important legal, financial, and property documents.",
+                "Correct listing information when reliable updated details are provided."
+              ].map((commitment, i) => (
+                <div key={i} className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-2 flex items-start gap-3">
+                  <Check size={18} className="text-amber-400 shrink-0 mt-0.5" />
+                  <p className="text-slate-200 text-sm leading-relaxed">{commitment}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* SECTION 11: TRANSPARENCY & BUYER DUE DILIGENCE */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-6">
-            <div className="max-w-3xl space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                <ShieldCheck size={16} /> Section 11 — Transparency &amp; Buyer Due Diligence
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Fostering E-E-A-T &amp; Informed Decision-Making
-              </h2>
-              <p className="text-slate-300 text-base leading-relaxed">
-                Real estate decisions are among the most significant financial commitments a homebuyer will ever make. Naani Projects adheres to high standards of transparency, clarity, and buyer education:
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-[#0F1629] border border-slate-800 space-y-4 text-slate-300 text-sm leading-relaxed">
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span><strong>Pricing Fluidity:</strong> Developer pricing, promotional discounts, and payment schemes can change without notice. Always request a written price sheet during site visits.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span><strong>Inventory Availability:</strong> Unit availability changes dynamically as bookings occur. Unit allocations must be confirmed directly with the builder.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span><strong>Independent Review:</strong> Title deeds, encumbrance certificates, layout approvals, and agreement conditions should be verified independently by a licensed legal legal practitioner.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span><strong>Official RERA Portals:</strong> Verify project registration details on the official Telangana RERA web portal for official timelines and registered documents.</span>
-                </li>
-              </ul>
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-400">
+              Property information, availability, pricing, project progress, and possession timelines may change. Customers should verify current details and obtain appropriate professional advice before completing a transaction.
             </div>
           </div>
         </section>
 
-        {/* SECTION 12: FREQUENTLY ASKED QUESTIONS */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+        {/* SECTION: BUYING OR SELLING A PROPERTY IN HYDERABAD? (CTA) */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16] border-b border-slate-800/60">
+          <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-8">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              Buying or Selling a Property in Hyderabad?
+            </h2>
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              Whether you are searching for an apartment, villa, open plot, residential property, or commercial space—or want to sell a property you own—Naani Projects welcomes your enquiry.
+            </p>
+            <p className="text-amber-300 font-medium text-sm sm:text-base">
+              Tell us what you need, your preferred location, and your budget. We will help you explore relevant options and understand the next steps.
+            </p>
+
+            {/* Contact Box */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#0F1629] border border-amber-500/30 space-y-6 max-w-2xl mx-auto shadow-2xl">
+              <div className="space-y-2">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Contact Naani Projects</h3>
+                <p className="text-slate-300 text-sm sm:text-base">Call or WhatsApp us directly for property discovery &amp; selling assistance:</p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+                <a 
+                  href={WA_URL}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-4 rounded-xl transition-all shadow-lg hover:shadow-emerald-900/40 text-sm sm:text-base whitespace-nowrap"
+                >
+                  <MessageCircle size={20} className="shrink-0" />
+                  <span>WhatsApp +91 94939 43946</span>
+                </a>
+                <a 
+                  href={TEL}
+                  className="flex-1 inline-flex items-center justify-center gap-2.5 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/40 font-bold px-5 py-4 rounded-xl transition-all text-sm sm:text-base whitespace-nowrap"
+                >
+                  <Phone size={20} className="shrink-0" />
+                  <span>Call +91 94939 43946</span>
+                </a>
+              </div>
+
+              <div className="pt-4 border-t border-slate-800 text-xs sm:text-sm text-slate-400 flex items-center justify-center gap-2">
+                <Globe size={16} className="text-amber-400" />
+                <span>Website: <a href="https://www.naani.in/" className="text-amber-400 hover:underline font-semibold">https://www.naani.in/</a></span>
+              </div>
+            </div>
+
+            <p className="text-xs font-bold text-slate-400 tracking-wider uppercase">
+              Naani Projects – Connecting the Right Buyer with the Right Seller.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION: FREQUENTLY ASKED QUESTIONS */}
+        <section className="py-16 md:py-20 bg-[#090D16]">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                <HelpCircle size={16} /> Section 12 — Frequently Asked Questions
+                <HelpCircle size={16} /> Frequently Asked Questions
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                 Frequently Asked Questions About Naani Projects
               </h2>
               <p className="text-slate-300 text-base">
-                Find answers to common questions about our platform, project coverage, and property discovery services.
+                Answers to common questions about our platform, founder, evaluation approach, and services.
               </p>
             </div>
 
-            {/* Rendered directly in HTML DOM without client interaction required for crawlers */}
             <div className="max-w-4xl mx-auto space-y-4">
               {faqs.map((faq, idx) => (
                 <div key={idx} className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-2">
-                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
                     <span className="text-amber-400 font-mono text-sm">Q{idx + 1}.</span> {faq.question}
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed pl-6">{faq.answer}</p>
@@ -700,70 +685,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* SECTION 13: EXPLORE HYDERABAD PROPERTIES (CTAS & INTERNAL LINKS) */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#0B101D] to-[#090D16]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
-            <div className="p-10 md:p-14 rounded-3xl bg-gradient-to-r from-[#0F172A] via-[#131C35] to-[#0F172A] border border-amber-500/30 text-center space-y-8 shadow-2xl relative overflow-hidden">
-              <div className="space-y-4 max-w-3xl mx-auto">
-                <span className="text-amber-400 text-sm font-bold uppercase tracking-wider block">Section 13 — Ready to Find Your Dream Property?</span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-                  Explore Premium Real Estate Across Hyderabad
-                </h2>
-                <p className="text-slate-300 text-base md:text-lg">
-                  Browse our active project listings, compare growth locations, or message our team directly on WhatsApp for instant assistance.
-                </p>
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-6 rounded-xl shadow-lg" onClick={() => window.open(WA_URL, "_blank")}>
-                  <MessageCircle size={18} className="mr-2" /> WhatsApp Enquiry
-                </Button>
-                <Button size="lg" variant="outline" className="bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/40 font-bold px-6 py-6 rounded-xl" onClick={() => window.location.href = TEL}>
-                  <Phone size={18} className="mr-2" /> Speak to an Expert
-                </Button>
-              </div>
-
-              {/* Internal Links Hub */}
-              <div className="pt-8 border-t border-slate-800 max-w-4xl mx-auto flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-300">
-                <Link to="/projects" className="hover:text-amber-400 transition-colors flex items-center gap-1">
-                  Browse Projects <ExternalLink size={12} />
-                </Link>
-                <Link to="/hyderabad" className="hover:text-amber-400 transition-colors flex items-center gap-1">
-                  Hyderabad Real Estate Hub <ExternalLink size={12} />
-                </Link>
-                <Link to="/hyderabad/2-bhk-flats" className="hover:text-amber-400 transition-colors flex items-center gap-1">
-                  2 BHK Flats in Hyderabad <ExternalLink size={12} />
-                </Link>
-                <Link to="/hyderabad/3-bhk-flats" className="hover:text-amber-400 transition-colors flex items-center gap-1">
-                  3 BHK Flats in Hyderabad <ExternalLink size={12} />
-                </Link>
-                <Link to="/list-your-property" className="hover:text-amber-400 transition-colors flex items-center gap-1">
-                  List Your Property <ExternalLink size={12} />
-                </Link>
-                <Link to="/contact-us" className="hover:text-amber-400 transition-colors flex items-center gap-1">
-                  Contact Naani Projects <ExternalLink size={12} />
-                </Link>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex justify-center gap-4 pt-4">
-                <a href="https://www.instagram.com/naaniprojects/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-amber-500/20 border border-slate-800 flex items-center justify-center text-amber-400 transition-all">
-                  <Instagram size={18} />
-                </a>
-                <a href="https://www.facebook.com/NaaniProjects/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-amber-500/20 border border-slate-800 flex items-center justify-center text-amber-400 transition-all">
-                  <Facebook size={18} />
-                </a>
-                <a href="https://www.youtube.com/@NaaniProjects" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-amber-500/20 border border-slate-800 flex items-center justify-center text-amber-400 transition-all">
-                  <Youtube size={18} />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <Footer />
-        <WhatsAppButton />
       </div>
     </>
   );

@@ -40,7 +40,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Phone, label: "Phone", value: "+91 94939 43946", href: "tel:+919493943946" },
-    { icon: Mail, label: "Email", value: "digitalnaani@gmail.com", href: "mailto:digitalnaani@gmail.com" },
+    { icon: Mail, label: "Email", value: "Naaniprojects@gmail.com", href: "mailto:Naaniprojects@gmail.com" },
     { icon: MapPin, label: "Location", value: "Hyderabad, Telangana", href: undefined },
   ];
 

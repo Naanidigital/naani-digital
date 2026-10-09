@@ -1,0 +1,177 @@
+# Implement Naani.in About Us E-E-A-T and Reusable Site-Wide Standards
+
+You are working on the existing Naani.in real estate platform. Improve the existing `/about-us` page and apply reusable E-E-A-T, factual accuracy, and trust standards across the website.
+
+Do not rebuild the application. Inspect the current implementation and preserve working functionality.
+
+## Phase 1 — Inspect the current application
+
+Before editing:
+
+- Inspect the existing `/about-us` route, components, layout, styles, metadata, schema, rendering, contact configuration, and analytics.
+- Inspect the current Workspace Knowledge and Project Knowledge instructions, if accessible.
+- Review `src/lib/seo/keywordEngine.ts`, `src/lib/propertiesApi.ts`, the existing Supabase schema, sitemap generation, and prerendering setup as relevant.
+- Determine whether the About Us page returns meaningful HTML in the deployed response, rather than only an application shell or tag-manager iframe.
+- Identify outdated contact details and conflicting business claims.
+- Do not overwrite existing project knowledge or replace existing systems without first understanding them.
+
+## Phase 2 — Implement the About Us page
+
+Use the approved About Us copy from this request as the content source.
+
+Required sections:
+
+1. About Naani Projects.
+2. Our Story.
+3. Meet the Founder — Shitish Kumar.
+4. What We Do.
+5. Our Approach to Property and Project Evaluation.
+6. Our Focus on Hyderabad.
+7. Areas We Follow.
+8. Emerging Locations We Monitor.
+9. Our Mission.
+10. Our Commitment to Customers.
+11. Buying or Selling a Property in Hyderabad?
+12. Contact CTA.
+
+Founder facts:
+
+- Shitish Kumar.
+- MBA in Marketing, Osmania University.
+- Real estate journey began in 2017.
+- Track record of 500+ flats and 100+ villas sold across Hyderabad through team/company activity.
+
+Important: Do not describe the team/company sales figures as personal sales by the founder. Do not invent additional career details, credentials, awards, or qualifications.
+
+Use the supplied Hyderabad location lists, but describe them as areas the business follows or monitors. Do not guarantee growth, appreciation, or investment returns.
+
+Use a professional, approachable, buyer-first tone. Avoid unsupported claims such as "No. 1", "100% safe", "guaranteed returns", "fully verified properties", or "we will never let you lose money".
+
+If the existing page has a founder photo, use it only if it is genuinely associated with the founder. Otherwise, do not generate a fake founder image. Use a neutral placeholder only if necessary and clearly mark it for replacement.
+
+## Phase 3 — Property-checking and customer trust
+
+Create a clearly visible explanation of the business's actual evaluation approach:
+
+- Check RERA registration where applicable.
+- Review available developer background information.
+- Review available project documents and relevant public information.
+- Explain that source information and verification status may vary.
+- Encourage independent legal, financial, and technical due diligence where appropriate.
+- Explain that RERA registration is not a guarantee of legal title, completion, quality, or investment returns.
+- Do not claim independent title verification unless it has actually been completed by an appropriate professional.
+
+For home loans, explain the process without implying that Naani Projects approves loans or controls lender decisions.
+
+## Phase 4 — Contact consistency
+
+The latest contact number supplied for Naani Projects is +91 94939 43946.
+
+Search the existing application for old phone numbers and hardcoded call or WhatsApp links. Centralise contact details if a suitable shared configuration already exists.
+
+Update visible contact information and CTAs to the latest supplied number only after checking for conflicts. The intended WhatsApp link is `https://wa.me/919493943946` if the number is confirmed to have WhatsApp enabled.
+
+Do not modify unrelated business email addresses, office details, or social links unless verified. Do not reintroduce a legacy phone number through cached content or duplicated components.
+
+## Phase 5 — Technical SEO and structured data
+
+For `/about-us`:
+
+- Preserve canonical URL `https://www.naani.in/about-us`.
+- Provide a unique, accurate SEO title and meta description.
+- Use one descriptive H1 and a logical H2/H3 structure.
+- Add meaningful internal links to existing relevant project, property, builder, location, and listing routes.
+- Use appropriate image alt text.
+- Add `AboutPage`, `Organization`, `Person`, and `BreadcrumbList` JSON-LD only when supported by the actual visible content and site structure.
+- Keep the structured data consistent with the page.
+- Do not invent `sameAs` profiles, aggregate ratings, reviews, addresses, certifications, or business details.
+- Add FAQPage markup only if appropriate FAQs are visibly present and applicable guidelines are followed.
+
+Check for duplicate schema generated by both page components and global SEO utilities. Reuse existing schema utilities when possible.
+
+## Phase 6 — Confirm crawler-readable rendering
+
+Verify the deployed About Us route using a raw HTTP response or another suitable crawler-oriented test.
+
+Confirm:
+
+- The HTML contains the actual page title and meaningful About Us content.
+- The canonical and metadata are present.
+- The page does not depend exclusively on client-side rendering for essential content if the current SEO architecture supports prerendering.
+- The route is not accidentally serving HTML where a JSON endpoint is expected, or vice versa.
+- The rendered page and metadata are consistent with the intended route.
+
+Do not claim that a test passed unless it was actually executed. If the deployment is unavailable, report that the deployed check remains outstanding.
+
+## Phase 7 — Reusable Workspace Knowledge
+
+Add or update Workspace Knowledge with general reusable standards:
+
+- Factual accuracy and claim verification.
+- Clear distinction between personal and team/company experience.
+- E-E-A-T standards for authorship, experience, expertise, authority, and trust.
+- No fabricated testimonials, credentials, guarantees, or first-hand experience.
+- Honest property-verification language.
+- User-first SEO and structured-data standards.
+- Privacy and lead-data protection.
+- Use the current confirmed contact configuration rather than stale values.
+
+Keep broad standards in Workspace Knowledge. Do not duplicate the entire technical architecture there.
+
+## Phase 8 — Reusable Naani.in Project Knowledge
+
+Add or update Project Knowledge with:
+
+- Naani.in brand positioning and business facts.
+- About Us content and founder facts.
+- Hyderabad property coverage and location lists.
+- Property evaluation policy and disclaimers.
+- Current confirmed contact number.
+- Existing routes, APIs, SEO utilities, Supabase tables, RLS constraints, sitemap, and prerendering architecture.
+- Route-specific SEO, schema, publishing, data privacy, and QA requirements.
+
+Preserve existing correct knowledge and avoid overwriting unrelated project instructions.
+
+## Phase 9 — Apply E-E-A-T standards across the site
+
+Audit existing property, project, builder, location, BHK, and blog templates.
+
+Apply reusable standards without redesigning every page unnecessarily:
+
+- Use real records and relevant local information.
+- Clearly distinguish verified facts from source-provided information.
+- Avoid invented property facts and unsupported claims.
+- Use genuine author information when available.
+- Add meaningful review dates only when pages are genuinely reviewed or updated.
+- Keep schema consistent with visible content.
+- Preserve canonical URLs, redirects, internal links, and existing SEO features.
+- Avoid thin duplicate pages and keyword stuffing.
+- Do not expose private lead, owner, or unpublished listing data.
+
+Do not force every page to reach a particular word count. Content length should depend on the actual available information and user intent.
+
+## Phase 10 — QA and final report
+
+Test:
+
+- Desktop and mobile rendering.
+- Contact and WhatsApp links.
+- About Us title, description, canonical, and heading hierarchy.
+- JSON-LD validity and consistency.
+- Internal links and image alt text.
+- Raw HTML or prerendered content where applicable.
+- Existing property submission, lead capture, publishing, and data permissions.
+- No exposure of private data.
+
+At completion, report:
+
+1. Files and components changed.
+2. Final About Us page sections.
+3. Final SEO metadata and structured data.
+4. Workspace Knowledge and Project Knowledge updates.
+5. Site-wide templates audited and updated.
+6. Tests actually completed and their results.
+7. Any facts that still require evidence or confirmation.
+8. Any deployment-only tests that remain outstanding.
+
+Implement the work within the existing architecture. Do not fabricate results, claim tests passed without running them, or replace working functionality unnecessarily.
