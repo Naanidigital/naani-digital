@@ -17,7 +17,7 @@ import amenitiesImg from "@/assets/jaycon/amenities-collage.png";
 import floorPlanImg from "@/assets/jaycon/floor-plan.png";
 
 /* ── WhatsApp helper ── */
-const WA_NUM = "919705080909";
+const WA_NUM = "919493943946";
 const waLink = (msg: string) =>
   `https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`;
 const defaultMsg = "Hi, I am interested in Jaycon Gateway Tirupati. Please share details.";
@@ -693,13 +693,13 @@ const JayconGatewayTirupatiPage = () => {
             <button data-lead-gate="brochure" onClick={() => openLead("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-semibold rounded-lg shadow-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-all hover:scale-105">
               Get Latest Offers
             </button>
-            <a href="https://wa.me/919705080909?text=Hi%2C%20I%27m%20interested%20in%20Jaycon%20Gateway%20Tirupati" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105 text-lg">
+            <a href="https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20Jaycon%20Gateway%20Tirupati" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105 text-lg">
               <MessageCircle size={20} /> WhatsApp Us
             </a>
           </div>
           <div className="mt-6">
-            <a href="tel:+919705080909" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+            <a href="tel:+919493943946" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>

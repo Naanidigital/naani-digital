@@ -32,18 +32,18 @@ const NeoTowersStickyCTA = ({ onOpenPopup }: Props) => {
           className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-md transition-all hover:scale-105"
         >
           <MessageCircle size={15} />
-          WhatsApp 9705080909
+          WhatsApp 9493943946
         </button>
       </div>
 
       {/* Mobile Fixed Bottom Action Bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#090D16]/95 backdrop-blur-lg border-t border-amber-500/30 px-3 py-2.5 flex items-center justify-between gap-2 shadow-2xl">
         <a
-          href="tel:9705080909"
+          href="tel:9493943946"
           className="flex-1 flex flex-col items-center justify-center gap-1 bg-slate-900 border border-amber-500/30 text-amber-400 rounded-xl py-2 font-bold text-[11px] active:scale-95"
         >
           <Phone size={16} />
-          Call 9705080909
+          Call 9493943946
         </a>
         <button
           onClick={handleWhatsApp}

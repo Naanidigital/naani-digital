@@ -18,11 +18,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const PHONE = "+919705080909";
+const PHONE = "+919493943946";
 const WHATSAPP_MSG = encodeURIComponent(
   "Hi, I am interested in Man Airport Residency 4BHK Villas at Tukkuguda, Hyderabad. Please share more details."
 );
-const WA_LINK = `https://wa.me/919705080909?text=${WHATSAPP_MSG}`;
+const WA_LINK = `https://wa.me/919493943946?text=${WHATSAPP_MSG}`;
 
 const ManAirportResidencyPage = () => {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -34,7 +34,7 @@ const ManAirportResidencyPage = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open(`https://wa.me/919705080909?text=${WHATSAPP_MSG}`, "_blank");
+    window.open(`https://wa.me/919493943946?text=${WHATSAPP_MSG}`, "_blank");
   };
 
   const handleCall = () => {
@@ -70,7 +70,7 @@ const ManAirportResidencyPage = () => {
         name: "Man Airport Residency by Naani Projects",
         description: "Luxury 4BHK ready-to-occupy villas near Hyderabad Airport at Tukkuguda",
         url: "https://www.naani.in/projects/man-airport-residency-4bhk-villas-near-me-tukkuguda-hyderabad",
-        telephone: "+919705080909",
+        telephone: "+919493943946",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Mankhal, Tukkuguda",
@@ -154,7 +154,7 @@ const ManAirportResidencyPage = () => {
     <>
       <SEOHead
         title="4BHK Villas in Tukkuguda Hyderabad | Man Airport Residency"
-        description="Looking for 4BHK villas near me? Explore ready-to-occupy luxury villas at Man Airport Residency, Tukkuguda Hyderabad near Airport & ORR. Call/WhatsApp +91 9705080909."
+        description="Looking for 4BHK villas near me? Explore ready-to-occupy luxury villas at Man Airport Residency, Tukkuguda Hyderabad near Airport & ORR. Call/WhatsApp +91 9493943946."
         canonicalUrl="https://www.naani.in/projects/man-airport-residency-4bhk-villas-near-me-tukkuguda-hyderabad"
         keywords="4BHK Villas near me, Villas in Tukkuguda Hyderabad, Villas near Hyderabad Airport, Ready to move villas in Hyderabad, Luxury villas in Tukkuguda, Villas near ORR Exit 14, Man Airport Residency"
         ogImage="https://www.naani.in/og/man-airport-residency.png"
@@ -188,7 +188,7 @@ const ManAirportResidencyPage = () => {
                 Book Site Visit
               </button>
               <a href={`tel:${PHONE}`} className="px-8 py-4 border-2 border-amber-500/50 text-amber-300 hover:bg-amber-500/10 rounded-xl font-bold transition-all text-lg">
-                📞 Call: +91 97050 80909
+                📞 Call: +91 94939 43946
               </a>
             </div>
           </div>
@@ -226,7 +226,7 @@ const ManAirportResidencyPage = () => {
             </div>
             <div className="text-center mt-10">
               <button onClick={handleWhatsApp} className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg transition-all text-lg">
-                <MessageCircle className="w-5 h-5 inline mr-2" /> WhatsApp: +91 97050 80909
+                <MessageCircle className="w-5 h-5 inline mr-2" /> WhatsApp: +91 94939 43946
               </button>
             </div>
           </div>
@@ -420,7 +420,7 @@ const ManAirportResidencyPage = () => {
             </div>
             <div className="mt-6">
               <a href={`tel:${PHONE}`} className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-                <Phone size={18} /> Call Now: +91 97050 80909
+                <Phone size={18} /> Call Now: +91 94939 43946
               </a>
             </div>
           </div>
@@ -447,7 +447,7 @@ const ManAirportResidencyPage = () => {
             <MessageCircle className="w-5 h-5" fill="white" /> WhatsApp
           </button>
         </div>
-        <p className="text-center text-xs text-gray-400 mt-2">+91 97050 80909</p>
+        <p className="text-center text-xs text-gray-400 mt-2">+91 94939 43946</p>
       </div>
 
       <LeadCapturePopup open={enquiryOpen} onOpenChange={setEnquiryOpen} source={enquirySource} projectName="Man Airport Residency" />

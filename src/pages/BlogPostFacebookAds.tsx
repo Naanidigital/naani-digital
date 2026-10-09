@@ -424,14 +424,14 @@ const BlogPostFacebookAds = () => {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="tel:+919705080909"
+                      href="tel:+919493943946"
                       className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-xl transition-all hover:scale-105"
                     >
                       <Phone size={20} />
-                      Call: 9705 08 0909
+                      Call: 94939 43946
                     </a>
                     <a
-                      href="https://wa.me/919705080909?text=Hi%2C%20I%20need%20help%20with%20Facebook%20Ads%20for%20my%20business%20in%20Hyderabad"
+                      href="https://wa.me/919493943946?text=Hi%2C%20I%20need%20help%20with%20Facebook%20Ads%20for%20my%20business%20in%20Hyderabad"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105"

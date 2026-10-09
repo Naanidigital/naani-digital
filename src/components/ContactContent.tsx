@@ -121,7 +121,7 @@ const ContactContent = () => {
                 Our team is available 7 days a week.
               </p>
               <a 
-                href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20want%20to%20discuss%20digital%20marketing%20services%20and%20pricing%20for%20my%20business."
+                href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20want%20to%20discuss%20digital%20marketing%20services%20and%20pricing%20for%20my%20business."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -158,8 +158,8 @@ const ContactContent = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Phone & WhatsApp</h3>
                     <p className="text-sm text-muted-foreground mb-1">Available 7 days a week</p>
-                    <a href="tel:+918185856789" className="text-accent hover:underline font-medium">
-                      +91 81858 56789
+                    <a href="tel:+919493943946" className="text-accent hover:underline font-medium">
+                      +91 94939 43946
                     </a>
                   </div>
                 </CardContent>
@@ -378,11 +378,11 @@ const ContactContent = () => {
               </span>
               {" • "}
               <a 
-                href="tel:+918185856789" 
+                href="tel:+919493943946" 
                 itemProp="telephone" 
                 className="text-primary hover:underline"
               >
-                +91 81858 56789
+                +91 94939 43946
               </a>
             </address>
 
@@ -422,7 +422,7 @@ const ContactContent = () => {
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20want%20a%20free%20consultation%20for%20my%20business."
+              href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20want%20a%20free%20consultation%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
             >

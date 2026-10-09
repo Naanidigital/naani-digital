@@ -25,7 +25,7 @@ const CTAButton = ({ text, className = "", onClick }: { text: string; className?
 const faqs = [
   {
     q: "What is the price of Aspire Spaces Aarna?",
-    a: "Aspire Spaces Aarna offers competitive pricing starting at ₹4,500/sft (all inclusive). Final pricing depends on the configuration, floor, and unit orientation. Contact us on WhatsApp at +91 9705080909 for the latest offers and payment plans.",
+    a: "Aspire Spaces Aarna offers competitive pricing starting at ₹4,500/sft (all inclusive). Final pricing depends on the configuration, floor, and unit orientation. Contact us on WhatsApp at +91 9493943946 for the latest offers and payment plans.",
   },
   {
     q: "Where is Aspire Spaces Aarna located?",
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "How do I book a site visit at Aspire Spaces Aarna?",
-    a: "Simply WhatsApp +91 9705080909 with your preferred date and time. Our team will confirm your slot and arrange a visit. You can also call the same number for instant assistance.",
+    a: "Simply WhatsApp +91 9493943946 with your preferred date and time. Our team will confirm your slot and arrange a visit. You can also call the same number for instant assistance.",
   },
 ];
 
@@ -76,7 +76,7 @@ const AspireSpacesA3Page = () => {
 
   const openPopup = () => setPopupOpen(true);
 
-  const waLink = `https://wa.me/919705080909?text=${encodeURIComponent("Hi, I'm interested in Aspire Spaces Aarna Bachupally. Please share price details and availability.")}`;
+  const waLink = `https://wa.me/919493943946?text=${encodeURIComponent("Hi, I'm interested in Aspire Spaces Aarna Bachupally. Please share price details and availability.")}`;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -411,8 +411,8 @@ const AspireSpacesA3Page = () => {
               </a>
             </div>
             <div className="mt-6">
-              <a href="tel:+919705080909" className="call-btn text-[#01B4BA] hover:text-[#FF7A0F] font-semibold text-lg transition-colors">
-                📞 Call Now: +91 97050 80909
+              <a href="tel:+919493943946" className="call-btn text-[#01B4BA] hover:text-[#FF7A0F] font-semibold text-lg transition-colors">
+                📞 Call Now: +91 94939 43946
               </a>
             </div>
           </div>
@@ -431,7 +431,7 @@ const AspireSpacesA3Page = () => {
         {/* Mobile Sticky Bar */}
         <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-amber-400/20 p-3 md:hidden">
           <div className="flex gap-3">
-            <a href="tel:+919705080909" className="call-btn flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-xl font-medium">
+            <a href="tel:+919493943946" className="call-btn flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-xl font-medium">
               <Phone className="w-5 h-5" /> Call Now
             </a>
             <a href={waLink} target="_blank" rel="noopener noreferrer"

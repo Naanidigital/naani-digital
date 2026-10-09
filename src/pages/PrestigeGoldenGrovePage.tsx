@@ -118,7 +118,7 @@ const structuredData = {
       "@type": "LocalBusiness",
       "@id": "https://www.naani.in/#prestige-golden-grove-agent",
       "name": "Naani Projects – Prestige Golden Grove Sales",
-      "telephone": "+91-9705080909",
+      "telephone": "+91-9493943946",
       "url": "https://www.naani.in/projects/prestige-golden-grove-hyderabad",
       "address": {
         "@type": "PostalAddress",
@@ -130,7 +130,7 @@ const structuredData = {
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-9705080909",
+        "telephone": "+91-9493943946",
         "contactType": "Sales",
         "availableLanguage": ["English", "Telugu", "Hindi"]
       }
@@ -654,13 +654,13 @@ const PrestigeGoldenGrovePage = () => {
             <button data-lead-gate="brochure" onClick={() => openLead("Get Latest Offers")} className="lead-btn bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/40 font-bold w-52 h-12 inline-flex items-center justify-center rounded-xl shadow-lg transition-all hover:scale-105">
               Get Latest Offers
             </button>
-            <a href="https://wa.me/919705080909?text=Hi%2C%20I%27m%20interested%20in%20Prestige%20Golden%20Grove" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold w-52 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all hover:scale-105">
+            <a href="https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20Prestige%20Golden%20Grove" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold w-52 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all hover:scale-105">
               <MessageCircle size={20} /> WhatsApp Us
             </a>
           </div>
           <div className="mt-6">
-            <a href="tel:+919705080909" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+            <a href="tel:+919493943946" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
@@ -687,7 +687,7 @@ const PrestigeGoldenGrovePage = () => {
             Enquire Now
           </button>
           <a
-            href="tel:+919705080909"
+            href="tel:+919493943946"
             className="call-btn flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-3 rounded-xl font-semibold text-sm"
           >
             <Phone size={18} />

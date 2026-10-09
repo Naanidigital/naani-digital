@@ -178,7 +178,7 @@ const ServiceDetail = () => {
 
   const handleWhatsApp = () => {
     const message = `Hi Naani Projects! I'm interested in your ${service.title}. Can we discuss how you can help my business grow?`;
-    window.open(`https://wa.me/919502541934?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/919493943946?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const structuredData = seoData ? {

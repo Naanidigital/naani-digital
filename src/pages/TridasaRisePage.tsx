@@ -68,7 +68,7 @@ const TridasaRisePage = () => {
         "name": "Tridasa Rise by Naani Projects",
         "description": "Premium 3 & 4 BHK apartments in Nallagandla, Hyderabad",
         "url": "https://www.naani.in/projects/tridasa-rise",
-        "telephone": "+919705080909",
+        "telephone": "+919493943946",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Nallagandla",
@@ -164,13 +164,13 @@ const TridasaRisePage = () => {
               <button data-lead-gate="brochure" onClick={() => openEnquiry("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-md bg-[#040957] hover:bg-[#020536] text-white transition-all hover:scale-105">
                 Get Latest Offers
               </button>
-              <a href="https://wa.me/919705080909?text=Hi%2C%20I%27m%20interested%20in%20Tridasa%20Rise" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl shadow-md transition-all hover:scale-105 text-lg">
+              <a href="https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20Tridasa%20Rise" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl shadow-md transition-all hover:scale-105 text-lg">
                 <MessageCircle size={20} /> WhatsApp Us
               </a>
             </div>
             <div className="mt-6">
-              <a href="tel:+919705080909" className="call-btn text-[#0080FF] hover:text-[#040957] font-bold text-lg transition-colors inline-flex items-center gap-2">
-                <Phone size={18} /> Call Now: +91 97050 80909
+              <a href="tel:+919493943946" className="call-btn text-[#0080FF] hover:text-[#040957] font-bold text-lg transition-colors inline-flex items-center gap-2">
+                <Phone size={18} /> Call Now: +91 94939 43946
               </a>
             </div>
           </div>

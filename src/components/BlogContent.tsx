@@ -203,7 +203,7 @@ const BlogContent = () => {
                 WhatsApp. Our team is happy to answer your digital marketing questions and provide personalized advice.
               </p>
               <a 
-                href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20have%20a%20question%20about%20digital%20marketing."
+                href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20have%20a%20question%20about%20digital%20marketing."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -280,7 +280,7 @@ const BlogContent = () => {
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20want%20to%20discuss%20digital%20marketing%20for%20my%20business."
+              href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20want%20to%20discuss%20digital%20marketing%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
             >

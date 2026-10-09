@@ -4,8 +4,8 @@
 export const LEAD_API_ENDPOINT =
   "https://script.google.com/macros/s/AKfycby30gkREDd8MHYr_OAHgD9TNq-4sfUZ49b4apFQUn8Ta_9K5x2ugDfAaNeoQi-3OwtWmg/exec";
 
-export const NAANI_PHONE = "+919705080909";
-export const NAANI_WA = "919705080909";
+export const NAANI_PHONE = "+919493943946";
+export const NAANI_WA = "919493943946";
 
 export type LookingFor =
   | "2 BHK"

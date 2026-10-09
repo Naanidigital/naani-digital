@@ -17,8 +17,8 @@ import towerG from "@/assets/team4-aria/tower-g.png";
 
 const PROJECT_NAME = "Team4 Aria Miyapur";
 const WA_MSG = encodeURIComponent("Hi, I'm interested in Team4 Aria Miyapur. Please share details.");
-const WA_LINK = `https://wa.me/919705080909?text=${WA_MSG}`;
-const CALL_LINK = "tel:+919705080909";
+const WA_LINK = `https://wa.me/919493943946?text=${WA_MSG}`;
+const CALL_LINK = "tel:+919493943946";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -36,7 +36,7 @@ const structuredData = {
     {
       "@type": "LocalBusiness",
       "name": "Team4 Aria Miyapur Sales Office",
-      "telephone": "+91-9705080909",
+      "telephone": "+91-9493943946",
       "address": { "@type": "PostalAddress", "addressLocality": "Miyapur, Hyderabad", "addressCountry": "India" },
       "url": "https://www.naani.in/projects/team4-aria-miyapur-luxury-apartments-hyderabad"
     },
@@ -69,7 +69,7 @@ const amenityCategories = [
 ];
 
 const faqs = [
-  { q: "What is the price of Team4 Aria Miyapur?", a: "EOI Price starts from ₹6,099 – ₹6,399 per sq.ft. Special OTP pricing is available during the pre-launch phase. Contact us at 9705080909 for the latest offers." },
+  { q: "What is the price of Team4 Aria Miyapur?", a: "EOI Price starts from ₹6,099 – ₹6,399 per sq.ft. Special OTP pricing is available during the pre-launch phase. Contact us at 9493943946 for the latest offers." },
   { q: "What are the unit configurations available?", a: "Team4 Aria offers spacious 3 BHK (1490–1998 sq.ft) and 3.5 BHK (2056–2218 sq.ft) ultra luxury apartments designed for maximum ventilation and natural light." },
   { q: "When is the expected possession date?", a: "Expected possession is January 2031. The project is currently in Pre-Launch / EOI Phase. RERA Number: P02400010543." },
   { q: "Where is Team4 Aria Miyapur located?", a: "Located in Miyapur, Hyderabad – just 4 mins from Miyapur Metro Station, with easy connectivity to HITEC City, Gachibowli, and ORR." },
@@ -442,7 +442,7 @@ const Team4AriaMiyapurPage = () => {
           </div>
           <div className="mt-6">
             <a href={CALL_LINK} className="call-btn text-[#01B4BA] hover:text-[#FF7A0F] font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
@@ -475,7 +475,7 @@ const Team4AriaMiyapurPage = () => {
             <div>
               <h3 className="font-semibold text-amber-300 mb-4">Contact</h3>
               <div className="space-y-3">
-                <a href={CALL_LINK} className="call-btn flex items-center gap-2 text-gray-300 hover:text-amber-300 text-sm"><Phone className="w-4 h-4" />+91 97050 80909</a>
+                <a href={CALL_LINK} className="call-btn flex items-center gap-2 text-gray-300 hover:text-amber-300 text-sm"><Phone className="w-4 h-4" />+91 94939 43946</a>
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center gap-2 text-gray-300 hover:text-green-400 text-sm"><MessageCircle className="w-4 h-4" />WhatsApp</a>
               </div>
             </div>

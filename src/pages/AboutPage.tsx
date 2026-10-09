@@ -6,8 +6,8 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import { Button } from "../components/ui/button";
 
-const WA_URL = "https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.";
-const TEL = "tel:+919705080909";
+const WA_URL = "https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.";
+const TEL = "tel:+919493943946";
 
 const AboutPage = () => {
   const faqs = [
@@ -37,7 +37,7 @@ const AboutPage = () => {
     },
     {
       question: "How can I contact Naani Projects?",
-      answer: "You can easily contact Naani Projects via WhatsApp at +91 97050 80909, call us directly, or send an enquiry through our official contact page. Our property discovery advisors respond promptly with customized project information."
+      answer: "You can easily contact Naani Projects via WhatsApp at +91 94939 43946, call us directly, or send an enquiry through our official contact page. Our property discovery advisors respond promptly with customized project information."
     },
     {
       question: "Does Naani Projects verify project information?",
@@ -78,7 +78,7 @@ const AboutPage = () => {
       "caption": "Naani Projects Logo"
     },
     "image": "https://www.naani.in/naani-projects-hyderabad-real-estate-team.webp",
-    "telephone": "+919705080909",
+    "telephone": "+919493943946",
     "email": "info@naani.in",
     "description": "Naani Projects is a specialized Hyderabad real estate discovery platform helping property buyers explore apartments, villas, plots, and new residential developments.",
     "address": {
@@ -95,7 +95,7 @@ const AboutPage = () => {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+919705080909",
+      "telephone": "+919493943946",
       "contactType": "Customer Service",
       "areaServed": "IN",
       "availableLanguage": ["English", "Telugu", "Hindi"]

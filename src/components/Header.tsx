@@ -29,7 +29,7 @@ const Header = () => {
 
   const openWhatsApp = () =>
     window.open(
-      "https://wa.me/919705080909?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.%20Please%20share%20options.",
+      "https://wa.me/919493943946?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.%20Please%20share%20options.",
       "_blank"
     );
 
@@ -78,7 +78,7 @@ const Header = () => {
               variant="outline"
               size="sm"
               className="bg-transparent border-amber-500/50 text-amber-400 hover:bg-amber-500/20 font-bold px-4 py-2 rounded-xl transition-all"
-              onClick={() => (window.location.href = "tel:+919705080909")}
+              onClick={() => (window.location.href = "tel:+919493943946")}
             >
               <Phone size={15} className="mr-1.5" />
               Call Now
@@ -120,7 +120,7 @@ const Header = () => {
                   variant="outline"
                   size="sm"
                   className="bg-transparent border-amber-500/50 text-amber-400 font-bold"
-                  onClick={() => (window.location.href = "tel:+919705080909")}
+                  onClick={() => (window.location.href = "tel:+919493943946")}
                 >
                   <Phone size={14} className="mr-2" /> Call Now
                 </Button>

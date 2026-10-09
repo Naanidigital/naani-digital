@@ -15,8 +15,8 @@ import { matchesSlug, isBuilderSeoSlug, builderSlugFromSeo, titleCase } from "@/
 import NotFound from "@/pages/NotFound";
 
 const SITE = "https://www.naani.in";
-const WA = "https://wa.me/919705080909";
-const TEL = "tel:+919705080909";
+const WA = "https://wa.me/919493943946";
+const TEL = "tel:+919493943946";
 
 const BUILDER_BLURB: Record<string, string> = {
   "aparna-constructions": "Aparna Constructions develops residential gated communities across Hyderabad, with major projects in Kondapur, Tellapur, Bachupally, and Kompally.",
@@ -73,11 +73,11 @@ const BuilderHubPage = ({ builderSeoSlugOverride }: BuilderHubPageProps = {}) =>
 
   const faqs = [
     { question: `How many projects does ${displayName} have listed in Hyderabad?`, answer: `${displayName} has ${matching.length || "several"} active and upcoming residential projects listed on Naani Projects across Hyderabad.` },
-    { question: `Are ${displayName} projects RERA-approved?`, answer: `Yes. Every ${displayName} project listed on Naani Projects is RERA-registered. Contact us on WhatsApp at +91 97050 80909 for specific RERA registration numbers.` },
+    { question: `Are ${displayName} projects RERA-approved?`, answer: `Yes. Every ${displayName} project listed on Naani Projects is RERA-registered. Contact us on WhatsApp at +91 94939 43946 for specific RERA registration numbers.` },
     { question: `What is the general price range for ${displayName} apartments?`, answer: `Pricing for ${displayName} developments varies by location, floor plan size, and project stage. Contact Naani Projects on WhatsApp for updated pricing.` },
     { question: `Where can I find floor plans and brochures for ${displayName} projects?`, answer: `Select any ${displayName} project listed below to view floor plan options, layout details, and pricing breakdowns.` },
     { question: `Do homebuyers pay advisory fees to Naani Projects?`, answer: `No, our property discovery and advisory services are free for homebuyers.` },
-    { question: `How do I schedule a site visit for a ${displayName} project?`, answer: `Message +91 97050 80909 on WhatsApp with your preferred project and visit timing to arrange a site visit.` },
+    { question: `How do I schedule a site visit for a ${displayName} project?`, answer: `Message +91 94939 43946 on WhatsApp with your preferred project and visit timing to arrange a site visit.` },
   ];
 
   const breadcrumbSchema = {
@@ -157,7 +157,7 @@ const BuilderHubPage = ({ builderSeoSlugOverride }: BuilderHubPageProps = {}) =>
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary">
-                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 97050 80909</a>
+                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 94939 43946</a>
               </Button>
             </div>
 
@@ -238,7 +238,7 @@ const BuilderHubPage = ({ builderSeoSlugOverride }: BuilderHubPageProps = {}) =>
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary">
-                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 97050 80909</a>
+                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 94939 43946</a>
               </Button>
             </div>
           </div>

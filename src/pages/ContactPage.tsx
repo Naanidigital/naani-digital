@@ -10,8 +10,8 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { toast } from "sonner";
 
-const WA_URL = "https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.";
-const TEL = "tel:+919705080909";
+const WA_URL = "https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.";
+const TEL = "tel:+919493943946";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", location: "", budget: "", propertyType: "", message: "" });
@@ -30,7 +30,7 @@ const ContactPage = () => {
     setTimeout(() => {
       setSubmitting(false);
       toast.success("Inquiry sent! Opening WhatsApp to confirm with our expert.");
-      window.open(`https://wa.me/919705080909?text=${text}`, "_blank");
+      window.open(`https://wa.me/919493943946?text=${text}`, "_blank");
       setForm({ name: "", phone: "", email: "", location: "", budget: "", propertyType: "", message: "" });
     }, 600);
   };
@@ -38,7 +38,7 @@ const ContactPage = () => {
   const faqs = [
     {
       question: "How can I contact Naani Projects?",
-      answer: "You can easily contact Naani Projects via WhatsApp at +91 97050 80909, call us directly at +91 97050 80909, email digitalnaani@gmail.com, or submit a property enquiry through our online form. Our property discovery team responds promptly during business hours."
+      answer: "You can easily contact Naani Projects via WhatsApp at +91 94939 43946, call us directly at +91 94939 43946, email digitalnaani@gmail.com, or submit a property enquiry through our online form. Our property discovery team responds promptly during business hours."
     },
     {
       question: "What types of properties can I enquire about?",
@@ -103,7 +103,7 @@ const ContactPage = () => {
       "caption": "Naani Projects Logo"
     },
     "image": "https://www.naani.in/naani-projects-contact-hyderabad-real-estate.webp",
-    "telephone": "+919705080909",
+    "telephone": "+919493943946",
     "email": "digitalnaani@gmail.com",
     "description": "Contact Naani Projects for apartments, villas, plots and new residential projects in Hyderabad. Get property details, compare projects or request a site visit.",
     "address": {
@@ -120,7 +120,7 @@ const ContactPage = () => {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+919705080909",
+      "telephone": "+919493943946",
       "contactType": "Customer Service",
       "areaServed": "IN",
       "availableLanguage": ["English", "Telugu", "Hindi"]
@@ -277,7 +277,7 @@ const ContactPage = () => {
                   <Phone size={20} />
                 </div>
                 <h3 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors">Call Us</h3>
-                <p className="text-amber-400 font-bold text-sm">+91 97050 80909</p>
+                <p className="text-amber-400 font-bold text-sm">+91 94939 43946</p>
                 <p className="text-xs text-slate-400">Speak directly with a Hyderabad property expert.</p>
               </a>
 
@@ -286,7 +286,7 @@ const ContactPage = () => {
                   <MessageCircle size={20} />
                 </div>
                 <h3 className="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">WhatsApp</h3>
-                <p className="text-emerald-400 font-bold text-sm">+91 97050 80909</p>
+                <p className="text-emerald-400 font-bold text-sm">+91 94939 43946</p>
                 <p className="text-xs text-slate-400">Instant project details, floor plans &amp; pricing.</p>
               </a>
 
@@ -365,7 +365,7 @@ const ContactPage = () => {
 
                   <div className="sm:col-span-1">
                     <label htmlFor="contact-phone" className="text-xs font-bold text-amber-400 mb-1 block">Mobile Number *</label>
-                    <Input id="contact-phone" name="phone" value={form.phone} onChange={handleChange} required type="tel" placeholder="+91 97050 80909" className="bg-[#0B101D] border-slate-700 text-white font-medium text-sm" />
+                    <Input id="contact-phone" name="phone" value={form.phone} onChange={handleChange} required type="tel" placeholder="+91 94939 43946" className="bg-[#0B101D] border-slate-700 text-white font-medium text-sm" />
                   </div>
 
                   <div className="sm:col-span-2">

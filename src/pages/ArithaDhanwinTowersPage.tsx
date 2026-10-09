@@ -268,7 +268,7 @@ const FAQS = [
   },
   {
     q: "Can I schedule a site visit?",
-    a: "Yes. Click 'Schedule Site Visit' anywhere on this page or call +91 97050 80909 to arrange a personalised on-site walkthrough at your convenient time.",
+    a: "Yes. Click 'Schedule Site Visit' anywhere on this page or call +91 94939 43946 to arrange a personalised on-site walkthrough at your convenient time.",
   },
 ];
 
@@ -1124,7 +1124,7 @@ const ArithaDhanwinTowersPage = () => {
           </div>
           <div className="mt-6">
             <a href={`tel:${NAANI_PHONE}`} className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <PhoneIcon size={18} /> Call Now: +91 97050 80909
+              <PhoneIcon size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>

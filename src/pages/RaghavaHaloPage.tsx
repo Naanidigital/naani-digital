@@ -183,7 +183,7 @@ const FAQS = [
   },
   {
     q: "What is the launch price of Raghava Halo Kondapur?",
-    a: "Pre-launch pricing starts at ₹7,800 per sq.ft. EOI is open for the first 100 customers at ₹6,500 — call +91 97050 80909 to confirm current pricing.",
+    a: "Pre-launch pricing starts at ₹7,800 per sq.ft. EOI is open for the first 100 customers at ₹6,500 — call +91 94939 43946 to confirm current pricing.",
   },
   {
     q: "Is Raghava Halo RERA approved?",
@@ -203,7 +203,7 @@ const FAQS = [
   },
   {
     q: "How can I schedule a site visit?",
-    a: "Click 'Schedule Site Visit' anywhere on this page or call +91 97050 80909. Our Naani Projects expert will coordinate a personalised on-site walkthrough at your convenient time.",
+    a: "Click 'Schedule Site Visit' anywhere on this page or call +91 94939 43946. Our Naani Projects expert will coordinate a personalised on-site walkthrough at your convenient time.",
   },
 ];
 
@@ -352,7 +352,7 @@ const RaghavaHaloPage = () => {
               <span className="w-10 h-10 rounded-full bg-amber-500/15 border border-amber-500/40 flex items-center justify-center">
                 <PhoneIcon className="w-5 h-5" />
               </span>
-              +91 97050 80909
+              +91 94939 43946
             </a>
           </motion.div>
         </div>
@@ -456,7 +456,7 @@ const RaghavaHaloPage = () => {
               </Button>
               <div className="mt-5">
                 <a href={`tel:${NAANI_PHONE}`} className="call-btn text-amber-400 font-semibold inline-flex items-center gap-2">
-                  <PhoneIcon className="w-4 h-4" /> +91 97050 80909
+                  <PhoneIcon className="w-4 h-4" /> +91 94939 43946
                 </a>
               </div>
               <p className="text-xs text-muted-foreground mt-4">* Indicative. Final pricing on confirmation.</p>
@@ -650,7 +650,7 @@ const RaghavaHaloPage = () => {
           </div>
           <div className="mt-6">
             <a href={`tel:${NAANI_PHONE}`} className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <PhoneIcon className="w-5 h-5" /> Call Now: +91 97050 80909
+              <PhoneIcon className="w-5 h-5" /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
@@ -686,7 +686,7 @@ const RaghavaHaloPage = () => {
             <a href="/" className="text-amber-500 hover:underline font-semibold">Naani Projects</a> · Hyderabad
           </p>
           <p className="text-xs text-muted-foreground mt-2">
-            +91 97050 80909 · Disclaimer: All visuals are artistic impressions. Pricing & specifications subject to change at the developer's discretion.
+            +91 94939 43946 · Disclaimer: All visuals are artistic impressions. Pricing & specifications subject to change at the developer's discretion.
           </p>
         </div>
       </footer>

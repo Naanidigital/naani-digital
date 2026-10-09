@@ -19,8 +19,8 @@ import clubhouseImg from "@/assets/rajapushpa-sierra/clubhouse.png";
 
 const PROJECT_NAME = "Rajapushpa Sierra";
 const WA_MSG = encodeURIComponent("Hi, I'm interested in Rajapushpa Sierra. Please share details.");
-const WA_LINK = `https://wa.me/919705080909?text=${WA_MSG}`;
-const CALL_LINK = "tel:+919705080909";
+const WA_LINK = `https://wa.me/919493943946?text=${WA_MSG}`;
+const CALL_LINK = "tel:+919493943946";
 const PAGE_URL = "https://www.naani.in/projects/rajapushpa-sierra-tellapur-hyderabad";
 
 const structuredData = {
@@ -40,7 +40,7 @@ const structuredData = {
 
       "@type": "RealEstateAgent",
       "name": "Naani Projects – Rajapushpa Sierra Sales Partner",
-      "telephone": "+91-9705080909",
+      "telephone": "+91-9493943946",
       "url": PAGE_URL,
       "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "India" }
     },
@@ -63,7 +63,7 @@ const faqs = [
   { q: "Is Rajapushpa Sierra a good investment?", a: "Yes. Tellapur is one of Hyderabad's fastest-appreciating zones thanks to IT-corridor proximity, planned infrastructure, and strong rental demand. Rajapushpa is a trusted developer known for timely delivery." },
   { q: "What is the possession date of Rajapushpa Sierra?", a: "Possession is expected by 2030. The project is currently under construction with active EOI and bookings open in the pre-launch phase." },
   { q: "What amenities are available at Rajapushpa Sierra?", a: "Residents get a 1.5 lakh sqft grand clubhouse and sports complex, swimming pool, gym, indoor games, multiple sports courts, kids play area, jogging tracks, co-working spaces, and 24/7 security." },
-  { q: "Is Rajapushpa Sierra RERA approved?", a: "Yes, Rajapushpa Sierra is RERA approved. Connect with our team on +91 97050 80909 for the full RERA registration details." },
+  { q: "Is Rajapushpa Sierra RERA approved?", a: "Yes, Rajapushpa Sierra is RERA approved. Connect with our team on +91 94939 43946 for the full RERA registration details." },
   { q: "How many towers and floors are there?", a: "Sierra has 9 iconic towers with G+49 floors and 3,537 premium residences spread across 21.1 acres with 76% open spaces." },
 ];
 
@@ -417,7 +417,7 @@ const RajapushpaSierraPage = () => {
           </div>
           <div className="mt-6">
             <a href={CALL_LINK} className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
@@ -450,7 +450,7 @@ const RajapushpaSierraPage = () => {
             <div>
               <h3 className="font-semibold text-amber-300 mb-4">Contact</h3>
               <div className="space-y-3">
-                <a href={CALL_LINK} className="call-btn flex items-center gap-2 text-gray-300 hover:text-amber-300 text-sm"><Phone className="w-4 h-4" />+91 97050 80909</a>
+                <a href={CALL_LINK} className="call-btn flex items-center gap-2 text-gray-300 hover:text-amber-300 text-sm"><Phone className="w-4 h-4" />+91 94939 43946</a>
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center gap-2 text-gray-300 hover:text-green-400 text-sm"><MessageCircle className="w-4 h-4" />WhatsApp</a>
               </div>
             </div>

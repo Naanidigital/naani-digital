@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 const ServicesPage = () => {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/918185856789?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20digital%20marketing%20services", "_blank");
+    window.open("https://wa.me/919493943946?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20digital%20marketing%20services", "_blank");
   };
 
   const faqs = [

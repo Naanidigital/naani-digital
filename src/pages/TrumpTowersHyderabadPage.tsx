@@ -42,7 +42,7 @@ const HMDA_NO = "2128/HMDA/SWBP/2026 (RERA)";
 const RERA_COMPLETION_DATE = "15 May 2031";
 const LOCATION_NAME = "Golden Mile, Kokapet, Hyderabad";
 const SITE_ADDRESS = "Golden Mile, Kokapet, Gandipet Mandal, Hyderabad, Telangana – 500075";
-const PHONE_NUMBER = "9705080909";
+const PHONE_NUMBER = "9493943946";
 const CANONICAL_URL = "https://www.naani.in/projects/trump-towers-hyderabad-kokapet";
 
 const TrumpTowersHyderabadPage: React.FC = () => {
@@ -81,7 +81,7 @@ const TrumpTowersHyderabadPage: React.FC = () => {
           className="flex-1 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 border border-slate-700 transition"
         >
           <Phone className="w-3.5 h-3.5 text-amber-400" />
-          <span>Call 9705080909</span>
+          <span>Call 9493943946</span>
         </a>
         <button
           onClick={handleWhatsApp}
@@ -177,12 +177,12 @@ const TrumpTowersHyderabadPage: React.FC = () => {
                 className="w-full sm:w-auto bg-emerald-600/90 hover:bg-emerald-500 text-white text-base font-bold px-8 py-4 rounded-2xl border border-emerald-500/40 backdrop-blur-md transition flex items-center justify-center gap-2"
               >
                 <MessageSquare className="w-5 h-5" />
-                <span>WhatsApp 9705080909</span>
+                <span>WhatsApp 9493943946</span>
               </button>
             </div>
 
             <p className="text-xs text-slate-400 italic">
-              * Public pricing is available upon private request through Naani Projects. Contact 9705080909 for verified inventory details.
+              * Public pricing is available upon private request through Naani Projects. Contact 9493943946 for verified inventory details.
             </p>
           </div>
         </section>
@@ -261,7 +261,7 @@ const TrumpTowersHyderabadPage: React.FC = () => {
                   <tr className="hover:bg-slate-900/50">
                     <td className="py-3.5 px-6 font-semibold text-white">Public Pricing</td>
                     <td className="py-3.5 px-6 font-bold text-amber-400">
-                      Contact 9705080909 for current private pricing & inventory
+                      Contact 9493943946 for current private pricing & inventory
                     </td>
                   </tr>
                 </tbody>
@@ -1263,21 +1263,21 @@ const TrumpTowersHyderabadPage: React.FC = () => {
               <div className="p-6 bg-[#0B101D] rounded-2xl border border-slate-800 space-y-2">
                 <h3 className="text-base font-bold text-white">17. What is the current price of apartments in Trump Towers Hyderabad?</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Current pricing and availability vary by configuration, floor, orientation and inventory. Contact Naani Projects on <strong>9705080909</strong> for the latest private pricing information.
+                  Current pricing and availability vary by configuration, floor, orientation and inventory. Contact Naani Projects on <strong>9493943946</strong> for the latest private pricing information.
                 </p>
               </div>
 
               <div className="p-6 bg-[#0B101D] rounded-2xl border border-slate-800 space-y-2">
                 <h3 className="text-base font-bold text-white">18. How can I download the floor plans and e-brochure?</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Click the "Request Floor Plan" or "Download Brochure" buttons on this page, or WhatsApp Naani Projects at <strong>9705080909</strong> for instant layout sheets.
+                  Click the "Request Floor Plan" or "Download Brochure" buttons on this page, or WhatsApp Naani Projects at <strong>9493943946</strong> for instant layout sheets.
                 </p>
               </div>
 
               <div className="p-6 bg-[#0B101D] rounded-2xl border border-slate-800 space-y-2">
                 <h3 className="text-base font-bold text-white">19. How do I schedule a site visit for Trump Towers Hyderabad?</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Call or WhatsApp Naani Projects at <strong>9705080909</strong> or click "Schedule a Site Visit" to register your preferred date and time for a guided tour.
+                  Call or WhatsApp Naani Projects at <strong>9493943946</strong> or click "Schedule a Site Visit" to register your preferred date and time for a guided tour.
                 </p>
               </div>
             </div>

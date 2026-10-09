@@ -15,8 +15,8 @@ import { slugify, matchesSlug, titleCase } from "@/lib/seoSlug";
 import NotFound from "@/pages/NotFound";
 
 const SITE = "https://www.naani.in";
-const WA = "https://wa.me/919705080909";
-const TEL = "tel:+919705080909";
+const WA = "https://wa.me/919493943946";
+const TEL = "tel:+919493943946";
 
 // Curated long-tail locations with extra context. Any other location still works dynamically.
 const LOCATION_INTRO: Record<string, string> = {
@@ -46,9 +46,9 @@ const buildFaqs = (loc: string) => [
   { question: `Why consider buying property in ${loc}, Hyderabad?`, answer: `${loc} offers convenient access to IT corridors, Outer Ring Road connectivity, and growing social infrastructure, making it a popular choice for homebuyers and investors.` },
   { question: `What is the price range for apartments in ${loc}?`, answer: `Property prices in ${loc} vary based on builder, BHK configuration, floor area, and amenities. Contact Naani Projects on WhatsApp for updated pricing on specific projects.` },
   { question: `Which developers have active projects in ${loc}?`, answer: `Developers active in ${loc} include Aparna, Brigade, Prestige, My Home, Rajapushpa, Candeur, Anuhar, and Team4. You can compare their floor plans and status on Naani Projects.` },
-  { question: `Are ready-to-move flats available in ${loc}?`, answer: `Yes, ${loc} has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 97050 80909 to get matching options.` },
+  { question: `Are ready-to-move flats available in ${loc}?`, answer: `Yes, ${loc} has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 94939 43946 to get matching options.` },
   { question: `Is ${loc} suitable for rental income?`, answer: `${loc} sees regular rental interest due to its proximity to IT hubs and office corridors. Rental returns depend on unit size, furnishings, and project location.` },
-  { question: `How can I schedule a site visit in ${loc}?`, answer: `Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.` },
+  { question: `How can I schedule a site visit in ${loc}?`, answer: `Select any project on our website or message +91 94939 43946 on WhatsApp with your preferred date and time to arrange a site visit.` },
   { question: `Do buyers pay any advisory fees to Naani Projects?`, answer: `No, our project discovery and advisory service is free for homebuyers.` },
 ];
 
@@ -122,7 +122,7 @@ const LocationHubPage = ({ locationSlugOverride }: LocationHubPageProps = {}) =>
     name: `Naani Projects — ${displayName}`,
     image: `${SITE}/naani-projects-logo.png`,
     url: canonical,
-    telephone: "+91 9705080909",
+    telephone: "+91 9493943946",
     areaServed: { "@type": "Place", name: `${displayName}, Hyderabad` },
     address: { "@type": "PostalAddress", addressLocality: displayName, addressRegion: "Telangana", addressCountry: "IN" },
   };
@@ -187,7 +187,7 @@ const LocationHubPage = ({ locationSlugOverride }: LocationHubPageProps = {}) =>
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary">
-                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 97050 80909</a>
+                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 94939 43946</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-accent/40 text-accent">
                 <a href={`${WA}?text=${encodeURIComponent(`Hi, I want to book a site visit in ${displayName}.`)}`} target="_blank" rel="noopener noreferrer">
@@ -294,7 +294,7 @@ const LocationHubPage = ({ locationSlugOverride }: LocationHubPageProps = {}) =>
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary">
-                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 97050 80909</a>
+                <a href={TEL}><Phone className="mr-2" size={18} /> Call +91 94939 43946</a>
               </Button>
             </div>
           </div>

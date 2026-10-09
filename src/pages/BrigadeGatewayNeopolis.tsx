@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     q: "What is the price of apartments in Brigade Gateway Neopolis Kokapet?",
-    a: "Pricing varies by configuration, floor, and unit orientation. For the latest pricing, payment plans, and availability, WhatsApp or call +91 9705080909 and our team will provide you with a customized quote within minutes.",
+    a: "Pricing varies by configuration, floor, and unit orientation. For the latest pricing, payment plans, and availability, WhatsApp or call +91 9493943946 and our team will provide you with a customized quote within minutes.",
   },
   {
     q: "How do I book a site visit at Brigade Gateway Neopolis?",
-    a: "Simply WhatsApp +91 9705080909 with your preferred date and time. Our team will confirm your slot and arrange a complimentary pickup if required. You can also call the same number for instant assistance.",
+    a: "Simply WhatsApp +91 9493943946 with your preferred date and time. Our team will confirm your slot and arrange a complimentary pickup if required. You can also call the same number for instant assistance.",
   },
 ];
 
@@ -126,7 +126,7 @@ const structuredData = {
       "@type": "LocalBusiness",
       "@id": "https://www.naani.in/#brigade-agent",
       "name": "Naani Projects – Brigade Gateway Neopolis Sales",
-      "telephone": "+91-9705080909",
+      "telephone": "+91-9493943946",
       "url": "https://www.naani.in/projects/brigade-gateway-neopolis-kokapet-hyderabad",
       "address": {
         "@type": "PostalAddress",
@@ -138,7 +138,7 @@ const structuredData = {
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-9705080909",
+        "telephone": "+91-9493943946",
         "contactType": "Sales",
         "availableLanguage": ["English", "Telugu", "Hindi"]
       }
@@ -172,7 +172,7 @@ const BrigadeGatewayNeopolis = () => {
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <SEOHead
         title="Brigade Gateway Neopolis Kokapet | Luxury Apartments"
-        description="Explore Brigade Gateway Neopolis – premium 3, 4, 5 & 6 BHK homes in Kokapet, Hyderabad with world-class amenities, sky-high towers, and excellent connectivity. Call/WhatsApp +91 9705080909."
+        description="Explore Brigade Gateway Neopolis – premium 3, 4, 5 & 6 BHK homes in Kokapet, Hyderabad with world-class amenities, sky-high towers, and excellent connectivity. Call/WhatsApp +91 9493943946."
         canonicalUrl="https://www.naani.in/projects/brigade-gateway-neopolis-kokapet-hyderabad"
         keywords="Brigade Gateway Neopolis Hyderabad, luxury apartments in Kokapet Hyderabad, 4 BHK flats near ORR Hyderabad, Brigade Group apartments Neopolis, Brigade Gateway Hyderabad real estate"
         ogImage="https://www.naani.in/og/brigade-gateway-neopolis.png"
@@ -662,13 +662,13 @@ const BrigadeGatewayNeopolis = () => {
             <button data-lead-gate="brochure" onClick={() => openLead("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-semibold rounded-lg shadow-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-all hover:scale-105">
               Get Latest Offers
             </button>
-            <a href="https://wa.me/919705080909?text=Hi%2C%20I%27m%20interested%20in%20Brigade%20Gateway%20Neopolis" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105 text-lg">
+            <a href="https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20Brigade%20Gateway%20Neopolis" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105 text-lg">
               <MessageCircle size={20} /> WhatsApp Us
             </a>
           </div>
           <div className="mt-6">
-            <a href="tel:+919705080909" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+            <a href="tel:+919493943946" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
@@ -695,7 +695,7 @@ const BrigadeGatewayNeopolis = () => {
             Enquire Now
           </button>
           <a
-            href="tel:+919705080909"
+            href="tel:+919493943946"
             className="call-btn flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white py-3 rounded-xl font-semibold text-sm"
           >
             <Phone size={18} />

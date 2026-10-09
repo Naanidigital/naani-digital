@@ -53,7 +53,7 @@ const StickyContact = () => {
           </a>
         </div>
         <p className="text-center text-xs text-muted-foreground mt-2">
-          +91 97050 80909
+          +91 94939 43946
         </p>
       </div>
     </>

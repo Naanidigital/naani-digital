@@ -17,7 +17,7 @@ import gallery2 from "@/assets/sri-soho/gallery-2.jpg";
 import gallery3 from "@/assets/sri-soho/gallery-3.jpg";
 import logo from "@/assets/sri-soho/logo.png";
 
-const PHONE = "+919705080909";
+const PHONE = "+919493943946";
 const WA_MSG = encodeURIComponent("Hi, I am interested in interior design services in Hyderabad. Please share details.");
 const PROJECT_NAME = "Sri Soho Interiors";
 
@@ -46,7 +46,7 @@ const SriSohoInteriorsPage = () => {
 
   const openEnquiry = (src: string) => { setEnquirySource(src); setEnquiryOpen(true); };
   const handleCall = () => { window.location.href = `tel:${PHONE}`; };
-  const handleWhatsApp = () => { window.open(`https://wa.me/919705080909?text=${WA_MSG}`, "_blank"); };
+  const handleWhatsApp = () => { window.open(`https://wa.me/919493943946?text=${WA_MSG}`, "_blank"); };
 
   useEffect(() => {
     const onScroll = () => setHeaderScrolled(window.scrollY > 50);
@@ -72,7 +72,7 @@ const SriSohoInteriorsPage = () => {
     "@type": "LocalBusiness",
     name: "Sri Soho Interiors",
     image: "https://www.naani.in/images/sri-soho-interiors.jpg",
-    telephone: "+91-9705080909",
+    telephone: "+91-9493943946",
     address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressCountry: "India" },
     url: "https://www.naani.in/projects/sri-soho-interiors-designers-hyderabad",
     sameAs: [],
@@ -92,7 +92,7 @@ const SriSohoInteriorsPage = () => {
     <div className="min-h-screen bg-[#faf8f5] text-[#2d2d2d] font-sans">
       <Helmet>
         <title>Best Interior Designers in Hyderabad | Sri Soho Interiors</title>
-        <meta name="description" content="Looking for interior designers in Hyderabad? Explore Sri Soho Interiors project offering modular kitchens, home interiors & luxury designs. Call 9705080909." />
+        <meta name="description" content="Looking for interior designers in Hyderabad? Explore Sri Soho Interiors project offering modular kitchens, home interiors & luxury designs. Call 9493943946." />
         <meta name="keywords" content="interior designers in Hyderabad, home interiors Hyderabad, modular kitchen Hyderabad, Sri Soho Interiors, luxury interior design Hyderabad, 2BHK interiors, 3BHK interiors, villa interiors Hyderabad" />
         <link rel="canonical" href="https://www.naani.in/projects/sri-soho-interiors-designers-hyderabad" />
         <meta property="og:title" content="Best Interior Designers in Hyderabad | Sri Soho Interiors" />
@@ -337,7 +337,7 @@ const SriSohoInteriorsPage = () => {
           </div>
           <div className="mt-6">
             <a href={`tel:${PHONE}`} className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>

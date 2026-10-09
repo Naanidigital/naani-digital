@@ -240,7 +240,7 @@ const PortfolioContent = () => {
                 deliver similar results for your Hyderabad business.
               </p>
               <a 
-                href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20want%20to%20see%20portfolio%20samples%20for%20my%20industry."
+                href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20want%20to%20see%20portfolio%20samples%20for%20my%20industry."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -293,7 +293,7 @@ const PortfolioContent = () => {
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20my%20project."
+              href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
             >

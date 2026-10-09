@@ -60,7 +60,7 @@ export const POPUP_CONFIGS: Record<
     leadSource: "callback_request",
   },
   whatsapp_click: {
-    title: "Connect via WhatsApp on 9705080909",
+    title: "Connect via WhatsApp on 9493943946",
     subtitle: "Provide your contact info to get instant floor plans & project deck via WhatsApp.",
     ctaText: "Connect on WhatsApp",
     leadSource: "whatsapp_click",

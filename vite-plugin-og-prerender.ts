@@ -380,11 +380,11 @@ const CONTACT_US_PRERENDER_HTML = `<script type="application/ld+json">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
             <h3 class="text-base font-bold text-white">Call Us</h3>
-            <p class="text-amber-400 font-bold text-sm">+91 97050 80909</p>
+            <p class="text-amber-400 font-bold text-sm">+91 94939 43946</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
             <h3 class="text-base font-bold text-white">WhatsApp</h3>
-            <p class="text-emerald-400 font-bold text-sm">+91 97050 80909</p>
+            <p class="text-emerald-400 font-bold text-sm">+91 94939 43946</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
             <h3 class="text-base font-bold text-white">Email</h3>
@@ -472,7 +472,7 @@ const CONTACT_US_PRERENDER_HTML = `<script type="application/ld+json">
         <div class="space-y-4">
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
             <h3 class="text-lg font-bold text-white">How can I contact Naani Projects?</h3>
-            <p class="text-slate-300 text-sm mt-1">Contact Naani Projects via WhatsApp at +91 97050 80909, call us directly at +91 97050 80909, email digitalnaani@gmail.com, or submit an online enquiry.</p>
+            <p class="text-slate-300 text-sm mt-1">Contact Naani Projects via WhatsApp at +91 94939 43946, call us directly at +91 94939 43946, email digitalnaani@gmail.com, or submit an online enquiry.</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800">
             <h3 class="text-lg font-bold text-white">What types of properties can I enquire about?</h3>
@@ -536,7 +536,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
       "postalCode": "500075",
       "addressCountry": "IN"
     },
-    "telephone": "+919705080909",
+    "telephone": "+919493943946",
     "developer": {
       "@type": "Organization",
       "name": "Yula Globus Developers LLP"
@@ -648,7 +648,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
         "name": "How can I get current pricing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Current pricing and availability can vary by configuration, floor, orientation and inventory. Contact Naani Projects at 9705080909 for the latest details."
+          "text": "Current pricing and availability can vary by configuration, floor, orientation and inventory. Contact Naani Projects at 9493943946 for the latest details."
         }
       },
       {
@@ -656,7 +656,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
         "name": "How can I schedule a site visit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can click 'Schedule a Site Visit' on this page, or directly call or WhatsApp Naani Projects on 9705080909 to arrange a guided property tour."
+          "text": "You can click 'Schedule a Site Visit' on this page, or directly call or WhatsApp Naani Projects on 9493943946 to arrange a guided property tour."
         }
       }
     ]
@@ -739,14 +739,14 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
         </div>
 
         <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <a href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I%20want%20to%20get%20current%20price%20for%20Neo%20Towers%20Neopolis%20Kokapet." target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold shadow-xl text-sm sm:text-base">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20want%20to%20get%20current%20price%20for%20Neo%20Towers%20Neopolis%20Kokapet." target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold shadow-xl text-sm sm:text-base">
             Get Current Price
           </a>
-          <a href="tel:+919705080909" class="px-7 py-3.5 rounded-xl bg-slate-900 border border-amber-500/30 text-amber-400 font-bold text-sm sm:text-base">
-            Call +91 97050 80909
+          <a href="tel:+919493943946" class="px-7 py-3.5 rounded-xl bg-slate-900 border border-amber-500/30 text-amber-400 font-bold text-sm sm:text-base">
+            Call +91 94939 43946
           </a>
-          <a href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-sm sm:text-base">
-            WhatsApp 9705080909
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-sm sm:text-base">
+            WhatsApp 9493943946
           </a>
         </div>
       </div>
@@ -814,7 +814,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
           </div>
 
           <p class="text-xs text-slate-400 italic text-center pt-2">
-            Pricing and availability are subject to change. Contact Naani Projects on 9705080909 for current information.
+            Pricing and availability are subject to change. Contact Naani Projects on 9493943946 for current information.
           </p>
         </div>
       </div>
@@ -913,7 +913,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
               Club Neo provides a multi-level social ecosystem featuring fully equipped fitness studios, indoor badminton and squash courts, community event spaces, senior citizen lounges, an health clinic with physio suite, pharmacy, grocery store, and children's crèche.
             </p>
             <div class="pt-2">
-              <a href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I%20want%20details%20about%20Club%20Neo%20at%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm shadow-md">
+              <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20want%20details%20about%20Club%20Neo%20at%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm shadow-md">
                 Explore Club Neo Details
               </a>
             </div>
@@ -936,7 +936,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
               Residents can experience sunrise yoga on the Surya Namaskar Lawn, morning runs on the Sky Trail walking track, workout sessions at the elevated Sky Gym, evening relaxation at Sky Cafe, and nighttime stargazing through high-powered astronomical telescopes.
             </p>
             <div class="pt-2">
-              <a href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20please%20share%20Skydeck%20details%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm shadow-md">
+              <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20please%20share%20Skydeck%20details%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm shadow-md">
                 Get Amenity Details
               </a>
             </div>
@@ -1063,7 +1063,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
             <p class="text-xs text-slate-400">Ranging from approximately 2,235 sq.ft. featuring spacious living rooms, wide balconies, and utility areas.</p>
             <img src="/assets/floor-plan-1.jpg" alt="Neo Towers 3 BHK apartment floor plan" width="800" height="600" class="w-full h-[360px] object-contain mx-auto bg-white p-2 rounded-2xl" loading="lazy" />
             <div class="pt-2 text-right">
-              <a href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20please%20send%203%20BHK%20floor%20plan%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs">
+              <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20please%20send%203%20BHK%20floor%20plan%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs">
                 Request Detailed Floor Plan
               </a>
             </div>
@@ -1073,7 +1073,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
             <p class="text-xs text-slate-400">Up to approximately 4,565 sq.ft. featuring grand entry foyer, family lounge, servant room, and panoramic view deck.</p>
             <img src="/assets/floor-plan-2.jpg" alt="Neo Towers 4 BHK apartment floor plan" width="800" height="600" class="w-full h-[360px] object-contain mx-auto bg-white p-2 rounded-2xl" loading="lazy" />
             <div class="pt-2 text-right">
-              <a href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20please%20send%204%20BHK%20floor%20plan%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs">
+              <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20please%20send%204%20BHK%20floor%20plan%20for%20Neo%20Towers." target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs">
                 Request Detailed Floor Plan
               </a>
             </div>
@@ -1293,11 +1293,11 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
           </div>
           <div class="bg-[#0B101D] p-5 rounded-2xl border border-amber-500/20 space-y-2">
             <h3 class="font-bold text-white text-base">How can I get current pricing?</h3>
-            <p class="text-slate-300 leading-relaxed">Current pricing and availability can vary by configuration, floor, orientation and inventory. Contact Naani Projects at 9705080909 for the latest details.</p>
+            <p class="text-slate-300 leading-relaxed">Current pricing and availability can vary by configuration, floor, orientation and inventory. Contact Naani Projects at 9493943946 for the latest details.</p>
           </div>
           <div class="bg-[#0B101D] p-5 rounded-2xl border border-amber-500/20 space-y-2">
             <h3 class="font-bold text-white text-base">How can I schedule a site visit?</h3>
-            <p class="text-slate-300 leading-relaxed">You can click 'Schedule a Site Visit' on this page, or directly call or WhatsApp Naani Projects on 9705080909 to arrange a guided property tour.</p>
+            <p class="text-slate-300 leading-relaxed">You can click 'Schedule a Site Visit' on this page, or directly call or WhatsApp Naani Projects on 9493943946 to arrange a guided property tour.</p>
           </div>
         </div>
       </div>
@@ -1310,7 +1310,7 @@ const NEO_TOWERS_PRERENDER_HTML = `<script type="application/ld+json">
           <strong>Information Source:</strong> Project information has been compiled primarily from the official Neo Towers project website and publicly available regulatory information. Project specifications, availability, plans and other details may change. Buyers should independently verify current information with the promoter and Telangana RERA before making a purchase decision.
         </p>
         <p>
-          <strong>RERA Disclaimer:</strong> Neo Towers is presented with Telangana RERA registration number TG RERA P02400010006. Contact sales support on 9705080909 for verified documentation.
+          <strong>RERA Disclaimer:</strong> Neo Towers is presented with Telangana RERA registration number TG RERA P02400010006. Contact sales support on 9493943946 for verified documentation.
         </p>
       </div>
     </section>
@@ -1372,7 +1372,7 @@ const TRUMP_TOWERS_PRERENDER_HTML = `<div class="min-h-screen bg-[#070A11] text-
     <section class="py-16 bg-[#070A11] border-t border-slate-800 text-xs text-slate-400">
       <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-2">
         <p><strong>Official Brand Licensing Disclaimer:</strong> Trump Towers Hyderabad is not owned, developed or sold by Donald J. Trump, The Trump Organization or any of their affiliates. Ira The Edge Developers LLP is the developer and promoter of the property and uses the “Trump” name and mark under licence from DT Marks Hyderabad LLC, subject to the applicable agreement.</p>
-        <p><strong>RERA Notice:</strong> TG RERA Reg. No. P02400010871. RERA completion date: 15 May 2031. Contact sales support on 9705080909 for verified documentation.</p>
+        <p><strong>RERA Notice:</strong> TG RERA Reg. No. P02400010871. RERA completion date: 15 May 2031. Contact sales support on 9493943946 for verified documentation.</p>
       </div>
     </section>
   </main>
@@ -1470,13 +1470,13 @@ const KOKAPET_PRERENDER_HTML = `<script type="application/ld+json">
           Kokapet is a major residential hub in West Hyderabad, located close to the Financial District and Neopolis SEZ, featuring multi-tower apartment developments and gated communities.
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20top%20projects%20in%20Kokapet%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20share%20top%20projects%20in%20Kokapet%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
             WhatsApp for Kokapet Projects
           </a>
-          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
-            Call +91 97050 80909
+          <a href="tel:+919493943946" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 94939 43946
           </a>
-          <a href="https://wa.me/919705080909?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20Kokapet." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20Kokapet." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
             Book Site Visit
           </a>
         </div>
@@ -1580,7 +1580,7 @@ const KOKAPET_PRERENDER_HTML = `<script type="application/ld+json">
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">Are ready-to-move flats available in Kokapet?</h3>
-            <p class="text-slate-300 text-sm">Yes, Kokapet has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 97050 80909 to get matching options.</p>
+            <p class="text-slate-300 text-sm">Yes, Kokapet has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 94939 43946 to get matching options.</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">Is Kokapet suitable for rental income?</h3>
@@ -1588,7 +1588,7 @@ const KOKAPET_PRERENDER_HTML = `<script type="application/ld+json">
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">How can I schedule a site visit in Kokapet?</h3>
-            <p class="text-slate-300 text-sm">Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.</p>
+            <p class="text-slate-300 text-sm">Select any project on our website or message +91 94939 43946 on WhatsApp with your preferred date and time to arrange a site visit.</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">Do buyers pay any advisory fees to Naani Projects?</h3>
@@ -1719,13 +1719,13 @@ const TELLAPUR_PRERENDER_HTML = `<script type="application/ld+json">
           Tellapur is a growing residential corridor in West Hyderabad, popular with families seeking gated communities with access to the ORR and nearby international schools.
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20top%20projects%20in%20Tellapur%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20share%20top%20projects%20in%20Tellapur%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
             WhatsApp for Tellapur Projects
           </a>
-          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
-            Call +91 97050 80909
+          <a href="tel:+919493943946" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 94939 43946
           </a>
-          <a href="https://wa.me/919705080909?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20Tellapur." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20Tellapur." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
             Book Site Visit
           </a>
         </div>
@@ -1845,7 +1845,7 @@ const TELLAPUR_PRERENDER_HTML = `<script type="application/ld+json">
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">Are ready-to-move flats available in Tellapur?</h3>
-            <p class="text-slate-300 text-sm">Yes, Tellapur has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 97050 80909 to get matching options.</p>
+            <p class="text-slate-300 text-sm">Yes, Tellapur has both ready-to-move and under-construction projects. Share your preferred timeline on WhatsApp at +91 94939 43946 to get matching options.</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">Is Tellapur suitable for rental income?</h3>
@@ -1853,7 +1853,7 @@ const TELLAPUR_PRERENDER_HTML = `<script type="application/ld+json">
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">How can I schedule a site visit in Tellapur?</h3>
-            <p class="text-slate-300 text-sm">Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.</p>
+            <p class="text-slate-300 text-sm">Select any project on our website or message +91 94939 43946 on WhatsApp with your preferred date and time to arrange a site visit.</p>
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">Do buyers pay any advisory fees to Naani Projects?</h3>
@@ -1967,13 +1967,13 @@ function generateLocationPrerenderHtml(locationSlug: string, locName: string): s
           ${intro}
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20top%20projects%20in%20${encodeURIComponent(locName)}%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20share%20top%20projects%20in%20${encodeURIComponent(locName)}%2C%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
             WhatsApp for ${locName} Projects
           </a>
-          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
-            Call +91 97050 80909
+          <a href="tel:+919493943946" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 94939 43946
           </a>
-          <a href="https://wa.me/919705080909?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20${encodeURIComponent(locName)}." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20in%20${encodeURIComponent(locName)}." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-bold text-sm">
             Book Site Visit
           </a>
         </div>
@@ -2010,7 +2010,7 @@ function generateLocationPrerenderHtml(locationSlug: string, locName: string): s
           </div>
           <div class="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-1">
             <h3 class="text-lg font-bold text-white">How can I schedule a site visit in ${locName}?</h3>
-            <p class="text-slate-300 text-sm">Select any project on our website or message +91 97050 80909 on WhatsApp with your preferred date and time to arrange a site visit.</p>
+            <p class="text-slate-300 text-sm">Select any project on our website or message +91 94939 43946 on WhatsApp with your preferred date and time to arrange a site visit.</p>
           </div>
         </div>
       </div>
@@ -2084,11 +2084,11 @@ function generateBuilderPrerenderHtml(builderSlug: string, builderName: string):
           ${intro}
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="https://wa.me/919705080909?text=Hi%2C%20share%20all%20${encodeURIComponent(builderName)}%20projects%20in%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20share%20all%20${encodeURIComponent(builderName)}%20projects%20in%20Hyderabad." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
             WhatsApp for ${builderName} Projects
           </a>
-          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
-            Call +91 97050 80909
+          <a href="tel:+919493943946" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 94939 43946
           </a>
         </div>
       </div>
@@ -2188,11 +2188,11 @@ function generateProjectPrerenderHtml(projectSlug: string, projectTitle: string)
           ${intro}
         </p>
         <div class="flex flex-wrap justify-center gap-4 pt-4">
-          <a href="https://wa.me/919705080909?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(projectTitle)}.%20Please%20share%20price%20and%20floor%20plans." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
+          <a href="https://wa.me/919493943946?text=Hi%2C%20I'm%20interested%20in%20${encodeURIComponent(projectTitle)}.%20Please%20share%20price%20and%20floor%20plans." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg">
             WhatsApp for Floor Plans
           </a>
-          <a href="tel:+919705080909" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
-            Call +91 97050 80909
+          <a href="tel:+919493943946" class="px-6 py-3 rounded-xl bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-sm">
+            Call +91 94939 43946
           </a>
         </div>
       </div>

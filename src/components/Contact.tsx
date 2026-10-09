@@ -28,7 +28,7 @@ const Contact = () => {
     try {
       const v = contactSchema.parse(formData);
       const msg = `Name: ${encodeURIComponent(v.name)}%0AEmail: ${encodeURIComponent(v.email)}%0AMessage: ${encodeURIComponent(v.message)}`;
-      window.open(`https://wa.me/918185856789?text=${msg}`, "_blank");
+      window.open(`https://wa.me/919493943946?text=${msg}`, "_blank");
       toast({ title: "Message sent!", description: "We'll get back to you as soon as possible." });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: "Phone", value: "+91 81858 56789", href: "tel:+918185856789" },
+    { icon: Phone, label: "Phone", value: "+91 94939 43946", href: "tel:+919493943946" },
     { icon: Mail, label: "Email", value: "digitalnaani@gmail.com", href: "mailto:digitalnaani@gmail.com" },
     { icon: MapPin, label: "Location", value: "Hyderabad, Telangana", href: undefined },
   ];

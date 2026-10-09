@@ -364,7 +364,7 @@ const SanviProjectPage = ({ project: p }: Props) => {
                   </Button>
                 </div>
                 <p className="text-[11px] text-muted-foreground text-center mt-4">
-                  Or call <a href={`tel:${NAANI_PHONE}`} className="call-btn text-amber-400 font-semibold">+91 97050 80909</a>
+                  Or call <a href={`tel:${NAANI_PHONE}`} className="call-btn text-amber-400 font-semibold">+91 94939 43946</a>
                 </p>
               </div>
             </aside>
@@ -778,13 +778,13 @@ const SanviProjectPage = ({ project: p }: Props) => {
             <button data-lead-gate="brochure" onClick={() => gate("Bottom CTA · Get Offers")} className="lead-btn bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/40 font-bold w-52 h-12 inline-flex items-center justify-center rounded-xl shadow-lg transition-all hover:scale-105">
               Get Latest Offers
             </button>
-            <a href={`https://wa.me/919705080909?text=${encodeURIComponent(`Hi, I'm interested in ${p.name}`)}`} target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold w-52 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all hover:scale-105">
+            <a href={`https://wa.me/919493943946?text=${encodeURIComponent(`Hi, I'm interested in ${p.name}`)}`} target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold w-52 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all hover:scale-105">
               <MessageCircle size={20} /> WhatsApp Us
             </a>
           </div>
           <div className="mt-6">
-            <a href="tel:+919705080909" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+            <a href="tel:+919493943946" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>

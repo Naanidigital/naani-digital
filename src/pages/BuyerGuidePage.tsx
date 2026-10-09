@@ -128,7 +128,7 @@ const BuyerGuidePage = () => {
                 <Link to={is3Bhk ? "/hyderabad/3-bhk-flats" : "/hyderabad/2-bhk-flats"} className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-sm shadow-gold">
                   Explore {is3Bhk ? "3 BHK" : "2 BHK"} Projects →
                 </Link>
-                <a href="tel:+919705080909" className="call-btn px-6 py-3 rounded-xl bg-card border border-primary/40 text-primary font-bold text-sm hover:bg-primary/10">
+                <a href="tel:+919493943946" className="call-btn px-6 py-3 rounded-xl bg-card border border-primary/40 text-primary font-bold text-sm hover:bg-primary/10">
                   <Phone className="w-4 h-4 inline mr-2" /> Call Advisor
                 </a>
               </div>

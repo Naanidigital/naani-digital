@@ -37,7 +37,7 @@ import goldLogo9 from "@/assets/rise-with-9/rise-with-9-logo.jpg";
 
 const PROJECT_NAME = "Rise With 9";
 const RERA_NO = "P02400009942";
-const CONTACT_PHONE = "9705080909";
+const CONTACT_PHONE = "9493943946";
 
 const CTAButton = ({
   text,
@@ -218,7 +218,7 @@ export default function RiseWith9Page() {
             name: "How can I request price details or schedule a site visit for Rise With 9?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Current pricing, floor plans, and site visit schedules are available by contacting Naani Projects directly at 9705080909.",
+              text: "Current pricing, floor plans, and site visit schedules are available by contacting Naani Projects directly at 9493943946.",
             },
           },
         ],
@@ -289,7 +289,7 @@ export default function RiseWith9Page() {
     },
     {
       q: "How can I request price details or schedule a site visit?",
-      a: "You can request updated price details, floor plan brochures, or schedule a site visit by calling or messaging Naani Projects directly at 9705080909.",
+      a: "You can request updated price details, floor plan brochures, or schedule a site visit by calling or messaging Naani Projects directly at 9493943946.",
     },
   ];
 

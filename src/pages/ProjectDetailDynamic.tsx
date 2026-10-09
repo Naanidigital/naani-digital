@@ -19,8 +19,8 @@ import { fetchProjectBySlug, fetchProjects, projectPath, type DBProject } from "
 import { useLeadPopup } from "@/hooks/useLeadPopup";
 import BrochureGateModal from "@/components/BrochureGateModal";
 
-const PHONE = "+919705080909";
-const WA = (msg: string) => `https://wa.me/919705080909?text=${encodeURIComponent(msg)}`;
+const PHONE = "+919493943946";
+const WA = (msg: string) => `https://wa.me/919493943946?text=${encodeURIComponent(msg)}`;
 
 interface ProjectDetailDynamicProps {
   slugOverride?: string;
@@ -325,7 +325,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
     name: "Naani Projects",
     image: "https://www.naani.in/naani-projects-og.jpg",
     url: "https://www.naani.in/projects",
-    telephone: "+91-9705080909",
+    telephone: "+91-9493943946",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Kondapur",
@@ -423,7 +423,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
             <p className="text-xs text-slate-300 font-medium">Limited inventory available. Direct pre-launch pricing.</p>
             <Button onClick={() => openPopup("Sidebar Enquiry", project.name)} className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-extrabold h-12 shadow-md hover:from-amber-600 hover:to-yellow-600">Enquire Now</Button>
             <a href={WA(waMsg)} target="_blank" rel="noopener noreferrer" className="whatsapp-btn w-full h-12 inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl shadow-md"><MessageCircle size={18} /> WhatsApp</a>
-            <a href={`tel:${PHONE}`} className="call-btn w-full h-12 inline-flex items-center justify-center gap-2 bg-slate-900 border border-amber-500/40 text-amber-400 font-bold rounded-xl shadow-md hover:bg-slate-800"><Phone size={18} /> Call +91 97050 80909</a>
+            <a href={`tel:${PHONE}`} className="call-btn w-full h-12 inline-flex items-center justify-center gap-2 bg-slate-900 border border-amber-500/40 text-amber-400 font-bold rounded-xl shadow-md hover:bg-slate-800"><Phone size={18} /> Call +91 94939 43946</a>
           </aside>
         </div>
       </section>
@@ -569,7 +569,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
           </div>
           <div className="mt-8">
             <a href={`tel:${PHONE}`} className="call-btn text-amber-400 hover:text-amber-300 font-extrabold text-xl transition-colors inline-flex items-center gap-2">
-              <Phone size={22} /> Call Now: +91 97050 80909
+              <Phone size={22} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>

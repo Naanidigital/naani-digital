@@ -37,7 +37,7 @@ import skyAmenitiesRooftop from "@/assets/linq-by-raghava/linq-by-raghava-sky-am
 
 const PROJECT_NAME = "LINQ by Raghava";
 const RERA_NO = "P02400011056";
-const CONTACT_PHONE = "9705080909";
+const CONTACT_PHONE = "9493943946";
 
 const CTAButton = ({
   text,
@@ -202,7 +202,7 @@ export default function LinqByRaghavaPage() {
             name: "How can I request price details or schedule a site visit for LINQ by Raghava?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Current price details, unit cost sheets, and site visit appointments are provided privately by contacting Naani Projects at 9705080909.",
+              text: "Current price details, unit cost sheets, and site visit appointments are provided privately by contacting Naani Projects at 9493943946.",
             },
           },
         ],
@@ -273,7 +273,7 @@ export default function LinqByRaghavaPage() {
     },
     {
       q: "How can I request pricing or schedule a site visit?",
-      a: "Current unit availability, pricing, cost sheets, and site visit schedules are provided privately by contacting Naani Projects at 9705080909.",
+      a: "Current unit availability, pricing, cost sheets, and site visit schedules are provided privately by contacting Naani Projects at 9493943946.",
     },
   ];
 

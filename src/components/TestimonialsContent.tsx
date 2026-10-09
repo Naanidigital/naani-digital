@@ -270,7 +270,7 @@ const TestimonialsContent = () => {
                 Let's discuss how we can help you achieve similar results.
               </p>
               <a 
-                href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20read%20your%20client%20testimonials%20and%20want%20to%20discuss%20my%20project."
+                href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20read%20your%20client%20testimonials%20and%20want%20to%20discuss%20my%20project."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -292,7 +292,7 @@ const TestimonialsContent = () => {
           </p>
           <div className="text-center">
             <a 
-              href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20would%20like%20to%20speak%20with%20a%20past%20client%20for%20reference."
+              href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20would%20like%20to%20speak%20with%20a%20past%20client%20for%20reference."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -315,7 +315,7 @@ const TestimonialsContent = () => {
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/918185856789?text=Hi%20Naani%20Digital!%20I%20want%20to%20start%20my%20digital%20marketing%20journey."
+              href="https://wa.me/919493943946?text=Hi%20Naani%20Digital!%20I%20want%20to%20start%20my%20digital%20marketing%20journey."
               target="_blank"
               rel="noopener noreferrer"
             >

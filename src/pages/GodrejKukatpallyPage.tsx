@@ -17,7 +17,7 @@ import masterplanImg from "@/assets/godrej-kukatpally/masterplan.png";
 
 const PROJECT_NAME = "Godrej Kukatpally Hyderabad";
 const WA_MSG = encodeURIComponent("Hi, I'm interested in Godrej Kukatpally Hyderabad. Please share details.");
-const WA_LINK = `https://wa.me/919705080909?text=${WA_MSG}`;
+const WA_LINK = `https://wa.me/919493943946?text=${WA_MSG}`;
 const PAGE_URL = "https://www.naani.in/projects/godrej-kukatpally-hyderabad";
 
 const structuredData = {
@@ -46,7 +46,7 @@ const structuredData = {
     {
       "@type": "RealEstateAgent",
       "name": "Naani Projects – Godrej Kukatpally Sales Partner",
-      "telephone": "+91-9705080909",
+      "telephone": "+91-9493943946",
       "url": PAGE_URL,
       "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "India" }
     },
@@ -401,8 +401,8 @@ const GodrejKukatpallyPage = () => {
             </a>
           </div>
           <div className="mt-6">
-            <a href="tel:+919705080909" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
-              <Phone size={18} /> Call Now: +91 97050 80909
+            <a href="tel:+919493943946" className="call-btn text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors inline-flex items-center gap-2">
+              <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
@@ -410,7 +410,7 @@ const GodrejKukatpallyPage = () => {
 
       {/* STICKY MOBILE CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-slate-900/95 backdrop-blur-md border-t border-amber-500/20 p-2 grid grid-cols-3 gap-2">
-        <a href="tel:+919705080909" className="call-btn flex items-center justify-center gap-1.5 bg-blue-600 text-white py-2.5 rounded-lg text-xs font-semibold">
+        <a href="tel:+919493943946" className="call-btn flex items-center justify-center gap-1.5 bg-blue-600 text-white py-2.5 rounded-lg text-xs font-semibold">
           <Phone size={14} /> Call
         </a>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center justify-center gap-1.5 bg-green-600 text-white py-2.5 rounded-lg text-xs font-semibold">

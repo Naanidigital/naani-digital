@@ -139,7 +139,7 @@ const BhkLandingPage = ({ forcedType }: BhkLandingPageProps) => {
                         <Link to={p.slug} className="flex-1 text-center bg-[#0080FF] hover:bg-[#006bd6] text-white font-bold py-3 px-4 rounded-xl text-sm transition-colors shadow-sm flex items-center justify-center gap-1">
                           View Details <ArrowRight size={14} />
                         </Link>
-                        <a href={`https://wa.me/919705080909?text=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(p.name)}`} target="_blank" rel="noopener noreferrer" className="p-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors">
+                        <a href={`https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(p.name)}`} target="_blank" rel="noopener noreferrer" className="p-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors">
                           <MessageCircle size={18} />
                         </a>
                       </div>
@@ -199,7 +199,7 @@ const BhkLandingPage = ({ forcedType }: BhkLandingPageProps) => {
                         <Link to={p.slug} className="flex-1 text-center bg-primary hover:bg-amber-600 text-primary-foreground font-semibold py-3 px-4 rounded-xl text-sm transition-colors shadow-gold flex items-center justify-center gap-1">
                           View Details <ArrowRight size={14} />
                         </Link>
-                        <a href={`https://wa.me/919705080909?text=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(p.name)}`} target="_blank" rel="noopener noreferrer" className="p-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors">
+                        <a href={`https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(p.name)}`} target="_blank" rel="noopener noreferrer" className="p-3 bg-green-600 hover:bg-green-700 text-white rounded-xl transition-colors">
                           <MessageCircle size={18} />
                         </a>
                       </div>

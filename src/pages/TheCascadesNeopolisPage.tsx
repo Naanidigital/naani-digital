@@ -147,7 +147,7 @@ const faqs = [
   },
   {
     q: "How can I schedule a site visit to The Cascades Neopolis?",
-    a: "You can schedule a site visit by clicking any 'Schedule Site Visit' button on this page, calling +91 9705080909, or messaging our Naani Projects advisory team on WhatsApp.",
+    a: "You can schedule a site visit by clicking any 'Schedule Site Visit' button on this page, calling +91 9493943946, or messaging our Naani Projects advisory team on WhatsApp.",
   },
 ];
 
@@ -281,7 +281,7 @@ const TheCascadesNeopolisPage = () => {
                     Schedule Site Visit
                   </button>
                   <a
-                    href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20The%20Cascades%20Neopolis%20Kokapet."
+                    href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20The%20Cascades%20Neopolis%20Kokapet."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-3 rounded-xl transition-all"
@@ -840,13 +840,13 @@ const TheCascadesNeopolisPage = () => {
                 onClick={() => openLeadModal("Bottom Banner - Request Price")}
               />
               <a
-                href="https://wa.me/919705080909?text=Hi%20Naani%20Projects%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20The%20Cascades%20Neopolis."
+                href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20want%20to%20schedule%20a%20site%20visit%20for%20The%20Cascades%20Neopolis."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl transition-all"
               >
                 <MessageCircle size={18} />
-                WhatsApp Us (+91 9705080909)
+                WhatsApp Us (+91 9493943946)
               </a>
             </div>
           </div>

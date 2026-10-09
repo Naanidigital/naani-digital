@@ -22,7 +22,7 @@ const Footer = () => {
     { icon: Instagram, href: "https://www.instagram.com/naaniprojects/", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/company/naaniprojects/", label: "LinkedIn" },
     { icon: PinterestIcon, href: "https://in.pinterest.com/naaniprojects/", label: "Pinterest" },
-    { icon: MessageCircle, href: "https://wa.me/919705080909?text=Hi", label: "WhatsApp" },
+    { icon: MessageCircle, href: "https://wa.me/919493943946?text=Hi", label: "WhatsApp" },
   ];
 
   const locations = [
@@ -43,7 +43,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 w-full">
             <a
-              href="https://wa.me/919705080909?text=Hi"
+              href="https://wa.me/919493943946?text=Hi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold w-56 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg transition-all hover:scale-105"
@@ -51,10 +51,10 @@ const Footer = () => {
               <MessageCircle size={20} /> WhatsApp Us Now
             </a>
             <a
-              href="tel:+919705080909"
+              href="tel:+919493943946"
               className="bg-slate-950 hover:bg-slate-900 text-amber-400 font-extrabold w-56 h-12 inline-flex items-center justify-center gap-2 rounded-xl shadow-lg border border-amber-400/40 transition-all hover:scale-105"
             >
-              <Phone size={20} /> Call +91 97050 80909
+              <Phone size={20} /> Call +91 94939 43946
             </a>
           </div>
         </div>
@@ -158,12 +158,12 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-slate-300">
                 <Phone size={18} className="text-amber-400 shrink-0" />
-                <a href="tel:+919705080909" className="font-bold text-white hover:text-amber-400 transition-colors">+91 97050 80909</a>
+                <a href="tel:+919493943946" className="font-bold text-white hover:text-amber-400 transition-colors">+91 94939 43946</a>
               </li>
               <li className="flex items-center gap-3 text-slate-300">
                 <MessageCircle size={18} className="text-emerald-400 shrink-0" />
                 <a
-                  href="https://wa.me/919705080909?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad"
+                  href="https://wa.me/919493943946?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad"
                   target="_blank" rel="noopener noreferrer"
                   className="font-bold text-emerald-400 hover:underline transition-colors"
                 >

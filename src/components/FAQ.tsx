@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: "How do I contact you for urgent updates?",
-    answer: "You can reach us via WhatsApp (+91 81858 56789), call, or email—contact details are always at the bottom of the website."
+    answer: "You can reach us via WhatsApp (+91 94939 43946), call, or email—contact details are always at the bottom of the website."
   },
   {
     question: "What's your process for new projects?",

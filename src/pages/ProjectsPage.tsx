@@ -97,7 +97,7 @@ const ProjectsPage = () => {
 
   const shown = filtered.slice(0, visible);
   const waLink = (name: string) =>
-    `https://wa.me/919705080909?text=${encodeURIComponent(`Hi, I'm interested in ${name}. Please share details.`)}`;
+    `https://wa.me/919493943946?text=${encodeURIComponent(`Hi, I'm interested in ${name}. Please share details.`)}`;
 
   const activeFilterCount = [locationFilter, typeFilter, bhkFilter, statusFilter, builderFilter, budgetFilter].filter(v => v !== "All").length;
   const resetFilters = () => {
@@ -339,7 +339,7 @@ const ProjectsPage = () => {
             Tell us your location, budget and preferences — we'll find the perfect property on WhatsApp.
           </p>
           <a
-            href="https://wa.me/919705080909?text=Hi%2C%20I%27m%20looking%20for%20a%20property.%20Please%20help%20me%20find%20the%20best%20option."
+            href="https://wa.me/919493943946?text=Hi%2C%20I%27m%20looking%20for%20a%20property.%20Please%20help%20me%20find%20the%20best%20option."
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-btn inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105 text-base"

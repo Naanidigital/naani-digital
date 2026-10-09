@@ -6,7 +6,7 @@ import ProjectImage from "@/components/ProjectImage";
 import { projectPath, type DBProject } from "@/lib/projectsApi";
 
 const waLink = (name: string) =>
-  `https://wa.me/919705080909?text=${encodeURIComponent(`Hi, I'm interested in ${name}. Please share details.`)}`;
+  `https://wa.me/919493943946?text=${encodeURIComponent(`Hi, I'm interested in ${name}. Please share details.`)}`;
 
 interface Props {
   project: DBProject;

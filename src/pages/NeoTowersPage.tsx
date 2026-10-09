@@ -53,7 +53,7 @@ const DEVELOPER_NAME = "Yula Globus Developers LLP";
 const RERA_NO = "TG RERA P02400010006";
 const LOCATION_NAME = "Neopolis, Kokapet, Hyderabad";
 const SITE_ADDRESS = "Plot No. 11, Neopolis, Kokapet, Gandipet, Telangana – 500075";
-const PHONE_NUMBER = "9705080909";
+const PHONE_NUMBER = "9493943946";
 const CANONICAL_URL = "https://www.naani.in/projects/neo-towers-neopolis-kokapet";
 
 // Analytics tracking helper
@@ -228,11 +228,11 @@ const NeoTowersPage = () => {
     },
     {
       q: "How can I get current pricing?",
-      a: "Current pricing and availability can vary by configuration, floor, orientation and inventory. Contact Naani Projects at 9705080909 for the latest details.",
+      a: "Current pricing and availability can vary by configuration, floor, orientation and inventory. Contact Naani Projects at 9493943946 for the latest details.",
     },
     {
       q: "How can I schedule a site visit?",
-      a: "You can click 'Schedule a Site Visit' on this page, or directly call or WhatsApp Naani Projects on 9705080909 to arrange a guided property tour.",
+      a: "You can click 'Schedule a Site Visit' on this page, or directly call or WhatsApp Naani Projects on 9493943946 to arrange a guided property tour.",
     },
   ];
 
@@ -265,7 +265,7 @@ const NeoTowersPage = () => {
           "postalCode": "500075",
           "addressCountry": "IN",
         },
-        "telephone": "+919705080909",
+        "telephone": "+919493943946",
         "developer": {
           "@type": "Organization",
           "name": "Yula Globus Developers LLP",

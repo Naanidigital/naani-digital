@@ -55,12 +55,12 @@ export const POPUP_CONFIGS: Record<
   },
   callback_request: {
     title: "Talk to a Trump Towers Property Advisor",
-    subtitle: "Have questions about 65-storey towers, private elevators, or RERA record? Call 9705080909 or get an instant callback.",
+    subtitle: "Have questions about 65-storey towers, private elevators, or RERA record? Call 9493943946 or get an instant callback.",
     ctaText: "Request Callback",
     leadSource: "callback_request",
   },
   whatsapp_click: {
-    title: "Connect via WhatsApp on 9705080909",
+    title: "Connect via WhatsApp on 9493943946",
     subtitle: "Receive instant floor plans, project deck, and availability updates directly on WhatsApp.",
     ctaText: "Connect on WhatsApp",
     leadSource: "whatsapp_click",

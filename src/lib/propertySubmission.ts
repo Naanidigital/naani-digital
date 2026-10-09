@@ -277,7 +277,7 @@ export function generateAIDescription(s: PropertySubmission): string {
     parts.push(`Residents enjoy access to top-tier amenities such as ${s.amenities.slice(0, 10).join(", ")}.`);
   }
 
-  parts.push(`Connect with Naani Projects on WhatsApp or call +91 97050 80909 for builder-direct offers, floor plans, and free guided site visits.`);
+  parts.push(`Connect with Naani Projects on WhatsApp or call +91 94939 43946 for builder-direct offers, floor plans, and free guided site visits.`);
 
   return parts.join(" ");
 }
@@ -416,7 +416,7 @@ export function generatePropertySchema(s: PropertySubmission, canonicalUrl: stri
     "offeredBy": {
       "@type": "RealEstateAgent",
       "name": "Naani Projects",
-      "telephone": "+919705080909",
+      "telephone": "+919493943946",
       "url": "https://www.naani.in",
     },
   };
@@ -527,10 +527,10 @@ export const submitProperty = async (s: PropertySubmission): Promise<{ slug: str
     amenities: s.amenities,
     faqs: [
       { q: `Where is ${s.projectName || "this property"} located?`, a: `${s.projectName || "Property"} is located in ${s.locality}${s.landmark ? `, near ${s.landmark}` : ""}, ${s.city}, ${s.state}.` },
-      { q: `What is the price of ${s.bhk} ${s.propertyType}?`, a: `Available at ₹${s.expectedPrice}. Contact Naani Projects on WhatsApp +91 97050 80909 for builder-direct pricing.` },
+      { q: `What is the price of ${s.bhk} ${s.propertyType}?`, a: `Available at ₹${s.expectedPrice}. Contact Naani Projects on WhatsApp +91 94939 43946 for builder-direct pricing.` },
       { q: `Who is the developer?`, a: `${s.projectName || "Property"} is developed by ${s.builder || "renowned builder"} in ${s.city}.` },
       { q: `What is the possession timeline?`, a: `Possession expected by ${s.possessionMonth} ${s.possessionYear} (${s.availability}).` },
-      { q: `Is brochure download available?`, a: brochureUrl ? `Yes, digital brochure is available for download on this page.` : `Brochure and floor plans are available on WhatsApp +91 97050 80909.` },
+      { q: `Is brochure download available?`, a: brochureUrl ? `Yes, digital brochure is available for download on this page.` : `Brochure and floor plans are available on WhatsApp +91 94939 43946.` },
     ] as unknown as object,
     gallery: [...galleryUrls, ...floorPlanUrls],
     hero_image: heroUrl,

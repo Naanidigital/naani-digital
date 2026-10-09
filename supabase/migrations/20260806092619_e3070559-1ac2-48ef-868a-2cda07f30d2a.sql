@@ -1,4 +1,4 @@
-DELETE FROM public.project_submissions WHERE submitter_name='a' AND submitter_phone='9705080909';
+DELETE FROM public.project_submissions WHERE submitter_name='a' AND submitter_phone='9493943946';
 DELETE FROM public.projects WHERE name='T' AND source='list-your-property';
 
 DROP POLICY IF EXISTS "Read submission media property-media" ON storage.objects;

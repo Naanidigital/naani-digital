@@ -10,7 +10,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/918185856789?text=Hi%2C%20I%20want%20to%20discuss%20digital%20marketing%20services%20for%20my%20business", "_blank");
+    window.open("https://wa.me/919493943946?text=Hi%2C%20I%20want%20to%20discuss%20digital%20marketing%20services%20for%20my%20business", "_blank");
   };
 
   return (

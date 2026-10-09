@@ -14,8 +14,8 @@ import { fetchProjects, projectPath } from "@/lib/projectsApi";
 import candeurHero from "@/assets/candeur-eternia/hero.png";
 import godrejHero from "@/assets/godrej-kukatpally/hero.jpg";
 
-const WA_LINK = "https://wa.me/919705080909?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.%20Please%20share%20best%20options.";
-const TEL_LINK = "tel:+919705080909";
+const WA_LINK = "https://wa.me/919493943946?text=Hi%2C%20I'm%20looking%20for%20a%20property%20in%20Hyderabad.%20Please%20share%20best%20options.";
+const TEL_LINK = "tel:+919493943946";
 
 const FEATURED = [
   { name: "Candeur Eternia", location: "Bachupally", builder: "Candeur Developers", configuration: "2, 2.5 & 3 BHK · 33 Floors", price_range: "New Launch", path: "/projects/candeur-eternia-bachupally-hyderabad", image: candeurHero, tag: "New Launch" },
@@ -71,7 +71,7 @@ const Index = () => {
   const faqs = [
     {
       question: "How does Naani Projects help me find the right property in Hyderabad?",
-      answer: "Just send your **location, budget and preferences on WhatsApp** to +91 97050 80909. Our property experts curate the best matching apartments, villas, gated communities and luxury homes in Hyderabad and share verified options instantly — no endless browsing, no spam calls."
+      answer: "Just send your **location, budget and preferences on WhatsApp** to +91 94939 43946. Our property experts curate the best matching apartments, villas, gated communities and luxury homes in Hyderabad and share verified options instantly — no endless browsing, no spam calls."
     },
     {
       question: "Which areas of Hyderabad do you cover?",
@@ -442,7 +442,7 @@ const Index = () => {
                 We keep communication straightforward and direct on WhatsApp. Tell us your location preference, budget range, and BHK requirement, and we will send you a tailored list of matching projects with clear details—no unsolicited marketing calls or exaggerated promises.
               </p>
               <p>
-                Have questions or ready to explore options? <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline font-bold">Message us on WhatsApp at +91 97050 80909</a> or <Link to="/projects" className="text-amber-400 hover:underline font-bold">browse our project listings</Link>.
+                Have questions or ready to explore options? <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline font-bold">Message us on WhatsApp at +91 94939 43946</a> or <Link to="/projects" className="text-amber-400 hover:underline font-bold">browse our project listings</Link>.
               </p>
             </div>
           </div>
