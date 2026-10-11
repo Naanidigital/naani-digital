@@ -38,6 +38,7 @@ const LOCATION_INTRO: Record<string, string> = {
   "neopolis": "Neopolis Kokapet is Hyderabad's ultra-luxury high-rise SEZ corridor, featuring landmark residential towers with world-class amenities.",
   "kollur": "Kollur is a rapidly growing residential hub along the Outer Ring Road, popular for spacious 2, 3 and 4 BHK gated community apartments.",
   "nallagandla": "Nallagandla is a prime residential pocket situated between BHEL and Financial District, popular for premium high-rise apartments and green surroundings.",
+  "bowrampet": "Bowrampet is an emerging residential corridor in North-West Hyderabad near ORR Exit 4A, Dundigal, and Bachupally, offering modern gated communities and seamless connectivity to Miyapur and HITEC City.",
 };
 
 const slug = (s: string) => slugify(s);
@@ -60,7 +61,8 @@ const SIMILAR: Record<string, string[]> = {
   "narsingi": ["kokapet", "manikonda", "financial-district", "puppalaguda"],
   "kondapur": ["gachibowli", "madhapur", "miyapur", "kothaguda"],
   "miyapur": ["bachupally", "kukatpally", "kondapur", "madinaguda"],
-  "bachupally": ["miyapur", "kukatpally", "pragathi-nagar", "tellapur"],
+  "bachupally": ["miyapur", "kukatpally", "pragathi-nagar", "bowrampet", "tellapur"],
+  "bowrampet": ["bachupally", "miyapur", "kukatpally", "pragathi-nagar", "mallampet"],
   "shamshabad": ["tukkuguda", "rajendra-nagar", "kothur", "adibatla"],
   "tukkuguda": ["shamshabad", "adibatla", "rajendra-nagar", "kothur"],
   "manikonda": ["narsingi", "gachibowli", "puppalaguda", "financial-district"],

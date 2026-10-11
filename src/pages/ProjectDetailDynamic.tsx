@@ -137,6 +137,62 @@ const getFallbackProject = (slug: string): DBProject => {
     };
   }
 
+  if (slug.includes("canny-aravindam")) {
+    return {
+      id: "canny-aravindam",
+      slug: "canny-aravindam",
+      name: "Canny Aravindam",
+      builder: "Canny Life Spaces",
+      location: "Bowrampet",
+      city: "Hyderabad",
+      configuration: "2 & 3 BHK Luxury Apartments",
+      bhk_list: [2, 3],
+      property_type: "Apartment",
+      price_range: "Price on Request",
+      min_price_inr: null,
+      max_price_inr: null,
+      status: "Under Construction",
+      possession: "December 2027",
+      usp: "3 Acres · 3 Towers (G+9) · 5-Level Clubhouse · No Common Walls · Near ORR Exit 4A",
+      description: "Canny Aravindam is a premium gated residential apartment community developed by Canny Life Spaces across 3 acres in Bowrampet, North-West Hyderabad. The project features 3 towers rising G+9 floors with 340 spacious 2 and 3 BHK apartments, 60% open spaces, no common walls, and a signature 5-level 17,000 sq.ft. clubhouse with 30+ lifestyle amenities.",
+      amenities: [
+        "5-Level Clubhouse (~17,000 sq.ft.)",
+        "Swimming Pool & Kids Pool",
+        "AC Gym",
+        "Co-working Space",
+        "Indoor Games",
+        "Badminton Court",
+        "Party Deck",
+        "Kids Play Area",
+        "Yoga Zone",
+        "Rooftop Garden",
+        "2-Level Parking",
+        "24/7 Security",
+      ],
+      faqs: [
+        { q: "What is Canny Aravindam?", a: "Canny Aravindam is a luxury 2 and 3 BHK gated community in Bowrampet, Hyderabad, spanning 3 acres with 3 towers (G+9), 340 flats, and a 5-level clubhouse." },
+        { q: "Where is Canny Aravindam located?", a: "Canny Aravindam is situated in Bowrampet, Hyderabad, near ORR Exit 4A, within ~30 minutes of Miyapur, Kukatpally, and HITEC City." },
+        { q: "What configurations are available?", a: "Canny Aravindam offers 2 BHK flats (1,250–1,285 sq.ft.) and 3 BHK flats (1,505–2,300 sq.ft.) designed with no common walls." },
+        { q: "What is the RERA registration number for Canny Aravindam?", a: "Canny Aravindam is TS RERA approved with registration number P02200007242." },
+        { q: "What is the expected possession timeline?", a: "As per current official project schedules, expected possession is December 2027." },
+        { q: "How can I enquire about price and availability?", a: "Pricing is available on request. Contact Naani Projects via WhatsApp or call +91 94939 43946 for official pricing and guided site visits." }
+      ],
+      gallery: [
+        "/assets/canny-aravindam/canny-aravindam-elevation.jpg",
+        "/assets/canny-aravindam/canny-aravindam-clubhouse.jpg",
+        "/assets/canny-aravindam/canny-aravindam-brochure.png"
+      ],
+      hero_image: "/assets/canny-aravindam/canny-aravindam-elevation.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=Bowrampet+Hyderabad&output=embed",
+      seo_title: "Canny Aravindam, Bowrampet | 2 & 3 BHK Flats",
+      meta_description: "Explore Canny Aravindam in Bowrampet, Hyderabad. View 2 and 3 BHK apartment details, amenities, floor plans and RERA information.",
+      canonical_url: "https://www.naani.in/projects/canny-aravindam",
+      custom_page_path: "/projects/canny-aravindam",
+      featured: true,
+    };
+  }
+
   const title = slug
     .replace(/-hyderabad$/, "")
     .replace(/-/g, " ")

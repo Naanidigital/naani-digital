@@ -92,6 +92,7 @@ export const HYDERABAD_LOCATIONS: LocationConfig[] = [
   { name: "Financial District", slug: "financial-district", popularTypes: ["2 BHK", "3 BHK", "4 BHK"], description: "High-density corporate & luxury high-rise residential zone in Nanakramguda." },
   { name: "Miyapur", slug: "miyapur", popularTypes: ["2 BHK", "3 BHK"], description: "Major residential hub on NH-65 with Metro Rail connectivity." },
   { name: "Bachupally", slug: "bachupally", popularTypes: ["2 BHK", "3 BHK"], description: "Rapidly expanding educational & residential destination in North-West Hyderabad." },
+  { name: "Bowrampet", slug: "bowrampet", popularTypes: ["2 BHK", "3 BHK"], description: "Emerging residential hub near ORR Exit 4A, Dundigal, and Bachupally in North-West Hyderabad." },
   { name: "Neopolis", slug: "neopolis", popularTypes: ["3 BHK", "4 BHK"], description: "Ultra-luxury high-rise SEZ & residential district in Kokapet." },
   { name: "Kollur", slug: "kollur", popularTypes: ["2 BHK", "3 BHK"], description: "Promising ORR Exit 2 location featuring affordable luxury gated communities." },
   { name: "Nallagandla", slug: "nallagandla", popularTypes: ["2 BHK", "3 BHK"], description: "Upscale residential neighborhood near BHEL, Lingampally & HCU." },

@@ -13,6 +13,7 @@ import riseHero from "@/assets/rise-with-9/rise-with-9-trilight-hero.jpg";
 import linqHero from "@/assets/linq-by-raghava/linq-by-raghava-elevation-hero.jpg";
 import neoHero from "@/assets/neo-towers/tower.webp";
 import trumpHero from "@/assets/trump-towers/hero.jpg";
+import cannyHero from "@/assets/canny-aravindam/canny-aravindam-elevation.jpg";
 
 export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove-hyderabad": prestigeElevation,
@@ -44,6 +45,7 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "rajapushpa-sierra": rajapushpaHero,
   "tridasa-rise": tridasaBlock,
   "sri-soho-interiors-designers-hyderabad": "/og/sri-soho-interiors.png",
+  "canny-aravindam": cannyHero,
 };
 
 export const DEFAULT_BUILDING_IMAGES = [
@@ -83,6 +85,7 @@ export function getMappedProjectImage(slug?: string | null, name?: string | null
     if (n.includes("rajapushpa") || n.includes("sierra")) return rajapushpaHero;
     if (n.includes("team4") || n.includes("aria")) return team4Hero;
     if (n.includes("tridasa") || n.includes("rise")) return tridasaBlock;
+    if (n.includes("canny") || n.includes("aravindam")) return cannyHero;
   }
 
   return null;

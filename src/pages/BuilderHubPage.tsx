@@ -32,7 +32,8 @@ const BUILDER_BLURB: Record<string, string> = {
   "raghava-projects": "Raghava Projects develops iconic luxury skyscrapers and landmark residences across Hyderabad.",
   "tridasa-developers": "Tridasa Developers designs IGBC Gold certified luxury gated communities in Nallagandla and West Hyderabad.",
   "aritha-projects": "Aritha Projects builds modern residential towers with premium amenities across Hyderabad.",
-  "sri-soho-interiors": "Sri Soho Interiors delivers end-to-end luxury interior design solutions for residential and commercial properties in Hyderabad."
+  "sri-soho-interiors": "Sri Soho Interiors delivers end-to-end luxury interior design solutions for residential and commercial properties in Hyderabad.",
+  "canny-life-spaces": "Canny Life Spaces develops premium residential gated communities and modern apartments in Hyderabad, known for thoughtful architecture, high open spaces, and lifestyle amenities such as Canny Aravindam in Bowrampet.",
 };
 
 interface BuilderHubPageProps {

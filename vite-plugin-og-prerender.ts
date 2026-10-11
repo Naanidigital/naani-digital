@@ -2213,6 +2213,111 @@ function generateCategoryPrerenderHtml(categoryPath: string, categoryTitle: stri
 </div>`;
 }
 
+const CANNY_ARAVINDAM_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/canny-aravindam#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Bowrampet", "item": "https://www.naani.in/projects-in-bowrampet" },
+      { "@type": "ListItem", "position": 4, "name": "Canny Aravindam", "item": "https://www.naani.in/projects/canny-aravindam" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/canny-aravindam#project",
+    "name": "Canny Aravindam",
+    "url": "https://www.naani.in/projects/canny-aravindam",
+    "description": "Canny Aravindam in Bowrampet, Hyderabad. Discover 2 & 3 BHK luxury residences across 3 acres with 3 towers (G+9), 340 flats, no common walls, and a signature 5-level 17,000 sq.ft. clubhouse near ORR Exit 4A.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bowrampet",
+      "addressRegion": "Telangana",
+      "postalCode": "500043",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Canny Life Spaces"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/canny-aravindam#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Canny Aravindam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Canny Aravindam is a luxury 2 and 3 BHK gated community in Bowrampet, Hyderabad, spanning 3 acres with 3 towers (G+9), 340 flats, and a 5-level clubhouse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Canny Aravindam located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Canny Aravindam is situated in Bowrampet, Hyderabad, near ORR Exit 4A, within ~30 minutes of Miyapur, Kukatpally, and HITEC City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations are available at Canny Aravindam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Canny Aravindam offers 2 BHK flats (1,250–1,285 sq.ft.) and 3 BHK flats (1,505–2,300 sq.ft.) designed with no common walls."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number for Canny Aravindam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Canny Aravindam is TS RERA approved with registration number P02200007242."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/hyderabad" class="hover:text-amber-400">Hyderabad Hub</a>
+        <a href="/projects-in-bowrampet" class="hover:text-amber-400">Bowrampet</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">TS RERA APPROVED P02200007242 • Bowrampet, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Canny Aravindam – <span class="text-amber-400">2 &amp; 3 BHK Apartments in Bowrampet</span></h1>
+        <p class="text-lg text-slate-200">Luxury Gated Community by Canny Life Spaces</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          3 Acres • 3 Towers (G+9) • 340 Flats • 60% Open Space • No Common Walls • 5-Level Clubhouse • Near ORR Exit 4A
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20want%20price%20and%20floor%20plans%20for%20Canny%20Aravindam." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Current Price</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -2440,6 +2545,14 @@ const ogRoutes: OGRoute[] = [
     prerenderHtml: TRUMP_TOWERS_PRERENDER_HTML,
   },
   {
+    path: '/projects/canny-aravindam',
+    title: 'Canny Aravindam, Bowrampet | 2 & 3 BHK Flats',
+    description: 'Explore Canny Aravindam in Bowrampet, Hyderabad. View 2 and 3 BHK apartment details, amenities, floor plans and RERA information.',
+    url: `${SITE}/projects/canny-aravindam`,
+    image: `${SITE}/assets/canny-aravindam/canny-aravindam-elevation.jpg`,
+    prerenderHtml: CANNY_ARAVINDAM_PRERENDER_HTML,
+  },
+  {
     path: '/projects/rise-with-9',
     title: 'Rise With 9 Neopolis Kokapet Hyderabad | Luxury 3 & 4 BHK',
     description: 'Explore Rise With 9 in Neopolis, Kokapet, Hyderabad. Discover its large-format luxury residences, double-height living, sky amenities, clubhouse, connectivity and RERA details.',
@@ -2508,6 +2621,13 @@ const ogRoutes: OGRoute[] = [
     description: 'Rajapushpa Sierra – G+49 luxury 2 & 3 BHK apartments in Tellapur, Hyderabad. 1.5 lakh sft clubhouse near Gachibowli. Starting ₹94 Lakhs. Book site visit.',
     url: `${SITE}/projects/rajapushpa-sierra-tellapur-hyderabad`,
     image: `${SITE}/og-rajapushpa-sierra.jpg`,
+  },
+  {
+    path: '/projects/canny-aravindam',
+    title: 'Canny Aravindam Bowrampet | 2 & 3 BHK Luxury Flats Near ORR | Naani Projects',
+    description: 'Canny Aravindam by Canny Life Spaces offers 2 & 3 BHK luxury apartments in Bowrampet, Hyderabad near ORR Exit 4A. 3.05 acres, 3 towers (G+9), 360 units, 5-level jaali clubhouse, 60% open spaces. TG RERA P02200007242.',
+    url: `${SITE}/projects/canny-aravindam`,
+    image: `${SITE}/assets/canny-aravindam/canny-aravindam-elevation.jpg`,
   },
 ];
 
