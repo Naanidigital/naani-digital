@@ -73,3 +73,7 @@ Disallow: /*?*utm_
 Disallow: /*?*s=
 
 Sitemap: https://www.naani.in/sitemap.xml
+Sitemap: https://www.naani.in/sitemaps/static.xml
+Sitemap: https://www.naani.in/sitemaps/projects.xml
+Sitemap: https://www.naani.in/sitemaps/locations.xml
+Sitemap: https://www.naani.in/sitemaps/builders.xml

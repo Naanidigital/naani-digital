@@ -98,7 +98,7 @@ const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-
   }
 
   // Locations sitemap
-  const locations = Array.from(new Set(published.map((p) => p.location).filter(Boolean)));
+  const locations = Array.from(new Set([...published.map((p) => p.location), "Bowrampet"].filter(Boolean)));
   const locationEntries = locations.flatMap((loc) => {
     const slug = slugify(loc);
     return [
@@ -110,7 +110,7 @@ const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-
   writeFileSync(resolve(outDir, "locations.xml"), wrap(locationEntries));
 
   // Builders sitemap
-  const builders = Array.from(new Set(published.map((p) => p.builder).filter(Boolean)));
+  const builders = Array.from(new Set([...published.map((p) => p.builder), "Canny Life Spaces"].filter(Boolean)));
   const builderEntries = builders.map((b) =>
     urlEntry(`${SITE}/${slugify(b)}-projects-hyderabad`, { changefreq: "monthly", priority: "0.6" })
   );
