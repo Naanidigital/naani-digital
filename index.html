@@ -1,6 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark" style="color-scheme: dark;">
   <head>
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#090D16" />
     <!-- Google Tag Manager (deferred until idle / first interaction to protect TBT) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];var loaded=false;
     function load(){if(loaded)return;loaded=true;w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
@@ -67,14 +69,20 @@
     <!-- Inline critical CSS for LCP - ensures immediate render without waiting for CSS bundle -->
     <style>
       /* Critical CSS - Naani Projects dark luxury palette */
-      body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:hsl(228 45% 7%);color:hsl(0 0% 95%)}
-      #root{min-height:100vh}
-      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+      html, body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        background-color: #090D16;
+        color: #FAFAFA;
+        color-scheme: dark;
+      }
+      #root { min-height: 100vh; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
       /* Critical LCP styles - hero heading renders immediately */
-      .hero-heading{font-size:clamp(2.25rem,8vw,4.5rem);font-weight:700;line-height:1.1;display:block;color:hsl(0 0% 95%)}
-      .hero-heading-gradient{background:linear-gradient(90deg,hsl(43 80% 60%),hsl(35 75% 45%));-webkit-background-clip:text;background-clip:text;color:transparent}
+      .hero-heading { font-size: clamp(2.25rem, 8vw, 4.5rem); font-weight: 700; line-height: 1.1; display: block; color: #FAFAFA; }
+      .hero-heading-gradient { background: linear-gradient(90deg, hsl(43 80% 60%), hsl(35 75% 45%)); -webkit-background-clip: text; background-clip: text; color: transparent; }
       /* Container for hero to prevent layout shift */
-      .hero-container{min-height:100vh;display:flex;align-items:center;justify-content:center;background:hsl(228 45% 7%)}
+      .hero-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #090D16; }
     </style>
 
     <!-- OG/Twitter tags are dynamically set per page via react-helmet-async SEOHead component -->

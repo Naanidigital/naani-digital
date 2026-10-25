@@ -4,8 +4,6 @@ import {
   TrendingUp, Users, Award, CheckCircle2, ArrowRight, Search, CalendarCheck, 
   HelpCircle, Check, Compass, FileSearch, Scale, AlertTriangle, Layers, UserCheck, Briefcase, GraduationCap, Globe
 } from "lucide-react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import SEOHead from "../components/SEOHead";
 import { Button } from "../components/ui/button";
 
@@ -197,20 +195,17 @@ const AboutPage = () => {
         structuredData={structuredDataCombined}
       />
 
-      <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans">
-        <Header />
-
         {/* Breadcrumb Bar */}
-        <nav className="w-full bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
+        <nav className="w-full bg-card border-b border-border/40 py-3 px-4 sm:px-8 lg:px-12 text-xs text-muted-foreground">
           <div className="max-w-6xl mx-auto flex items-center gap-2">
-            <Link to="/" className="hover:text-amber-400 transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-amber-400 font-medium">About Us</span>
+            <span className="text-primary font-medium">About Us</span>
           </div>
         </nav>
 
         {/* HERO SECTION */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/50 to-background border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">
               <Sparkles size={14} /> Hyderabad Real Estate Discovery &amp; Assistance
@@ -248,7 +243,7 @@ const AboutPage = () => {
         </section>
 
         {/* SECTION: OUR STORY */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-card border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
@@ -289,11 +284,11 @@ const AboutPage = () => {
 
               {/* Track Record Stats Card */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-[#0F1629] border border-slate-800 text-center">
+                <div className="p-4 rounded-xl bg-secondary border border-border/40 text-center">
                   <div className="text-2xl font-extrabold text-amber-400">500+</div>
                   <div className="text-xs text-slate-400 mt-1">Flats Sold Across Hyderabad (Team/Company Sales)</div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#0F1629] border border-slate-800 text-center">
+                <div className="p-4 rounded-xl bg-secondary border border-border/40 text-center">
                   <div className="text-2xl font-extrabold text-amber-400">100+</div>
                   <div className="text-xs text-slate-400 mt-1">Villas Sold Across Hyderabad (Team/Company Sales)</div>
                 </div>
@@ -303,11 +298,11 @@ const AboutPage = () => {
         </section>
 
         {/* SECTION: MEET OUR FOUNDER - SHITISH KUMAR */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-background border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="grid lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-4 flex justify-center">
-                <div className="p-8 rounded-3xl bg-[#0F1629] border border-amber-500/30 text-center space-y-4 w-full max-w-sm shadow-xl relative overflow-hidden">
+                <div className="p-8 rounded-3xl bg-secondary border border-primary/30 text-center space-y-4 w-full max-w-sm shadow-xl relative overflow-hidden">
                   <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-amber-500 via-amber-300 to-amber-500 p-1 shadow-lg shadow-amber-500/20">
                     <img 
                       src="/shitish-kumar.png" 
@@ -356,7 +351,7 @@ const AboutPage = () => {
                   <p>
                     His vision is to help people explore suitable property options while helping owners connect with prospective buyers. Naani Projects supports enquiries related to apartments, villas, open plots, residential properties, and commercial properties.
                   </p>
-                  <p className="italic text-amber-200/90 bg-[#0F1629] p-4 rounded-xl border border-slate-800">
+                  <p className="italic text-amber-200/90 bg-secondary p-4 rounded-xl border border-border/40">
                     "For Shitish, real estate is about more than presenting a listing. It is about understanding what a customer needs, sharing available information clearly, and helping them take the next step with greater confidence."
                   </p>
                 </div>
@@ -366,7 +361,7 @@ const AboutPage = () => {
         </section>
 
         {/* SECTION: WHAT WE DO */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-card border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
@@ -382,45 +377,45 @@ const AboutPage = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Card 1 */}
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="p-6 rounded-2xl bg-secondary border border-border/40 hover:border-primary/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   <Search size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-white">Property Buying Assistance</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold text-foreground">Property Buying Assistance</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   We help buyers explore property options based on their preferred location, budget, property type, configuration, and intended use. Available options may include new residential projects, apartments, villas, plots, resale properties, and commercial spaces.
                 </p>
               </div>
 
               {/* Card 2 */}
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="p-6 rounded-2xl bg-secondary border border-border/40 hover:border-primary/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   <Building2 size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-white">Property Selling Assistance</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold text-foreground">Property Selling Assistance</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Property owners can contact Naani Projects to discuss selling their apartments, villas, plots, or other eligible properties. We help present property information and connect owners with relevant prospective buyers.
                 </p>
               </div>
 
               {/* Card 3 */}
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="p-6 rounded-2xl bg-secondary border border-border/40 hover:border-primary/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   <FileSearch size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-white">Project and Developer Information</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold text-foreground">Project and Developer Information</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   For applicable real estate projects, we prioritise checking RERA registration details and reviewing available information about the developer, project documents, progress, and expected possession. The extent of verification depends on the information and records available.
                 </p>
               </div>
 
               {/* Card 4 */}
-              <div className="p-6 rounded-2xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="p-6 rounded-2xl bg-secondary border border-border/40 hover:border-primary/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   <Scale size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-white">Payment and Home-Loan Guidance</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold text-foreground">Payment and Home-Loan Guidance</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   We help customers understand the payment arrangements associated with a property and the general steps involved in a home-loan process. Loan eligibility, approval, interest rates, and final terms are determined by the relevant financial institution.
                 </p>
               </div>
@@ -429,7 +424,7 @@ const AboutPage = () => {
         </section>
 
         {/* SECTION: OUR APPROACH TO PROPERTY AND PROJECT EVALUATION */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-background border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
             <div className="max-w-3xl space-y-4">
               <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
@@ -471,21 +466,21 @@ const AboutPage = () => {
                   desc: "Encourage buyers to independently verify property documents, legal title, approvals, payment terms, and other matters relevant to their transaction before committing."
                 }
               ].map((item, idx) => (
-                <div key={idx} className="p-5 rounded-xl bg-[#0F1629] border border-slate-800 flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center shrink-0">
+                <div key={idx} className="p-5 rounded-xl bg-secondary border border-border/40 flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-primary/20 text-primary font-bold flex items-center justify-center shrink-0">
                     {item.num}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white">{item.title}</h3>
-                    <p className="text-slate-300 text-sm mt-1">{item.desc}</p>
+                    <h3 className="text-base font-bold text-foreground">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Evaluation Disclaimer Card */}
-            <div className="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-slate-200 text-sm leading-relaxed space-y-2">
-              <div className="font-bold text-amber-400 text-base flex items-center gap-2">
+            <div className="p-6 rounded-2xl bg-primary/10 border border-primary/30 text-foreground/90 text-sm leading-relaxed space-y-2">
+              <div className="font-bold text-primary text-base flex items-center gap-2">
                 <AlertTriangle size={18} /> Disclaimer on Evaluation Scope
               </div>
               <p>
@@ -496,34 +491,34 @@ const AboutPage = () => {
         </section>
 
         {/* SECTION: OUR FOCUS ON HYDERABAD */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-card border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="max-w-3xl space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+              <span className="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2">
                 <MapPin size={16} /> Hyderabad Coverage
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
                 Our Focus on Hyderabad
               </h2>
-              <p className="text-slate-300 text-base leading-relaxed">
+              <p className="text-muted-foreground text-base leading-relaxed">
                 Hyderabad includes established residential neighbourhoods, expanding development corridors, and locations attracting new buyer interest. We follow property opportunities across the city and surrounding areas, considering factors such as connectivity, available infrastructure, project information, budget, and customer requirements.
               </p>
             </div>
 
             {/* Areas We Follow */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <CheckCircle2 size={18} className="text-amber-400" /> Areas We Follow
+              <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-primary" /> Areas We Follow
               </h3>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 {areasFollowed.map((area, i) => (
                   <Link 
                     key={i} 
                     to={area.path} 
-                    className="p-3.5 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 hover:text-amber-400 transition-all flex items-center justify-between text-sm font-semibold text-slate-200 group"
+                    className="p-3.5 rounded-xl bg-secondary border border-border/40 hover:border-primary/40 hover:text-primary transition-all flex items-center justify-between text-sm font-semibold text-foreground/80 group"
                   >
                     <span>{area.name}</span>
-                    <ArrowRight size={14} className="text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={14} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-transform" />
                   </Link>
                 ))}
               </div>
@@ -531,34 +526,34 @@ const AboutPage = () => {
 
             {/* Emerging Locations We Monitor */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <Compass size={18} className="text-amber-400" /> Emerging Locations We Monitor
+              <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+                <Compass size={18} className="text-primary" /> Emerging Locations We Monitor
               </h3>
               <div className="flex flex-wrap gap-2.5">
                 {emergingLocations.map((loc, idx) => (
-                  <span key={idx} className="px-4 py-2 rounded-xl bg-[#0F1629] border border-slate-800 text-xs font-semibold text-slate-300 hover:border-amber-500/30 transition-colors">
+                  <span key={idx} className="px-4 py-2 rounded-xl bg-secondary border border-border/40 text-xs font-semibold text-muted-foreground hover:border-primary/30 transition-colors">
                     {loc}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+            <div className="p-4 rounded-xl bg-card border border-border/40 text-xs text-muted-foreground leading-relaxed">
               These lists describe the areas we follow; they are not guarantees of price appreciation or investment performance. Suitability depends on individual requirements, property-specific facts, infrastructure, approvals, and prevailing market conditions.
             </div>
           </div>
         </section>
 
         {/* SECTION: OUR MISSION */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-background border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-bold uppercase tracking-[0.2em]">
               <Award size={14} /> Our Core Mission
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground max-w-2xl mx-auto">
               Connecting the Right Buyer with the Right Seller
             </h2>
-            <div className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto space-y-4">
+            <div className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto space-y-4">
               <p>
                 Our mission is to connect the right buyer with the right seller through clear communication, relevant property options, and responsible guidance.
               </p>
@@ -570,16 +565,16 @@ const AboutPage = () => {
         </section>
 
         {/* SECTION: OUR COMMITMENT TO CUSTOMERS */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-card border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
             <div className="max-w-3xl space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+              <span className="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2">
                 <CheckCircle2 size={16} /> Customer Standards
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
                 Our Commitment to Customers
               </h2>
-              <p className="text-slate-300 text-base leading-relaxed">
+              <p className="text-muted-foreground text-base leading-relaxed">
                 We believe that property decisions deserve careful consideration. We aim to:
               </p>
             </div>
@@ -593,37 +588,37 @@ const AboutPage = () => {
                 "Encourage independent verification of important legal, financial, and property documents.",
                 "Correct listing information when reliable updated details are provided."
               ].map((commitment, i) => (
-                <div key={i} className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 space-y-2 flex items-start gap-3">
-                  <Check size={18} className="text-amber-400 shrink-0 mt-0.5" />
-                  <p className="text-slate-200 text-sm leading-relaxed">{commitment}</p>
+                <div key={i} className="p-6 rounded-xl bg-secondary border border-border/40 space-y-2 flex items-start gap-3">
+                  <Check size={18} className="text-primary shrink-0 mt-0.5" />
+                  <p className="text-foreground/90 text-sm leading-relaxed">{commitment}</p>
                 </div>
               ))}
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-400">
+            <div className="p-4 rounded-xl bg-card border border-border/40 text-xs text-muted-foreground">
               Property information, availability, pricing, project progress, and possession timelines may change. Customers should verify current details and obtain appropriate professional advice before completing a transaction.
             </div>
           </div>
         </section>
 
         {/* SECTION: BUYING OR SELLING A PROPERTY IN HYDERABAD? (CTA) */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/50 to-background border-b border-border/40">
           <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
               Buying or Selling a Property in Hyderabad?
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Whether you are searching for an apartment, villa, open plot, residential property, or commercial space—or want to sell a property you own—Naani Projects welcomes your enquiry.
             </p>
-            <p className="text-amber-300 font-medium text-sm sm:text-base">
+            <p className="text-primary font-medium text-sm sm:text-base">
               Tell us what you need, your preferred location, and your budget. We will help you explore relevant options and understand the next steps.
             </p>
 
             {/* Contact Box */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#0F1629] border border-amber-500/30 space-y-6 max-w-2xl mx-auto shadow-2xl">
+            <div className="p-6 sm:p-8 rounded-3xl bg-secondary border border-primary/30 space-y-6 max-w-2xl mx-auto shadow-2xl">
               <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Contact Naani Projects</h3>
-                <p className="text-slate-300 text-sm sm:text-base">Call or WhatsApp us directly for property discovery &amp; selling assistance:</p>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">Contact Naani Projects</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">Call or WhatsApp us directly for property discovery &amp; selling assistance:</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
@@ -638,55 +633,52 @@ const AboutPage = () => {
                 </a>
                 <a 
                   href={TEL}
-                  className="flex-1 inline-flex items-center justify-center gap-2.5 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/40 font-bold px-5 py-4 rounded-xl transition-all text-sm sm:text-base whitespace-nowrap"
+                  className="flex-1 inline-flex items-center justify-center gap-2.5 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/40 font-bold px-5 py-4 rounded-xl transition-all text-sm sm:text-base whitespace-nowrap"
                 >
                   <Phone size={20} className="shrink-0" />
                   <span>Call +91 94939 43946</span>
                 </a>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 text-xs sm:text-sm text-slate-400 flex items-center justify-center gap-2">
-                <Globe size={16} className="text-amber-400" />
-                <span>Website: <a href="https://www.naani.in/" className="text-amber-400 hover:underline font-semibold">https://www.naani.in/</a></span>
+              <div className="pt-4 border-t border-border/40 text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
+                <Globe size={16} className="text-primary" />
+                <span>Website: <a href="https://www.naani.in/" className="text-primary hover:underline font-semibold">https://www.naani.in/</a></span>
               </div>
             </div>
 
-            <p className="text-xs font-bold text-slate-400 tracking-wider uppercase">
+            <p className="text-xs font-bold text-muted-foreground tracking-wider uppercase">
               Naani Projects – Connecting the Right Buyer with the Right Seller.
             </p>
           </div>
         </section>
 
         {/* SECTION: FREQUENTLY ASKED QUESTIONS */}
-        <section className="py-16 md:py-20 bg-[#090D16]">
+        <section className="py-16 md:py-20 bg-background">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-amber-400 text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+              <span className="text-primary text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2">
                 <HelpCircle size={16} /> Frequently Asked Questions
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
                 Frequently Asked Questions About Naani Projects
               </h2>
-              <p className="text-slate-300 text-base">
+              <p className="text-muted-foreground text-base">
                 Answers to common questions about our platform, founder, evaluation approach, and services.
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-4">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-2">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="text-amber-400 font-mono text-sm">Q{idx + 1}.</span> {faq.question}
+                <div key={idx} className="p-6 rounded-xl bg-card border border-border/40 space-y-2">
+                  <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+                    <span className="text-primary font-mono text-sm">Q{idx + 1}.</span> {faq.question}
                   </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed pl-6">{faq.answer}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed pl-6">{faq.answer}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        <Footer />
-      </div>
     </>
   );
 };

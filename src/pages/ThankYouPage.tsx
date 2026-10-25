@@ -80,7 +80,7 @@ const ThankYouPage = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-background flex items-center justify-center px-4 py-12">
+      <div className="flex-1 min-h-[70vh] flex items-center justify-center px-4 py-20">
         <div data-lead-gate-skip className="max-w-md w-full text-center space-y-8">
           <div className="flex justify-center">
             <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center">

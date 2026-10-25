@@ -10,7 +10,6 @@ import {
 import { Button } from "@/components/ui/button";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
-import ProjectHeader from "@/components/ProjectHeader";
 import SEOHead from "@/components/SEOHead";
 import elevationImg from "@/assets/jaycon/elevation-collage.png";
 import amenitiesImg from "@/assets/jaycon/amenities-collage.png";
@@ -28,14 +27,14 @@ const priceMsg = "Please share the latest price and payment plan for Jaycon Gate
 const expertMsg = "I'd like to speak with an expert about Jaycon Gateway Tirupati investment.";
 
 /* ── Theme constants ── */
-const NAVY_BG = "#0B1C2C";
-const NAVY_DEEP = "#0E2238";
-const GOLD = "#F5B400";
-const GOLD_LIGHT = "#FFD54F";
-const SUBTEXT = "#AAB3C5";
-const CARD_BG = "rgba(255,255,255,0.05)";
-const CARD_BORDER = "rgba(245,180,0,0.2)";
-const CARD_HOVER_SHADOW = "0 8px 32px rgba(245,180,0,0.15)";
+const NAVY_BG = "#090D16";
+const NAVY_DEEP = "#111726";
+const GOLD = "#D4AF37";
+const GOLD_LIGHT = "#F59E0B";
+const SUBTEXT = "#94A3B8";
+const CARD_BG = "rgba(17,23,38,0.7)";
+const CARD_BORDER = "rgba(212,175,55,0.2)";
+const CARD_HOVER_SHADOW = "0 8px 32px rgba(212,175,55,0.15)";
 
 /* ── Count-up hook ── */
 const useCountUp = (end: number, duration = 2000, inView = false) => {
@@ -122,17 +121,17 @@ const CtaBtn = ({ text, onClick, variant = "gold", icon, className = "", pulse =
     <Button
       className={`group px-7 py-5 text-sm font-bold rounded-xl transition-all duration-300 ${
         variant === "gold"
-          ? `bg-gradient-to-r from-[${GOLD}] to-[${GOLD_LIGHT}] hover:from-[#e0a600] hover:to-[${GOLD}] text-[${NAVY_BG}] shadow-[0_0_30px_rgba(245,180,0,0.3)] hover:shadow-[0_0_50px_rgba(245,180,0,0.5)]`
-          : `border border-[${GOLD}]/30 text-[${GOLD}] bg-[${GOLD}]/5 hover:bg-[${GOLD}]/10 hover:border-[${GOLD}]/60`
+          ? "bg-gradient-gold text-primary-foreground shadow-gold hover:opacity-95"
+          : "border border-primary/30 text-primary bg-primary/5 hover:bg-primary/10 hover:border-primary/60"
       } hover:scale-[1.05] ${pulse ? "animate-[pulse_2s_ease-in-out_infinite]" : ""} ${className}`}
       style={variant === "gold" ? {
         background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`,
         color: NAVY_BG,
-        boxShadow: "0 0 30px rgba(245,180,0,0.3)",
+        boxShadow: "0 0 30px rgba(212,175,55,0.3)",
       } : {
-        border: `1px solid rgba(245,180,0,0.3)`,
+        border: `1px solid rgba(212,175,55,0.3)`,
         color: GOLD,
-        background: "rgba(245,180,0,0.05)",
+        background: "rgba(212,175,55,0.05)",
       }}
     >
       {icon || <MessageCircle className="w-4 h-4 mr-2" />}
@@ -208,7 +207,7 @@ const JayconGatewayTirupatiPage = () => {
   const monthlyIncome = useCountUp(30, 1500, roiInView);
 
   return (
-    <div className="min-h-screen font-sans text-white" style={{ background: `linear-gradient(180deg, ${NAVY_BG} 0%, ${NAVY_DEEP} 50%, ${NAVY_BG} 100%)` }}>
+    <>
       <SEOHead
         title="Jaycon Gateway Tirupati – Premium Suites with Rental Income & Investment Opportunity"
         description="Invest in Jaycon Gateway Tirupati premium suites. Earn passive rental income with fully managed property near Tirumala. Book your unit today."
@@ -217,7 +216,6 @@ const JayconGatewayTirupatiPage = () => {
         ogImage="https://www.naani.in/og-jaycon-gateway-tirupati.jpg"
         structuredData={structuredData}
       />
-      <ProjectHeader projectName="Jaycon Gateway Tirupati" />
 
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative min-h-[96vh] flex items-center justify-center overflow-hidden">
@@ -706,15 +704,15 @@ const JayconGatewayTirupatiPage = () => {
       </section>
 
       {/* ═══════════ STICKY MOBILE CTA ═══════════ */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden backdrop-blur-xl p-3 flex gap-3" style={{ background: "rgba(11,28,44,0.95)", borderTop: `1px solid ${CARD_BORDER}` }}>
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden backdrop-blur-xl p-3 flex gap-3 bg-background/95 border-t border-border/40">
         <div onClick={() => openLead("Mobile - Enquire Now")} className="flex-1 cursor-pointer">
-          <Button className="w-full font-bold py-5 text-sm rounded-xl" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, color: NAVY_BG, boxShadow: "0 0 25px rgba(245,180,0,0.3)" }}>
+          <Button className="w-full font-bold py-5 text-sm rounded-xl bg-gradient-gold text-primary-foreground shadow-gold">
             <MessageCircle className="w-4 h-4 mr-2" />
             Enquire Now
           </Button>
         </div>
         <div onClick={() => openLead("Mobile - Site Visit")} className="flex-1 cursor-pointer">
-          <Button className="w-full font-bold py-5 text-sm rounded-xl" style={{ border: `1px solid rgba(245,180,0,0.3)`, color: GOLD, background: "rgba(245,180,0,0.05)" }}>
+          <Button className="w-full font-bold py-5 text-sm rounded-xl border border-primary/40 text-primary bg-primary/5">
             <CalendarCheck className="w-4 h-4 mr-2" />
             Site Visit
           </Button>
@@ -723,7 +721,7 @@ const JayconGatewayTirupatiPage = () => {
       <div className="h-16 md:hidden" />
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName="Jaycon Gateway Tirupati" />
       <ScrollTriggerPopup projectName="Jaycon Gateway Tirupati" />
-    </div>
+    </>
   );
 };
 

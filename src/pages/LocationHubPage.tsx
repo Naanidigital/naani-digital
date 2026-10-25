@@ -2,9 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { MapPin, MessageCircle, Phone, Calendar, ChevronRight, Building2, Home } from "lucide-react";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import ProjectCard from "@/components/ProjectCard";
@@ -158,9 +155,6 @@ const LocationHubPage = ({ locationSlugOverride }: LocationHubPageProps = {}) =>
         {itemListSchema && <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>}
       </Helmet>
 
-      <div className="min-h-screen bg-background">
-        <ProjectsHeader />
-
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="pt-24 pb-2 container mx-auto px-4 text-sm text-muted-foreground">
           <ol className="flex items-center gap-1 flex-wrap">
@@ -301,10 +295,6 @@ const LocationHubPage = ({ locationSlugOverride }: LocationHubPageProps = {}) =>
             </div>
           </div>
         </section>
-
-        <ProjectsFooter />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

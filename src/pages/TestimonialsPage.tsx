@@ -1,7 +1,4 @@
-import Header from "@/components/Header";
 import TestimonialsContent from "@/components/TestimonialsContent";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import InternalLinkBlock from "@/components/InternalLinkBlock";
@@ -71,19 +68,14 @@ const TestimonialsPage = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        <TestimonialsContent />
-        <FAQSection faqs={faqs} pageUrl="https://www.naani.in/testimonials" />
-        <InternalLinkBlock
-          text="Stay ahead with the latest digital marketing trends and insights from Hyderabad experts on our"
-          linkUrl="/blogs"
-          linkTitle="Digital Marketing Blog - Expert Campaigns & Tips Hyderabad"
-          anchorText="marketing insights blog"
-        />
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <TestimonialsContent />
+      <FAQSection faqs={faqs} pageUrl="https://www.naani.in/testimonials" />
+      <InternalLinkBlock
+        text="Stay ahead with the latest digital marketing trends and insights from Hyderabad experts on our"
+        linkUrl="/blogs"
+        linkTitle="Digital Marketing Blog - Expert Campaigns & Tips Hyderabad"
+        anchorText="marketing insights blog"
+      />
     </>
   );
 };

@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import FAQSection from "@/components/FAQSection";
 import { HYDERABAD_LOCATIONS } from "@/config/seoKeywords";
 import { getSeoPageData } from "@/lib/seoDataHelper";
@@ -21,27 +18,24 @@ const HyderabadHubPage = () => {
         structuredData={pageData.structuredData}
       />
 
-      <div className="min-h-screen bg-background text-foreground">
-        <Header />
+      {/* HERO SECTION */}
+      <section className="relative pt-28 pb-14 bg-gradient-to-b from-background via-card/50 to-background border-b border-border/40">
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Breadcrumb */}
+          <nav aria-label="breadcrumb" className="text-xs text-muted-foreground mb-6 font-medium">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link> / <span className="text-foreground font-semibold">Hyderabad Real Estate</span>
+          </nav>
 
-        {/* HERO SECTION */}
-        <section className="relative pt-28 pb-14 bg-[#F1F1F1] border-b border-[#0080FF]/20">
-          <div className="container mx-auto px-4 relative z-10">
-            {/* Breadcrumb */}
-            <nav aria-label="breadcrumb" className="text-xs text-[#0080FF] mb-6 font-medium">
-              <Link to="/" className="hover:text-[#040957] transition-colors">Home</Link> / <span className="text-[#040957] font-semibold">Hyderabad Real Estate</span>
-            </nav>
-
-            <div className="max-w-4xl">
-              <span className="inline-block bg-[#0080FF]/15 border border-[#0080FF]/30 text-[#0080FF] text-xs font-bold px-3.5 py-1.5 rounded-full mb-4 uppercase tracking-widest">
-                Hyderabad Real Estate Discovery Hub
-              </span>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-[#040957]">
-                Properties &amp; Flats for Sale in Hyderabad
-              </h1>
-              <p className="text-base md:text-lg text-slate-700 mb-8 leading-relaxed">
-                {pageData.intro}
-              </p>
+          <div className="max-w-4xl">
+            <span className="inline-block bg-primary/10 border border-primary/30 text-primary text-xs font-bold px-3.5 py-1.5 rounded-full mb-4 uppercase tracking-widest">
+              Hyderabad Real Estate Discovery Hub
+            </span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-foreground">
+              <span className="text-gold-gradient">Properties &amp; Flats for Sale</span> in Hyderabad
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
+              {pageData.intro}
+            </p>
 
               {/* QUICK BHK FILTER TILES */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
@@ -162,10 +156,6 @@ const HyderabadHubPage = () => {
             <FAQSection items={pageData.faqs} />
           </div>
         </section>
-
-        <Footer />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

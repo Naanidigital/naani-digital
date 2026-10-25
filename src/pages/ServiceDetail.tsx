@@ -3,9 +3,6 @@ import { ArrowLeft, CheckCircle2, ArrowRight, MessageCircle, Phone, Target, User
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Contact from "@/components/Contact";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import InternalLinkBlock from "@/components/InternalLinkBlock";
@@ -233,12 +230,8 @@ const ServiceDetail = () => {
         />
       )}
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        <WhatsAppButton />
-      
-        {/* Hero Section */}
-        <section className="pt-32 pb-16 relative">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-transparent"></div>
           
           <div className="container mx-auto px-4 relative z-10">
@@ -530,9 +523,6 @@ const ServiceDetail = () => {
         {seoData && (
           <FAQSection faqs={seoData.faqs} pageUrl={seoData.canonicalUrl} />
         )}
-        
-        <Footer />
-      </div>
     </>
   );
 };

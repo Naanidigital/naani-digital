@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -297,32 +294,24 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
 
   if (loading) {
     return (
-      <>
-        <ProjectsHeader />
-        <div className="container mx-auto px-4 pt-28 pb-20 space-y-6">
-          <Skeleton className="h-[40vh] w-full rounded-2xl" />
-          <Skeleton className="h-8 w-2/3" />
-          <Skeleton className="h-4 w-1/2" />
-          <div className="grid md:grid-cols-3 gap-4">
-            <Skeleton className="h-40" /><Skeleton className="h-40" /><Skeleton className="h-40" />
-          </div>
+      <div className="container mx-auto px-4 pt-28 pb-20 space-y-6">
+        <Skeleton className="h-[40vh] w-full rounded-2xl" />
+        <Skeleton className="h-8 w-2/3" />
+        <Skeleton className="h-4 w-1/2" />
+        <div className="grid md:grid-cols-3 gap-4">
+          <Skeleton className="h-40" /><Skeleton className="h-40" /><Skeleton className="h-40" />
         </div>
-        <ProjectsFooter />
-      </>
+      </div>
     );
   }
 
   if (!project) {
     return (
-      <>
-        <ProjectsHeader />
-        <div className="container mx-auto px-4 pt-28 pb-20 text-center min-h-[60vh] flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-[#040957] mb-3">Project not found</h1>
-          <p className="text-slate-600 mb-6 font-medium">We couldn't find this project. Browse all projects below.</p>
-          <Link to="/projects" className="text-[#0080FF] underline font-bold">View all projects →</Link>
-        </div>
-        <ProjectsFooter />
-      </>
+      <div className="container mx-auto px-4 pt-28 pb-20 text-center min-h-[60vh] flex flex-col items-center justify-center">
+        <h1 className="text-3xl font-bold text-foreground mb-3">Project not found</h1>
+        <p className="text-muted-foreground mb-6 font-medium">We couldn't find this project. Browse all projects below.</p>
+        <Link to="/projects" className="text-primary hover:underline font-bold">View all projects →</Link>
+      </div>
     );
   }
 
@@ -409,13 +398,12 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
         ogImage={heroImg}
         structuredData={{ "@context": "https://schema.org", "@graph": [breadcrumbSchema, realEstateSchema, localBusinessSchema, faqSchema].filter(Boolean) }}
       />
-      <ProjectsHeader />
 
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-end pt-20 bg-[#090D16]">
+      <section className="relative min-h-[85vh] flex items-end pt-20 bg-background">
         <div className="absolute inset-0">
           <img src={heroImg} alt={`${project.name} - ${project.property_type} in ${project.location}`} className="w-full h-full object-cover opacity-40" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090D16] via-[#090D16]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         </div>
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 pb-16 relative z-10">
           <nav aria-label="breadcrumb" className="text-xs font-semibold text-slate-300 mb-4 flex items-center gap-1">
@@ -462,13 +450,13 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
       </section>
 
       {/* OVERVIEW */}
-      <section className="py-16 bg-[#090D16]">
+      <section className="py-16 bg-background">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-3xl font-extrabold text-white flex items-center gap-3"><Sparkles className="text-amber-400" /> About {project.name}</h2>
-            <p className="text-slate-300 leading-relaxed font-medium text-base md:text-lg glass-card p-8">{project.description}</p>
+            <h2 className="text-3xl font-extrabold text-foreground flex items-center gap-3"><Sparkles className="text-primary" /> About {project.name}</h2>
+            <p className="text-muted-foreground leading-relaxed font-medium text-base md:text-lg glass-card p-8">{project.description}</p>
             {project.usp && (
-              <div className="bg-[#111726] border-l-4 border-amber-400 p-5 rounded-2xl shadow-md border border-amber-500/20">
+              <div className="bg-card border-l-4 border-primary p-5 rounded-2xl shadow-md border border-border/40">
                 <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">Project Highlight / USP</p>
                 <p className="text-white font-semibold text-base md:text-lg mt-1">{project.usp}</p>
               </div>
@@ -485,7 +473,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
       </section>
 
       {/* RICH SEO CONTENT — Builder · Connectivity · Lifestyle · Investment */}
-      <section className="py-16 bg-[#0B101D] border-y border-amber-500/20">
+      <section className="py-16 bg-card/40 border-y border-border/40">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 grid md:grid-cols-2 gap-8">
           <article className="glass-card p-8">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3"><Building2 className="text-amber-400" size={24} /> About the Builder</h2>
@@ -519,7 +507,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
 
       {/* GALLERY */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="py-16 bg-[#090D16]">
+        <section className="py-16 bg-background">
           <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
             <h2 className="text-3xl font-extrabold text-white mb-8">Project Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -533,7 +521,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
 
       {/* AMENITIES */}
       {project.amenities && project.amenities.length > 0 && (
-        <section className="py-16 bg-[#0B101D] border-y border-amber-500/20">
+        <section className="py-16 bg-card/40 border-y border-border/40">
           <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
             <h2 className="text-3xl font-extrabold text-white mb-3">Project Amenities</h2>
             <p className="text-slate-300 font-medium mb-8">Everything you need for a luxury lifestyle.</p>
@@ -569,7 +557,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
       </section>
 
       {/* LOCATION */}
-      <section className="py-16 bg-[#090D16]">
+      <section className="py-16 bg-background">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           <h2 className="text-3xl font-extrabold text-white mb-3 flex items-center gap-3"><MapPin className="text-amber-400" /> Location Advantages</h2>
           <p className="text-slate-300 mb-8 font-medium text-base md:text-lg max-w-4xl">{project.location} is one of Hyderabad's fastest-growing residential corridors with excellent connectivity to IT hubs, schools, hospitals and entertainment zones.</p>
@@ -588,7 +576,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
 
       {/* FAQs */}
       {project.faqs && project.faqs.length > 0 && (
-        <section className="py-16 bg-[#0B101D] border-y border-amber-500/20">
+        <section className="py-16 bg-card/40 border-y border-border/40">
           <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-10">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="space-y-4">
@@ -604,7 +592,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
       )}
 
       {/* FINAL CTA SECTION - EQUAL SIZED BOXES */}
-      <section className="py-20 px-4 bg-[#090D16]">
+      <section className="py-20 px-4 bg-background">
         <div className="max-w-5xl mx-auto text-center glass-card p-10 sm:p-14">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
             Book Your <span className="text-amber-400">Dream Home</span> Today
@@ -640,7 +628,7 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
         ].filter(s => s.items.length > 0);
         if (!sections.length) return null;
         return (
-          <section className="py-16 bg-[#0B101D] border-y border-amber-500/20 space-y-12">
+          <section className="py-16 bg-card/40 border-y border-border/40 space-y-12">
             {sections.map((sec) => (
               <div key={sec.title} className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-6 flex items-center gap-3">{sec.icon} {sec.title}</h2>
@@ -663,14 +651,11 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
       })()}
 
       {/* MOBILE STICKY BOTTOM CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-xl border-t border-amber-500/30 p-3 grid grid-cols-3 gap-2 shadow-2xl">
-        <a href={`tel:${PHONE}`} className="call-btn flex flex-col items-center justify-center bg-slate-900 border border-amber-500/40 text-amber-400 py-2.5 rounded-xl text-xs font-bold shadow-md"><Phone size={18} />Call</a>
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-xl border-t border-border/40 p-3 grid grid-cols-3 gap-2 shadow-2xl">
+        <a href={`tel:${PHONE}`} className="call-btn flex flex-col items-center justify-center bg-card border border-primary/40 text-primary py-2.5 rounded-xl text-xs font-bold shadow-md"><Phone size={18} />Call</a>
         <a href={WA(waMsg)} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex flex-col items-center justify-center bg-emerald-600 text-white py-2.5 rounded-xl text-xs font-bold shadow-md"><MessageCircle size={18} />WhatsApp</a>
         <button onClick={() => openPopup("Sticky Bar", project.name)} className="flex flex-col items-center justify-center bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 py-2.5 rounded-xl text-xs font-extrabold shadow-md"><Calendar size={18} />Visit</button>
       </div>
-
-      <ProjectsFooter />
-      <WhatsAppButton />
 
       <LeadCapturePopup open={open} onOpenChange={setOpen} source={source} projectName={projectName || project.name} />
       <BrochureGateModal open={brochureGateOpen} onOpenChange={setBrochureGateOpen} brochureUrl={project.brochure_url} projectName={project.name} />

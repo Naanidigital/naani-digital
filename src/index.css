@@ -12,6 +12,7 @@
 
 @layer base {
   :root {
+    color-scheme: dark;
     /* Background - Deep Obsidian Black #090D16 */
     --background: 222 47% 7%;
     /* Foreground - Pure Crisp White */
@@ -76,13 +77,18 @@
     @apply border-border;
   }
 
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background));
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: hsl(var(--background));
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {

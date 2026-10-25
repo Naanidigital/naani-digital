@@ -6,9 +6,6 @@ import {
   ArrowRight, ArrowLeft, ShieldCheck, TrendingUp, Users, DollarSign,
   FileText, Layers, Check, Plus, AlertCircle, RefreshCw, Lock, HelpCircle
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
@@ -199,26 +196,23 @@ const ListYourPropertyPage = () => {
         canonicalUrl="https://www.naani.in/list-your-property"
         keywords="list property Hyderabad, post property free, submit property Naani Projects, sell flat Bachupally, sell villa Kokapet, real estate listing platform Hyderabad"
       />
-      <div className="min-h-screen bg-[#090D16] text-white">
-        <Header />
+      {/* HERO BANNER */}
+      <section className="pt-28 pb-12 bg-background border-b border-border/40">
+        <div className="w-full px-4 sm:px-8 lg:px-12 max-w-5xl mx-auto text-center">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-card border border-primary/30 text-primary text-xs font-extrabold uppercase tracking-[0.2em] shadow-md mb-4">
+            Owner, Builder &amp; Partner Platform
+          </span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight">
+            List Your Property on <span className="text-gold-gradient">Naani Projects</span>
+          </h1>
+          <p className="text-muted-foreground text-base sm:text-lg font-medium mt-4 max-w-3xl mx-auto leading-relaxed">
+            Submit your property details to reach active homebuyers and tenants across Hyderabad. Provide structured information to help buyers evaluate your listing quickly.
+          </p>
+        </div>
+      </section>
 
-        {/* HERO BANNER */}
-        <section className="pt-28 pb-12 bg-[#090D16] border-b border-amber-500/20">
-          <div className="w-full px-4 sm:px-8 lg:px-12 max-w-5xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#111726] border border-amber-500/30 text-amber-400 text-xs font-extrabold uppercase tracking-[0.2em] shadow-md mb-4">
-              Owner, Builder &amp; Partner Platform
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-              List Your Property on <span className="text-gold-gradient">Naani Projects</span>
-            </h1>
-            <p className="text-slate-300 text-base sm:text-lg font-medium mt-4 max-w-3xl mx-auto leading-relaxed">
-              Submit your property details to reach active homebuyers and tenants across Hyderabad. Provide structured information to help buyers evaluate your listing quickly.
-            </p>
-          </div>
-        </section>
-
-        {/* MULTI-STEP PROGRESS BAR */}
-        <section className="py-6 bg-[#0B101D] border-b border-amber-500/20 sticky top-16 md:top-20 z-30 backdrop-blur-md bg-opacity-95">
+      {/* MULTI-STEP PROGRESS BAR */}
+      <section className="py-6 bg-card/95 border-b border-border/40 sticky top-16 md:top-20 z-30 backdrop-blur-md">
           <div className="w-full px-4 sm:px-8 lg:px-12 max-w-6xl mx-auto">
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-4">
               {STEPS.map((s) => {
@@ -260,7 +254,7 @@ const ListYourPropertyPage = () => {
         </section>
 
         {/* MAIN FORM CONTAINER */}
-        <section className="py-12 bg-[#090D16]">
+        <section className="py-12 bg-background">
           <div className="w-full px-4 sm:px-8 lg:px-12 max-w-5xl mx-auto">
             <div className="glass-card p-6 sm:p-10 shadow-2xl border border-amber-500/20">
 
@@ -402,7 +396,7 @@ const ListYourPropertyPage = () => {
                   </div>
 
                   {/* Submitter Contact */}
-                  <div className="bg-[#0B101D] p-5 rounded-2xl border border-amber-500/20 space-y-4">
+                  <div className="bg-card p-5 rounded-2xl border border-amber-500/20 space-y-4">
                     <h3 className="text-sm font-extrabold text-amber-400 uppercase tracking-wider">H. Submitter Contact Details</h3>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
@@ -752,7 +746,7 @@ const ListYourPropertyPage = () => {
                   </div>
 
                   {/* Searchable Amenities */}
-                  <div className="bg-[#0B101D] p-5 rounded-2xl border border-amber-500/20 space-y-4">
+                  <div className="bg-card p-5 rounded-2xl border border-amber-500/20 space-y-4">
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                       <Label className="text-xs font-extrabold text-amber-400 uppercase tracking-wider">Searchable Amenities Multi-Select ({form.amenities.length} selected)</Label>
                       <Input
@@ -844,7 +838,7 @@ const ListYourPropertyPage = () => {
                   </div>
 
                   {/* RERA Registration */}
-                  <div className="bg-[#0B101D] p-5 rounded-2xl border border-amber-500/20 space-y-4">
+                  <div className="bg-card p-5 rounded-2xl border border-amber-500/20 space-y-4">
                     <h3 className="text-sm font-extrabold text-amber-400 uppercase tracking-wider">RERA Compliance Details</h3>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
@@ -864,7 +858,7 @@ const ListYourPropertyPage = () => {
                   </div>
 
                   {/* INTERNAL SEO HEALTH SCORECARD */}
-                  <div className="p-6 rounded-2xl bg-[#0B101D] border border-amber-500/30 space-y-4">
+                  <div className="p-6 rounded-2xl bg-card border border-amber-500/30 space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="text-base font-extrabold text-white">Internal SEO Diagnostic Score</h3>
@@ -1042,9 +1036,9 @@ const ListYourPropertyPage = () => {
         </section>
 
         {/* WHY LIST WITH NAANI */}
-        <section className="py-16 bg-[#0B101D] border-t border-amber-500/20">
+        <section className="py-16 bg-card/40 border-t border-border/40">
           <div className="w-full px-4 sm:px-8 lg:px-12 max-w-6xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground text-center mb-10">
               Why List Your Property with <span className="text-gold-gradient">Naani Projects</span>
             </h2>
 
@@ -1058,8 +1052,8 @@ const ListYourPropertyPage = () => {
                   <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center border border-amber-500/30 text-amber-400">
                     <item.icon size={24} />
                   </div>
-                  <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -1067,9 +1061,6 @@ const ListYourPropertyPage = () => {
         </section>
 
         <FAQSection faqs={faqs} pageUrl="https://www.naani.in/list-your-property" />
-        <Footer />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

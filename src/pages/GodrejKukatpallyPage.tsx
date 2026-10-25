@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
-import ProjectHeader from "@/components/ProjectHeader";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 import { Button } from "@/components/ui/button";
@@ -153,7 +152,7 @@ const GodrejKukatpallyPage = () => {
   const sectionClass = "py-16 md:py-24 px-4";
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
       <SEOHead
         title="Godrej Kukatpally Hyderabad | Luxury 3 & 4 BHK Apartments"
         description="Explore Godrej Kukatpally Hyderabad, an ultra-luxury high-rise residential project offering premium 3 & 4 BHK apartments near HITEC City with world-class amenities and excellent connectivity."
@@ -163,12 +162,10 @@ const GodrejKukatpallyPage = () => {
         structuredData={structuredData}
       />
 
-      <ProjectHeader projectName={PROJECT_NAME} />
-
       {/* HERO */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
         <img src={heroImg} alt="Godrej Kukatpally Hyderabad luxury G+46 high-rise apartments at dusk" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center max-w-5xl space-y-6 pt-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 border border-amber-500/30 rounded-full backdrop-blur-sm">
             <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
@@ -239,7 +236,7 @@ const GodrejKukatpallyPage = () => {
       </section>
 
       {/* HIGHLIGHTS */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Project Highlights</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -279,7 +276,7 @@ const GodrejKukatpallyPage = () => {
       </section>
 
       {/* AMENITIES */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Luxury Amenities</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">A signature Godrej clubhouse and curated lifestyle amenities — designed for elevated everyday living.</p>
@@ -321,7 +318,7 @@ const GodrejKukatpallyPage = () => {
       </section>
 
       {/* GALLERY */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Project Gallery</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -340,7 +337,7 @@ const GodrejKukatpallyPage = () => {
       </section>
 
       {/* INVESTMENT */}
-      <section className={`${sectionClass} bg-gradient-to-b from-black via-slate-950 to-slate-900`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/80 to-background`}>
         <div className="container mx-auto max-w-5xl text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Why Invest in Godrej Kukatpally</h2>
           <div className="grid md:grid-cols-3 gap-5">
@@ -381,12 +378,12 @@ const GodrejKukatpallyPage = () => {
       </section>
 
       {/* LEAD CTA */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-slate-900 border-t border-slate-800/50">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-card border-t border-border/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Book Your <span className="text-amber-400">Dream Home</span> Today
           </h2>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-base">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-base">
             Explore Godrej Kukatpally. Discover 2, 3, and 4 BHK apartments with clubhouse facilities and convenient access to Gachibowli and HITEC City.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -409,25 +406,20 @@ const GodrejKukatpallyPage = () => {
       </section>
 
       {/* STICKY MOBILE CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-slate-900/95 backdrop-blur-md border-t border-amber-500/20 p-2 grid grid-cols-3 gap-2">
-        <a href="tel:+919493943946" className="call-btn flex items-center justify-center gap-1.5 bg-blue-600 text-white py-2.5 rounded-lg text-xs font-semibold">
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-t border-border/40 p-2 grid grid-cols-3 gap-2">
+        <a href="tel:+919493943946" className="call-btn flex items-center justify-center gap-1.5 bg-card border border-primary/40 text-primary py-2.5 rounded-lg text-xs font-semibold">
           <Phone size={14} /> Call
         </a>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center justify-center gap-1.5 bg-green-600 text-white py-2.5 rounded-lg text-xs font-semibold">
           <MessageCircle size={14} /> WhatsApp
         </a>
-        <button onClick={() => openPopup("Sticky Mobile – Brochure")} className="lead-btn flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white py-2.5 rounded-lg text-xs font-semibold">
+        <button onClick={() => openPopup("Sticky Mobile – Brochure")} className="lead-btn flex items-center justify-center gap-1.5 bg-gradient-gold text-primary-foreground py-2.5 rounded-lg text-xs font-semibold shadow-gold">
           <Download size={14} /> Brochure
         </button>
       </div>
 
-      {/* Floating WhatsApp */}
-      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn fixed bottom-24 md:bottom-6 right-4 z-40 w-14 h-14 bg-green-600 hover:bg-green-700 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center transition-transform hover:scale-110">
-        <MessageCircle className="w-6 h-6 text-white" fill="white" />
-      </a>
-
       {showScrollTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-44 md:bottom-24 right-4 z-40 w-12 h-12 bg-amber-600 hover:bg-amber-700 rounded-full shadow-lg flex items-center justify-center transition">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-20 md:bottom-8 right-4 z-40 w-10 h-10 bg-primary text-primary-foreground rounded-full shadow-gold flex items-center justify-center transition hover:opacity-95">
           <ArrowUp className="w-5 h-5 text-white" />
         </button>
       )}
@@ -441,7 +433,7 @@ const GodrejKukatpallyPage = () => {
 
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
-    </div>
+    </>
   );
 };
 

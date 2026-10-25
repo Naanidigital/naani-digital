@@ -47,7 +47,6 @@ import {
   Ruler,
   CheckCircle2,
 } from "lucide-react";
-import ProjectsHeader from "@/components/ProjectsHeader";
 import StickyContact from "@/components/tridasa/StickyContact";
 import SEOHead from "@/components/SEOHead";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
@@ -258,7 +257,7 @@ const RaghavaHaloPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
       <SEOHead
         title="Raghava Halo Kondapur | 3 BHK Luxury Apartments Hyderabad"
         description="Explore Raghava Halo, a premium luxury residential project in Kondapur, Hyderabad. Spacious 3 BHK apartments from 1830 to 2455 sq.ft. with world-class amenities and exclusive pre-launch offers."
@@ -268,7 +267,6 @@ const RaghavaHaloPage = () => {
         structuredData={structuredData}
       />
 
-      <ProjectsHeader />
       <StickyContact />
 
       {/* ============== SECTION 1: HERO ============== */}
@@ -678,26 +676,13 @@ const RaghavaHaloPage = () => {
         </div>
       </section>
 
-      {/* Standalone clean footer (per project landing architecture memory) */}
-      <footer className="border-t border-amber-500/10 py-10 mt-10">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-muted-foreground">
-            Raghava Halo · Marketed by{" "}
-            <a href="/" className="text-amber-500 hover:underline font-semibold">Naani Projects</a> · Hyderabad
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            +91 94939 43946 · Disclaimer: All visuals are artistic impressions. Pricing & specifications subject to change at the developer's discretion.
-          </p>
-        </div>
-      </footer>
-
       <LeadCapturePopup
         open={popupOpen}
         onOpenChange={setPopupOpen}
         source={popupSource}
         projectName={PROJECT}
       />
-    </div>
+    </>
   );
 };
 

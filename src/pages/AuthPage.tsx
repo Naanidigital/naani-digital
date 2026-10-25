@@ -79,8 +79,7 @@ const AuthPage = () => {
 
   return (
     <>
-    <NoIndex title="Sign In | Naani Projects" />
-    <main className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="flex-1 min-h-[70vh] flex items-center justify-center p-4 py-24">
       <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 md:p-8 shadow-xl">
         <div className="text-center mb-6">
           <Link to="/" className="text-2xl font-bold text-primary">Naani Projects</Link>
@@ -154,7 +153,7 @@ const AuthPage = () => {
           )}
         </p>
       </div>
-    </main>
+    </div>
     </>
   );
 };

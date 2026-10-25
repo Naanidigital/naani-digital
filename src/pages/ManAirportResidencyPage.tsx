@@ -2,7 +2,6 @@ import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
-import ProjectHeader from "@/components/ProjectHeader";
 import {
   Home, MapPin, Ruler, Compass, Building2, AlertTriangle, CheckCircle, Shield,
   Phone, MessageCircle, Waves, Dumbbell, Baby, Gamepad2, PartyPopper, Lock,
@@ -161,12 +160,11 @@ const ManAirportResidencyPage = () => {
         structuredData={structuredData}
       />
 
-      <main className="dark min-h-screen bg-slate-950 text-white pb-20 md:pb-0">
-        <ProjectHeader projectName="Man Airport Residency" />
+      <div className="pb-20 md:pb-0">
         <section className="relative">
           <div className="absolute inset-0">
             <img src={layoutElevation} alt="Man Airport Residency - Luxury 4BHK Villas aerial view at Tukkuguda Hyderabad" className="w-full h-full object-cover" fetchPriority="high" decoding="async" />
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
           </div>
           <div className="relative container mx-auto px-4 py-20 md:py-32 text-center">
             <div className="inline-block bg-amber-500/20 border border-amber-500/40 rounded-full px-4 py-1.5 mb-6">
@@ -195,7 +193,7 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* AEO OPENING SECTION */}
-        <section className="py-16 bg-slate-900">
+        <section className="py-16 bg-card/60">
           <div className="container mx-auto px-4 max-w-4xl">
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
               If you're searching for <strong className="text-amber-400">4BHK villas near me</strong> in Hyderabad, Man Airport Residency at Tukkuguda is the answer. Located just 5 minutes from Rajiv Gandhi International Airport and 2 minutes from ORR Exit 14, these <strong className="text-amber-400">ready-to-move luxury villas in Hyderabad</strong> offer the perfect blend of connectivity, comfort, and exclusivity.
@@ -210,14 +208,14 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* PROJECT HIGHLIGHTS */}
-        <section className="py-16 bg-slate-950">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               Project <span className="text-amber-400">Highlights</span>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
               {highlights.map((h, i) => (
-                <div key={i} className={`bg-slate-900 border rounded-2xl p-5 text-center transition-all hover:scale-105 ${h.label === "Availability" ? "border-amber-500/60 bg-amber-500/10" : "border-slate-800"}`}>
+                <div key={i} className={`bg-card border rounded-2xl p-5 text-center transition-all hover:scale-105 ${h.label === "Availability" ? "border-amber-500/60 bg-amber-500/10" : "border-border/40"}`}>
                   <div className="text-amber-400 flex justify-center mb-3">{h.icon}</div>
                   <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{h.label}</p>
                   <p className={`font-bold text-sm md:text-base ${h.label === "Availability" ? "text-amber-400" : "text-white"}`}>{h.value}</p>
@@ -233,25 +231,25 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* VILLA ELEVATION IMAGE */}
-        <section className="py-16 bg-slate-900">
+        <section className="py-16 bg-card/60">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Villa <span className="text-amber-400">Elevation</span>
             </h2>
-            <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+            <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-border/40">
               <img src={villaElevation} alt="Man Airport Residency 4BHK Villa Elevation - Luxury villa exterior design at Tukkuguda Hyderabad" className="w-full" loading="lazy" />
             </div>
           </div>
         </section>
 
         {/* VIDEO SECTION */}
-        <section className="py-16 bg-slate-950">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Watch <span className="text-amber-400">Video Tour</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+              <div className="aspect-video rounded-2xl overflow-hidden border border-border/40 shadow-xl">
                 <iframe
                   src="https://www.youtube.com/embed/0kDHAh5QEnU"
                   title="Man Airport Residency Villa Tour"
@@ -261,7 +259,7 @@ const ManAirportResidencyPage = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+              <div className="aspect-video rounded-2xl overflow-hidden border border-border/40 shadow-xl">
                 <iframe
                   src="https://www.youtube.com/embed/1r8REtO9EG4"
                   title="Man Airport Residency Project Walkthrough"
@@ -276,12 +274,12 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* LAYOUT PLAN */}
-        <section className="py-16 bg-slate-900">
+        <section className="py-16 bg-card/60">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Layout <span className="text-amber-400">Plan</span>
             </h2>
-            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-border/40">
               <img src={layoutPlan} alt="Man Airport Residency Layout Plan - 39 luxury villas on 4.05 acres at Tukkuguda" className="w-full" loading="lazy" />
             </div>
             <div className="text-center mt-8">
@@ -293,7 +291,7 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* LOCATION ADVANTAGE */}
-        <section className="py-16 bg-slate-950">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Location <span className="text-amber-400">Advantage</span>
@@ -304,7 +302,7 @@ const ManAirportResidencyPage = () => {
                 { icon: "🛣️", title: "2 Mins to ORR Exit 14", desc: "Seamless connectivity to Outer Ring Road for all parts of Hyderabad" },
                 { icon: "🏫", title: "Schools & Hospitals", desc: "Close proximity to top schools, hospitals, and IT hubs in Hyderabad" },
               ].map((loc, i) => (
-                <div key={i} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div key={i} className="bg-card border border-border/40 rounded-2xl p-6 text-center">
                   <div className="text-4xl mb-3">{loc.icon}</div>
                   <h3 className="font-bold text-lg mb-2">{loc.title}</h3>
                   <p className="text-gray-400 text-sm">{loc.desc}</p>
@@ -315,14 +313,14 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* VILLA FEATURES */}
-        <section className="py-16 bg-slate-900">
+        <section className="py-16 bg-card/60">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Villa <span className="text-amber-400">Features</span>
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {villaFeatures.map((f, i) => (
-                <div key={i} className="bg-slate-950 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/40 transition-all group">
+                <div key={i} className="bg-background border border-border/40 rounded-2xl p-6 hover:border-amber-500/40 transition-all group">
                   <div className="text-amber-400 mb-4 group-hover:scale-110 transition-transform">{f.icon}</div>
                   <h3 className="font-bold text-lg mb-2">{f.title}</h3>
                   <p className="text-gray-400 text-sm">{f.desc}</p>
@@ -333,14 +331,14 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* AMENITIES */}
-        <section className="py-16 bg-slate-950">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               World-Class <span className="text-amber-400">Amenities</span>
             </h2>
             <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
               {amenities.map((a, i) => (
-                <div key={i} className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center hover:border-amber-500/40 transition-all">
+                <div key={i} className="bg-card border border-border/40 rounded-xl p-4 text-center hover:border-amber-500/40 transition-all">
                   <div className="text-amber-400 flex justify-center mb-2">{a.icon}</div>
                   <p className="text-sm font-medium">{a.name}</p>
                 </div>
@@ -350,7 +348,7 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* WHY INVEST */}
-        <section className="py-16 bg-slate-900">
+        <section className="py-16 bg-card/60">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
               Why Invest in <span className="text-amber-400">Tukkuguda?</span>
@@ -378,14 +376,14 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* FAQ SECTION */}
-        <section className="py-16 bg-slate-950">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Frequently Asked <span className="text-amber-400">Questions</span>
             </h2>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`} className="bg-slate-900 border border-slate-800 rounded-xl px-6 overflow-hidden">
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border/40 rounded-xl px-6 overflow-hidden">
                   <AccordionTrigger className="text-left text-white font-semibold hover:text-amber-400 transition-colors py-5">
                     {faq.q}
                   </AccordionTrigger>
@@ -399,12 +397,12 @@ const ManAirportResidencyPage = () => {
         </section>
 
         {/* FINAL CTA */}
-        <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-slate-900 border-t border-slate-800/50">
+        <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-card border-t border-border/50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Book Your <span className="text-amber-400">Dream Home</span> Today
             </h2>
-            <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-base">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-base">
               Experience elevated living at Man Airport Residency. Discover luxury 4BHK villas near Tukkuguda Hyderabad, premium amenities, and a vibrant community designed for modern lifestyles.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -425,29 +423,19 @@ const ManAirportResidencyPage = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      {/* Sticky Contact Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 hidden md:flex">
-        <button onClick={handleCall} className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full shadow-lg shadow-blue-500/30 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Call us">
-          <Phone className="w-6 h-6 text-white" />
-        </button>
-        <button onClick={handleWhatsApp} className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center hover:scale-110 transition-transform" aria-label="Chat on WhatsApp">
-          <MessageCircle className="w-6 h-6 text-white" fill="white" />
-        </button>
       </div>
 
       {/* Mobile Sticky Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-t border-border/40 p-3 md:hidden">
         <div className="flex gap-3">
-          <button onClick={handleCall} className="flex-1 flex items-center justify-center gap-2 bg-blue-500 text-white py-3 rounded-xl font-medium">
+          <button onClick={handleCall} className="flex-1 flex items-center justify-center gap-2 bg-card border border-primary/40 text-primary py-3 rounded-xl font-medium">
             <Phone className="w-5 h-5" /> Call Now
           </button>
-          <button onClick={handleWhatsApp} className="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-medium">
+          <button onClick={handleWhatsApp} className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-3 rounded-xl font-medium">
             <MessageCircle className="w-5 h-5" fill="white" /> WhatsApp
           </button>
         </div>
-        <p className="text-center text-xs text-gray-400 mt-2">+91 94939 43946</p>
+        <p className="text-center text-xs text-muted-foreground mt-2">+91 94939 43946</p>
       </div>
 
       <LeadCapturePopup open={enquiryOpen} onOpenChange={setEnquiryOpen} source={enquirySource} projectName="Man Airport Residency" />

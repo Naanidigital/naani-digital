@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#070A10] text-white border-t border-amber-500/20 relative pt-12 pb-8">
+    <footer className="bg-background text-foreground border-t border-border/40 relative pt-12 pb-8">
       {/* TOP FLOATING GOLD WHATSAPP BANNER */}
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 text-slate-950 p-8 md:p-12 rounded-3xl shadow-2xl w-full max-w-6xl mx-auto text-center mb-16 relative z-10 border border-amber-300">
@@ -67,7 +67,7 @@ const Footer = () => {
           {/* COL 1: Brand & Social */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="h-10 w-10 bg-slate-900 rounded-xl p-1 shadow-md border border-amber-500/30 flex items-center justify-center">
+              <div className="h-10 w-10 bg-card rounded-xl p-1 shadow-md border border-border/40 flex items-center justify-center">
                 <img
                   src="/naani-projects-logo.png"
                   alt="Naani Projects Logo"
@@ -75,15 +75,15 @@ const Footer = () => {
                   width="32" height="32" loading="lazy"
                 />
               </div>
-              <span className="text-xl font-extrabold text-white">Naani <span className="text-amber-400">Projects</span></span>
+              <span className="text-xl font-extrabold text-foreground">Naani <span className="text-primary">Projects</span></span>
             </Link>
-            <p className="text-sm text-slate-300 leading-relaxed font-medium">
+            <p className="text-sm text-muted-foreground leading-relaxed font-medium">
               Explore verified apartments, villas, and gated communities across Hyderabad with direct property advice on WhatsApp.
             </p>
             <div className="flex flex-wrap gap-2.5 pt-2">
               {socials.map((s, i) => (
                 <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-slate-900 hover:bg-amber-500 text-amber-400 hover:text-slate-950 transition-all duration-300 hover:scale-110 flex items-center justify-center border border-amber-500/30"
+                  className="w-10 h-10 rounded-xl bg-card hover:bg-primary text-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 flex items-center justify-center border border-border/40"
                   aria-label={s.label}>
                   <s.icon size={18} />
                 </a>
@@ -93,7 +93,7 @@ const Footer = () => {
 
           {/* COL 2: Explore & Browse Projects */}
           <div>
-            <h3 className="font-extrabold text-white mb-4 text-base tracking-wider uppercase text-amber-400">Explore</h3>
+            <h3 className="font-extrabold text-primary mb-4 text-base tracking-wider uppercase">Explore</h3>
             <ul className="space-y-2.5 text-sm mb-6">
               {[
                 { to: "/", label: "Home" },
@@ -102,30 +102,30 @@ const Footer = () => {
                 { to: "/contact-us", label: "Contact" },
               ].map((link) => (
                 <li key={link.to}>
-                  <Link to={link.to} className="text-slate-200 font-bold hover:text-amber-400 transition-colors">
+                  <Link to={link.to} className="text-foreground/80 font-bold hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <h4 className="font-bold text-amber-400 mb-2 text-sm">Browse Projects</h4>
+            <h4 className="font-bold text-primary mb-2 text-sm">Browse Projects</h4>
             <div className="relative">
               <button
                 onClick={() => setProjectsOpen((v) => !v)}
                 aria-expanded={projectsOpen}
-                className="w-full flex items-center justify-between gap-2 text-sm text-white font-bold hover:text-amber-400 transition-colors border border-amber-500/30 rounded-xl px-4 py-2.5 bg-slate-900"
+                className="w-full flex items-center justify-between gap-2 text-sm text-foreground font-bold hover:text-primary transition-colors border border-border/40 rounded-xl px-4 py-2.5 bg-card"
               >
                 <span>All Projects ({allProjects.length || 224})</span>
-                <ChevronDown size={16} className={`text-amber-400 transition-transform ${projectsOpen ? "rotate-180" : ""}`} />
+                <ChevronDown size={16} className={`text-primary transition-transform ${projectsOpen ? "rotate-180" : ""}`} />
               </button>
               {projectsOpen && (
-                <ul className="mt-2 max-h-64 overflow-y-auto rounded-xl border border-amber-500/40 bg-[#0B101D] shadow-2xl divide-y divide-amber-500/20 absolute left-0 right-0 z-30">
+                <ul className="mt-2 max-h-64 overflow-y-auto rounded-xl border border-border/60 bg-card shadow-2xl divide-y divide-border/30 absolute left-0 right-0 z-30">
                   {allProjects.map((p) => (
                     <li key={p.id}>
                       <Link to={projectPath(p)} onClick={() => setProjectsOpen(false)}
-                        className="block px-4 py-2.5 text-xs text-slate-200 hover:text-amber-400 hover:bg-amber-500/10 transition-colors">
+                        className="block px-4 py-2.5 text-xs text-foreground/80 hover:text-primary hover:bg-primary/10 transition-colors">
                         <span className="font-bold">{p.name}</span>
-                        <span className="block text-[10px] text-amber-400/80 mt-0.5">{p.location}</span>
+                        <span className="block text-[10px] text-primary/80 mt-0.5">{p.location}</span>
                       </Link>
                     </li>
                   ))}

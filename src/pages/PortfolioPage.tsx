@@ -1,7 +1,4 @@
-import Header from "@/components/Header";
 import PortfolioContent from "@/components/PortfolioContent";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
 import InternalLinkBlock from "@/components/InternalLinkBlock";
@@ -79,19 +76,14 @@ const PortfolioPage = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        <PortfolioContent />
-        <FAQSection faqs={faqs} pageUrl="https://www.naani.in/portfolio" />
-        <InternalLinkBlock
-          text="Hear directly from our satisfied clients across Hyderabad. Read their"
-          linkUrl="/testimonials"
-          linkTitle="Client Testimonials - Online Marketing Agency Reviews Hyderabad"
-          anchorText="testimonials and success experiences"
-        />
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <PortfolioContent />
+      <FAQSection faqs={faqs} pageUrl="https://www.naani.in/portfolio" />
+      <InternalLinkBlock
+        text="Hear directly from our satisfied clients across Hyderabad. Read their"
+        linkUrl="/testimonials"
+        linkTitle="Client Testimonials - Online Marketing Agency Reviews Hyderabad"
+        anchorText="testimonials and success experiences"
+      />
     </>
   );
 };

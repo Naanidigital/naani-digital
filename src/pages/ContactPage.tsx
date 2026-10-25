@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, CalendarCheck, ShieldCheck, Building2, TrendingUp, Instagram, Facebook, Youtube, Clock, Sparkles, Search, Compass, Layers, Scale, HelpCircle, Check, ExternalLink, Share2, Linkedin, Pin } from "lucide-react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
@@ -163,20 +160,17 @@ const ContactPage = () => {
         structuredData={structuredDataCombined}
       />
 
-      <div className="min-h-screen bg-[#090D16] text-slate-100">
-        <Header />
-
         {/* Breadcrumb Bar */}
-        <nav className="w-full bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
+        <nav className="w-full bg-card border-b border-border/40 py-3 px-4 sm:px-8 lg:px-12 text-xs text-muted-foreground">
           <div className="max-w-6xl mx-auto flex items-center gap-2">
-            <Link to="/" className="hover:text-amber-400 transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-amber-400 font-medium">Contact Us</span>
+            <span className="text-primary font-medium">Contact Us</span>
           </div>
         </nav>
 
         {/* HERO SECTION */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#090D16] via-[#0D1322] to-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background via-card/50 to-background border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-[0.2em]">
               <Sparkles size={14} /> Property Discovery &amp; Assistance
@@ -244,75 +238,75 @@ const ContactPage = () => {
                 <p className="text-slate-300 text-sm leading-relaxed">Request comprehensive project information including digital brochures, floor plans, specifications, and cost sheets.</p>
               </div>
 
-              <div className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3">
-                <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <div className="p-6 rounded-xl bg-secondary border border-border/40 hover:border-primary/40 transition-all space-y-3">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
                   <CalendarCheck size={22} />
                 </div>
-                <h3 className="text-lg font-bold text-white">Schedule a Site Visit</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">Request free coordination for guided project site visits at convenient times with dedicated property advisors.</p>
+                <h3 className="text-lg font-bold text-foreground">Schedule a Site Visit</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">Request free coordination for guided project site visits at convenient times with dedicated property advisors.</p>
               </div>
 
-              <Link to="/list-your-property" className="p-6 rounded-xl bg-[#0F1629] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3 group block">
-                <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:bg-amber-500/20 transition-colors">
+              <Link to="/list-your-property" className="p-6 rounded-xl bg-secondary border border-border/40 hover:border-primary/40 transition-all space-y-3 group block">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                   <ExternalLink size={22} />
                 </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">List Your Property</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">Property owners or developers can explore options to list a residential project or property with Naani Projects.</p>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">List Your Property</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">Property owners or developers can explore options to list a residential project or property with Naani Projects.</p>
               </Link>
             </div>
           </div>
         </section>
 
         {/* CONTACT NAANI PROJECTS (4 CARDS) */}
-        <section className="py-16 md:py-20 bg-[#090D16] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-background border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Contact Naani Projects</h2>
-              <p className="text-slate-300 text-base">Reach out directly through any of our verified communication channels.</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Contact Naani Projects</h2>
+              <p className="text-muted-foreground text-base">Reach out directly through any of our verified communication channels.</p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <a href={TEL} className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3 group block">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <a href={TEL} className="p-6 rounded-xl bg-card border border-border/40 hover:border-primary/40 transition-all space-y-3 group block">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Phone size={20} />
                 </div>
-                <h3 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors">Call Us</h3>
-                <p className="text-amber-400 font-bold text-sm">+91 94939 43946</p>
-                <p className="text-xs text-slate-400">Speak directly with a Hyderabad property expert.</p>
+                <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors">Call Us</h3>
+                <p className="text-primary font-bold text-sm">+91 94939 43946</p>
+                <p className="text-xs text-muted-foreground">Speak directly with a Hyderabad property expert.</p>
               </a>
 
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 hover:border-emerald-500/40 transition-all space-y-3 group block">
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="p-6 rounded-xl bg-card border border-border/40 hover:border-emerald-500/40 transition-all space-y-3 group block">
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                   <MessageCircle size={20} />
                 </div>
-                <h3 className="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">WhatsApp</h3>
+                <h3 className="text-base font-bold text-foreground group-hover:text-emerald-400 transition-colors">WhatsApp</h3>
                 <p className="text-emerald-400 font-bold text-sm">+91 94939 43946</p>
-                <p className="text-xs text-slate-400">Instant project details, floor plans &amp; pricing.</p>
+                <p className="text-xs text-muted-foreground">Instant project details, floor plans &amp; pricing.</p>
               </a>
 
-              <a href="mailto:Naaniprojects@gmail.com" className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 hover:border-amber-500/40 transition-all space-y-3 group block">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <a href="mailto:Naaniprojects@gmail.com" className="p-6 rounded-xl bg-card border border-border/40 hover:border-primary/40 transition-all space-y-3 group block">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Mail size={20} />
                 </div>
-                <h3 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors">Email</h3>
-                <p className="text-amber-400 font-bold text-sm break-all">Naaniprojects@gmail.com</p>
-                <p className="text-xs text-slate-400">Send detailed project requirements &amp; queries.</p>
+                <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors">Email</h3>
+                <p className="text-primary font-bold text-sm break-all">Naaniprojects@gmail.com</p>
+                <p className="text-xs text-muted-foreground">Send detailed project requirements &amp; queries.</p>
               </a>
 
-              <div className="p-6 rounded-xl bg-[#0B101D] border border-slate-800 space-y-3">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+              <div className="p-6 rounded-xl bg-card border border-border/40 space-y-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold">
                   <MapPin size={20} />
                 </div>
-                <h3 className="text-base font-bold text-white">Visit Us</h3>
-                <p className="text-slate-200 font-bold text-sm">Kondapur, Hyderabad</p>
-                <p className="text-xs text-slate-400">Telangana 500084, India</p>
+                <h3 className="text-base font-bold text-foreground">Visit Us</h3>
+                <p className="text-foreground/90 font-bold text-sm">Kondapur, Hyderabad</p>
+                <p className="text-xs text-muted-foreground">Telangana 500084, India</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* SEND A PROPERTY ENQUIRY (LEAD FORM + IMAGE) */}
-        <section className="py-16 md:py-20 bg-[#0B101D] border-b border-slate-800/60">
+        <section className="py-16 md:py-20 bg-card border-b border-border/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 grid lg:grid-cols-12 gap-10 items-start">
             
             {/* Visual Column */}
@@ -710,9 +704,6 @@ const ContactPage = () => {
           </div>
         </section>
 
-        <Footer />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

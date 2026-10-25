@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import {
   MessageCircle,
   Phone,
@@ -304,11 +302,8 @@ export default function RiseWith9Page() {
         jsonLd={schemaJson}
       />
 
-      <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
-        <ProjectsHeader />
-
-        {/* Hero Section */}
-        <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-b from-[#0B101D] via-[#090D16] to-[#0D1426]">
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-b from-card/50 via-background to-background">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1141,8 +1136,6 @@ export default function RiseWith9Page() {
           </button>
         </div>
 
-        <ProjectsFooter />
-
         {/* Unified Lead Capture Popup */}
         <LeadCapturePopup
           open={popupOpen}
@@ -1152,7 +1145,6 @@ export default function RiseWith9Page() {
         />
 
         <ScrollTriggerPopup projectName={PROJECT_NAME} />
-      </div>
     </>
   );
 }

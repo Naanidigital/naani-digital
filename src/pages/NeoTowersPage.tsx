@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import NeoTowersLeadPopup, { NeoPopupType } from "@/components/neo-towers/NeoTowersLeadPopup";
 import NeoTowersStickyCTA from "@/components/neo-towers/NeoTowersStickyCTA";
 import {
@@ -287,7 +285,7 @@ const NeoTowersPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
+    <>
       <SEOHead
         title="Neo Towers Neopolis Kokapet Hyderabad | 3 & 4 BHK Apartments"
         description="Explore Neo Towers in Neopolis, Kokapet, Hyderabad. Discover 3 & 4 BHK residences, 57-storey towers, sky amenities, Club Neo, Sky Office, Skydeck and West Hyderabad connectivity."
@@ -304,10 +302,8 @@ const NeoTowersPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
       />
 
-      <ProjectsHeader />
-
       {/* BREADCRUMBS NAVIGATION */}
-      <nav aria-label="Breadcrumb" className="bg-[#0B101D] border-b border-slate-800/80 py-3 px-4 sm:px-8 lg:px-12 text-xs">
+      <nav aria-label="Breadcrumb" className="bg-card/40 border-b border-border/40 py-3 px-4 sm:px-8 lg:px-12 text-xs">
         <div className="max-w-7xl mx-auto flex items-center flex-wrap gap-2 text-slate-400">
           <Link to="/" className="hover:text-amber-400 transition-colors flex items-center gap-1">
             <Home size={14} />
@@ -1238,8 +1234,6 @@ const NeoTowersPage = () => {
         </div>
       </section>
 
-      <ProjectsFooter />
-
       {/* STICKY CTA */}
       <NeoTowersStickyCTA onOpenPopup={openPopup} />
 
@@ -1307,7 +1301,7 @@ const NeoTowersPage = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

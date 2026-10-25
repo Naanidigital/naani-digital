@@ -1,6 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import FAQSection from "../components/FAQSection";
 import InternalLinkBlock from "../components/InternalLinkBlock";
@@ -65,19 +62,14 @@ const BlogPage = () => {
         structuredData={structuredData}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        <BlogContent />
-        <FAQSection faqs={faqs} pageUrl="https://www.naani.in/blogs" />
-        <InternalLinkBlock
-          text="Ready to take action? Get a free consultation with our Hyderabad marketing experts."
-          linkUrl="/contact-us"
-          linkTitle="Contact Naani Projects - Free Marketing Consultation Hyderabad"
-          anchorText="Contact us today"
-        />
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <BlogContent />
+      <FAQSection faqs={faqs} pageUrl="https://www.naani.in/blogs" />
+      <InternalLinkBlock
+        text="Ready to take action? Get a free consultation with our Hyderabad marketing experts."
+        linkUrl="/contact-us"
+        linkTitle="Contact Naani Projects - Free Marketing Consultation Hyderabad"
+        anchorText="Contact us today"
+      />
     </>
   );
 };

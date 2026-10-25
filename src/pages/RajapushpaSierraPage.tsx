@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
-import ProjectHeader from "@/components/ProjectHeader";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 import { Button } from "@/components/ui/button";
@@ -100,7 +99,7 @@ const RajapushpaSierraPage = () => {
   const sectionClass = "py-16 md:py-24 px-4";
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
       <SEOHead
         title="Rajapushpa Sierra Tellapur | Luxury 2 & 3 BHK Apartments"
         description="Buy premium 2 & 3 BHK apartments in Rajapushpa Sierra, Tellapur. G+49 luxury high-rise near Gachibowli & Financial District. Starting ₹94 Lakhs. Book site visit today."
@@ -110,12 +109,10 @@ const RajapushpaSierraPage = () => {
         structuredData={structuredData}
       />
 
-      <ProjectHeader projectName={PROJECT_NAME} />
-
       {/* HERO */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
         <img src={heroImg} alt="Rajapushpa Sierra Tellapur Hyderabad luxury high-rise apartments aerial view" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center max-w-5xl space-y-6 pt-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 border border-amber-500/30 rounded-full backdrop-blur-sm">
             <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
@@ -176,7 +173,7 @@ const RajapushpaSierraPage = () => {
       </section>
 
       {/* OVERVIEW */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Project Overview</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -235,7 +232,7 @@ const RajapushpaSierraPage = () => {
       </section>
 
       {/* GALLERY */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Designed for the Life You Aspire</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -277,7 +274,7 @@ const RajapushpaSierraPage = () => {
       </section>
 
       {/* LOCATION */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Prime Location in Tellapur – Future Growth Hub</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -343,7 +340,7 @@ const RajapushpaSierraPage = () => {
       </section>
 
       {/* URGENCY */}
-      <section className={`${sectionClass} bg-gradient-to-br from-amber-600/15 via-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-br from-amber-600/15 via-card/80 to-background`}>
         <div className="container mx-auto max-w-4xl text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">Limited Units Available – Book Before Price Increase</h2>
           <p className="text-gray-300 text-lg">Tellapur's demand is rising rapidly. Lock in your unit at today's pre-launch price before the next revision.</p>
@@ -378,7 +375,7 @@ const RajapushpaSierraPage = () => {
       </section>
 
       {/* FAQ */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Frequently Asked Questions</h2>
           <div className="space-y-3">
@@ -396,12 +393,12 @@ const RajapushpaSierraPage = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-slate-900 border-t border-slate-800/50">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-card border-t border-border/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Book Your <span className="text-amber-400">Dream Home</span> Today
           </h2>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-base">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-base">
             Experience elevated living at Rajapushpa Sierra. Discover spacious 2 & 3 BHK luxury homes, world-class amenities, and a vibrant community designed for modern lifestyles.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -423,54 +420,15 @@ const RajapushpaSierraPage = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-12 px-4 border-t border-white/10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Rajapushpa Sierra</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">Luxury G+49 high-rise 2 & 3 BHK apartments in Tellapur, Hyderabad — within Rajapushpa Lifestyle City.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Configurations</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>2 BHK – ~1295 Sq.ft</li>
-                <li>3 BHK – 1665 to 2555 Sq.ft</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Key Highlights</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>21.1 Acres Campus</li>
-                <li>9 Towers, G+49</li>
-                <li>3,537 Apartments</li>
-                <li>1.5 Lakh Sft Clubhouse</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Contact</h3>
-              <div className="space-y-3">
-                <a href={CALL_LINK} className="call-btn flex items-center gap-2 text-gray-300 hover:text-amber-300 text-sm"><Phone className="w-4 h-4" />+91 94939 43946</a>
-                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center gap-2 text-gray-300 hover:text-green-400 text-sm"><MessageCircle className="w-4 h-4" />WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-6 text-center text-gray-500 text-xs">
-            <p>© 2026 Rajapushpa Sierra. All rights reserved.</p>
-            <p className="mt-1">Marketing Partner: <a href="https://www.naani.in" className="text-amber-500 hover:underline">Naani Projects</a></p>
-          </div>
-        </div>
-      </footer>
-
       {/* STICKY MOBILE CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-sm border-t border-amber-500/20 p-3 flex gap-2">
-        <a href={CALL_LINK} className="call-btn flex-1 flex items-center justify-center gap-1.5 bg-blue-600 text-white text-sm font-semibold py-3 rounded-lg"><Phone className="w-4 h-4" />Call</a>
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-sm border-t border-border/40 p-3 flex gap-2">
+        <a href={CALL_LINK} className="call-btn flex-1 flex items-center justify-center gap-1.5 bg-card border border-primary/40 text-primary text-sm font-semibold py-3 rounded-lg"><Phone className="w-4 h-4" />Call</a>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex-1 flex items-center justify-center gap-1.5 bg-green-600 text-white text-sm font-semibold py-3 rounded-lg"><MessageCircle className="w-4 h-4" />WhatsApp</a>
-        <button onClick={() => openPopup("Sticky CTA – Enquire")} className="lead-btn flex-1 flex items-center justify-center gap-1.5 bg-amber-500 text-white text-sm font-semibold py-3 rounded-lg">Enquire</button>
+        <button onClick={() => openPopup("Sticky CTA – Enquire")} className="lead-btn flex-1 flex items-center justify-center gap-1.5 bg-gradient-gold text-primary-foreground text-sm font-bold py-3 rounded-lg shadow-gold">Enquire</button>
       </div>
 
       {showScrollTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-20 md:bottom-8 right-4 z-50 w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-amber-600 transition-colors">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-20 md:bottom-8 right-4 z-50 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-gold hover:opacity-95 transition-colors">
           <ArrowUp className="w-5 h-5" />
         </button>
       )}
@@ -484,7 +442,7 @@ const RajapushpaSierraPage = () => {
 
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
-    </div>
+    </>
   );
 };
 

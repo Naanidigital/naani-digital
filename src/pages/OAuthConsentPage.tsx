@@ -93,21 +93,21 @@ const OAuthConsentPage = () => {
 
   if (error) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-4">
+      <div className="flex-1 min-h-[70vh] flex items-center justify-center p-4 py-24 bg-background">
         <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 text-center">
           <h1 className="text-xl font-semibold mb-2">Authorization error</h1>
           <p className="text-sm text-muted-foreground mb-4">{error}</p>
           <Link to="/" className="text-primary underline text-sm">Return to Naani Projects</Link>
         </div>
-      </main>
+      </div>
     );
   }
 
   if (!details) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-4">
+      <div className="flex-1 min-h-[70vh] flex items-center justify-center p-4 py-24 bg-background">
         <p className="text-sm text-muted-foreground">Loading authorization…</p>
-      </main>
+      </div>
     );
   }
 
@@ -121,7 +121,7 @@ const OAuthConsentPage = () => {
   return (
     <>
     <NoIndex title="Authorize Access | Naani Projects" />
-    <main className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="flex-1 min-h-[70vh] flex items-center justify-center p-4 py-24 bg-background">
       <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 md:p-8 shadow-xl">
         <div className="text-center mb-5">
           <Link to="/" className="text-lg font-semibold text-primary">Naani Projects</Link>
@@ -176,7 +176,7 @@ const OAuthConsentPage = () => {
           </Button>
         </div>
       </div>
-    </main>
+    </div>
     </>
   );
 };

@@ -24,8 +24,6 @@ import {
   TrendingUp,
   FileText,
 } from "lucide-react";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import SEOHead from "@/components/SEOHead";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import LeadQualificationPopup from "@/components/LeadQualificationPopup";
@@ -264,8 +262,6 @@ const SanviProjectPage = ({ project: p }: Props) => {
         ogImage={p.ogImage}
         structuredData={structuredData}
       />
-
-      <ProjectsHeader />
 
       {/* ============================ HERO ============================ */}
       <section className="relative pt-28 md:pt-36 pb-16 md:pb-20 overflow-hidden">
@@ -789,8 +785,6 @@ const SanviProjectPage = ({ project: p }: Props) => {
           </div>
         </div>
       </section>
-
-      <ProjectsFooter />
 
       {/* ==================== MOBILE STICKY CTA BAR ==================== */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-t border-amber-500/20 px-2 py-2">

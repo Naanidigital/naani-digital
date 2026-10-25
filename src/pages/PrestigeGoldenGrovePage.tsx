@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 import { MessageCircle, MapPin, Building2, Layers, Maximize2, Star, ChevronDown, ChevronUp, Home, Zap, Shield, Leaf, Award, Trees, Calendar, IndianRupee, Users, Ruler, Phone } from "lucide-react";
@@ -15,7 +13,7 @@ const PROJECT_NAME = "Prestige Golden Grove";
 const CTAButton = ({ text, className = "", onClick }: { text: string; message?: string; className?: string; onClick?: () => void }) => (
   <button
     onClick={onClick}
-    className={`lead-btn inline-flex items-center gap-2 bg-[#0080FF] hover:bg-[#006bd6] text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all hover:scale-105 ${className}`}
+    className={`lead-btn inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-6 py-3 rounded-xl shadow-gold transition-all hover:scale-105 ${className}`}
   >
     <MessageCircle size={18} />
     {text}
@@ -160,7 +158,7 @@ const PrestigeGoldenGrovePage = () => {
   const openLead = (src: string) => { setPopupSource(src); setPopupOpen(true); };
 
   return (
-    <div className="bg-[#090D16] text-white min-h-screen">
+    <>
       <SEOHead
         title="Prestige Golden Grove Hyderabad | Luxury Apartments Near ORR"
         description="Discover Prestige Golden Grove Hyderabad – premium 2, 3 & 4 BHK luxury apartments in Tellapur near ORR. 28.7 acres, 10 towers, 5120 units. Starting ₹93.5 Lakhs. Enquire on WhatsApp now."
@@ -169,7 +167,6 @@ const PrestigeGoldenGrovePage = () => {
         ogImage="https://www.naani.in/og/prestige-golden-grove.png"
         structuredData={structuredData}
       />
-      <ProjectsHeader />
 
       {/* ── HERO ── */}
       <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden pt-20">
@@ -178,24 +175,24 @@ const PrestigeGoldenGrovePage = () => {
             src={elevationImg}
             alt="Prestige Golden Grove luxury high-rise apartments Tellapur Hyderabad"
             className="w-full h-full object-cover object-center" fetchPriority="high" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F1F1F1] via-[#F1F1F1]/70 to-[#F1F1F1]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
           {/* Tentative disclaimer */}
-          <div className="absolute bottom-4 right-4 z-10 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#0080FF]/20 shadow-xs">
-            <p className="text-[10px] text-slate-600 italic font-medium">*Tentative image – actual may differ</p>
+          <div className="absolute bottom-4 right-4 z-10 bg-card/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-border/40 shadow-xs">
+            <p className="text-[10px] text-muted-foreground italic font-medium">*Tentative image – actual may differ</p>
           </div>
         </div>
 
         <div className="relative z-10 px-4 md:px-8 pb-16 pt-24 max-w-5xl mx-auto w-full">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-[#0080FF]/30 text-[#0080FF] text-xs font-bold uppercase tracking-[0.2em] shadow-xs mb-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-card border border-primary/30 text-primary text-xs font-bold uppercase tracking-[0.2em] shadow-xs mb-3">
             Prestige Group · Tellapur, West Hyderabad
           </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-[#040957] leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
             Prestige Golden Grove –<br />
-            <span className="text-[#0080FF]">
+            <span className="text-gold-gradient">
               Luxury Residential Apartments in Hyderabad
             </span>
           </h1>
-          <p className="text-slate-800 font-medium text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
+          <p className="text-muted-foreground font-medium text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
             Hyderabad's apartment launch is here. Prestige Golden Grove by the renowned Prestige Group brings 2, 3, and 4 BHK homes across 28.7 acres in Tellapur — West Hyderabad.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 w-full">
@@ -666,18 +663,8 @@ const PrestigeGoldenGrovePage = () => {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="py-8 px-4 bg-slate-950 border-t border-slate-800 text-center">
-        <p className="text-slate-500 text-sm">
-          © 2026 Naani Projects. All rights reserved. · Real Estate Digital Marketing Hyderabad
-        </p>
-        <p className="text-slate-600 text-xs mt-2">
-          All images are tentative & for representation purposes only. Actual images may differ. Pricing and specifications are subject to change without prior notice.
-        </p>
-      </footer>
-
       {/* ── MOBILE STICKY CTA BAR ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-md border-t border-emerald-600/20 p-3">
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/95 backdrop-blur-md border-t border-border/40 p-3">
         <div className="flex gap-3">
           <button
             onClick={() => openLead("Mobile - Enquire Now")}
@@ -695,10 +682,9 @@ const PrestigeGoldenGrovePage = () => {
           </a>
         </div>
       </div>
-      <ProjectsFooter />
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
-    </div>
+    </>
   );
 };
 

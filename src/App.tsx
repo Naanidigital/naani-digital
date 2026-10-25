@@ -43,6 +43,7 @@ const BhkLandingPage = lazy(() => import("./pages/BhkLandingPage"));
 const BuyerGuidePage = lazy(() => import("./pages/BuyerGuidePage"));
 
 import { isBuilderSeoSlug } from "./lib/seoSlug";
+import MainLayout from "./components/layout/MainLayout";
 
 const SeoHubRouter = () => {
   const { seoSlug = "" } = useParams<{ seoSlug: string }>();
@@ -82,8 +83,9 @@ const App = () => (
     <LeadGateProvider />
     <Suspense fallback={<PageLoader />}>
       <Routes>
-        {/* Primary lowercase routes */}
-        <Route path="/" element={<Index />} />
+        <Route element={<MainLayout />}>
+          {/* Primary lowercase routes */}
+          <Route path="/" element={<Index />} />
         <Route path="/about-us" element={<AboutPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact-us" element={<ContactPage />} />
@@ -163,6 +165,7 @@ const App = () => (
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </Suspense>
   </BrowserRouter>

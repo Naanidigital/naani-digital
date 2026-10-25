@@ -1,7 +1,4 @@
 import { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import InternalLinkBlock from "../components/InternalLinkBlock";
 import { Card } from "../components/ui/card";
@@ -92,10 +89,7 @@ const BlogPostAITools2025 = () => {
         structuredData={articleSchema}
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="container mx-auto px-4 py-12 md:py-16">
+      <div className="container mx-auto px-4 py-12 md:py-16">
           <article className="max-w-5xl mx-auto">
             {/* Article Header */}
             <header className="mb-16 text-center">
@@ -542,7 +536,7 @@ const BlogPostAITools2025 = () => {
             {/* FAQ Section */}
             <FAQSection faqs={faqs} pageUrl={canonicalUrl} />
           </article>
-        </main>
+        </div>
 
         <InternalLinkBlock
           text="Discover more digital marketing insights and expert guides on our"
@@ -550,10 +544,6 @@ const BlogPostAITools2025 = () => {
           linkTitle="Digital Marketing Blog - Latest Trends and Tips Hyderabad"
           anchorText="marketing blog"
         />
-
-        <Footer />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

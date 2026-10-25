@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectHeader from "@/components/ProjectHeader";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 import { Button } from "@/components/ui/button";
@@ -108,7 +107,7 @@ const Team4AriaMiyapurPage = () => {
   const sectionClass = "py-16 md:py-24 px-4";
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
       <SEOHead
         title="Team4 Aria Miyapur | Price, Floor Plans & Luxury Apartments Hyderabad"
         description="Explore Team4 Aria Miyapur – ultra luxury 3 & 3.5 BHK apartments in Hyderabad with 3.5 acre courtyard, infinity pool & premium amenities. Book site visit now."
@@ -117,8 +116,6 @@ const Team4AriaMiyapurPage = () => {
         ogImage="https://www.naani.in/og/team4-aria.png"
         structuredData={structuredData}
       />
-
-      <ProjectHeader projectName={PROJECT_NAME} />
 
       {/* ===== HERO ===== */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
@@ -430,73 +427,34 @@ const Team4AriaMiyapurPage = () => {
             Experience elevated living at Team4 Aria Miyapur. Discover spacious 3 &amp; 3.5 BHK luxury homes, world-class amenities, and a vibrant community designed for modern lifestyles.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button data-lead-gate="sitevisit" onClick={() => openPopup("Schedule Site Visit")} className="lead-btn py-4 px-8 text-lg font-semibold rounded-lg shadow-lg bg-[#FF7A0F] hover:bg-[#e06800] text-white transition-all hover:scale-105">
+            <button data-lead-gate="sitevisit" onClick={() => openPopup("Schedule Site Visit")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-gold bg-gradient-gold text-primary-foreground transition-all hover:scale-105">
               Schedule Site Visit
             </button>
-            <button data-lead-gate="brochure" onClick={() => openPopup("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-semibold rounded-lg shadow-lg bg-[#01B4BA] hover:bg-[#019aa0] text-white transition-all hover:scale-105">
+            <button data-lead-gate="brochure" onClick={() => openPopup("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-md bg-card border border-primary/40 text-primary hover:bg-primary/10 transition-all hover:scale-105">
               Get Latest Offers
             </button>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105 text-lg">
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 text-lg">
               <MessageCircle size={20} /> WhatsApp Us
             </a>
           </div>
           <div className="mt-6">
-            <a href={CALL_LINK} className="call-btn text-[#01B4BA] hover:text-[#FF7A0F] font-semibold text-lg transition-colors inline-flex items-center gap-2">
+            <a href={CALL_LINK} className="call-btn text-primary hover:text-amber-300 font-bold text-lg transition-colors inline-flex items-center gap-2">
               <Phone size={18} /> Call Now: +91 94939 43946
             </a>
           </div>
         </div>
       </section>
 
-      {/* ===== FOOTER ===== */}
-      <footer className="py-12 px-4 border-t border-white/10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Team4 Aria Miyapur</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">Ultra luxury G+48 high-rise apartments in Miyapur, Hyderabad. 3 & 3.5 BHK residences with world-class amenities.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Configurations</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>3 BHK – 1490 to 1998 Sq.ft</li>
-                <li>3.5 BHK – 2056 to 2218 Sq.ft</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Key Highlights</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>12.35 Acres Campus</li>
-                <li>7 Towers, G+48 Floors</li>
-                <li>3.5 Acre Courtyard</li>
-                <li>Dual Clubhouses</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-amber-300 mb-4">Contact</h3>
-              <div className="space-y-3">
-                <a href={CALL_LINK} className="call-btn flex items-center gap-2 text-gray-300 hover:text-amber-300 text-sm"><Phone className="w-4 h-4" />+91 94939 43946</a>
-                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center gap-2 text-gray-300 hover:text-green-400 text-sm"><MessageCircle className="w-4 h-4" />WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-6 text-center text-gray-500 text-xs">
-            <p>© 2026 Team4 Aria Miyapur. All rights reserved. | RERA No: P02400010543</p>
-            <p className="mt-1">Marketing Partner: <a href="https://www.naani.in" className="text-amber-500 hover:underline">Naani Projects</a></p>
-          </div>
-        </div>
-      </footer>
-
       {/* ===== STICKY MOBILE CTA ===== */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-sm border-t border-amber-500/20 p-3 flex gap-2">
-        <a href={CALL_LINK} className="call-btn flex-1 flex items-center justify-center gap-1.5 bg-blue-600 text-white text-sm font-semibold py-3 rounded-lg"><Phone className="w-4 h-4" />Call</a>
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/95 backdrop-blur-sm border-t border-border/40 p-3 flex gap-2">
+        <a href={CALL_LINK} className="call-btn flex-1 flex items-center justify-center gap-1.5 bg-card border border-primary/40 text-primary text-sm font-semibold py-3 rounded-lg"><Phone className="w-4 h-4" />Call</a>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex-1 flex items-center justify-center gap-1.5 bg-green-600 text-white text-sm font-semibold py-3 rounded-lg"><MessageCircle className="w-4 h-4" />WhatsApp</a>
-        <button onClick={() => openPopup("Sticky CTA – Enquire")} className="lead-btn flex-1 flex items-center justify-center gap-1.5 bg-amber-500 text-white text-sm font-semibold py-3 rounded-lg">Enquire</button>
+        <button onClick={() => openPopup("Sticky CTA – Enquire")} className="lead-btn flex-1 flex items-center justify-center gap-1.5 bg-gradient-gold text-primary-foreground text-sm font-bold py-3 rounded-lg shadow-gold">Enquire</button>
       </div>
 
       {/* Scroll to top */}
       {showScrollTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-20 md:bottom-8 right-4 z-50 w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-amber-600 transition-colors">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-20 md:bottom-8 right-4 z-50 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-gold hover:opacity-95 transition-colors">
           <ArrowUp className="w-5 h-5" />
         </button>
       )}
@@ -512,7 +470,7 @@ const Team4AriaMiyapurPage = () => {
       {/* Popups */}
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
-    </div>
+    </>
   );
 };
 

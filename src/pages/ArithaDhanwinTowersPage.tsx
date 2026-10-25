@@ -49,7 +49,6 @@ import {
   Award,
   Building,
 } from "lucide-react";
-import ProjectsHeader from "@/components/ProjectsHeader";
 import StickyContact from "@/components/tridasa/StickyContact";
 import SEOHead from "@/components/SEOHead";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -399,7 +398,7 @@ const ArithaDhanwinTowersPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
       <SEOHead
         title="Aritha GBR Dhanwin Towers Bowrampet | 2 & 3 BHK Flats"
         description="Explore Aritha GBR Dhanwin Towers in Bowrampet, Hyderabad. Premium 2 & 3 BHK apartments from 1165 to 2355 sq.ft with clubhouse, swimming pool, landscaped gardens and excellent connectivity. Schedule a site visit today."
@@ -409,7 +408,6 @@ const ArithaDhanwinTowersPage = () => {
         structuredData={structuredData}
       />
 
-      <ProjectsHeader />
       <StickyContact />
 
       {/* HERO */}
@@ -1149,7 +1147,7 @@ const ArithaDhanwinTowersPage = () => {
             className="max-w-full max-h-full object-contain rounded-lg" loading="lazy" decoding="async" />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

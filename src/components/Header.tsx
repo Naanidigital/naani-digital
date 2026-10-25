@@ -34,7 +34,7 @@ const Header = () => {
     );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0B1220]/95 backdrop-blur-md border-b border-amber-500/25 shadow-md py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/40 shadow-md py-3">
       <div className="w-full px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-14">
           {/* Logo & Brand */}
@@ -43,7 +43,7 @@ const Header = () => {
             className="flex items-center space-x-3 group"
             aria-label="Naani Projects home"
           >
-            <div className="h-10 w-10 bg-slate-900 rounded-xl p-1 shadow-xs border border-amber-500/30 flex items-center justify-center">
+            <div className="h-10 w-10 bg-card rounded-xl p-1 shadow-xs border border-border/40 flex items-center justify-center">
               <img
                 src="/naani-projects-logo.png"
                 alt="Naani Projects - Hyderabad Real Estate"
@@ -54,8 +54,8 @@ const Header = () => {
                 fetchPriority="high"
               />
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">
-              Naani <span className="text-amber-400">Projects</span>
+            <span className="text-xl font-bold text-foreground tracking-tight">
+              Naani <span className="text-primary">Projects</span>
             </span>
           </button>
 
@@ -65,7 +65,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item.href)}
-                className="px-4 py-2 text-sm font-bold text-slate-200 hover:text-amber-400 transition-colors rounded-lg hover:bg-amber-500/10"
+                className="px-4 py-2 text-sm font-bold text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-primary/10"
               >
                 {item.label}
               </button>
@@ -77,7 +77,7 @@ const Header = () => {
             <Button
               variant="outline"
               size="sm"
-              className="bg-transparent border-amber-500/50 text-amber-400 hover:bg-amber-500/20 font-bold px-4 py-2 rounded-xl transition-all"
+              className="bg-transparent border-primary/50 text-primary hover:bg-primary/20 font-bold px-4 py-2 rounded-xl transition-all"
               onClick={() => (window.location.href = "tel:+919493943946")}
             >
               <Phone size={15} className="mr-1.5" />
@@ -94,7 +94,7 @@ const Header = () => {
           </div>
 
           <button
-            className="lg:hidden text-white"
+            className="lg:hidden text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -104,22 +104,22 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0B1220] border-b border-amber-500/30 py-4 shadow-2xl animate-slide-down">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border/40 py-4 shadow-2xl animate-slide-down">
             <nav className="flex flex-col space-y-2 px-4">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => handleNavClick(item.href)}
-                  className="px-4 py-3 text-sm font-bold text-slate-200 hover:text-amber-400 hover:bg-amber-500/10 rounded-lg transition-colors w-full text-left"
+                  className="px-4 py-3 text-sm font-bold text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors w-full text-left"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-slate-800">
+              <div className="flex flex-col space-y-2 pt-4 border-t border-border/40">
                 <Button
                   variant="outline"
                   size="sm"
-                  className="bg-transparent border-amber-500/50 text-amber-400 font-bold"
+                  className="bg-transparent border-primary/50 text-primary font-bold"
                   onClick={() => (window.location.href = "tel:+919493943946")}
                 >
                   <Phone size={14} className="mr-2" /> Call Now

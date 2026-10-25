@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowRight, MessageCircle, Phone, MapPin, Building2, Home, TrendingUp, ShieldCheck, Search, Sparkles, Star, Briefcase, Plus } from "lucide-react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import FAQSection from "../components/FAQSection";
 import ScrollReveal from "../components/ScrollReveal";
@@ -108,10 +105,7 @@ const Index = () => {
         keywords="flats for sale Hyderabad, apartments Hyderabad, new projects Hyderabad, ready to move flats Hyderabad, 2 BHK Hyderabad, 3 BHK Hyderabad, luxury apartments Hyderabad, villas Hyderabad, plots for sale Hyderabad, real estate Hyderabad, Naani Projects"
       />
 
-      <div className="min-h-screen bg-[#090D16] text-white">
-        <Header />
-
-        {/* HERO - Full Width */}
+      {/* HERO - Full Width */}
         <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
           {/* LCP hero image */}
           <picture>
@@ -476,22 +470,18 @@ const Index = () => {
         {/* FAQ */}
         <FAQSection faqs={faqs} pageUrl="https://www.naani.in/" />
 
-        <Footer />
-        <WhatsAppButton />
-
         {/* Sticky Mobile CTA Bar */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#090D16]/95 backdrop-blur-xl border-t border-amber-500/30 grid grid-cols-3 divide-x divide-amber-500/20">
-          <a href={TEL_LINK} className="flex flex-col items-center justify-center py-3 text-amber-400 text-xs font-bold">
+        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-xl border-t border-border/40 grid grid-cols-3 divide-x divide-border/30">
+          <a href={TEL_LINK} className="flex flex-col items-center justify-center py-3 text-primary text-xs font-bold">
             <Phone size={18} className="mb-0.5" /> Call
           </a>
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center py-3 text-emerald-400 text-xs font-bold">
             <MessageCircle size={18} className="mb-0.5" /> WhatsApp
           </a>
-          <Link to="/contact-us" className="flex flex-col items-center justify-center py-3 text-white text-xs font-bold">
+          <Link to="/contact-us" className="flex flex-col items-center justify-center py-3 text-foreground text-xs font-bold">
             <Building2 size={18} className="mb-0.5" /> Enquire
           </Link>
         </div>
-      </div>
     </>
   );
 };

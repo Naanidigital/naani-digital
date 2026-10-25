@@ -1,8 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import FAQSection from "@/components/FAQSection";
 import { CheckCircle2, ArrowRight, ShieldCheck, FileText, Phone, MessageCircle } from "lucide-react";
 
@@ -53,26 +50,23 @@ const BuyerGuidePage = () => {
         structuredData={structuredData}
       />
 
-      <div className="min-h-screen bg-background text-foreground">
-        <Header />
-
-        {/* HERO */}
-        <section className="relative pt-28 pb-14 bg-[#F1F1F1] border-b border-[#0080FF]/20">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <nav aria-label="breadcrumb" className="text-xs text-[#0080FF] mb-6 font-medium">
-              <Link to="/" className="hover:text-[#040957]">Home</Link> / <Link to="/hyderabad" className="hover:text-[#040957]">Hyderabad</Link> / <span className="text-[#040957] font-semibold">Buyer Guide</span>
-            </nav>
-            <span className="inline-block bg-[#0080FF]/15 border border-[#0080FF]/30 text-[#0080FF] text-xs font-bold px-3.5 py-1.5 rounded-full mb-4 uppercase tracking-widest">
-              2026 Homebuyer Guide
-            </span>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[#040957]">
-              {h1}
-            </h1>
-            <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-              Everything you need to know before evaluating a {is3Bhk ? "3 BHK" : "2 BHK"} flat in Hyderabad: floor plans, RERA verification checklist, key locations, and step-by-step process.
-            </p>
-          </div>
-        </section>
+      {/* HERO */}
+      <section className="relative pt-28 pb-14 bg-gradient-to-b from-background via-card/50 to-background border-b border-border/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <nav aria-label="breadcrumb" className="text-xs text-muted-foreground mb-6 font-medium">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link> / <Link to="/hyderabad" className="hover:text-primary transition-colors">Hyderabad</Link> / <span className="text-foreground font-semibold">Buyer Guide</span>
+          </nav>
+          <span className="inline-block bg-primary/10 border border-primary/30 text-primary text-xs font-bold px-3.5 py-1.5 rounded-full mb-4 uppercase tracking-widest">
+            2026 Homebuyer Guide
+          </span>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
+            <span className="text-gold-gradient">{h1}</span>
+          </h1>
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+            Everything you need to know before evaluating a {is3Bhk ? "3 BHK" : "2 BHK"} flat in Hyderabad: floor plans, RERA verification checklist, key locations, and step-by-step process.
+          </p>
+        </div>
+      </section>
 
         {/* CONTENT BODY */}
         <section className="py-16 px-4">
@@ -138,10 +132,6 @@ const BuyerGuidePage = () => {
             <FAQSection items={faqs} />
           </div>
         </section>
-
-        <Footer />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
-import ProjectHeader from "@/components/ProjectHeader";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 import { Button } from "@/components/ui/button";
@@ -150,7 +149,7 @@ const CandeurEterniaPage = () => {
   const sectionClass = "py-16 md:py-24 px-4";
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
       <SEOHead
         title="Candeur Eternia Bachupally Hyderabad | Premium Apartments | Naani Projects"
         description="Explore Candeur Eternia in Bachupally, Hyderabad featuring premium 2, 2.5 & 3 BHK apartments with luxury amenities, excellent connectivity, and world-class lifestyle features. Book your free site visit today with Naani Projects."
@@ -160,12 +159,10 @@ const CandeurEterniaPage = () => {
         structuredData={structuredData}
       />
 
-      <ProjectHeader projectName={PROJECT_NAME} />
-
       {/* HERO */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
         <img src={heroImg} alt="Candeur Eternia Bachupally Hyderabad luxury high-rise apartments night view" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-background" />
         <div className="relative z-10 container mx-auto px-4 text-center max-w-5xl space-y-6 pt-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 border border-amber-500/30 rounded-full backdrop-blur-sm">
             <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
@@ -215,7 +212,7 @@ const CandeurEterniaPage = () => {
       </section>
 
       {/* ABOUT */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">About Candeur Eternia</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -273,7 +270,7 @@ const CandeurEterniaPage = () => {
       </section>
 
       {/* AMENITIES */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">World-Class Amenities</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">A 73,000 sft clubhouse spread across 5 levels, plus everything you need for elevated everyday living.</p>
@@ -321,7 +318,7 @@ const CandeurEterniaPage = () => {
       </section>
 
       {/* GALLERY */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/60 to-background`}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Project Gallery</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -357,7 +354,7 @@ const CandeurEterniaPage = () => {
       </section>
 
       {/* WHY INVEST */}
-      <section className={`${sectionClass} bg-gradient-to-b from-black via-slate-950 to-slate-900`}>
+      <section className={`${sectionClass} bg-gradient-to-b from-card/80 to-background`}>
         <div className="container mx-auto max-w-5xl text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Why Invest in Candeur Eternia</h2>
           <div className="grid md:grid-cols-3 gap-5">
@@ -385,12 +382,12 @@ const CandeurEterniaPage = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-white">Frequently Asked <span className="text-amber-400">Questions</span></h2>
           <div className="space-y-3">
             {faqs.map((f, i) => (
-              <div key={i} className="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden transition-all">
+              <div key={i} className="bg-card/60 border border-border/40 rounded-xl overflow-hidden transition-all">
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full text-left p-4 md:p-5 flex items-center justify-between font-bold text-white text-base md:text-lg hover:text-amber-400 transition-colors">
                   <span>{f.q}</span>
                   <ChevronDown className={`w-5 h-5 text-amber-400 transition-transform shrink-0 ${openFaq === i ? "rotate-180" : ""}`} />
                 </button>
-                {openFaq === i && <div className="px-4 pb-4 md:px-5 md:pb-5 text-slate-300 text-sm md:text-base leading-relaxed border-t border-slate-800/50 pt-3">{f.a}</div>}
+                {openFaq === i && <div className="px-4 pb-4 md:px-5 md:pb-5 text-muted-foreground text-sm md:text-base leading-relaxed border-t border-border/40 pt-3">{f.a}</div>}
               </div>
             ))}
           </div>
@@ -398,12 +395,12 @@ const CandeurEterniaPage = () => {
       </section>
 
       {/* LEAD FORM CTA */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-slate-900 border-t border-slate-800/50">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-amber-900/30 to-card border-t border-border/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Book Your <span className="text-amber-400">Dream Home</span> Today
           </h2>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-base">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-base">
             Experience elevated living at Candeur Eternia. Discover spacious 2 & 3 BHK luxury homes, premium amenities, and a vibrant community designed for modern lifestyles.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -426,25 +423,20 @@ const CandeurEterniaPage = () => {
       </section>
 
       {/* STICKY MOBILE CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-slate-900/95 backdrop-blur-md border-t border-amber-500/20 p-2 grid grid-cols-3 gap-2">
-        <a href="tel:+919493943946" className="call-btn flex items-center justify-center gap-1.5 bg-blue-600 text-white py-2.5 rounded-lg text-xs font-semibold">
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-t border-border/40 p-2 grid grid-cols-3 gap-2">
+        <a href="tel:+919493943946" className="call-btn flex items-center justify-center gap-1.5 bg-card border border-primary/40 text-primary py-2.5 rounded-lg text-xs font-semibold">
           <Phone size={14} /> Call
         </a>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn flex items-center justify-center gap-1.5 bg-green-600 text-white py-2.5 rounded-lg text-xs font-semibold">
           <MessageCircle size={14} /> WhatsApp
         </a>
-        <button onClick={() => openPopup("Sticky Mobile – Brochure")} className="lead-btn flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white py-2.5 rounded-lg text-xs font-semibold">
+        <button onClick={() => openPopup("Sticky Mobile – Brochure")} className="lead-btn flex items-center justify-center gap-1.5 bg-gradient-gold text-primary-foreground py-2.5 rounded-lg text-xs font-semibold shadow-gold">
           <Download size={14} /> Brochure
         </button>
       </div>
 
-      {/* Floating WhatsApp */}
-      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="whatsapp-btn fixed bottom-24 md:bottom-6 right-4 z-40 w-14 h-14 bg-green-600 hover:bg-green-700 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center transition-transform hover:scale-110">
-        <MessageCircle className="w-6 h-6 text-white" fill="white" />
-      </a>
-
       {showScrollTop && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-44 md:bottom-24 right-4 z-40 w-12 h-12 bg-amber-600 hover:bg-amber-700 rounded-full shadow-lg flex items-center justify-center transition">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-20 md:bottom-8 right-4 z-40 w-10 h-10 bg-primary text-primary-foreground rounded-full shadow-gold flex items-center justify-center transition hover:opacity-95">
           <ArrowUp className="w-5 h-5 text-white" />
         </button>
       )}
@@ -459,7 +451,7 @@ const CandeurEterniaPage = () => {
 
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
-    </div>
+    </>
   );
 };
 

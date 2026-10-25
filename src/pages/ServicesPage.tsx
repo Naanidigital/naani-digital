@@ -1,7 +1,4 @@
-import Header from "../components/Header";
 import Services from "../components/Services";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import FAQSection from "../components/FAQSection";
 import InternalLinkBlock from "../components/InternalLinkBlock";
@@ -54,135 +51,128 @@ const ServicesPage = () => {
         keywords="Digital Marketing Services in Hyderabad, Digital Marketing Services Hyd, SEO Services Hyderabad, PPC Hyderabad, Social Media Marketing Hyderabad, Naani Projects Agency"
       />
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        {/* Hero Section */}
-        <section className="pt-28 pb-12 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Our Services
-            </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#040957] mb-3">
-              Digital Marketing Services in Hyderabad
-            </h1>
-            <p className="text-lg text-slate-800 font-medium max-w-3xl mx-auto leading-relaxed">
-              Need fast, sustainable growth? <Link to="/" className="text-[#0080FF] hover:underline font-bold">Naani Projects</Link> delivers 
-              <strong> comprehensive digital marketing services in Hyderabad</strong> that drive traffic, generate leads, and convert visitors 
-              into paying customers. From SEO to social media, PPC to content marketing—we're your complete growth partner.
+      {/* Hero Section */}
+      <section className="pt-20 pb-12 container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            Our Services
+          </span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-3">
+            Digital Marketing Services in Hyderabad
+          </h1>
+          <p className="text-lg text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
+            Need fast, sustainable growth? <Link to="/" className="text-primary hover:underline font-bold">Naani Projects</Link> delivers 
+            <strong> comprehensive digital marketing services in Hyderabad</strong> that drive traffic, generate leads, and convert visitors 
+            into paying customers. From SEO to social media, PPC to content marketing—we're your complete growth partner.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <Services />
+
+      {/* Detailed Services Overview */}
+      <section className="py-16 container mx-auto px-4 bg-card/40 border-y border-border/40">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+            Complete Digital Marketing Solutions Under One Roof
+          </h2>
+          
+          <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed font-medium">
+            <p>
+              In today's competitive Hyderabad market, having a strong digital presence isn't optional—it's essential. 
+              <Link to="/" className="text-primary hover:underline font-bold"> Naani Projects</Link> offers a full suite 
+              of <strong>digital marketing services</strong> designed to help businesses like yours stand out, attract more 
+              customers, and grow revenue.
             </p>
-          </div>
-        </section>
 
-        {/* Services Grid */}
-        <Services />
-
-        {/* Detailed Services Overview */}
-        <section className="py-16 container mx-auto px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#040957] mb-8 text-center">
-              Complete Digital Marketing Solutions Under One Roof
-            </h2>
+            <h3 className="text-2xl font-bold text-foreground mt-8">Our Core Digital Marketing Services</h3>
             
-            <div className="space-y-6 text-slate-800 text-base md:text-lg leading-relaxed font-medium">
-              <p>
-                In today's competitive Hyderabad market, having a strong digital presence isn't optional—it's essential. 
-                <Link to="/" className="text-[#0080FF] hover:underline font-bold"> Naani Projects</Link> offers a full suite 
-                of <strong>digital marketing services</strong> designed to help businesses like yours stand out, attract more 
-                customers, and grow revenue.
-              </p>
-
-              <h3 className="text-2xl font-bold text-[#040957] mt-8">Our Core Digital Marketing Services</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <div>
+                  <strong className="text-foreground font-bold">SEO Services:</strong> Rank #1 on Google for keywords that matter. 
+                  Our <Link to="/services/seo-services" className="text-primary hover:underline font-bold">SEO services in Hyderabad</Link> include 
+                  technical SEO, on-page optimization, local SEO, and link building.
+                </div>
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#0080FF] shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong className="text-[#040957] font-bold">SEO Services:</strong> Rank #1 on Google for keywords that matter. 
-                    Our <Link to="/services/seo-services" className="text-[#0080FF] hover:underline font-bold">SEO services in Hyderabad</Link> include 
-                    technical SEO, on-page optimization, local SEO, and link building.
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#0080FF] shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong className="text-[#040957] font-bold">PPC Advertising:</strong> Get instant, qualified leads with our 
-                    <Link to="/services/pay-per-click-ads" className="text-[#0080FF] hover:underline font-bold"> pay-per-click campaigns</Link>. 
-                    We manage Google Ads, Facebook Ads, and Instagram Ads with laser-focused targeting.
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#0080FF] shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong className="text-[#040957] font-bold">Social Media Marketing:</strong> Build your brand and engage your audience with 
-                    <Link to="/services/social-media-marketing" className="text-[#0080FF] hover:underline font-bold"> social media marketing</Link> that 
-                    turns followers into customers.
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#0080FF] shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong className="text-[#040957] font-bold">Website Design:</strong> Convert more visitors with 
-                    <Link to="/services/website-design-services" className="text-[#0080FF] hover:underline font-bold"> high-converting websites</Link> that 
-                    are fast, mobile-friendly, and SEO-optimized.
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#0080FF] shrink-0 mt-1" size={20} />
-                  <div>
-                    <strong className="text-[#040957] font-bold">WhatsApp Marketing:</strong> Reach customers instantly with 
-                    <Link to="/services/whatsapp-marketing-services" className="text-[#0080FF] hover:underline font-bold"> WhatsApp marketing</Link> campaigns 
-                    that boost engagement and conversions.
-                  </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <div>
+                  <strong className="text-foreground font-bold">PPC Advertising:</strong> Get instant, qualified leads with our 
+                  <Link to="/services/pay-per-click-ads" className="text-primary hover:underline font-bold"> pay-per-click campaigns</Link>. 
+                  We manage Google Ads, Facebook Ads, and Instagram Ads with laser-focused targeting.
                 </div>
               </div>
 
-              <p className="mt-6">
-                Every strategy we create is <strong>custom-built for your business</strong> and the Hyderabad market. We don't 
-                believe in cookie-cutter solutions—your business is unique, and your digital marketing should be too.
-              </p>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <div>
+                  <strong className="text-foreground font-bold">Social Media Marketing:</strong> Build your brand and engage your audience with 
+                  <Link to="/services/social-media-marketing" className="text-primary hover:underline font-bold"> social media marketing</Link> that 
+                  turns followers into customers.
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <div>
+                  <strong className="text-foreground font-bold">Website Design:</strong> Convert more visitors with 
+                  <Link to="/services/website-design-services" className="text-primary hover:underline font-bold"> high-converting websites</Link> that 
+                  are fast, mobile-friendly, and SEO-optimized.
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <div>
+                  <strong className="text-foreground font-bold">WhatsApp Marketing:</strong> Reach customers instantly with 
+                  <Link to="/services/whatsapp-marketing-services" className="text-primary hover:underline font-bold"> WhatsApp marketing</Link> campaigns 
+                  that boost engagement and conversions.
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
 
-        {/* WhatsApp CTA */}
-        <section className="py-12 container mx-auto px-4">
-          <div className="bg-[#0080FF] text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-xl border border-white/20">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Get a Free Digital Marketing Consultation
-            </h2>
-            <p className="text-white/95 mb-6 max-w-2xl mx-auto font-medium">
-              Tell us about your business and goals. Our experts will analyze your current presence and 
-              recommend the best digital marketing services to grow your business in Hyderabad.
+            <p className="mt-6">
+              Every strategy we create is <strong>custom-built for your business</strong> and the Hyderabad market. We don't 
+              believe in cookie-cutter solutions—your business is unique, and your digital marketing should be too.
             </p>
-            <Button
-              size="lg"
-              className="bg-white hover:bg-slate-100 text-[#0080FF] font-bold text-lg px-10 py-6 group shadow-md"
-              onClick={handleWhatsApp}
-            >
-              💬 Chat on WhatsApp Now
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <p className="text-xs text-white/90 font-medium mt-4">Free consultation • No obligations • Response within 5 minutes</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <FAQSection faqs={faqs} pageUrl="https://www.naani.in/services" />
-        
-        <InternalLinkBlock
-          text="See how our digital marketing strategies have delivered real results for Hyderabad businesses in our"
-          linkUrl="/portfolio"
-          linkTitle="Digital Marketing Portfolio - Client Success Stories Hyderabad"
-          anchorText="portfolio of success stories"
-        />
-        
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      {/* WhatsApp CTA */}
+      <section className="py-12 container mx-auto px-4">
+        <div className="bg-gradient-to-br from-primary/20 via-card to-background text-foreground rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-gold border border-primary/30">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Get a Free Digital Marketing Consultation
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto font-medium">
+            Tell us about your business and goals. Our experts will analyze your current presence and 
+            recommend the best digital marketing services to grow your business in Hyderabad.
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-gold hover:opacity-95 text-primary-foreground font-bold text-lg px-10 py-6 group shadow-gold"
+            onClick={handleWhatsApp}
+          >
+            💬 Chat on WhatsApp Now
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <p className="text-xs text-muted-foreground font-medium mt-4">Free consultation • No obligations • Response within 5 minutes</p>
+        </div>
+      </section>
+
+      <FAQSection faqs={faqs} pageUrl="https://www.naani.in/services" />
+      
+      <InternalLinkBlock
+        text="See how our digital marketing strategies have delivered real results for Hyderabad businesses in our"
+        linkUrl="/portfolio"
+        linkTitle="Digital Marketing Portfolio - Client Success Stories Hyderabad"
+        anchorText="portfolio of success stories"
+      />
     </>
   );
 };

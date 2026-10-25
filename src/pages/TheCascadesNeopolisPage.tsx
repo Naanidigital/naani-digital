@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import {
   MessageCircle,
   Phone,
@@ -49,7 +47,7 @@ const CTAButton = ({
 }) => (
   <button
     onClick={onClick}
-    className={`lead-btn inline-flex items-center gap-2 bg-[#0080FF] hover:bg-[#006bd6] text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all hover:scale-105 ${className}`}
+    className={`lead-btn inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-6 py-3 rounded-xl shadow-gold transition-all hover:scale-105 ${className}`}
   >
     <MessageCircle size={18} />
     {text}
@@ -212,11 +210,8 @@ const TheCascadesNeopolisPage = () => {
         jsonLd={structuredData}
       />
 
-      <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans">
-        <ProjectsHeader />
-
-        {/* Hero Section */}
-        <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-b from-[#0B101D] via-[#0D1426] to-[#090D16] border-b border-slate-800/80">
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 bg-gradient-to-b from-card/50 via-background to-background border-b border-border/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Breadcrumb Navigation */}
             <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 mb-6 overflow-x-auto whitespace-nowrap pb-1">
@@ -435,7 +430,7 @@ const TheCascadesNeopolisPage = () => {
                     <td className="p-4">
                       <button
                         onClick={() => openLeadModal("Table 3BHK - Get Price")}
-                        className="text-xs bg-[#0080FF] hover:bg-[#006bd6] text-white px-3 py-1.5 rounded-md font-bold"
+                        className="text-xs bg-primary hover:bg-amber-600 text-primary-foreground px-3 py-1.5 rounded-md font-bold"
                       >
                         Request Cost Sheet
                       </button>
@@ -448,7 +443,7 @@ const TheCascadesNeopolisPage = () => {
                     <td className="p-4">
                       <button
                         onClick={() => openLeadModal("Table 4BHK - Get Price")}
-                        className="text-xs bg-[#0080FF] hover:bg-[#006bd6] text-white px-3 py-1.5 rounded-md font-bold"
+                        className="text-xs bg-primary hover:bg-amber-600 text-primary-foreground px-3 py-1.5 rounded-md font-bold"
                       >
                         Request Cost Sheet
                       </button>
@@ -461,7 +456,7 @@ const TheCascadesNeopolisPage = () => {
                     <td className="p-4">
                       <button
                         onClick={() => openLeadModal("Table Penthouse - Get Price")}
-                        className="text-xs bg-[#0080FF] hover:bg-[#006bd6] text-white px-3 py-1.5 rounded-md font-bold"
+                        className="text-xs bg-primary hover:bg-amber-600 text-primary-foreground px-3 py-1.5 rounded-md font-bold"
                       >
                         Enquire Inventory
                       </button>
@@ -852,9 +847,6 @@ const TheCascadesNeopolisPage = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <ProjectsFooter />
-
         {/* Unified Lead Capture Popup */}
         <LeadCapturePopup
           open={popupOpen}
@@ -865,7 +857,6 @@ const TheCascadesNeopolisPage = () => {
 
         {/* Scroll Triggered Popup */}
         <ScrollTriggerPopup projectName={PROJECT_NAME} />
-      </div>
     </>
   );
 };

@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import { MessageCircle, Phone, MapPin, Building2, Layers, Maximize2, Star, ChevronDown, ChevronUp, Home, Zap, Shield, Leaf, Award } from "lucide-react";
 
 import elevationImg from "@/assets/brigade/elevation.png";
@@ -23,7 +21,7 @@ const PROJECT_NAME = "Brigade Gateway Neopolis";
 const CTAButton = ({ text, className = "", onClick }: { text: string; message?: string; className?: string; onClick?: () => void }) => (
   <button
     onClick={onClick}
-    className={`lead-btn inline-flex items-center gap-2 bg-[#0080FF] hover:bg-[#006bd6] text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all hover:scale-105 ${className}`}
+    className={`lead-btn inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-6 py-3 rounded-xl shadow-gold transition-all hover:scale-105 ${className}`}
   >
     <MessageCircle size={18} />
     {text}
@@ -168,7 +166,7 @@ const BrigadeGatewayNeopolis = () => {
   const openLead = (src: string) => { setPopupSource(src); setPopupOpen(true); };
 
   return (
-    <div className="bg-[#090D16] text-white min-h-screen">
+    <>
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={popupSource} projectName={PROJECT_NAME} />
       <SEOHead
         title="Brigade Gateway Neopolis Kokapet | Luxury Apartments"
@@ -178,7 +176,6 @@ const BrigadeGatewayNeopolis = () => {
         ogImage="https://www.naani.in/og/brigade-gateway-neopolis.png"
         structuredData={structuredData}
       />
-      <ProjectsHeader />
 
       {/* ── HERO ── */}
       <section className="relative min-h-[85vh] flex flex-col justify-end overflow-hidden pt-20">
@@ -187,20 +184,20 @@ const BrigadeGatewayNeopolis = () => {
             src={elevationImg}
             alt="Brigade Gateway Neopolis – Luxury High-Rise Towers in Kokapet Hyderabad"
             className="w-full h-full object-cover object-center" fetchPriority="high" decoding="async" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F1F1F1] via-[#F1F1F1]/70 to-[#F1F1F1]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
         </div>
 
         <div className="relative z-10 px-4 md:px-8 pb-16 pt-24 max-w-5xl mx-auto w-full">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-[#0080FF]/30 text-[#0080FF] text-xs font-bold uppercase tracking-[0.2em] shadow-xs mb-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-card border border-primary/30 text-primary text-xs font-bold uppercase tracking-[0.2em] shadow-xs mb-3">
             Brigade Group · Neopolis, Kokapet, Hyderabad
           </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-[#040957] leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
             Brigade Gateway Neopolis –<br />
-            <span className="text-[#0080FF]">
+            <span className="text-gold-gradient">
               Premium Luxury Homes in Kokapet, Hyderabad
             </span>
           </h1>
-          <p className="text-slate-800 font-medium text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
+          <p className="text-muted-foreground font-medium text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
             Brigade Gateway Neopolis offers 3–6 BHK residences with high-rise views and clubhouse amenities in Neopolis, Kokapet.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -213,7 +210,7 @@ const BrigadeGatewayNeopolis = () => {
             </button>
             <button
               onClick={() => openLead("Hero - Book Site Visit")}
-              className="lead-btn inline-flex items-center gap-2 bg-[#0080FF] hover:bg-[#006bd6] text-white font-bold px-7 py-4 rounded-xl shadow-md transition-all text-base"
+              className="lead-btn inline-flex items-center gap-2 bg-gradient-gold text-primary-foreground font-bold px-7 py-4 rounded-xl shadow-gold transition-all text-base hover:opacity-95"
             >
               <Phone size={18} />
               Book a Site Visit
@@ -674,18 +671,8 @@ const BrigadeGatewayNeopolis = () => {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="py-8 px-4 bg-slate-950 border-t border-slate-800 text-center">
-        <p className="text-slate-500 text-sm">
-          © 2026 Naani Projects. All rights reserved. · Real Estate Digital Marketing Hyderabad
-        </p>
-        <p className="text-slate-600 text-xs mt-2">
-          All images are indicative & for representation purposes only. Pricing and specifications are subject to change without prior notice.
-        </p>
-      </footer>
-
       {/* ── MOBILE STICKY CTA BAR ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-slate-950/95 backdrop-blur-md border-t border-amber-600/20 p-3">
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card/95 backdrop-blur-md border-t border-border/40 p-3">
         <div className="flex gap-3">
           <button
             onClick={() => openLead("Mobile - Enquire Now")}
@@ -703,9 +690,8 @@ const BrigadeGatewayNeopolis = () => {
           </a>
         </div>
       </div>
-      <ProjectsFooter />
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
-    </div>
+    </>
   );
 };
 

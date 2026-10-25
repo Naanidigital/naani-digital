@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
 import TrumpTowersLeadPopup, { TrumpPopupType } from "@/components/trump-towers/TrumpTowersLeadPopup";
 import {
   Phone,
@@ -63,7 +61,7 @@ const TrumpTowersHyderabadPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#070A11] text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
+    <>
       <SEOHead
         title="Trump Towers Hyderabad Kokapet | Luxury Branded Residences"
         description="Explore Trump Towers Hyderabad in Kokapet's Golden Mile. Discover 65-storey twin towers, private elevators, large-format residences, the three-level Trump Club and West Hyderabad connectivity."
@@ -71,16 +69,13 @@ const TrumpTowersHyderabadPage: React.FC = () => {
         ogImage="https://www.naani.in/assets/trump-towers/hero.jpg"
       />
 
-      {/* Floating Header */}
-      <ProjectsHeader />
-
       {/* Sticky Bottom Lead CTA Bar for Mobile */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#0B101D]/95 backdrop-blur-lg border-t border-amber-500/30 p-3 sm:hidden shadow-2xl flex items-center justify-between gap-2">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-lg border-t border-border/40 p-3 sm:hidden shadow-2xl flex items-center justify-between gap-2">
         <a
           href={`tel:+91${PHONE_NUMBER}`}
-          className="flex-1 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 border border-slate-700 transition"
+          className="flex-1 bg-card hover:bg-muted text-foreground text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 border border-border transition"
         >
-          <Phone className="w-3.5 h-3.5 text-amber-400" />
+          <Phone className="w-3.5 h-3.5 text-primary" />
           <span>Call 9493943946</span>
         </a>
         <button
@@ -98,7 +93,7 @@ const TrumpTowersHyderabadPage: React.FC = () => {
         </button>
       </div>
 
-      <main className="pt-16 sm:pt-20">
+      <div className="pt-16 sm:pt-20">
         {/* HERO SECTION */}
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-12 lg:py-20">
           <div className="absolute inset-0 z-0">
@@ -1442,10 +1437,7 @@ const TrumpTowersHyderabadPage: React.FC = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      {/* FOOTER */}
-      <ProjectsFooter />
+      </div>
 
       {/* LEAD CAPTURE POPUP MODAL */}
       <TrumpTowersLeadPopup
@@ -1475,7 +1467,7 @@ const TrumpTowersHyderabadPage: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

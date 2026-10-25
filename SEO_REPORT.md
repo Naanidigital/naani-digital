@@ -1,6 +1,6 @@
 # Automated SEO Validation Report — Naani.in
 
-Generated: 2026-10-11T06:11:21.126Z
+Generated: 2026-10-25T05:18:48.525Z
 
 ## Executive Summary
 - **Total Validated Routes**: 8

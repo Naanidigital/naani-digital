@@ -1,7 +1,4 @@
 import { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
 import SEOHead from "../components/SEOHead";
 import InternalLinkBlock from "../components/InternalLinkBlock";
 import { Link } from "react-router-dom";
@@ -159,10 +156,7 @@ const BlogPostFacebookAds = () => {
       
       {/* NO separate FAQ schema here — FAQSection component handles it */}
       
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="container mx-auto px-4 py-12 md:py-16">
+      <div className="container mx-auto px-4 py-12 md:py-16">
           <article className="max-w-5xl mx-auto">
             {/* Article Header */}
             <header className="mb-16 text-center pt-4">
@@ -470,14 +464,10 @@ const BlogPostFacebookAds = () => {
               />
             </section>
           </article>
-        </main>
+        </div>
 
         {/* Single FAQSection — this component injects the only FAQPage schema */}
         <FAQSection faqs={faqs} pageUrl={canonicalUrl} />
-
-        <Footer />
-        <WhatsAppButton />
-      </div>
     </>
   );
 };

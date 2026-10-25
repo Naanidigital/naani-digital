@@ -13,8 +13,7 @@ import EnquiryPopup from "@/components/tridasa/EnquiryPopup";
 import StickyContact from "@/components/tridasa/StickyContact";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
 
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
+
 
 const TridasaRisePage = () => {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -125,9 +124,8 @@ const TridasaRisePage = () => {
         ogImage="https://www.naani.in/og/tridasa-rise.png"
         structuredData={structuredData}
       />
-      <ProjectsHeader />
 
-      <main className="min-h-screen bg-[#090D16] text-white pt-20 pb-20 md:pb-0">
+      <div className="text-foreground pt-20 pb-20 md:pb-0">
         <HeroSection
           onEnquireClick={() => openEnquiry("Enquire Now")}
           onBrochureClick={() => openEnquiry("Download Brochure")}
@@ -149,19 +147,19 @@ const TridasaRisePage = () => {
         <SpecificationsSection />
 
         {/* Final CTA Section */}
-        <section className="py-16 md:py-20 px-4 bg-white border-t border-[#0080FF]/20">
+        <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-background via-card/50 to-background border-t border-border/40">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#040957] mb-4">
-              Book Your <span className="text-[#0080FF]">Dream Home</span> Today
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Book Your <span className="text-gold-gradient">Dream Home</span> Today
             </h2>
-            <p className="text-slate-700 font-medium mb-8 max-w-2xl mx-auto text-base">
+            <p className="text-muted-foreground font-medium mb-8 max-w-2xl mx-auto text-base">
               Experience elevated living at Tridasa Rise. Discover spacious 3 BHK luxury homes, premium amenities, and a vibrant community designed for modern lifestyles.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button data-lead-gate="sitevisit" onClick={() => openEnquiry("Schedule Site Visit")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-md bg-[#0080FF] hover:bg-[#006bd6] text-white transition-all hover:scale-105">
+              <button data-lead-gate="sitevisit" onClick={() => openEnquiry("Schedule Site Visit")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-gold bg-gradient-gold text-primary-foreground transition-all hover:scale-105">
                 Schedule Site Visit
               </button>
-              <button data-lead-gate="brochure" onClick={() => openEnquiry("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-md bg-[#040957] hover:bg-[#020536] text-white transition-all hover:scale-105">
+              <button data-lead-gate="brochure" onClick={() => openEnquiry("Get Latest Offers")} className="lead-btn py-4 px-8 text-lg font-bold rounded-xl shadow-md bg-card border border-primary/40 text-primary hover:bg-primary/10 transition-all hover:scale-105">
                 Get Latest Offers
               </button>
               <a href="https://wa.me/919493943946?text=Hi%2C%20I%27m%20interested%20in%20Tridasa%20Rise" target="_blank" rel="noopener noreferrer" data-lead-gate="whatsapp" className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl shadow-md transition-all hover:scale-105 text-lg">
@@ -169,15 +167,14 @@ const TridasaRisePage = () => {
               </a>
             </div>
             <div className="mt-6">
-              <a href="tel:+919493943946" className="call-btn text-[#0080FF] hover:text-[#040957] font-bold text-lg transition-colors inline-flex items-center gap-2">
+              <a href="tel:+919493943946" className="call-btn text-primary hover:text-amber-300 font-bold text-lg transition-colors inline-flex items-center gap-2">
                 <Phone size={18} /> Call Now: +91 94939 43946
               </a>
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
-      <ProjectsFooter />
       <EnquiryPopup
         open={enquiryOpen}
         onOpenChange={setEnquiryOpen}

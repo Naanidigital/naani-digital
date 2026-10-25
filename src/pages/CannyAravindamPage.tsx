@@ -1,9 +1,7 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import BrochureGateModal from "@/components/BrochureGateModal";
 import {
@@ -484,12 +482,10 @@ export const CannyAravindamPage = () => {
         }}
       />
 
-      <ProjectsHeader />
-
       {/* 1. BREADCRUMBS */}
       <nav
         aria-label="Breadcrumb"
-        className="w-full bg-[#070B14] border-b border-slate-800/80 pt-24 pb-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400"
+        className="w-full bg-card/40 border-b border-border/40 pt-24 pb-3 px-4 sm:px-8 lg:px-12 text-xs text-slate-400"
       >
         <div className="max-w-7xl mx-auto flex items-center gap-1.5 flex-wrap">
           <Link to="/" className="hover:text-amber-400 transition-colors">
@@ -1840,9 +1836,6 @@ export const CannyAravindamPage = () => {
           </div>
         </div>
       )}
-
-      <ProjectsFooter />
-      <WhatsAppButton />
 
       {/* Modals */}
       <LeadCapturePopup

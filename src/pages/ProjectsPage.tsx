@@ -1,9 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ProjectsHeader from "@/components/ProjectsHeader";
-import ProjectsFooter from "@/components/ProjectsFooter";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import SmartSearch from "@/components/SmartSearch";
 import ProjectImage from "@/components/ProjectImage";
 import { MapPin, Home, MessageCircle, Star, ArrowRight, SlidersHorizontal, X } from "lucide-react";
@@ -123,13 +120,11 @@ const ProjectsPage = () => {
         description="Browse verified Hyderabad apartments, villas and plotted projects by location, builder, BHK and budget with Naani Projects."
         canonicalUrl="https://www.naani.in/projects"
       />
-      <ProjectsHeader />
-
       {/* Hero */}
-      <section className="relative z-40 min-h-[45vh] flex items-center justify-center bg-[#090D16] pt-24 pb-12">
+      <section className="relative z-40 min-h-[45vh] flex items-center justify-center bg-background pt-24 pb-12">
         <div className="w-full px-4 sm:px-8 lg:px-12 text-center relative z-40">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <span className="inline-block px-5 py-2 rounded-full bg-[#111726] text-amber-400 text-xs md:text-sm font-extrabold mb-4 border border-amber-500/30 shadow-md">
+            <span className="inline-block px-5 py-2 rounded-full bg-card text-primary text-xs md:text-sm font-extrabold mb-4 border border-border/40 shadow-md">
               Naani Projects · {projects.length}+ Verified Properties
             </span>
             <h1 className="text-3xl md:text-6xl font-extrabold text-white mb-3 leading-tight">
@@ -207,7 +202,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Property Grid */}
-      <section className="py-16 bg-[#090D16]">
+      <section className="py-16 bg-background">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           {loading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -330,12 +325,12 @@ const ProjectsPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#0B101D] border-t border-amber-500/20">
+      <section className="py-16 bg-card border-t border-border/40">
         <div className="w-full px-4 sm:px-8 lg:px-12 text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
             Can't Find What You're Looking For?
           </h2>
-          <p className="text-slate-300 mb-8 max-w-xl mx-auto text-base">
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto text-base">
             Tell us your location, budget and preferences — we'll find the perfect property on WhatsApp.
           </p>
           <a
@@ -348,9 +343,6 @@ const ProjectsPage = () => {
           </a>
         </div>
       </section>
-
-      <ProjectsFooter />
-      <WhatsAppButton />
     </>
   );
 };

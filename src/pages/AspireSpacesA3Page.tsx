@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import LeadCapturePopup from "@/components/LeadCapturePopup";
 import ScrollTriggerPopup from "@/components/ScrollTriggerPopup";
-import ProjectHeader from "@/components/ProjectHeader";
 import { MessageCircle, Phone, MapPin, Building2, Layers, Maximize2, Star, ChevronDown, ChevronUp, Home, Zap, Shield, Leaf, Award, Users, Dumbbell, TreePine, Car, GraduationCap, Stethoscope, Plane, Play } from "lucide-react";
 
 import elevationImg from "@/assets/aspire-a3-elevation.jpg";
@@ -171,12 +170,8 @@ const AspireSpacesA3Page = () => {
 
       <LeadCapturePopup open={popupOpen} onOpenChange={setPopupOpen} source={PROJECT_NAME} />
 
-      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
-        {/* Header */}
-        <ProjectHeader projectName={PROJECT_NAME} onEnquireClick={openPopup} />
-
-        {/* Hero */}
-        <section className="relative pt-20">
+      {/* Hero */}
+      <section className="relative pt-8">
           <div className="relative">
             <img
               src={elevationImg}
@@ -394,44 +389,34 @@ const AspireSpacesA3Page = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-[#01406D]/70 via-[hsl(205,50%,10%)] to-background border-t border-[#01B4BA]/30">
+        <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-primary/20 via-card to-background border-t border-border/40">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Book Your Dream Home <span className="text-[#FF7A0F]">at Aspire Aarna</span>
+              Book Your Dream Home <span className="text-primary">at Aspire Aarna</span>
             </h2>
-            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Experience elevated living at Aspire Spaces Aarna. Discover spacious homes, premium amenities, and a vibrant community designed for modern lifestyles.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <CTAButton text="Schedule Site Visit" onClick={openPopup} className="py-4 px-8 text-lg bg-[#FF7A0F] hover:bg-[#e06800]" />
-              <CTAButton text="Get Latest Offers" onClick={openPopup} className="py-4 px-8 text-lg bg-[#01B4BA] hover:bg-[#019aa0]" />
+              <CTAButton text="Schedule Site Visit" onClick={openPopup} className="py-4 px-8 text-lg bg-gradient-gold text-primary-foreground shadow-gold" />
+              <CTAButton text="Get Latest Offers" onClick={openPopup} className="py-4 px-8 text-lg bg-card border border-primary/40 text-primary" />
               <a href={waLink} target="_blank" rel="noopener noreferrer"
                 className="whatsapp-btn inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all hover:scale-105 text-lg">
                 <MessageCircle size={20} /> WhatsApp Us
               </a>
             </div>
             <div className="mt-6">
-              <a href="tel:+919493943946" className="call-btn text-[#01B4BA] hover:text-[#FF7A0F] font-semibold text-lg transition-colors">
+              <a href="tel:+919493943946" className="call-btn text-primary hover:text-primary/80 font-semibold text-lg transition-colors">
                 📞 Call Now: +91 94939 43946
               </a>
             </div>
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="py-8 px-4 border-t border-amber-400/10 text-center">
-          <p className="text-slate-500 text-sm">
-            © 2026 Naani Projects. All rights reserved. · Real Estate Digital Marketing Hyderabad
-          </p>
-          <p className="text-slate-600 text-xs mt-2">
-            All images are indicative & for representation purposes only. Pricing and specifications are subject to change without prior notice.
-          </p>
-        </footer>
-
         {/* Mobile Sticky Bar */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-amber-400/20 p-3 md:hidden">
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-t border-border/40 p-3 md:hidden">
           <div className="flex gap-3">
-            <a href="tel:+919493943946" className="call-btn flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-xl font-medium">
+            <a href="tel:+919493943946" className="call-btn flex-1 flex items-center justify-center gap-2 bg-card border border-primary/40 text-primary py-3 rounded-xl font-medium">
               <Phone className="w-5 h-5" /> Call Now
             </a>
             <a href={waLink} target="_blank" rel="noopener noreferrer"
@@ -440,7 +425,6 @@ const AspireSpacesA3Page = () => {
             </a>
           </div>
         </div>
-      </div>
       <ScrollTriggerPopup projectName={PROJECT_NAME} />
     </>
   );
