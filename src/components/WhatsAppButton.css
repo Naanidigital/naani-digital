@@ -1,0 +1,113 @@
+/* Naani Projects Floating WhatsApp Button */
+
+.naani-floating-whatsapp {
+  position: fixed;
+
+  /* Desktop position */
+  right: 26px;
+  bottom: 26px;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25D366;
+  color: #FFFFFF;
+
+  border-radius: 50%;
+  text-decoration: none;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.30),
+    0 0 0 3px rgba(37, 211, 102, 0.12);
+
+  z-index: 45;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Official WhatsApp icon */
+.naani-whatsapp-icon {
+  width: 34px;
+  height: 34px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+/* Desktop hover */
+.naani-floating-whatsapp:hover {
+  background: #20BD5A;
+  transform: scale(1.08);
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.35),
+    0 0 0 5px rgba(37, 211, 102, 0.15);
+}
+
+/* Keyboard accessibility */
+.naani-floating-whatsapp:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 4px;
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .naani-floating-whatsapp {
+    width: 58px;
+    height: 58px;
+
+    right: 18px;
+
+    /*
+      Bottom CTA bar is approximately 65-70px.
+      Keep WhatsApp button above it.
+      env() accounts for device safe area.
+    */
+    bottom: calc(92px + env(safe-area-inset-bottom));
+
+    z-index: 45;
+  }
+
+  .naani-whatsapp-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .naani-floating-whatsapp:hover {
+    transform: none;
+  }
+
+  .naani-floating-whatsapp:active {
+    transform: scale(0.94);
+  }
+}
+
+/* Compact mobile screens */
+@media (max-width: 375px) {
+  .naani-floating-whatsapp {
+    right: 14px;
+    bottom: calc(90px + env(safe-area-inset-bottom));
+    width: 54px;
+    height: 54px;
+  }
+
+  .naani-whatsapp-icon {
+    width: 31px;
+    height: 31px;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .naani-floating-whatsapp {
+    transition: none;
+  }
+}
