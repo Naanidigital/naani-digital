@@ -21,7 +21,7 @@ const BUILDER_BLURB: Record<string, string> = {
   "brigade-group": "Brigade Group develops residential high-rise communities in Hyderabad, including high-rise tower developments in Kokapet and financial hubs.",
   "my-home-group": "My Home Group is a major Hyderabad real estate developer with multiple completed and ongoing residential projects in Madhapur, Tellapur, Kondapur, and Kokapet.",
   "rajapushpa-properties": "Rajapushpa Properties develops 2, 3, and 4 BHK residential communities across Tellapur, Manikonda, and the western ORR corridor.",
-  "candeur-constructions": "Candeur Constructions develops high-rise apartment projects in Bachupally and Tellapur.",
+  "candeur-constructions": "Candeur Constructions develops landmark high-rise residential communities across Hyderabad, including Candeur Arbora in Kukatpally and Candeur Eternia in Bachupally.",
   "godrej-properties": "Godrej Properties develops residential communities in Hyderabad, including multi-tower developments in Kukatpally and West Hyderabad.",
   "sanvi-constructions": "Sanvi Constructions develops premium residential projects and villa communities across Hyderabad.",
   "jaycon-infrastructure": "Jaycon Infrastructure develops premium residential suites and mixed-use commercial projects.",

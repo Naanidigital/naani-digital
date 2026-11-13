@@ -48,6 +48,7 @@ const STATIC_URLS = [
   ["/projects/neo-towers-neopolis-kokapet", "0.90", "weekly"],
   ["/projects/trump-towers-hyderabad-kokapet", "0.90", "weekly"],
   ["/projects/canny-aravindam", "0.90", "weekly"],
+  ["/projects/candeur-arbora", "0.90", "weekly"],
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],

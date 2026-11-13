@@ -45,6 +45,8 @@ export const buildSuggestions = (projects: DBProject[]): Suggestion[] => {
     { label: "Neo Towers Neopolis", sub: "Kokapet · Premier Project", path: "/projects/neo-towers-neopolis-kokapet" },
     { label: "Trump Towers", sub: "Golden Mile, Kokapet · Ultra-Luxury Residences", path: "/projects/trump-towers-hyderabad-kokapet" },
     { label: "Trump Towers Kokapet", sub: "Golden Mile, Kokapet · Ultra-Luxury Residences", path: "/projects/trump-towers-hyderabad-kokapet" },
+    { label: "Candeur Arbora", sub: "Kukatpally · Luxury 3 BHK High-Rise", path: "/projects/candeur-arbora" },
+    { label: "Arbora Kukatpally", sub: "Kukatpally · Luxury 3 BHK High-Rise", path: "/projects/candeur-arbora" },
   ];
   FLAGSHIP_ALIASES.forEach((alias) => push({ kind: "project", ...alias }));
 

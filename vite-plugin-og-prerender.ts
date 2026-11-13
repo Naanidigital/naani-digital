@@ -2318,6 +2318,103 @@ const CANNY_ARAVINDAM_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const CANDEUR_ARBORA_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/candeur-arbora#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Kukatpally", "item": "https://www.naani.in/projects-in-kukatpally" },
+      { "@type": "ListItem", "position": 4, "name": "Candeur Arbora", "item": "https://www.naani.in/projects/candeur-arbora" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/candeur-arbora#project",
+    "name": "Candeur Arbora",
+    "url": "https://www.naani.in/projects/candeur-arbora",
+    "description": "Candeur Arbora in Kukatpally, Hyderabad. Discover 3 BHK luxury high-rise residences across 20 acres with multiple towers (G+25), 1.35 lakh sq.ft. clubhouse, and 4.3-acre central courtyard off Green Hills Road near IDL Lake.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Off Green Hills Road, Near IDL Lake",
+      "addressLocality": "Kukatpally",
+      "addressRegion": "Telangana",
+      "postalCode": "500072",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Candeur Constructions"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/candeur-arbora#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Candeur Arbora located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Candeur Arbora is situated off Green Hills Road, Kukatpally, Hyderabad, near IDL Lake and opposite Rainbow Vistas, 15 minutes from HITEC City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the starting price for Candeur Arbora Kukatpally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing starts provisionally from ₹1.3 Cr onwards for 3 BHK luxury residences, subject to developer confirmation and launch payment plans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number for Candeur Arbora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Candeur Arbora is TG RERA registered under registration numbers P02200011362 and P02200011363."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-kukatpally" class="hover:text-amber-400">Kukatpally</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">TG RERA P02200011362 &amp; P02200011363 • Kukatpally, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Candeur Arbora – <span class="text-amber-400">Luxury 3 BHK High-Rise in Kukatpally</span></h1>
+        <p class="text-lg text-slate-200">20-Acre Gated Township by Candeur Constructions • Starting ₹1.3 Cr Onwards</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Multiple G+25 Towers • 1.35 Lakh Sq.Ft. Clubhouse • 4.3-Acre Central Courtyard • 50+ Amenities • Off Green Hills Road near IDL Lake
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20want%20price%20and%20floor%20plans%20for%20Candeur%20Arbora." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -2628,6 +2725,14 @@ const ogRoutes: OGRoute[] = [
     description: 'Canny Aravindam by Canny Life Spaces offers 2 & 3 BHK luxury apartments in Bowrampet, Hyderabad near ORR Exit 4A. 3.05 acres, 3 towers (G+9), 360 units, 5-level jaali clubhouse, 60% open spaces. TG RERA P02200007242.',
     url: `${SITE}/projects/canny-aravindam`,
     image: `${SITE}/assets/canny-aravindam/canny-aravindam-elevation.jpg`,
+  },
+  {
+    path: '/projects/candeur-arbora',
+    title: 'Candeur Arbora Kukatpally Hyderabad | Luxury 3 BHK Apartments',
+    description: 'Candeur Arbora Kukatpally – 20-acre luxury high-rise gated community with 1.35 lakh sq.ft. clubhouse and 4.3-acre central courtyard. Starting ₹1.3 Cr. Book site visit with Naani Projects.',
+    url: `${SITE}/projects/candeur-arbora`,
+    image: `${SITE}/og-candeur-arbora.jpg`,
+    prerenderHtml: CANDEUR_ARBORA_PRERENDER_HTML,
   },
 ];
 

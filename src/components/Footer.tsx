@@ -39,7 +39,7 @@ const Footer = () => {
             Get Best Property Deals on WhatsApp
           </h2>
           <p className="text-slate-900 text-base md:text-lg font-bold max-w-3xl mx-auto mb-8">
-            Share your location, budget and preferences. We'll send a curated shortlist within 30 minutes. Free for buyers.
+            Connect with our property advisor for project details and assistance. Free for buyers.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 w-full">
             <a

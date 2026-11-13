@@ -24,6 +24,47 @@ interface ProjectDetailDynamicProps {
 }
 
 const getFallbackProject = (slug: string): DBProject => {
+  if (slug.includes("candeur-arbora")) {
+    return {
+      id: "candeur-arbora",
+      slug: "candeur-arbora",
+      name: "Candeur Arbora",
+      builder: "Candeur Constructions",
+      location: "Kukatpally",
+      city: "Hyderabad",
+      configuration: "3 BHK Luxury High-Rise Residences (1,550 - 2,205 Sq.Ft.)",
+      bhk_list: [3],
+      property_type: "Apartment",
+      price_range: "₹1.3 Cr Onwards (Subject to Developer Confirmation)",
+      min_price_inr: 13000000,
+      max_price_inr: 22000000,
+      status: "Pre-Launch",
+      possession: "September 2031",
+      usp: "20 Acres · Multiple Towers (G+25) · 1.35 Lakh Sq.Ft. Clubhouse · ~4.3 Acres Central Courtyard · Near IDL Lake",
+      description: "Candeur Arbora is a luxury high-rise gated community spread across 20 acres off Green Hills Road, Kukatpally, Hyderabad. It features G+25 residential towers, a grand 1.35 lakh sq.ft. multi-level clubhouse, ~4.3 acres of open central courtyard, and premium 3 BHK residences across 4 size bands (~1,550 to ~2,205 sq.ft.) near HITEC City and KPHB Metro.",
+      amenities: ["1.35 Lakh Sq.Ft. Clubhouse", "4.3-Acre Central Courtyard", "Swimming Pool & Deck", "Gymnasium & Fitness Studio", "Open-Air Amphitheater", "Kids Adventure Playground", "Outdoor Giant Chess", "Jogging Track", "Yoga & Meditation Lawns"],
+      faqs: [
+        { q: "Where is Candeur Arbora located?", a: "Candeur Arbora is located off Green Hills Road, Kukatpally, Hyderabad, near IDL Lake and opposite Rainbow Vistas, near Moosapet Metro and HITEC City." },
+        { q: "What is the price of Candeur Arbora?", a: "Pricing starts provisionally from ₹1.3 Cr onwards for 3 BHK luxury residences, subject to developer confirmation." }
+      ],
+      gallery: [
+        "/assets/candeur-arbora/hero-clubhouse.jpg",
+        "/assets/candeur-arbora/aerial-masterview.jpg",
+        "/assets/candeur-arbora/masterplan-layout.png",
+        "/assets/candeur-arbora/swimming-pool.jpg",
+        "/assets/candeur-arbora/central-park.jpg"
+      ],
+      hero_image: "/assets/candeur-arbora/hero-clubhouse.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=IDL+Lake+Kukatpally+Hyderabad&output=embed",
+      seo_title: "Candeur Arbora Kukatpally Hyderabad | Luxury 3 BHK High-Rise Apartments",
+      meta_description: "Explore Candeur Arbora in Kukatpally, Hyderabad. 20-acre luxury township with 1.35 lakh sft clubhouse and 4.3-acre central courtyard. Starting ₹1.3 Cr.",
+      canonical_url: "https://www.naani.in/projects/candeur-arbora",
+      custom_page_path: "/projects/candeur-arbora",
+      featured: true,
+    };
+  }
+
   if (slug.includes("prestige-golden-grove")) {
     return {
       id: "prestige-golden-grove",
@@ -259,6 +300,10 @@ const ProjectDetailDynamic = ({ slugOverride }: ProjectDetailDynamicProps = {}) 
         }
 
         if (!mounted) return;
+        if (p?.custom_page_path && typeof window !== "undefined" && window.location.pathname !== p.custom_page_path) {
+          navigate(p.custom_page_path, { replace: true });
+          return;
+        }
         setProject(p);
         setLoading(false);
 

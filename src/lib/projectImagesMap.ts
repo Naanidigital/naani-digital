@@ -1,4 +1,5 @@
 import candeurHero from "@/assets/candeur-eternia/hero.png";
+import candeurArboraHero from "@/assets/candeur-arbora/hero-clubhouse.jpg";
 import godrejHero from "@/assets/godrej-kukatpally/hero.jpg";
 import prestigeElevation from "@/assets/prestige/elevation.jpg";
 import brigadeElevation from "@/assets/brigade/elevation.png";
@@ -31,6 +32,9 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "trump-towers-hyderabad": trumpHero,
   "candeur-eternia-bachupally-hyderabad": candeurHero,
   "candeur-eternia": candeurHero,
+  "candeur-arbora": candeurArboraHero,
+  "candeur-arbora-kukatpally": candeurArboraHero,
+  "candeur-arbora-hyderabad": candeurArboraHero,
   "godrej-kukatpally-hyderabad": godrejHero,
   "godrej-kukatpally": godrejHero,
   "aspire-spaces-a3-bachupally": aspireElevation,
@@ -80,6 +84,8 @@ export function getMappedProjectImage(slug?: string | null, name?: string | null
     if (n.includes("aspire") || n.includes("spaces a3")) return aspireElevation;
     if (n.includes("jaycon") || n.includes("gateway")) return jayconElevation;
     if (n.includes("man airport") || n.includes("tukkuguda")) return manAirportElevation;
+    if (n.includes("candeur") && n.includes("arbora")) return candeurArboraHero;
+    if (n.includes("arbora")) return candeurArboraHero;
     if (n.includes("candeur") || n.includes("eternia")) return candeurHero;
     if (n.includes("godrej") || n.includes("kukatpally")) return godrejHero;
     if (n.includes("rajapushpa") || n.includes("sierra")) return rajapushpaHero;

@@ -28,4 +28,5 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   { name: "Trump Towers Hyderabad", slug: "/projects/trump-towers-hyderabad-kokapet", location: "Kokapet" },
   { name: "Sanvi Kowsalya Avani", slug: "/projects/sanvi-kowsalya-avani-kristareddypet", location: "Kristareddypet" },
   { name: "Canny Aravindam", slug: "/projects/canny-aravindam", location: "Bowrampet" },
+  { name: "Candeur Arbora", slug: "/projects/candeur-arbora", location: "Kukatpally" },
 ];
