@@ -112,3 +112,4 @@ ON CONFLICT (slug) DO UPDATE SET
   featured = EXCLUDED.featured,
   publish_status = EXCLUDED.publish_status,
   updated_at = now();
+

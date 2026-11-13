@@ -49,6 +49,8 @@ export const buildSuggestions = (projects: DBProject[]): Suggestion[] => {
     { label: "Arbora Kukatpally", sub: "Kukatpally · Luxury 3 BHK High-Rise", path: "/projects/candeur-arbora" },
     { label: "Aparna Serenity", sub: "Kompally · Ready to Move Luxury 2, 3 & 4 BHK", path: "/projects/aparna-serenity" },
     { label: "Serenity Kompally", sub: "Kompally · Ready to Move Luxury Residences", path: "/projects/aparna-serenity" },
+    { label: "Cybercity Stone Ridge", sub: "Moosapet · Luxury 2, 3 & 4 BHK High-Rise", path: "/projects/cybercity-stone-ridge" },
+    { label: "Stone Ridge Moosapet", sub: "Green Hills Road, Moosapet · Near HITEC City", path: "/projects/cybercity-stone-ridge" },
   ];
   FLAGSHIP_ALIASES.forEach((alias) => push({ kind: "project", ...alias }));
 

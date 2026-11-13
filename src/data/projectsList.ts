@@ -30,4 +30,5 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   { name: "Canny Aravindam", slug: "/projects/canny-aravindam", location: "Bowrampet" },
   { name: "Candeur Arbora", slug: "/projects/candeur-arbora", location: "Kukatpally" },
   { name: "Aparna Serenity", slug: "/projects/aparna-serenity", location: "Kompally" },
+  { name: "Cybercity Stone Ridge", slug: "/projects/cybercity-stone-ridge", location: "Moosapet" },
 ];

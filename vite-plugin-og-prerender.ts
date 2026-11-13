@@ -2512,6 +2512,111 @@ const APARNA_SERENITY_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const CYBERCITY_STONE_RIDGE_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/cybercity-stone-ridge#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Moosapet", "item": "https://www.naani.in/projects-in-moosapet" },
+      { "@type": "ListItem", "position": 4, "name": "Cybercity Stone Ridge", "item": "https://www.naani.in/projects/cybercity-stone-ridge" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/cybercity-stone-ridge#project",
+    "name": "Cybercity Stone Ridge",
+    "url": "https://www.naani.in/projects/cybercity-stone-ridge",
+    "description": "Cybercity Stone Ridge on Green Hills Road, Moosapet, near HITEC City, Hyderabad. 12.33 acres with 6 towers (25-27 floors), 70%+ open space, vehicle-free podium deck, and 66,000 sq.ft. 6-level clubhouse.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Green Hills Road, Sevalal Nagar",
+      "addressLocality": "Moosapet",
+      "addressRegion": "Telangana",
+      "postalCode": "500018",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Cybercity Builders & Developers Pvt. Ltd."
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/cybercity-stone-ridge#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Cybercity Stone Ridge and where is it located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cybercity Stone Ridge is an under-construction luxury high-rise gated community developed by Cybercity Builders on Green Hills Road in Moosapet, near HITEC City, Hyderabad. It spans 12.33 acres with 6 towers (25 and 27 floors) and 1,424 apartments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who designed Cybercity Stone Ridge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project is designed by master architect Hafeez Contractor with landscape architecture by CPG Asia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number and expected possession?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Registered under TG RERA numbers P02200009747 and P02200009748. Launched in 2025, possession is scheduled between May and September 2030."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations and price range are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stone Ridge offers 2 BHK (~1,300 sq.ft.), 3 BHK (1,650 – 2,760 sq.ft.), and 4 BHK (3,170 – 3,805 sq.ft.) luxury residences with base pricing from ₹1.08 Cr to ₹3.45 Cr (approx. ₹8,300 to ₹9,100 per sq.ft.)."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-moosapet" class="hover:text-amber-400">Moosapet</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P02200009747 &amp; 9748 • Moosapet, Near HITEC City</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Cybercity Stone Ridge – <span class="text-amber-400">Luxury High-Rise in Moosapet</span></h1>
+        <p class="text-lg text-slate-200">12.33-Acre Gated Community by Cybercity Builders • Designed by Hafeez Contractor • 2, 3 &amp; 4 BHK from ₹1.08 Cr</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          6 Residential Towers (25 &amp; 27 Floors) • 1,424 Residences • 70%+ Open Spaces with Vehicle-Free Podium Deck • 66,000 Sq.Ft. 6-Level Club Stone Ridge • Green Hills Road, Moosapet
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Cybercity%20Stone%20Ridge%20Moosapet.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -2838,6 +2943,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/aparna-serenity`,
     image: `${SITE}/og-aparna-serenity.jpg`,
     prerenderHtml: APARNA_SERENITY_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/cybercity-stone-ridge',
+    title: 'Cybercity Stone Ridge Moosapet Hyderabad | Luxury 2, 3 & 4 BHK Apartments',
+    description: 'Cybercity Stone Ridge on Green Hills Road, Moosapet, near HITEC City, Hyderabad. 12.33 acres, 6 towers (25-27 floors), 66,000 sft clubhouse, 70%+ open spaces by Hafeez Contractor. Get pricing & floor plans.',
+    url: `${SITE}/projects/cybercity-stone-ridge`,
+    image: `${SITE}/og-cybercity-stone-ridge.jpg`,
+    prerenderHtml: CYBERCITY_STONE_RIDGE_PRERENDER_HTML,
   },
 ];
 

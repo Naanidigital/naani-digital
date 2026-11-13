@@ -114,6 +114,55 @@ const getFallbackProject = (slug: string): DBProject => {
     };
   }
 
+  if (slug.includes("cybercity-stone-ridge")) {
+    return {
+      id: "cybercity-stone-ridge",
+      slug: "cybercity-stone-ridge",
+      name: "Cybercity Stone Ridge",
+      builder: "Cybercity Builders & Developers Pvt. Ltd.",
+      location: "Moosapet",
+      city: "Hyderabad",
+      configuration: "2, 3 & 4 BHK Luxury High-Rise Residences (1,300 - 3,805 Sq.Ft.)",
+      bhk_list: [2, 3, 4],
+      property_type: "Apartment",
+      price_range: "₹1.08 Cr – ₹3.45 Cr",
+      min_price_inr: 10800000,
+      max_price_inr: 34500000,
+      status: "Under Construction",
+      possession: "2030-09",
+      usp: "12.33 Acres · 6 Towers (25 & 27 Floors) · 66,000 Sft Clubhouse · 70%+ Open Spaces · Vehicle-Free Podium Deck",
+      description: "Cybercity Stone Ridge is an under-construction luxury high-rise gated community developed by Cybercity Builders on Green Hills Road in Moosapet, near HITEC City, Hyderabad. Conceived by Hafeez Contractor with landscaping by CPG Asia.",
+      amenities: [
+        "Club Stone Ridge (66,000 Sq.Ft. / 6 Levels)",
+        "1.5-Acre Central Park & Manicured Lawns",
+        "1.2-Acre Rock Adventure Zone with Boulders Trail",
+        "50-Meter Olympic Lap Pool & Splash Pools",
+        "Vehicle-Free Ground Podium Deck",
+        "Indoor Badminton & Squash Courts",
+        "Tennis & Dedicated Pickleball Courts",
+        "On-Site Supermarket, Pharmacy & Daycare",
+        "Dedicated Fenced Pet Park",
+        "Solar-Powered Entrance & Rainwater Harvesting"
+      ],
+      faqs: [
+        { q: "What is Cybercity Stone Ridge?", a: "Cybercity Stone Ridge is a 12.33-acre luxury high-rise gated community on Green Hills Road, Moosapet, near HITEC City, featuring 6 towers and 1,424 apartments." },
+        { q: "Is Cybercity Stone Ridge RERA registered?", a: "Yes, registered under TG RERA numbers P02200009747 and P02200009748." },
+        { q: "What is the price range?", a: "Base prices range between ₹8,300 and ₹9,100 per sq. ft. Unit values range from ₹1.08 Cr – ₹1.21 Cr for 2 BHK, ₹1.60 Cr – ₹2.50 Cr for 3 BHK, and ₹2.73 Cr – ₹3.45 Cr for 4 BHK." }
+      ],
+      gallery: [
+        "/og-cybercity-stone-ridge.jpg"
+      ],
+      hero_image: "/og-cybercity-stone-ridge.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=Cybercity+Stone+Ridge+Moosapet+Hyderabad&output=embed",
+      seo_title: "Cybercity Stone Ridge Moosapet Hyderabad | Luxury 2, 3 & 4 BHK Apartments",
+      meta_description: "Cybercity Stone Ridge on Green Hills Road, Moosapet, near HITEC City, Hyderabad. 12.33 acres, 6 towers (25-27 floors), 66,000 sft clubhouse, 70%+ open spaces by Hafeez Contractor.",
+      canonical_url: "https://www.naani.in/projects/cybercity-stone-ridge",
+      custom_page_path: "/projects/cybercity-stone-ridge",
+      featured: true,
+    };
+  }
+
   if (slug.includes("prestige-golden-grove")) {
     return {
       id: "prestige-golden-grove",
