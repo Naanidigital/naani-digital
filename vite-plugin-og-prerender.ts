@@ -2707,7 +2707,7 @@ const ogRoutes: OGRoute[] = [
   },
   {
     path: '/projects/team4-aria-miyapur-luxury-apartments-hyderabad',
-    title: 'Team4 Aria Miyapur | Price, Floor Plans & Luxury Apartments Hyderabad',
+    title: 'Team4 Aria Miyapur | Floor Plans & Luxury Apartments Hyderabad',
     description: 'Team4 Aria Miyapur – ultra luxury 3 & 3.5 BHK G+48 apartments in Hyderabad with 3.5 acre courtyard, infinity pool & premium amenities.',
     url: `${SITE}/projects/team4-aria-miyapur-luxury-apartments-hyderabad`,
     image: `${SITE}/og-team4-aria-miyapur.jpg`,

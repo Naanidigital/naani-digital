@@ -29,8 +29,7 @@ const structuredData = {
       "url": "https://www.naani.in/projects/team4-aria-miyapur-luxury-apartments-hyderabad",
       "image": "https://www.naani.in/team4-aria-hero.png",
       "datePosted": "2026-04-15",
-      "address": { "@type": "PostalAddress", "addressLocality": "Miyapur", "addressRegion": "Hyderabad", "addressCountry": "IN" },
-      "offers": { "@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "6099", "highPrice": "6399", "unitText": "per sq.ft" }
+      "address": { "@type": "PostalAddress", "addressLocality": "Miyapur", "addressRegion": "Hyderabad", "addressCountry": "IN" }
     },
     {
       "@type": "LocalBusiness",
@@ -42,7 +41,7 @@ const structuredData = {
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is the price of Team4 Aria Miyapur?", "acceptedAnswer": { "@type": "Answer", "text": "EOI Price starts from ₹6,099 – ₹6,399 per sq.ft. Special OTP pricing available during pre-launch." } },
+        { "@type": "Question", "name": "What is the price of Team4 Aria Miyapur?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing details are available on request. Contact our property advisor at +91 94939 43946 for the latest developer price sheet and payment plans." } },
         { "@type": "Question", "name": "What are the configurations available?", "acceptedAnswer": { "@type": "Answer", "text": "3 BHK (1490–1998 sq.ft) and 3.5 BHK (2056–2218 sq.ft) ultra luxury apartments." } },
         { "@type": "Question", "name": "When is the possession date?", "acceptedAnswer": { "@type": "Answer", "text": "Expected possession is January 2031. RERA Number: P02400010543." } },
         { "@type": "Question", "name": "Where is Team4 Aria located?", "acceptedAnswer": { "@type": "Answer", "text": "Miyapur, Hyderabad – 4 mins from Miyapur Metro, close to HITEC City & Gachibowli." } },
@@ -68,7 +67,7 @@ const amenityCategories = [
 ];
 
 const faqs = [
-  { q: "What is the price of Team4 Aria Miyapur?", a: "EOI Price starts from ₹6,099 – ₹6,399 per sq.ft. Special OTP pricing is available during the pre-launch phase. Contact us at 9493943946 for the latest offers." },
+  { q: "What is the price of Team4 Aria Miyapur?", a: "Pricing details are available on request. Contact our property advisor at +91 94939 43946 for the latest developer price sheet and payment plans." },
   { q: "What are the unit configurations available?", a: "Team4 Aria offers spacious 3 BHK (1490–1998 sq.ft) and 3.5 BHK (2056–2218 sq.ft) ultra luxury apartments designed for maximum ventilation and natural light." },
   { q: "When is the expected possession date?", a: "Expected possession is January 2031. The project is currently in Pre-Launch / EOI Phase. RERA Number: P02400010543." },
   { q: "Where is Team4 Aria Miyapur located?", a: "Located in Miyapur, Hyderabad – just 4 mins from Miyapur Metro Station, with easy connectivity to HITEC City, Gachibowli, and ORR." },
@@ -109,7 +108,7 @@ const Team4AriaMiyapurPage = () => {
   return (
     <>
       <SEOHead
-        title="Team4 Aria Miyapur | Price, Floor Plans & Luxury Apartments Hyderabad"
+        title="Team4 Aria Miyapur | Floor Plans & Luxury Apartments Hyderabad"
         description="Explore Team4 Aria Miyapur – ultra luxury 3 & 3.5 BHK apartments in Hyderabad with 3.5 acre courtyard, infinity pool & premium amenities. Book site visit now."
         canonicalUrl="https://www.naani.in/projects/team4-aria-miyapur-luxury-apartments-hyderabad"
         keywords="Team4 Aria Miyapur, Luxury apartments Miyapur, 3 BHK flats Hyderabad, High rise apartments Hyderabad, Pre launch projects Miyapur"
@@ -139,8 +138,8 @@ const Team4AriaMiyapurPage = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button onClick={() => openPopup("Hero – Get Price Details")} size="lg" className="lead-btn bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-8 py-6 text-lg shadow-lg shadow-amber-500/25">
-              Get Price Details
+            <Button onClick={() => openPopup("Hero – Request Price Details")} size="lg" className="lead-btn bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-8 py-6 text-lg shadow-lg shadow-amber-500/25">
+              Request Price Details
             </Button>
             <Button onClick={() => openPopup("Hero – Book Site Visit")} size="lg" variant="outline" className="lead-btn border-amber-500/50 text-amber-300 hover:bg-amber-500/10 px-8 py-6 text-lg">
               <Calendar className="w-5 h-5 mr-2" /> Book Site Visit
@@ -185,29 +184,6 @@ const Team4AriaMiyapurPage = () => {
               <p className="text-gray-300 leading-relaxed">With a 3.5-acre central courtyard, dual clubhouses, Olympic and infinity pools, and 10.5 ft ceiling heights, Team4 Aria redefines luxury apartment living in West Hyderabad. The project offers a 1:1 lift ratio, podium parking, and 900 ft road frontage for unmatched convenience.</p>
               <Button onClick={() => openPopup("Overview – Get Details")} className="lead-btn bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white mt-4">Get Complete Details</Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== PRICE SECTION ===== */}
-      <section className={`${sectionClass} bg-gradient-to-b from-slate-900 to-slate-950`}>
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">Price Details</h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            <div className="bg-white/5 border border-amber-500/20 rounded-2xl p-8 space-y-3">
-              <p className="text-gray-400 text-sm">EOI Price</p>
-              <p className="text-3xl font-bold text-white">₹6,099 – ₹6,399 <span className="text-lg font-normal text-amber-300">/ sq.ft</span></p>
-            </div>
-            <div className="bg-gradient-to-br from-amber-600/20 to-amber-500/10 border border-amber-500/30 rounded-2xl p-8 space-y-3">
-              <p className="text-gray-400 text-sm">Special OTP Price</p>
-              <p className="text-3xl font-bold text-white">₹5XXX <span className="text-lg font-normal text-amber-300">/ sq.ft + PLC</span></p>
-              <p className="text-amber-300 text-sm">🔥 Pre-launch exclusive pricing</p>
-            </div>
-          </div>
-          <p className="text-gray-400 text-sm">⚠️ Limited inventory available in pre-launch phase. Prices may increase anytime.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={() => openPopup("Price – Download Price Sheet")} className="lead-btn bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-6"><Download className="w-5 h-5 mr-2" />Download Price Sheet</Button>
-            <Button onClick={() => openPopup("Price – Check Availability")} variant="outline" className="lead-btn border-amber-500/50 text-amber-300 hover:bg-amber-500/10 px-8 py-6">Check Availability</Button>
           </div>
         </div>
       </section>
