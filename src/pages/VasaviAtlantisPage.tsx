@@ -566,7 +566,7 @@ export const VasaviAtlantisPage = () => {
         </section>
 
         {/* 2. PROJECT OVERVIEW & ARCHITECTURAL PILLARS */}
-        <section className="py-16 lg:py-24 border-b border-slate-800/60">
+        <section className="py-16 lg:py-24 border-b border-slate-800/60" id="architecture">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
               <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
@@ -1145,15 +1145,15 @@ export const VasaviAtlantisPage = () => {
           </div>
         </section>
 
-        {/* 6. BUYER CONSIDERATIONS & COMMUNITY FEEDBACK */}
-        <section className="py-16 lg:py-24 border-b border-slate-800/60">
+        {/* 6. BUYER CONSIDERATIONS & DUE DILIGENCE */}
+        <section className="py-16 lg:py-24 border-b border-slate-800/60" id="advisory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
               <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
                 Transparent Homebuyer Advisory
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-                Buyer Considerations &amp; Community Feedback
+                Independent Buyer Advisory &amp; Due Diligence
               </h2>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 Naani Projects provides balanced, research-driven advisory highlighting both project strengths and critical points to evaluate before making a purchase.
