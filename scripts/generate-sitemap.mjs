@@ -52,6 +52,7 @@ const STATIC_URLS = [
   ["/projects/aparna-serenity", "0.90", "weekly"],
   ["/projects/cybercity-stone-ridge", "0.90", "weekly"],
   ["/projects/vasavi-atlantis", "0.90", "weekly"],
+  ["/projects/pavani-starlit-miyapur", "0.90", "weekly"],
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],

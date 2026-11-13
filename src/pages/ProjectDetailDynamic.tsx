@@ -212,6 +212,55 @@ const getFallbackProject = (slug: string): DBProject => {
     };
   }
 
+  if (slug.includes("pavani-starlit")) {
+    return {
+      id: "pavani-starlit-miyapur",
+      slug: "pavani-starlit-miyapur",
+      name: "Pavani Starlit",
+      builder: "Sai Sravanthi Infra Projects Private Limited",
+      location: "Miyapur",
+      city: "Hyderabad",
+      configuration: "2, 2.5 & 3 BHK Premium Residences (1,275 - 2,139 Sq.Ft.)",
+      bhk_list: [2, 3],
+      property_type: "Apartment",
+      price_range: "Contact for Latest Price",
+      min_price_inr: 0,
+      max_price_inr: 0,
+      status: "Under Construction",
+      possession: "2029",
+      usp: "~3 Acres · 3 Towers (G+10) · 45,000+ Sft Amenities · ~70% Open Space · Maqtha Mahaboobpet, Miyapur",
+      description: "Pavani Starlit is a premium residential apartment community by Sai Sravanthi Infra Projects in Maqtha Mahaboobpet, Miyapur, Hyderabad. Featuring 2, 2.5 and 3 BHK homes across ~3 acres with 45,000+ sq. ft. of amenities.",
+      amenities: [
+        "Grand Clubhouse & Banquet Hall",
+        "Modern Gymnasium & Yoga Pavilions",
+        "Resort-Scale Swimming Pool & Kids Pool",
+        "Dedicated Business Lounge & Co-Working Hub",
+        "Indoor Games (Table Tennis, Billiards, Carrom)",
+        "Landscaped Open Spaces & Walking Paths",
+        "Children Play Areas & Outdoor Gazebos",
+        "2-Level Basement Parking with EV Provisions",
+        "100% DG Power Backup for Common Areas",
+        "24/7 Security Surveillance & Access Control"
+      ],
+      faqs: [
+        { q: "What is Pavani Starlit?", a: "Pavani Starlit is a ~3-acre premium residential community in Maqtha Mahaboobpet, Miyapur, Hyderabad, featuring 3 towers (G+10) with 2, 2.5 & 3 BHK homes." },
+        { q: "Is Pavani Starlit RERA approved?", a: "Yes, registered with Telangana RERA under registration ID TG RERA P02400008769." },
+        { q: "What is the expected possession timeline?", a: "Expected possession is scheduled for 2029 as per provisional disclosures." }
+      ],
+      gallery: [
+        "/og-pavani-starlit.jpg"
+      ],
+      hero_image: "/og-pavani-starlit.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=Miyapur+Hyderabad&output=embed",
+      seo_title: "Pavani Starlit Miyapur | 2, 2.5 & 3 BHK Flats in Hyderabad",
+      meta_description: "Explore Pavani Starlit Miyapur, Hyderabad. Discover spacious 2, 2.5 & 3 BHK apartments, project details, amenities, location and floor plans.",
+      canonical_url: "https://www.naani.in/projects/pavani-starlit-miyapur",
+      custom_page_path: "/projects/pavani-starlit-miyapur",
+      featured: true,
+    };
+  }
+
   if (slug.includes("prestige-golden-grove")) {
     return {
       id: "prestige-golden-grove",

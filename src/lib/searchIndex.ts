@@ -53,6 +53,8 @@ export const buildSuggestions = (projects: DBProject[]): Suggestion[] => {
     { label: "Stone Ridge Moosapet", sub: "Green Hills Road, Moosapet · Near HITEC City", path: "/projects/cybercity-stone-ridge" },
     { label: "Vasavi Atlantis", sub: "Narsingi · Luxury 2, 3, 3.5 & 4 BHK High-Rise", path: "/projects/vasavi-atlantis" },
     { label: "Atlantis Narsingi", sub: "Nehru ORR, Narsingi · Near Financial District", path: "/projects/vasavi-atlantis" },
+    { label: "Pavani Starlit", sub: "Miyapur · Premium 2, 2.5 & 3 BHK Residences", path: "/projects/pavani-starlit-miyapur" },
+    { label: "Starlit Miyapur", sub: "Maqtha Mahaboobpet, Miyapur · Near Metro Station", path: "/projects/pavani-starlit-miyapur" },
   ];
   FLAGSHIP_ALIASES.forEach((alias) => push({ kind: "project", ...alias }));
 
@@ -93,7 +95,7 @@ export const buildFuse = (entries: Suggestion[]) =>
     minMatchCharLength: 1,
   });
 
-export const POPULAR_SEARCHES = ["Trump Towers", "Neo Towers", "Vasavi Atlantis", "The Cascades", "Rise With 9", "Kokapet", "Ready to Move"];
+export const POPULAR_SEARCHES = ["Trump Towers", "Neo Towers", "Pavani Starlit", "Vasavi Atlantis", "The Cascades", "Rise With 9", "Miyapur", "Ready to Move"];
 
 const RECENT_KEY = "naani:recent-searches";
 export const getRecent = (): string[] => {

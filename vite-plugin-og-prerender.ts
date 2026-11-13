@@ -2722,6 +2722,111 @@ const VASAVI_ATLANTIS_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const PAVANI_STARLIT_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/pavani-starlit-miyapur#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Miyapur", "item": "https://www.naani.in/projects-in-miyapur" },
+      { "@type": "ListItem", "position": 4, "name": "Pavani Starlit", "item": "https://www.naani.in/projects/pavani-starlit-miyapur" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/pavani-starlit-miyapur#project",
+    "name": "Pavani Starlit",
+    "url": "https://www.naani.in/projects/pavani-starlit-miyapur",
+    "description": "Pavani Starlit is a premium residential apartment community by Sai Sravanthi Infra Projects in Maqtha Mahaboobpet, Miyapur, Hyderabad. Featuring 2, 2.5 and 3 BHK homes across ~3 acres with 45,000+ sq. ft. of amenities. Registered under TG RERA ID P02400008769.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Maqtha Mahaboobpet, Miyapur",
+      "addressLocality": "Miyapur",
+      "addressRegion": "Telangana",
+      "postalCode": "500049",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Sai Sravanthi Infra Projects Private Limited"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/pavani-starlit-miyapur#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Pavani Starlit located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Starlit is located in Maqtha Mahaboobpet, Miyapur, Hyderabad, Telangana 500049, near the Miyapur Metro Station and Western Hyderabad IT corridor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number and expected possession?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Registered under TG RERA ID P02400008769. Expected possession is scheduled for 2029 as per provisional disclosures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations and sizes are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Starlit offers 2 BHK (1,275 – 1,471 sq. ft.), 2.5 BHK (1,348 – 1,590 sq. ft.), and 3 BHK (1,604 – 2,139 sq. ft.) apartments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What amenities does Pavani Starlit provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Features over 45,000 sq. ft. of amenities including a modern clubhouse, swimming pool, gymnasium, yoga room, business lounge, indoor sports, and landscaped gardens."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-miyapur" class="hover:text-amber-400">Miyapur</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P02400008769 • Maqtha Mahaboobpet, Miyapur</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Pavani Starlit – <span class="text-amber-400">Premium Apartments in Miyapur</span></h1>
+        <p class="text-lg text-slate-200">~3-Acre Community by Sai Sravanthi Infra Projects • 3 Towers (G+10) • 2, 2.5 &amp; 3 BHK</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Thoughtfully Planned 1,275 – 2,139 Sq.Ft. Residences • ~70% Open Spaces • 45,000+ Sft Amenities • 5–7 Mins to Miyapur Metro Station
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Pavani%20Starlit%20Miyapur.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3064,6 +3169,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/vasavi-atlantis`,
     image: `${SITE}/og-vasavi-atlantis.jpg`,
     prerenderHtml: VASAVI_ATLANTIS_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/pavani-starlit-miyapur',
+    title: 'Pavani Starlit Miyapur | 2, 2.5 & 3 BHK Flats in Hyderabad',
+    description: 'Explore Pavani Starlit Miyapur, Hyderabad. Discover spacious 2, 2.5 & 3 BHK apartments, project details, amenities, location and floor plans.',
+    url: `${SITE}/projects/pavani-starlit-miyapur`,
+    image: `${SITE}/og-pavani-starlit.jpg`,
+    prerenderHtml: PAVANI_STARLIT_PRERENDER_HTML,
   },
 ];
 
