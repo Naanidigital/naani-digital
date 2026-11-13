@@ -2617,6 +2617,111 @@ const CYBERCITY_STONE_RIDGE_PRERENDER_HTML = `<script type="application/ld+json"
   </main>
 </div>`;
 
+const VASAVI_ATLANTIS_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/vasavi-atlantis#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Narsingi", "item": "https://www.naani.in/projects-in-narsingi" },
+      { "@type": "ListItem", "position": 4, "name": "Vasavi Atlantis", "item": "https://www.naani.in/projects/vasavi-atlantis" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/vasavi-atlantis#project",
+    "name": "Vasavi Atlantis",
+    "url": "https://www.naani.in/projects/vasavi-atlantis",
+    "description": "Vasavi Atlantis is an ultra-high-rise luxury gated community in Narsingi, Hyderabad, adjacent to Nehru ORR near Financial District. Spanning 12.3 acres with 8 towers (40-45 floors), ~70% open spaces, and rare twin clubhouses.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Adjacent to Nehru Outer Ring Road, Narsingi",
+      "addressLocality": "Narsingi",
+      "addressRegion": "Telangana",
+      "postalCode": "500075",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Vasavi Group (Vasavi Constructions LLP)"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/vasavi-atlantis#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Vasavi Atlantis and where is it located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vasavi Atlantis is an ultra-high-rise luxury residential gated township developed by Vasavi Group in Narsingi, Hyderabad, right off the Nehru Outer Ring Road (ORR) near the Financial District, spanning 12.3 acres across 8 towers (40 to 45 floors)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number and delivery timeline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Registered under TG RERA registration ID P02400003398. The project launched in late 2021 with phased possession running through August 2028."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations and sizes are available at Vasavi Atlantis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The community offers 2 BHK (1,250 – 1,310 sq. ft.), 3 BHK (1,610 – 2,220 sq. ft.), and 3.5 & 4 BHK (2,450 – 3,330 sq. ft.) apartments with prices starting from ₹1.06 Cr up to ₹3.16 Cr+."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What unique amenities does Vasavi Atlantis provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vasavi Atlantis introduces a rare twin-clubhouse model across North and South hubs, indoor temperature-controlled and outdoor swimming pools, lakefront viewing deck, business co-working spaces, and 4 basement parking levels."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-narsingi" class="hover:text-amber-400">Narsingi</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P02400003398 • Narsingi, Near Financial District</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Vasavi Atlantis – <span class="text-amber-400">45-Storey Luxury Living in Narsingi</span></h1>
+        <p class="text-lg text-slate-200">12.3-Acre Gated Community by Vasavi Group • 8 Towers (40-45 Floors) • 2, 3, 3.5 &amp; 4 BHK from ₹1.06 Cr</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Staggered Wavering Skyline Facades • ~70% Open Space &amp; Lakefront Deck • Rare Twin Clubhouses • 4 Basements with EV Charging • Direct Nehru ORR Access
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Vasavi%20Atlantis%20Narsingi.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -2951,6 +3056,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/cybercity-stone-ridge`,
     image: `${SITE}/og-cybercity-stone-ridge.jpg`,
     prerenderHtml: CYBERCITY_STONE_RIDGE_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/vasavi-atlantis',
+    title: 'Vasavi Atlantis Narsingi Hyderabad | Luxury 2, 3, 3.5 & 4 BHK High-Rise Apartments',
+    description: 'Vasavi Atlantis in Narsingi, Hyderabad, off ORR near Financial District. 12.3 acres, 8 towers (40-45 floors), twin clubhouses, 70% open green space, RERA P02400003398. Get pricing & floor plans.',
+    url: `${SITE}/projects/vasavi-atlantis`,
+    image: `${SITE}/og-vasavi-atlantis.jpg`,
+    prerenderHtml: VASAVI_ATLANTIS_PRERENDER_HTML,
   },
 ];
 

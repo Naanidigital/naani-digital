@@ -2,17 +2,20 @@ import { spawn } from 'child_process';
 import fs from 'fs';
 import http from 'http';
 import path from 'path';
+import os from 'os';
 
 const screenshotDir = 'C:\\Users\\PC\\.gemini\\antigravity\\brain\\10365bfc-d17a-44c5-981e-875f927c8a18\\screenshots';
 const targetUrl = 'https://www.naani.in/projects/candeur-arbora';
-const CDP_PORT = 9226;
+const CDP_PORT = 9228;
 
 const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 const browserBinary = fs.existsSync(edgePath) ? edgePath : chromePath;
 
+const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cdp-live-profile-'));
 const browserProc = spawn(browserBinary, [
   `--remote-debugging-port=${CDP_PORT}`,
+  `--user-data-dir=${tmpDir}`,
   '--headless=new',
   '--disable-gpu',
   '--no-first-run',
@@ -85,40 +88,36 @@ async function getJson(endpoint) {
     }
 
     await send('Page.enable');
-    await wait(2000);
-
-    // Desktop 1440px
-    await send('Emulation.setDeviceMetricsOverride', {
-      width: 1440,
-      height: 900,
-      deviceScaleFactor: 1,
-      mobile: false
-    });
-    await evalJs(`window.scrollTo(0, 0)`);
+    
+    // Wait until React hydrates
+    for (let i = 0; i < 20; i++) {
+      const ready = await evalJs(`Boolean(document.querySelector('.naani-floating-whatsapp'))`);
+      if (ready) break;
+      await wait(500);
+    }
     await wait(1000);
-    await captureScreenshot('candeur-arbora-live-desktop-1440.png');
 
-    // Mobile 390px
-    await send('Emulation.setDeviceMetricsOverride', {
-      width: 390,
-      height: 844,
-      deviceScaleFactor: 2,
-      mobile: true
-    });
-    await evalJs(`window.scrollTo(0, 0)`);
-    await wait(1000);
-    await captureScreenshot('candeur-arbora-live-mobile-390.png');
+    const viewports = [
+      { name: 'Mobile-360px', width: 360, height: 740, mobile: true },
+      { name: 'Mobile-375px', width: 375, height: 812, mobile: true },
+      { name: 'Mobile-390px', width: 390, height: 844, mobile: true },
+      { name: 'Mobile-430px', width: 430, height: 932, mobile: true },
+      { name: 'Desktop-1440px', width: 1440, height: 900, mobile: false }
+    ];
 
-    // Mobile 360px
-    await send('Emulation.setDeviceMetricsOverride', {
-      width: 360,
-      height: 740,
-      deviceScaleFactor: 2,
-      mobile: true
-    });
-    await evalJs(`window.scrollTo(0, 0)`);
-    await wait(1000);
-    await captureScreenshot('candeur-arbora-live-mobile-360.png');
+    console.log('\nCapturing Live Production Screenshots from https://www.naani.in/projects/candeur-arbora...');
+
+    for (const vp of viewports) {
+      await send('Emulation.setDeviceMetricsOverride', {
+        width: vp.width,
+        height: vp.height,
+        deviceScaleFactor: vp.mobile ? 2 : 1,
+        mobile: vp.mobile
+      });
+      await wait(600);
+      const filename = `candeur-arbora-live-${vp.name.toLowerCase()}.png`;
+      await captureScreenshot(filename);
+    }
 
     console.log('All live production screenshots captured successfully.');
     ws.close();
@@ -130,4 +129,3 @@ async function getJson(endpoint) {
     process.exit(1);
   }
 })();
-

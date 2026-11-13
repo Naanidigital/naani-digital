@@ -163,6 +163,55 @@ const getFallbackProject = (slug: string): DBProject => {
     };
   }
 
+  if (slug.includes("vasavi-atlantis")) {
+    return {
+      id: "vasavi-atlantis",
+      slug: "vasavi-atlantis",
+      name: "Vasavi Atlantis",
+      builder: "Vasavi Group",
+      location: "Narsingi",
+      city: "Hyderabad",
+      configuration: "2, 3, 3.5 & 4 BHK Ultra-High-Rise Residences (1,250 - 3,330 Sq.Ft.)",
+      bhk_list: [2, 3, 4],
+      property_type: "Apartment",
+      price_range: "₹1.06 Cr – ₹3.16 Cr",
+      min_price_inr: 10600000,
+      max_price_inr: 31600000,
+      status: "Under Construction",
+      possession: "2028-08",
+      usp: "12.3 Acres · 8 Towers (40-45 Floors) · Rare Twin Clubhouses · ~70% Open Space · Adjacent to ORR",
+      description: "Vasavi Atlantis is a large-scale, ultra-high-rise luxury gated community developed by Vasavi Group in Narsingi, Hyderabad, positioned right off the Nehru Outer Ring Road near the Financial District.",
+      amenities: [
+        "Twin Clubhouse Complex (Dedicated North & South Hubs)",
+        "Temperature-Controlled Indoor Pool & Resort Outdoor Pool",
+        "Multiple High-Tech Gymnasiums & Yoga/Aerobics Studios",
+        "Indoor Badminton & Squash Courts",
+        "Lakefront Viewing Deck & Pedestrian Water Bridges",
+        "Dedicated Business Center & Co-working Lounges",
+        "Grand Banquet Hall & Party Lawns",
+        "Open-Air Amphitheatre & Mini Private Theatre",
+        "4 Basement Parking Levels with EV Charging",
+        "100% DG Power Backup & Piped Gas Infrastructure"
+      ],
+      faqs: [
+        { q: "What is Vasavi Atlantis?", a: "Vasavi Atlantis is a 12.3-acre ultra-high-rise gated community in Narsingi, Hyderabad, right off the Nehru Outer Ring Road near the Financial District, featuring 8 towers (40-45 floors) and ~2,199 apartments." },
+        { q: "Is Vasavi Atlantis RERA approved?", a: "Yes, registered under TG RERA ID P02400003398." },
+        { q: "What are the apartment sizes and prices?", a: "2 BHKs range from 1,250 to 1,310 sq. ft. (₹1.06 Cr – ₹1.25 Cr), 3 BHKs range from 1,610 to 2,220 sq. ft. (₹1.52 Cr – ₹2.10 Cr), and 3.5 & 4 BHKs range from 2,450 to 3,330 sq. ft. (₹2.30 Cr – ₹3.16 Cr)." }
+      ],
+      gallery: [
+        "/og-vasavi-atlantis.jpg"
+      ],
+      hero_image: "/og-vasavi-atlantis.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=Vasavi+Atlantis+Narsingi+Hyderabad&output=embed",
+      seo_title: "Vasavi Atlantis Narsingi Hyderabad | Luxury 2, 3, 3.5 & 4 BHK High-Rise Apartments",
+      meta_description: "Vasavi Atlantis in Narsingi, Hyderabad, off ORR near Financial District. 12.3 acres, 8 towers (40-45 floors), twin clubhouses, 70% open green space, RERA P02400003398.",
+      canonical_url: "https://www.naani.in/projects/vasavi-atlantis",
+      custom_page_path: "/projects/vasavi-atlantis",
+      featured: true,
+    };
+  }
+
   if (slug.includes("prestige-golden-grove")) {
     return {
       id: "prestige-golden-grove",
