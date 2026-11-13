@@ -2415,6 +2415,103 @@ const CANDEUR_ARBORA_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const APARNA_SERENITY_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/aparna-serenity#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Kompally", "item": "https://www.naani.in/projects-in-kompally" },
+      { "@type": "ListItem", "position": 4, "name": "Aparna Serenity", "item": "https://www.naani.in/projects/aparna-serenity" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/aparna-serenity#project",
+    "name": "Aparna Serenity",
+    "url": "https://www.naani.in/projects/aparna-serenity",
+    "description": "Aparna Serenity by Aparna Constructions in Brundavan Colony, Kompally, North Hyderabad. Spread across 22.45 acres with 22 mid-rise towers (G+9), 80% open greens, zero common walls, and dual-hub clubhouses.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Brundavan Colony, Off NH-44",
+      "addressLocality": "Kompally",
+      "addressRegion": "Telangana",
+      "postalCode": "500014",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Aparna Constructions"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/aparna-serenity#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Aparna Serenity and where is it located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aparna Serenity is a 22.45-acre ready-to-move-in luxury residential township by Aparna Constructions located in Brundavan Colony, Kompally, North Hyderabad, off NH-44."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number for Aparna Serenity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aparna Serenity is registered under Telangana RERA with registration number TS RERA No. P02200002386."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the price range and configurations at Aparna Serenity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aparna Serenity offers 2, 2.5, 3, and 4 BHK luxury residences (1,335 to 2,730 sq.ft.) with indicative market pricing ranging from ₹1.10 Cr to ₹2.50 Cr+ (~₹9,650+/sq.ft.)."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-kompally" class="hover:text-amber-400">Kompally</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">Ready to Move • TS RERA P02200002386 • Kompally, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Aparna Serenity – <span class="text-amber-400">Resort-Scale Mid-Rise Living in Kompally</span></h1>
+        <p class="text-lg text-slate-200">22.45-Acre Ready-to-Move Township by Aparna Constructions • 2, 2.5, 3 &amp; 4 BHK from ₹1.10 Cr</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          22 Mid-Rise Towers (G+9) • 1,499 Residences • 80% Open Green Space • Zero Common Walls • 50,290 Sq.Ft. Dual-Hub Clubhouses • Brundavan Colony, Off NH-44
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Aparna%20Serenity%20Kompally.%20Please%20share%20verified%20resale%20inventory%20and%20pricing." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -2733,6 +2830,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/candeur-arbora`,
     image: `${SITE}/og-candeur-arbora.jpg`,
     prerenderHtml: CANDEUR_ARBORA_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/aparna-serenity',
+    title: 'Aparna Serenity Kompally Hyderabad | Ready to Move 2, 3 & 4 BHK Flats',
+    description: 'Aparna Serenity in Kompally, Hyderabad by Aparna Constructions. 22.45-acre luxury township with 80% open space, zero common walls, dual clubhouses & ready-to-move homes. Get price sheet & resale list.',
+    url: `${SITE}/projects/aparna-serenity`,
+    image: `${SITE}/og-aparna-serenity.jpg`,
+    prerenderHtml: APARNA_SERENITY_PRERENDER_HTML,
   },
 ];
 

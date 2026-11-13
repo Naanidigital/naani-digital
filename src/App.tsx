@@ -31,6 +31,7 @@ const NeoTowersPage = lazy(() => import("./pages/NeoTowersPage"));
 const TrumpTowersHyderabadPage = lazy(() => import("./pages/TrumpTowersHyderabadPage"));
 const CannyAravindamPage = lazy(() => import("./pages/CannyAravindamPage"));
 const CandeurArboraPage = lazy(() => import("./pages/CandeurArboraPage"));
+const AparnaSerenityPage = lazy(() => import("./pages/AparnaSerenityPage"));
 const ProjectDetailDynamic = lazy(() => import("./pages/ProjectDetailDynamic"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ThankYouPage = lazy(() => import("./pages/ThankYouPage"));
@@ -120,6 +121,8 @@ const App = () => (
         <Route path="/projects/canny-aravindam" element={<CannyAravindamPage />} />
         <Route path="/projects/candeur-arbora" element={<CandeurArboraPage />} />
         <Route path="/projects/candeur-arbora-kukatpally" element={<Navigate to="/projects/candeur-arbora" replace />} />
+        <Route path="/projects/aparna-serenity" element={<AparnaSerenityPage />} />
+        <Route path="/projects/aparna-serenity-kompally" element={<Navigate to="/projects/aparna-serenity" replace />} />
         {/* Dynamic catch-all for DB-driven projects (must come AFTER all custom project routes) */}
         <Route path="/projects/:slug" element={<ProjectDetailDynamic />} />
         {/* User-submitted property pages share the same renderer */}

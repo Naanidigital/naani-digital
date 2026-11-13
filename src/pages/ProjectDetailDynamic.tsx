@@ -65,6 +65,55 @@ const getFallbackProject = (slug: string): DBProject => {
     };
   }
 
+  if (slug.includes("aparna-serenity")) {
+    return {
+      id: "f498449e-5735-4608-a796-1b9fddaa2939",
+      slug: "aparna-serenity",
+      name: "Aparna Serenity",
+      builder: "Aparna Constructions",
+      location: "Kompally",
+      city: "Hyderabad",
+      configuration: "2, 2.5, 3 & 4 BHK Luxury Residences (1,335 - 2,730 Sq.Ft.)",
+      bhk_list: [2, 3, 4],
+      property_type: "Apartment",
+      price_range: "₹1.10 Cr – ₹2.50 Cr+",
+      min_price_inr: 11000000,
+      max_price_inr: 25000000,
+      status: "Ready to Move",
+      possession: "Ready to Move",
+      usp: "22.45 Acres · 22 Towers (G+9 Mid-Rise) · 80% Open Greens · Zero Common Walls · Dual Clubhouses",
+      description: "Aparna Serenity is a 22.45-acre ready-to-move luxury gated community crafted by Aparna Constructions in Brundavan Colony, Kompally, North Hyderabad. Features low-density G+9 mid-rise living, zero common walls, and dual resort clubhouses.",
+      amenities: [
+        "Club Serenity (34,700 Sq.Ft.)",
+        "Dedicated Sports Complex (15,590 Sq.Ft.)",
+        "All-Weather Indoor Swimming Pool",
+        "Zero Common Walls (Acoustic Privacy)",
+        "80% Open Green Landscaped Grounds",
+        "Squash & Indoor Wooden Badminton Courts",
+        "Commercial Plaza & On-Site Supermarket",
+        "Crèche & Managed Daycare Center",
+        "Dedicated Fenced Pet Park",
+        "Water Softening (WSP) & Sewage Treatment (STP)"
+      ],
+      faqs: [
+        { q: "What is Aparna Serenity?", a: "Aparna Serenity is an expansive 22.45-acre ready-to-move luxury residential community by Aparna Constructions in Brundavan Colony, Kompally, North Hyderabad." },
+        { q: "Is Aparna Serenity RERA registered?", a: "Yes, registered under TS RERA No. P02200002386." },
+        { q: "What is the price range?", a: "Indicative market pricing starts from ₹1.10 Cr to ₹2.50 Cr+ across 2, 2.5, 3 and 4 BHK configurations (~₹9,650+/sq.ft.)." }
+      ],
+      gallery: [
+        "/og-aparna-serenity.jpg"
+      ],
+      hero_image: "/og-aparna-serenity.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=Aparna+Serenity+Kompally+Hyderabad&output=embed",
+      seo_title: "Aparna Serenity Kompally Hyderabad | Ready to Move 2, 3 & 4 BHK Flats",
+      meta_description: "Aparna Serenity in Kompally, Hyderabad by Aparna Constructions. 22.45-acre luxury township with 80% open space, zero common walls, dual clubhouses & ready-to-move homes.",
+      canonical_url: "https://www.naani.in/projects/aparna-serenity",
+      custom_page_path: "/projects/aparna-serenity",
+      featured: true,
+    };
+  }
+
   if (slug.includes("prestige-golden-grove")) {
     return {
       id: "prestige-golden-grove",
