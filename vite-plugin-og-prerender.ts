@@ -2932,6 +2932,111 @@ const PAVANI_FELICITY_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const PAVANI_MIRAI_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/pavani-mirai-financial-district#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Financial District", "item": "https://www.naani.in/projects-in-financial-district" },
+      { "@type": "ListItem", "position": 4, "name": "Pavani Mirai", "item": "https://www.naani.in/projects/pavani-mirai-financial-district" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/pavani-mirai-financial-district#project",
+    "name": "Pavani Mirai",
+    "url": "https://www.naani.in/projects/pavani-mirai-financial-district",
+    "description": "Pavani Mirai is an ultra-luxury 55-storey single mono skyscraper in Puppalaguda, Financial District, Hyderabad by Pavani Infra. Featuring exclusive ~8,000 Sft Sky Residences, ~16,000 Sft Sky Mansions, 4 Sky Pods at ~720 feet, and 1,01,415 Sft 4-level clubhouse. Registered under TG RERA P02400007735.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Puppalaguda, Financial District",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Pavani Infra"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/pavani-mirai-financial-district#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Pavani Mirai located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Mirai is located in Puppalaguda, Financial District, Hyderabad, offering seamless connectivity to Kokapet Neopolis, ORR Exit 4, and major IT campuses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number and expected possession?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Mirai is registered under TG RERA ID P02400007735. The provisional RERA-linked target timeline is November 2028 to March 2029 (subject to official verification)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations and sizes are available at Pavani Mirai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Mirai exclusively offers 4 BHK Sky Residences ranging from 7,812 to 8,448 sq. ft. and 5 BHK Sky Mansion Duplexes spanning approximately 16,000 sq. ft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the four Sky Pods?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The four Sky Pods (Terra, Aqua, Ignis, Ventus) are elevated pavilions perched at approximately 720 feet elevation, hosting private sky lounges, rooftop infinity pools, and panoramic horizon observation decks."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#060911] text-slate-100 font-sans">
+  <header class="w-full bg-[#060911] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-financial-district" class="hover:text-amber-400">Financial District</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#060911]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P02400007735 • Financial District, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Pavani Mirai – <span class="text-amber-400">Ultra-Luxury Sky Residences in Financial District</span></h1>
+        <p class="text-lg text-slate-200">55-Storey Mono Skyscraper by Pavani Infra • 4 BHK Sky Residences &amp; 5 BHK Sky Mansions</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Expansive 7,812 – 16,000 Sq.Ft. Residences • Four Elemental Sky Pods at ~720 Feet • 1,01,415 Sq.Ft. Four-Level Clubhouse • Puppalaguda, Financial District
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Pavani%20Mirai%20Financial%20District.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3298,6 +3403,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/pavani-felicity-nizampet`,
     image: `${SITE}/og-pavani-felicity.jpg`,
     prerenderHtml: PAVANI_FELICITY_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/pavani-mirai-financial-district',
+    title: 'Pavani Mirai Financial District | Ultra Luxury Apartments Hyderabad',
+    description: 'Explore Pavani Mirai in Puppalaguda, Hyderabad. Discover exclusive 4 & 5 BHK Sky Residences, Sky Mansions, Sky Pods, clubhouse and luxury amenities.',
+    url: `${SITE}/projects/pavani-mirai-financial-district`,
+    image: `${SITE}/og-pavani-mirai.jpg`,
+    prerenderHtml: PAVANI_MIRAI_PRERENDER_HTML,
   },
 ];
 
