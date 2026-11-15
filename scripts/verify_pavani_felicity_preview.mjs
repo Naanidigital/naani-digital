@@ -10,8 +10,8 @@ if (!fs.existsSync(screenshotDir)) {
   fs.mkdirSync(screenshotDir, { recursive: true });
 }
 
-const PREVIEW_PORT = 4188;
-const CDP_PORT = 9268;
+const PREVIEW_PORT = 4195;
+const CDP_PORT = 9275;
 const targetUrl = `http://127.0.0.1:${PREVIEW_PORT}/projects/pavani-felicity-nizampet`;
 
 const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -79,7 +79,7 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
 
   let browserProc = null;
   try {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cdp-pavani-felicity-'));
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cdp-pavani-felicity-img-'));
     console.log(`Launching browser on CDP port ${CDP_PORT}...`);
     browserProc = spawn(browserBinary, [
       `--remote-debugging-port=${CDP_PORT}`,
@@ -141,7 +141,7 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
       console.log(`Captured screenshot: ${shotPath}`);
     }
 
-    // 1. Desktop 1440px Hero & Overview
+    // 1. Desktop 1440px Hero with real elevation visual & switcher
     console.log('Navigating to target URL on Desktop (1440x900)...');
     await send('Page.navigate', { url: targetUrl });
     await wait(3000);
@@ -149,46 +149,50 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
     const titleRes = await send('Runtime.evaluate', { expression: 'document.title' });
     console.log('Document title:', titleRes.result?.value);
 
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-preview-desktop-1440px.png'), 1440, 900);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-hero-1440px.png'), 1440, 900);
 
-    // Scroll to Overview & Highlights
-    await send('Runtime.evaluate', { expression: 'window.scrollTo({ top: 800, behavior: "instant" })' });
-    await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-desktop-overview.png'), 1440, 900);
+    // Scroll to Drone aerial view in Overview section
+    await send('Runtime.evaluate', { expression: 'document.getElementById("overview")?.scrollIntoView({ behavior: "instant" }) || window.scrollTo({ top: 900, behavior: "instant" })' });
+    await wait(600);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-drone-aerial.png'), 1440, 900);
 
-    // Scroll to Configurations
-    await send('Runtime.evaluate', { expression: 'document.getElementById("configurations")?.scrollIntoView({ behavior: "instant" }) || window.scrollTo({ top: 1600, behavior: "instant" })' });
-    await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-desktop-configurations.png'), 1440, 900);
+    // Scroll to Typical Floor Plate / Master Layout Blueprint section
+    await send('Runtime.evaluate', { expression: 'document.getElementById("floor-plans")?.scrollIntoView({ behavior: "instant" }) || window.scrollTo({ top: 1800, behavior: "instant" })' });
+    await wait(600);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-floorplate-blueprint.png'), 1440, 900);
 
-    // Scroll to Amenities & Clubhouse
-    await send('Runtime.evaluate', { expression: 'document.getElementById("amenities")?.scrollIntoView({ behavior: "instant" }) || window.scrollTo({ top: 2500, behavior: "instant" })' });
-    await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-desktop-amenities.png'), 1440, 900);
+    // Scroll to Project Gallery Section (#gallery)
+    await send('Runtime.evaluate', { expression: 'document.getElementById("gallery")?.scrollIntoView({ behavior: "instant" }) || window.scrollTo({ top: 3200, behavior: "instant" })' });
+    await wait(600);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-gallery.png'), 1440, 900);
 
-    // Scroll to Due Diligence & RERA Advisory
-    await send('Runtime.evaluate', { expression: 'document.getElementById("due-diligence")?.scrollIntoView({ behavior: "instant" }) || window.scrollTo({ top: 3800, behavior: "instant" })' });
+    // Trigger Lightbox Modal by clicking the first gallery image card
+    await send('Runtime.evaluate', { expression: '(() => { const btn = document.querySelector("#gallery button[title*=\\"View\\"]") || document.querySelector("#gallery .group button"); if (btn) { btn.click(); return true; } return false; })()' });
+    await wait(800);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-lightbox-modal.png'), 1440, 900);
+
+    // Close Lightbox Modal
+    await send('Runtime.evaluate', { expression: '(() => { const closeBtn = document.querySelector("button[aria-label=\\"Close Lightbox\\"]") || document.querySelector("[data-radix-focus-guard] + div button"); if (closeBtn) closeBtn.click(); })()' });
     await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-desktop-advisory.png'), 1440, 900);
 
     // 2. Mobile 390px (iPhone 12/13/14)
     console.log('Switching to Mobile 390x844...');
     await send('Runtime.evaluate', { expression: 'window.scrollTo({ top: 0, behavior: "instant" })' });
-    await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-preview-mobile-390px.png'), 390, 844, 2);
+    await wait(600);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-mobile-hero-390px.png'), 390, 844, 2);
 
-    // Mobile sticky bottom bar view
-    await send('Runtime.evaluate', { expression: 'window.scrollTo({ top: 600, behavior: "instant" })' });
-    await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-preview-mobile-bottom-bar.png'), 390, 844, 2);
+    // Mobile sticky bottom bar + floating WhatsApp button
+    await send('Runtime.evaluate', { expression: 'window.scrollTo({ top: 750, behavior: "instant" })' });
+    await wait(600);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-mobile-bottom-bar.png'), 390, 844, 2);
 
     // 3. Mobile 360px (Standard Android)
     console.log('Switching to Mobile 360x800...');
     await send('Runtime.evaluate', { expression: 'window.scrollTo({ top: 0, behavior: "instant" })' });
-    await wait(500);
-    await captureScreen(path.join(screenshotDir, 'pavani-felicity-preview-mobile-360px.png'), 360, 800, 2);
+    await wait(600);
+    await captureScreen(path.join(screenshotDir, 'pavani-felicity-updated-mobile-360px.png'), 360, 800, 2);
 
-    console.log('All screenshots captured successfully!');
+    console.log('All updated screenshots captured successfully!');
     ws.close();
   } catch (err) {
     console.error('Error during verification:', err);

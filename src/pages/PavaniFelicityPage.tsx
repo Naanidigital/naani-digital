@@ -17,6 +17,7 @@ import {
   Compass,
   Home,
   ChevronRight,
+  ChevronLeft,
   ArrowRight,
   Dumbbell,
   Waves,
@@ -35,6 +36,7 @@ import {
   Download,
   Eye,
   FileText,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,7 +45,17 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { sendLeadToSheet, type LeadProfile, type PageContext } from "@/lib/leadProfile";
+
+// High-resolution authentic project visual assets
+import felicityElevationTwilight from "@/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp";
+import felicityTower from "@/assets/pavani-felicity/pavani-felicity-tower.webp";
+import felicityDroneAerial from "@/assets/pavani-felicity/pavani-felicity-drone-aerial.webp";
+import felicityBalconyView from "@/assets/pavani-felicity/pavani-felicity-balcony-view.webp";
+import felicityElevationDay from "@/assets/pavani-felicity/pavani-felicity-elevation-day.webp";
+import felicityAerialCourtyard from "@/assets/pavani-felicity/pavani-felicity-aerial-courtyard.webp";
+import felicityMasterplan from "@/assets/pavani-felicity/pavani-felicity-masterplan.jpg";
 
 // Centralized Project Configuration (Fact-Checked & Authoritative)
 export const PROJECT_CONFIG = {
@@ -75,7 +87,124 @@ export const PROJECT_CONFIG = {
   leadSource: "Website - Pavani Felicity",
   developerWebsite: "https://pavaniinfra.com",
   reraWebsite: "https://rera.telangana.gov.in/",
+  hero_image: "/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp",
+  gallery: [
+    "/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp",
+    "/assets/pavani-felicity/pavani-felicity-elevation-day.webp",
+    "/assets/pavani-felicity/pavani-felicity-tower.webp",
+    "/assets/pavani-felicity/pavani-felicity-aerial-courtyard.webp",
+    "/assets/pavani-felicity/pavani-felicity-drone-aerial.webp",
+    "/assets/pavani-felicity/pavani-felicity-balcony-view.webp",
+    "/assets/pavani-felicity/pavani-felicity-masterplan.jpg",
+  ],
 };
+
+export interface ProjectVisual {
+  id: string;
+  title: string;
+  subtitle: string;
+  src: string;
+  badge: string;
+  tag: string;
+  category: "elevation" | "aerial" | "lifestyle" | "masterplan";
+  alt: string;
+}
+
+export const PROJECT_VISUALS: ProjectVisual[] = [
+  {
+    id: "elevation-twilight",
+    title: "Tower Elevation at Twilight (23 Storeys)",
+    subtitle: "Iconic high-rise single tower with illuminated private balconies, cascading architectural facade, and landscaped ground perimeter",
+    src: felicityElevationTwilight,
+    badge: "Twilight Elevation",
+    tag: "23 Floors High-Rise",
+    category: "elevation",
+    alt: "Pavani Felicity illuminated 23-floor luxury high-rise tower at twilight in Nizampet, Hyderabad",
+  },
+  {
+    id: "elevation-day",
+    title: "Daytime Front Elevation & Modern Facade",
+    subtitle: "Contemporary glass-and-concrete exterior detailing with expansive floor-to-ceiling balcony projections and multi-tier greens",
+    src: felicityElevationDay,
+    badge: "Daytime Elevation",
+    tag: "Contemporary Architecture",
+    category: "elevation",
+    alt: "Pavani Felicity daytime front architectural elevation of the 23-storey residential tower",
+  },
+  {
+    id: "tower",
+    title: "Vertical Skyline Tower Perspective",
+    subtitle: "Dramatic high-angle vertical perspective emphasizing the 23-floor height, tree-lined avenue approach, and prime Nizampet location",
+    src: felicityTower,
+    badge: "Skyline Landmark",
+    tag: "Nizampet Corridor",
+    category: "elevation",
+    alt: "Pavani Felicity vertical architectural high-rise tower facade with landscaped road approach",
+  },
+  {
+    id: "aerial-courtyard",
+    title: "3D Isometric Quad-Courtyard Master Architecture",
+    subtitle: "Geometric quad-wing design surrounding an internal open courtyard, ground-level vehicle circulation, entry plaza, and rooftop gardens",
+    src: felicityAerialCourtyard,
+    badge: "3D Architectural Render",
+    tag: "Quad-Courtyard Design",
+    category: "aerial",
+    alt: "Pavani Felicity 3D isometric architectural aerial view highlighting central courtyard and rooftop terrace",
+  },
+  {
+    id: "drone-aerial",
+    title: "High-Altitude Neighborhood & Locality Drone Aerial",
+    subtitle: "Expansive bird's-eye view showcasing the immediate proximity to the natural lake, Sapthapadi Convention Centre, and Hill County enclave",
+    src: felicityDroneAerial,
+    badge: "Locality Aerial View",
+    tag: "Lake Proximity",
+    category: "aerial",
+    alt: "Pavani Felicity high-altitude aerial drone perspective showing tower, lake waterbody, and Nizampet neighborhood",
+  },
+  {
+    id: "balcony-view",
+    title: "Panoramic Horizon Sit-Out Balcony View",
+    subtitle: "Wide sit-out balcony offering uninterrupted vistas across the tranquil lake waterbody, Nizampet residential greens, and city skyline",
+    src: felicityBalconyView,
+    badge: "Balcony Skyline View",
+    tag: "Lake & City Vistas",
+    category: "lifestyle",
+    alt: "Pavani Felicity spacious sit-out balcony view overlooking panoramic Nizampet lake and city skyline",
+  },
+  {
+    id: "masterplan",
+    title: "Official Sanctioned Typical Floor Plate & Master Layout",
+    subtitle: "Architectural floor plate detailing 12 exclusive 3 BHK units per floor (Units 01 to 12 from 1,797 to 2,514 Sft), central swimming pool courtyard, and dual entry-exit boulevards",
+    src: felicityMasterplan,
+    badge: "Sanctioned Blueprint",
+    tag: "Floor Plate Layout",
+    category: "masterplan",
+    alt: "Pavani Felicity official floor plate layout showing 12 3-BHK units per floor with exact square footage and central courtyard swimming pool",
+  },
+];
+
+export interface FloorPlateUnit {
+  unitNo: string;
+  bhk: string;
+  sizeSft: number;
+  facing: string;
+  features: string;
+}
+
+export const FLOOR_PLATE_UNITS: FloorPlateUnit[] = [
+  { unitNo: "01", bhk: "3 BHK", sizeSft: 2172, facing: "East", features: "Spacious layout with foyer, 3 baths, dual balconies, utility" },
+  { unitNo: "02", bhk: "3 BHK", sizeSft: 2491, facing: "North-East", features: "Large 3 BHK with expansive living/dining, walk-in closet, sit-out" },
+  { unitNo: "03", bhk: "3 BHK", sizeSft: 2269, facing: "North", features: "Large living area, pooja room, dedicated utility balcony" },
+  { unitNo: "04", bhk: "3 BHK", sizeSft: 2491, facing: "North-West", features: "Grand three-bedroom layout with panoramic corner ventilation" },
+  { unitNo: "05", bhk: "3 BHK", sizeSft: 2088, facing: "West", features: "Efficient 3 BHK with master bedroom sit-out and family lounge" },
+  { unitNo: "06", bhk: "3 BHK", sizeSft: 2088, facing: "West", features: "Symmetrical three-bedroom plan with cross-ventilation" },
+  { unitNo: "07", bhk: "3 BHK", sizeSft: 2514, facing: "South-West", features: "Largest unit configuration on floor plate, palatial room sizes" },
+  { unitNo: "08", bhk: "3 BHK", sizeSft: 1879, facing: "South", features: "Compact luxury 3 BHK with optimal space efficiency" },
+  { unitNo: "09", bhk: "3 BHK", sizeSft: 1797, facing: "South-East", features: "Smart 3 BHK layout with dedicated dining and utility zone" },
+  { unitNo: "10", bhk: "3 BHK", sizeSft: 1879, facing: "East", features: "East-facing 3 BHK with private foyer and sit-out balcony" },
+  { unitNo: "11", bhk: "3 BHK", sizeSft: 2476, facing: "East", features: "Expansive luxury unit with lake views and large master suite" },
+  { unitNo: "12", bhk: "3 BHK", sizeSft: 2172, facing: "North-East", features: "Premium unit facing courtyard pool and open sky" },
+];
 
 // 12 Published Sizes grouped for browsing
 export interface ConfigTier {
@@ -198,17 +327,24 @@ const AMENITY_CATEGORIES: AmenityCategory[] = [
     items: [
       "2-Level Basement Parking with Clear Directional Signage",
       "Provisions for Resident EV Vehicle Charging",
-      "100% DG Emergency Power Backup for Common Areas & Elevators",
-      "24/7 CCTV Surveillance & Automated Security Boom Barriers",
-      "High-Speed Automatic Passenger & Stretcher Lifts",
-      "Rainwater Harvesting System & Comprehensive Sewage Treatment Plant",
+      "100% DG Emergency Power Backup for Common Areas",
+      "24/7 CCTV Surveillance with High-Definition IP Cameras",
+      "Automated Boom Barriers with RFID Resident Tags",
+      "Rainwater Harvesting System & Modern STP",
     ],
   },
 ];
 
 export const PavaniFelicityPage = () => {
   const formId = useId();
-  const [selectedTierTab, setSelectedTierTab] = useState<"all" | "compact" | "spacious" | "large">("all");
+  const [activeHeroTab, setActiveHeroTab] = useState<number>(0);
+  const [selectedImage, setSelectedImage] = useState<ProjectVisual | null>(null);
+  const [galleryCategory, setGalleryCategory] = useState<string>("all");
+  const [selectedFloorUnit, setSelectedFloorUnit] = useState<number | null>(null);
+
+  const [activeConfigCategory, setActiveConfigCategory] = useState<
+    "all" | "compact" | "spacious" | "large"
+  >("all");
   const [selectedSizeFilter, setSelectedSizeFilter] = useState<number | null>(null);
   const [activeAmenityTab, setActiveAmenityTab] = useState<string>("indoor");
   const [copiedRera, setCopiedRera] = useState(false);
@@ -218,8 +354,7 @@ export const PavaniFelicityPage = () => {
     name: "",
     mobile: "",
     email: "",
-    preference: "3 BHK (1,961 - 2,190 Sft)",
-    budget: "Contact for Pricing",
+    sizePreference: "Compact 3 BHK (1,561–1,818 Sft)",
     purpose: "Self Use",
     visitDate: "",
     consent: false,
@@ -238,99 +373,102 @@ export const PavaniFelicityPage = () => {
     e.preventDefault();
     setErrorMessage("");
 
-    const trimmedName = formData.name.trim();
-    const cleanMobile = formData.mobile.replace(/\D/g, "");
-
-    if (!trimmedName || trimmedName.length < 2) {
-      setErrorMessage("Please enter your full name.");
+    if (!formData.name.trim()) {
+      setErrorMessage("Please provide your full name.");
       return;
     }
 
-    if (!/^[6-9]\d{9}$/.test(cleanMobile)) {
-      setErrorMessage("Please enter a valid 10-digit Indian mobile number.");
+    const cleanMobile = formData.mobile.replace(/\D/g, "");
+    if (!cleanMobile || cleanMobile.length < 10) {
+      setErrorMessage("Please enter a valid 10-digit mobile number.");
       return;
     }
 
     if (!formData.consent) {
-      setErrorMessage("Please check the consent box to proceed.");
+      setErrorMessage("Please acknowledge and check the consent box to proceed.");
       return;
     }
 
     setFormStatus("loading");
 
     try {
-      const profile: LeadProfile = {
-        name: trimmedName,
-        phone: `+91${cleanMobile}`,
+      const leadProfile: LeadProfile = {
+        name: formData.name.trim(),
+        mobile: cleanMobile,
         email: formData.email.trim() || undefined,
-        lead_score: 85,
-        lead_stage: "new",
-        notes: `Pavani Felicity Enquiry | Config: ${formData.preference} | Purpose: ${formData.purpose} | Preferred Visit: ${formData.visitDate || "Not Specified"}`,
-        search_intent: {
-          budget_min: undefined,
-          budget_max: undefined,
-          preferred_locations: ["Nizampet", "Bachupally"],
-          preferred_bhk: ["3 BHK"],
+        requirements: {
+          bhk: "3 BHK",
+          preferredUnitSize: formData.sizePreference,
+          purpose: formData.purpose as "Self Use" | "Investment",
+          preferredVisitDate: formData.visitDate || undefined,
         },
       };
 
-      const context: PageContext = {
+      const pageContext: PageContext = {
         projectName: PROJECT_CONFIG.name,
-        projectSlug: "pavani-felicity-nizampet",
         location: PROJECT_CONFIG.location,
         leadSource: PROJECT_CONFIG.leadSource,
-        pageUrl: window.location.href,
+        pageUrl: typeof window !== "undefined" ? window.location.href : PROJECT_CONFIG.canonicalUrl,
+        pageTitle: `${PROJECT_CONFIG.name} Nizampet | 3 BHK Flats in Hyderabad`,
+        timestamp: new Date().toISOString(),
       };
 
-      const result = await sendLeadToSheet(profile, context);
-
-      if (result.success) {
-        setFormStatus("success");
-      } else {
-        setErrorMessage(result.error || "Failed to submit enquiry. Please call our advisor directly.");
-        setFormStatus("error");
-      }
-    } catch (err: any) {
-      setErrorMessage("Network issue. Please reach us via WhatsApp or Phone.");
+      await sendLeadToSheet(leadProfile, pageContext);
+      setFormStatus("success");
+    } catch {
       setFormStatus("error");
+      setErrorMessage("Unable to submit enquiry at this moment. Please call or WhatsApp us directly.");
     }
   };
 
-  const filteredTiers =
-    selectedTierTab === "all"
-      ? CONFIG_TIERS
-      : CONFIG_TIERS.filter((t) => t.category === selectedTierTab);
-
-  const waText = encodeURIComponent(
-    `Hi Naani Projects, I am interested in Pavani Felicity in Nizampet, Hyderabad. Please share current pricing, floor plans, and unit availability.`
+  const waMessage = encodeURIComponent(
+    `Hi Naani Projects, I am interested in Pavani Felicity Nizampet. Please share current pricing, 3 BHK floor plans, and availability.`
   );
-  const waUrl = `https://wa.me/91${PROJECT_CONFIG.phoneRaw}?text=${waText}`;
+  const waUrl = `https://wa.me/91${PROJECT_CONFIG.phoneRaw}?text=${waMessage}`;
 
   // Structured Data (JSON-LD)
   const schemaBreadcrumbs = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
-      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
-      { "@type": "ListItem", "position": 3, "name": "Nizampet", "item": "https://www.naani.in/projects-in-nizampet" },
-      { "@type": "ListItem", "position": 4, "name": "Pavani Felicity", "item": PROJECT_CONFIG.canonicalUrl },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.naani.in/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://www.naani.in/projects",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Nizampet",
+        "item": "https://www.naani.in/projects-in-nizampet",
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Pavani Felicity",
+        "item": PROJECT_CONFIG.canonicalUrl,
+      },
     ],
   };
 
   const schemaProject = {
     "@context": "https://schema.org",
     "@type": "ApartmentComplex",
-    "name": PROJECT_CONFIG.name,
+    "name": "Pavani Felicity",
+    "description":
+      "Pavani Felicity is a premium high-rise residential apartment development by Pavani Infra, located opposite Sapthapadi Convention Centre and adjacent to Hill County in Nizampet, Hyderabad. Offering spacious 3 BHK luxury residences across ~2.5 acres.",
     "url": PROJECT_CONFIG.canonicalUrl,
-    "image": [
-      "https://www.naani.in/og-pavani-felicity.jpg",
-    ],
-    "description": "Pavani Felicity is a premium residential high-rise apartment development by Pavani Infra in Nizampet, Hyderabad. Spanning ~2.5 acres with a single 23-storey tower offering spacious 3 BHK residences (1,561 to 2,514 sq. ft.) with clubhouse amenities and ~65% open spaces. Registered under TG RERA ID P02200005477.",
     "telephone": PROJECT_CONFIG.phone,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Opposite Sapthapadi Convention Centre, Adjacent to Hill County",
+      "streetAddress": PROJECT_CONFIG.address,
       "addressLocality": "Nizampet",
       "addressRegion": "Telangana",
       "postalCode": "500090",
@@ -339,14 +477,14 @@ export const PavaniFelicityPage = () => {
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "17.5186",
-      "longitude": "78.3754",
+      "longitude": "78.3842",
     },
+    "numberOfAccommodationUnits": 278,
     "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Multi-Level Clubhouse", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Swimming Pool & Kids Pool", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Fully Equipped Gymnasium", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Co-Working Business Lounge", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Multipurpose Banquet Hall", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Badminton & Sports Practice Courts", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Gymnasium & Fitness Center", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Co-Working Business Hub", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Landscaped Theme Gardens", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "2-Level Basement Parking", "value": true },
     ],
@@ -417,7 +555,7 @@ export const PavaniFelicityPage = () => {
         "name": "How can I get verified floor plans for Pavani Felicity?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can request verified architectural floor plans directly through Naani Projects by clicking 'Request Floor Plans' or messaging our property advisor on WhatsApp at +91 94939 43946.",
+          "text": "You can inspect the official typical floor plate diagram on this page or request sanctioned high-resolution architectural drawings directly through Naani Projects by clicking 'Request Floor Plans' or messaging our property advisor on WhatsApp at +91 94939 43946.",
         },
       },
       {
@@ -480,7 +618,7 @@ export const PavaniFelicityPage = () => {
       />
 
       <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200 pb-20 md:pb-0">
-        {/* 1. HERO SECTION */}
+        {/* 1. HERO SECTION WITH OFFICIAL INTERACTIVE VISUAL SHOWCASE */}
         <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-slate-800/80">
           {/* Subtle Ambient Background Lighting */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none">
@@ -507,7 +645,7 @@ export const PavaniFelicityPage = () => {
             </nav>
 
             <div className="grid lg:grid-cols-12 gap-10 items-start">
-              {/* Left Column: Headings, Badges, Showcase Card & CTAs */}
+              {/* Left Column: Headings, Interactive Media Carousel, Badges & CTAs */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-wide uppercase">
                   <Sparkles size={14} className="text-amber-400 animate-pulse" />
@@ -525,40 +663,105 @@ export const PavaniFelicityPage = () => {
                   Experience spacious living with thoughtfully designed 3 BHK residences, premium lifestyle amenities, and convenient connectivity in Nizampet. Positioned opposite Sapthapadi Convention Centre and adjacent to Hill County.
                 </p>
 
-                {/* Hero Showcase Card */}
-                <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-slate-900 shadow-2xl p-6 sm:p-7 space-y-4">
-                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-1 rounded-md bg-amber-500/15 border border-amber-500/30 text-[11px] font-bold text-amber-300">
-                        23-Floor Tower
+                {/* OFFICIAL INTERACTIVE HERO VISUAL SHOWCASE */}
+                <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-slate-900 shadow-2xl group">
+                  <div
+                    className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 overflow-hidden cursor-zoom-in"
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[activeHeroTab])}
+                  >
+                    <img
+                      src={PROJECT_VISUALS[activeHeroTab].src}
+                      alt={PROJECT_VISUALS[activeHeroTab].alt}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      fetchPriority="high"
+                      loading="eager"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+
+                    {/* Top Floating Badges */}
+                    <div className="absolute top-3 left-3 flex items-center gap-2">
+                      <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-amber-400/40 text-[11px] font-bold text-amber-300 shadow">
+                        {PROJECT_VISUALS[activeHeroTab].badge}
                       </span>
-                      <span className="px-2.5 py-1 rounded-md bg-emerald-500/15 border border-emerald-500/30 text-[11px] font-bold text-emerald-300">
-                        Exclusive 3 BHK Community
+                      <span className="px-2 py-1 rounded-md bg-emerald-950/80 backdrop-blur-md border border-emerald-400/40 text-[10px] font-bold text-emerald-300 shadow">
+                        Official Project Visual
                       </span>
                     </div>
-                    <span className="text-xs font-mono text-slate-400">TG RERA: P02200005477</span>
+
+                    {/* Zoom Action Icon */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedImage(PROJECT_VISUALS[activeHeroTab]);
+                      }}
+                      className="absolute top-3 right-3 p-2 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-700 text-slate-200 hover:text-amber-400 transition-colors z-10 shadow"
+                      aria-label="Enlarge image"
+                    >
+                      <Maximize2 size={16} />
+                    </button>
+
+                    {/* Desktop Prev / Next Navigation Arrows */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveHeroTab((prev) => (prev === 0 ? PROJECT_VISUALS.length - 1 : prev - 1));
+                      }}
+                      className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-white hover:text-amber-400 hover:border-amber-400/50 items-center justify-center transition-all z-10 shadow-lg"
+                      aria-label="Previous Visual"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveHeroTab((prev) => (prev === PROJECT_VISUALS.length - 1 ? 0 : prev + 1));
+                      }}
+                      className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-white hover:text-amber-400 hover:border-amber-400/50 items-center justify-center transition-all z-10 shadow-lg"
+                      aria-label="Next Visual"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+
+                    {/* Bottom Caption Overlay */}
+                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800 text-left">
+                      <p className="text-xs sm:text-sm font-bold text-white flex items-center justify-between">
+                        <span>{PROJECT_VISUALS[activeHeroTab].title}</span>
+                        <span className="text-[11px] text-amber-400 font-mono hidden sm:inline">
+                          {activeHeroTab + 1} / {PROJECT_VISUALS.length}
+                        </span>
+                      </p>
+                      <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
+                        {PROJECT_VISUALS[activeHeroTab].subtitle}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-white">High-Rise Living Beside Hill County</h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                      Designed as a standalone landmark rising <strong>2 Cellars + Stilt + 23 Upper Floors</strong> across ~2.5 acres, Pavani Felicity offers generous 3 BHK floor plans ranging from 1,561 to 2,514 sq. ft. with over 65% open spaces and multi-tier recreation.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold block">Tower Height</span>
-                      <span className="text-xs sm:text-sm font-extrabold text-white">23 Floors</span>
-                    </div>
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold block">Size Spectrum</span>
-                      <span className="text-xs sm:text-sm font-extrabold text-amber-400">1,561 – 2,514 Sft</span>
-                    </div>
-                    <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold block">Provisional Possession</span>
-                      <span className="text-xs sm:text-sm font-extrabold text-emerald-400">Oct 2028 (RERA)</span>
-                    </div>
+                  {/* Quick Switcher Thumbnails */}
+                  <div className="grid grid-cols-4 sm:grid-cols-7 p-2 bg-slate-950/90 border-t border-slate-800 gap-1.5 overflow-x-auto">
+                    {PROJECT_VISUALS.map((vis, idx) => (
+                      <button
+                        key={vis.id}
+                        type="button"
+                        onClick={() => setActiveHeroTab(idx)}
+                        className={`flex items-center gap-1.5 p-1 rounded-lg text-left transition-all ${
+                          activeHeroTab === idx
+                            ? "bg-amber-500/20 border border-amber-500/50 text-amber-300 ring-1 ring-amber-400/40"
+                            : "bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+                        }`}
+                      >
+                        <img
+                          src={vis.src}
+                          alt={vis.badge}
+                          className="w-8 h-8 sm:w-10 sm:h-8 object-cover rounded shrink-0"
+                        />
+                        <div className="min-w-0 hidden lg:block">
+                          <span className="text-[9px] font-bold block truncate">{vis.badge}</span>
+                        </div>
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -624,11 +827,19 @@ export const PavaniFelicityPage = () => {
                   </a>
 
                   <a
-                    href="#configurations"
+                    href="#floorplans"
                     className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 text-slate-200 font-bold text-sm transition-all active:scale-95"
                   >
                     <Layers size={15} className="mr-2 text-amber-400" />
                     <span>View Floor Plans</span>
+                  </a>
+
+                  <a
+                    href="#gallery"
+                    className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 text-slate-200 font-bold text-sm transition-all active:scale-95"
+                  >
+                    <Eye size={15} className="mr-2 text-amber-400" />
+                    <span>Visual Gallery</span>
                   </a>
 
                   <a
@@ -651,46 +862,44 @@ export const PavaniFelicityPage = () => {
                 </div>
               </div>
 
-              {/* Right Column: Lead Form Card */}
+              {/* Right Column: Direct Advisory Lead Capture Card */}
               <div className="lg:col-span-5" id="enquiry-section">
-                <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950 border border-amber-500/30 shadow-2xl backdrop-blur-md relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
-
-                  <div className="space-y-2 mb-6">
-                    <span className="text-[11px] font-extrabold text-amber-400 tracking-wider uppercase block">
+                <div className="sticky top-24 rounded-2xl border border-amber-500/40 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-950 p-6 sm:p-7 shadow-2xl space-y-5">
+                  <div>
+                    <span className="text-[11px] font-extrabold tracking-widest uppercase text-amber-400 block mb-1">
                       Direct Advisory Access
                     </span>
-                    <h2 className="text-xl sm:text-2xl font-extrabold text-white">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                       Request Pricing &amp; Floor Plans
-                    </h2>
-                    <p className="text-xs text-slate-300">
+                    </h3>
+                    <p className="text-xs text-slate-400 mt-1">
                       Receive verified floor plans, transparent cost estimates, and unit availability directly from authorized advisors.
                     </p>
                   </div>
 
                   {formStatus === "success" ? (
-                    <div className="p-6 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-center space-y-3">
+                    <div className="p-5 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center space-y-3">
                       <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                         <CheckCircle2 size={24} />
                       </div>
-                      <h4 className="text-lg font-bold text-white">Enquiry Received Successfully</h4>
+                      <h4 className="text-base font-bold text-white">Enquiry Received!</h4>
                       <p className="text-xs text-slate-300 leading-relaxed">
-                        Our senior property advisor for <strong>Pavani Felicity</strong> will connect with you via WhatsApp/Call with the latest pricing and layout plans.
+                        Thank you for your interest in <strong>Pavani Felicity</strong>. Our senior property advisor will connect with you on WhatsApp / Phone shortly with verified floor plans and pricing.
                       </p>
                       <a
                         href={waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-500 transition-all"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 pt-2"
                       >
-                        <MessageCircle size={14} className="mr-1.5" />
-                        Chat on WhatsApp Now
+                        <MessageCircle size={14} />
+                        <span>Chat immediately on WhatsApp</span>
                       </a>
                     </div>
                   ) : (
                     <form onSubmit={handleFormSubmit} className="space-y-4">
                       {errorMessage && (
-                        <div className="p-3 rounded-lg bg-red-950/40 border border-red-500/40 text-red-300 text-xs flex items-center gap-2">
+                        <div className="p-3 rounded-lg bg-red-950/60 border border-red-500/40 text-red-300 text-xs flex items-center gap-2">
                           <AlertTriangle size={15} className="shrink-0 text-red-400" />
                           <span>{errorMessage}</span>
                         </div>
@@ -702,7 +911,7 @@ export const PavaniFelicityPage = () => {
                           htmlFor={`${formId}-name`}
                           className="block text-xs font-bold text-slate-300 mb-1"
                         >
-                          Full Name *
+                          Full Name <span className="text-amber-400">*</span>
                         </label>
                         <input
                           type="text"
@@ -711,25 +920,22 @@ export const PavaniFelicityPage = () => {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="e.g. Sravan Kumar"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
                         />
                       </div>
 
                       {/* Mobile Number */}
                       <div>
                         <label
-                          htmlFor={`${formId}-phone`}
+                          htmlFor={`${formId}-mobile`}
                           className="block text-xs font-bold text-slate-300 mb-1"
                         >
-                          Mobile Number *
+                          Mobile Number <span className="text-amber-400">*</span>
                         </label>
                         <div className="relative">
-                          <span className="absolute left-3.5 top-2.5 text-sm text-slate-400 font-medium">
-                            +91
-                          </span>
                           <input
                             type="tel"
-                            id={`${formId}-phone`}
+                            id={`${formId}-mobile`}
                             required
                             maxLength={10}
                             value={formData.mobile}
@@ -739,14 +945,16 @@ export const PavaniFelicityPage = () => {
                                 mobile: e.target.value.replace(/\D/g, ""),
                               })
                             }
-                            placeholder="9876543210"
-                            className="w-full pl-12 pr-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            placeholder="+91 9876543210"
+                            className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
                           />
                         </div>
-                        <p className="text-[10px] text-slate-400 mt-1">10-digit Indian mobile number</p>
+                        <span className="text-[10px] text-slate-400 mt-1 block">
+                          10-digit Indian mobile number
+                        </span>
                       </div>
 
-                      {/* Email (Optional) */}
+                      {/* Email Address */}
                       <div>
                         <label
                           htmlFor={`${formId}-email`}
@@ -760,29 +968,31 @@ export const PavaniFelicityPage = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="name@example.com"
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
                         />
                       </div>
 
-                      {/* Configuration & Purpose Grid */}
+                      {/* Preferred Size & Buying Purpose */}
                       <div className="grid grid-cols-2 gap-3">
                         <div>
                           <label
-                            htmlFor={`${formId}-pref`}
+                            htmlFor={`${formId}-size`}
                             className="block text-xs font-bold text-slate-300 mb-1"
                           >
                             Preferred Size
                           </label>
                           <select
-                            id={`${formId}-pref`}
-                            value={formData.preference}
-                            onChange={(e) => setFormData({ ...formData, preference: e.target.value })}
+                            id={`${formId}-size`}
+                            value={formData.sizePreference}
+                            onChange={(e) =>
+                              setFormData({ ...formData, sizePreference: e.target.value })
+                            }
                             className="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700/80 text-white text-xs focus:outline-none focus:border-amber-400 transition-colors"
                           >
-                            <option value="Compact 3 BHK (1,561 - 1,818 Sft)">Compact 3 BHK (1,561–1,818 Sft)</option>
-                            <option value="Spacious 3 BHK (1,961 - 2,190 Sft)">Spacious 3 BHK (1,961–2,190 Sft)</option>
-                            <option value="Large 3 BHK (2,269 - 2,514 Sft)">Large 3 BHK (2,269–2,514 Sft)</option>
-                            <option value="Undecided">Undecided / Exploring</option>
+                            <option value="Compact 3 BHK (1,561–1,818 Sft)">Compact 3 BHK (1,561–1,818 Sft)</option>
+                            <option value="Spacious 3 BHK (1,961–2,190 Sft)">Spacious 3 BHK (1,961–2,190 Sft)</option>
+                            <option value="Large 3 BHK (2,269–2,514 Sft)">Large 3 BHK (2,269–2,514 Sft)</option>
+                            <option value="All Sizes">Explore All Sizes</option>
                           </select>
                         </div>
 
@@ -863,7 +1073,7 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 2. PROJECT OVERVIEW */}
+        {/* 2. PROJECT OVERVIEW WITH DRONE LOCALITY SHOWCASE */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="overview">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
@@ -876,6 +1086,74 @@ export const PavaniFelicityPage = () => {
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 Pavani Felicity is a premium residential apartment development by <strong>Pavani Infra</strong>, located in the prominent residential neighborhood of Nizampet, Hyderabad.
               </p>
+            </div>
+
+            {/* AERIAL PERSPECTIVE SHOWCASE CARD */}
+            <div className="mb-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-amber-500/30 shadow-2xl">
+              <div className="grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7">
+                  <div
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[4])}
+                    className="relative rounded-xl overflow-hidden border border-amber-500/30 bg-slate-950 cursor-zoom-in group aspect-[16/10]"
+                  >
+                    <img
+                      src={felicityDroneAerial}
+                      alt="Pavani Felicity high-altitude aerial drone perspective showing tower, lake waterbody, and Nizampet neighborhood"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
+                      Locality Drone Perspective
+                    </div>
+                    <div className="absolute top-3 right-3 p-1.5 rounded-lg bg-slate-950/80 border border-slate-700 text-slate-300">
+                      <Maximize2 size={15} />
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800">
+                      <h4 className="text-xs sm:text-sm font-bold text-white">Adjacent to Hill County &amp; Natural Lake</h4>
+                      <p className="text-[11px] text-slate-400 mt-0.5">
+                        High-altitude drone view showing the tower rising beside the tranquil lake and residential enclave. Tap to enlarge.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 space-y-4">
+                  <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400 block">
+                    Strategic Neighborhood Context
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                    Uninterrupted Waterbody Vistas &amp; Suburban Peace
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Positioned <strong>opposite Sapthapadi Convention Centre</strong> and <strong>adjacent to Hill County</strong>, the single residential tower stands tall as a prominent skyline focal point in the Nizampet–Bachupally growth corridor.
+                  </p>
+                  <ul className="space-y-2.5 text-xs text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Scenic Waterbody Frontage:</strong> North &amp; East facing residences enjoy open lake views.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>High-Rise Elevation:</strong> 2 Cellars + Stilt + 23 upper floors with 360-degree daylight exposure.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Low Density Footprint:</strong> 278 units across ~2.5 acres ensuring quiet, privacy-centric living.</span>
+                    </li>
+                  </ul>
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(PROJECT_VISUALS[4])}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-all shadow active:scale-95"
+                    >
+                      <Maximize2 size={14} />
+                      <span>Inspect Locality Drone Aerial</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Narrative Context Card */}
@@ -949,14 +1227,14 @@ export const PavaniFelicityPage = () => {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">TG RERA Registered</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Officially registered under TG RERA ID <strong>P02200005477</strong>, ensuring statutory regulatory disclosures.
+                  Official registration under TG RERA ID <strong>P02200005477</strong> providing regulatory transparency for buyers.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 3. APARTMENT CONFIGURATIONS (ALL 12 SIZES) */}
+        {/* 3. APARTMENT CONFIGURATIONS */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="configurations">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
@@ -970,83 +1248,119 @@ export const PavaniFelicityPage = () => {
                 Explore twelve published size options across Compact, Spacious, and Large 3 BHK layouts (1,561 to 2,514 sq. ft.).
               </p>
 
-              {/* Tier Filter Tabs */}
+              {/* Category Filter Tabs */}
               <div className="flex flex-wrap justify-center gap-2 pt-4">
-                {[
-                  { key: "all", label: "All 3 BHK Sizes (12)" },
-                  { key: "compact", label: "Compact 3 BHK (1,561–1,818 Sft)" },
-                  { key: "spacious", label: "Spacious 3 BHK (1,961–2,190 Sft)" },
-                  { key: "large", label: "Large 3 BHK (2,269–2,514 Sft)" },
-                ].map((tab) => (
-                  <button
-                    key={tab.key}
-                    onClick={() => {
-                      setSelectedTierTab(tab.key as any);
-                      setSelectedSizeFilter(null);
-                    }}
-                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                      selectedTierTab === tab.key
-                        ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
-                        : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveConfigCategory("all");
+                    setSelectedSizeFilter(null);
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    activeConfigCategory === "all"
+                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                      : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
+                  }`}
+                >
+                  All 3 BHK Sizes (12)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveConfigCategory("compact");
+                    setSelectedSizeFilter(null);
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    activeConfigCategory === "compact"
+                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                      : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
+                  }`}
+                >
+                  Compact 3 BHK (1,561–1,818 Sft)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveConfigCategory("spacious");
+                    setSelectedSizeFilter(null);
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    activeConfigCategory === "spacious"
+                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                      : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
+                  }`}
+                >
+                  Spacious 3 BHK (1,961–2,190 Sft)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveConfigCategory("large");
+                    setSelectedSizeFilter(null);
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    activeConfigCategory === "large"
+                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                      : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
+                  }`}
+                >
+                  Large 3 BHK (2,269–2,514 Sft)
+                </button>
+              </div>
+
+              {/* Published Sizes Pills Bar */}
+              <div className="pt-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800 text-left">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">
+                  Select Specific Published Floor Size (Sq. Ft.):
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {[1561, 1725, 1797, 1805, 1818, 1961, 2014, 2152, 2190, 2269, 2395, 2514].map(
+                    (size) => (
+                      <button
+                        key={size}
+                        type="button"
+                        onClick={() => setSelectedSizeFilter(selectedSizeFilter === size ? null : size)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
+                          selectedSizeFilter === size
+                            ? "bg-amber-400 text-slate-950 shadow-md ring-2 ring-amber-300"
+                            : "bg-slate-900 border border-slate-800 text-slate-300 hover:border-amber-500/40 hover:text-white"
+                        }`}
+                      >
+                        {size.toLocaleString()} Sft
+                      </button>
+                    )
+                  )}
+                </div>
               </div>
             </div>
 
-            {/* Quick Size Pill Selectors */}
-            <div className="mb-10 p-5 rounded-2xl bg-slate-900/50 border border-slate-800">
-              <span className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-3 text-center sm:text-left">
-                Select Specific Published Floor Size (Sq. Ft.):
-              </span>
-              <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                {[1561, 1725, 1797, 1805, 1818, 1961, 2014, 2152, 2190, 2269, 2395, 2514].map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSizeFilter(selectedSizeFilter === size ? null : size)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
-                      selectedSizeFilter === size
-                        ? "bg-amber-400 text-slate-950 ring-2 ring-amber-400/50"
-                        : "bg-slate-950 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-500/40"
-                    }`}
-                  >
-                    {size.toLocaleString()} Sft
-                  </button>
-                ))}
-                {selectedSizeFilter && (
-                  <button
-                    onClick={() => setSelectedSizeFilter(null)}
-                    className="text-xs text-amber-400 underline font-semibold px-2 py-1"
-                  >
-                    Reset Filter
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Configuration Cards Grid */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {filteredTiers.map((tier) => (
+            {/* 3 Browsing Tier Cards */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {(activeConfigCategory === "all"
+                ? CONFIG_TIERS
+                : CONFIG_TIERS.filter((t) => t.category === activeConfigCategory)
+              ).map((tier) => (
                 <div
                   key={tier.id}
-                  className="rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-slate-800 p-6 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl"
+                  className="p-6 sm:p-7 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between shadow-xl"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-wider">
-                        {tier.category.toUpperCase()} 3 BHK
+                      <span className="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-[11px] font-bold text-amber-400 uppercase tracking-wider">
+                        {tier.category === "compact"
+                          ? "Compact 3 BHK"
+                          : tier.category === "spacious"
+                          ? "Spacious 3 BHK"
+                          : "Large 3 BHK"}
                       </span>
-                      <Home size={18} className="text-slate-500" />
+                      <Home size={16} className="text-slate-500" />
                     </div>
 
                     <div>
                       <h3 className="text-xl font-bold text-white">{tier.tierTitle}</h3>
-                      <div className="flex items-baseline gap-2 mt-1">
-                        <span className="text-xs text-slate-400">Super Built-up Band:</span>
-                        <span className="text-sm font-extrabold text-amber-400">{tier.sizeBand}</span>
-                      </div>
+                      <p className="text-xs text-slate-400 mt-0.5">
+                        Super Built-up Band: <strong className="text-amber-300 font-mono">{tier.sizeBand}</strong>
+                      </p>
                     </div>
 
                     {/* Published Sft Breakdown */}
@@ -1101,7 +1415,7 @@ export const PavaniFelicityPage = () => {
                       href="#floorplans"
                       className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold transition-all flex items-center justify-center gap-1.5"
                     >
-                      <span>Request Floor Plan Drawing</span>
+                      <span>Inspect Sanctioned Blueprint</span>
                     </a>
                   </div>
                 </div>
@@ -1164,19 +1478,139 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 4. FLOOR PLANS SECTION */}
+        {/* 4. SANCTIONED FLOOR PLANS & MASTER LAYOUT BLUEPRINT */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="floorplans">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
               <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
-                Architectural Layouts
+                Architectural Layouts &amp; Floor Plate
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-                Explore Pavani Felicity Floor Plans
+                Explore Pavani Felicity Typical Floor Plate
               </h2>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                Authentic unit layouts detailing bedroom arrangements, living and dining spaces, kitchen with utility, bathrooms, balconies, and pooja spaces.
+                Authentic unit layouts detailing bedroom arrangements, living and dining spaces, kitchen with utility, bathrooms, balconies, and central courtyard swimming pool.
               </p>
+            </div>
+
+            {/* SANCTIONED MASTER BLUEPRINT SHOWCASE CARD */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-amber-500/30 shadow-2xl mb-12">
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-4">
+                  <div
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[6])}
+                    className="relative rounded-xl overflow-hidden border border-amber-500/30 bg-slate-950 cursor-zoom-in group p-2"
+                  >
+                    <img
+                      src={felicityMasterplan}
+                      alt="Pavani Felicity official floor plate layout showing 12 3-BHK units per floor with exact square footage and central courtyard swimming pool"
+                      className="w-full h-auto object-contain max-h-[500px] mx-auto rounded-lg group-hover:scale-[1.02] transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-slate-950/90 text-[11px] font-bold text-amber-300 border border-slate-700 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
+                      <Maximize2 size={13} />
+                      <span>Click to Zoom Blueprint</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
+                    <span className="flex items-center gap-1.5">
+                      <CheckCircle2 size={14} className="text-emerald-400" />
+                      <span>Authentic Sanctioned Typical Floor Plate (Units 01 to 12)</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(PROJECT_VISUALS[6])}
+                      className="text-amber-400 hover:text-amber-300 font-bold flex items-center gap-1"
+                    >
+                      <Eye size={13} />
+                      <span>Full Screen</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 space-y-4">
+                  <div>
+                    <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400 block mb-1">
+                      12 Units Per Floor Plate
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                      Typical Floor Plan &amp; Unit Sizing
+                    </h3>
+                    <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                      Every floor incorporates 12 thoughtfully configured 3 BHK residences wrapped around a central courtyard featuring the resort swimming pool, kids pool, and wooden deck.
+                    </p>
+                  </div>
+
+                  {/* Interactive Unit Pills */}
+                  <div className="space-y-2">
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                      Tap Unit to Inspect Dimensions &amp; Facing:
+                    </span>
+                    <div className="grid grid-cols-4 sm:grid-cols-6 gap-1.5">
+                      {FLOOR_PLATE_UNITS.map((u, i) => (
+                        <button
+                          key={u.unitNo}
+                          type="button"
+                          onClick={() => setSelectedFloorUnit(selectedFloorUnit === i ? null : i)}
+                          className={`p-1.5 rounded-lg text-center transition-all ${
+                            selectedFloorUnit === i
+                              ? "bg-amber-400 text-slate-950 font-extrabold ring-2 ring-amber-300 shadow"
+                              : "bg-slate-900 border border-slate-800 text-slate-200 hover:border-amber-400/40"
+                          }`}
+                        >
+                          <span className="text-[10px] block font-mono">Unit {u.unitNo}</span>
+                          <span className="text-[11px] font-bold block">{u.sizeSft} Sft</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Selected Unit Details Panel */}
+                  {selectedFloorUnit !== null ? (
+                    <div className="p-4 rounded-xl bg-slate-950/90 border border-amber-500/40 space-y-2 animate-fadeIn">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                        <div>
+                          <span className="text-xs font-mono font-bold text-amber-400">
+                            Unit {FLOOR_PLATE_UNITS[selectedFloorUnit].unitNo}
+                          </span>
+                          <h4 className="text-sm font-bold text-white">
+                            {FLOOR_PLATE_UNITS[selectedFloorUnit].bhk} · {FLOOR_PLATE_UNITS[selectedFloorUnit].sizeSft.toLocaleString()} Sq. Ft.
+                          </h4>
+                        </div>
+                        <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold uppercase">
+                          {FLOOR_PLATE_UNITS[selectedFloorUnit].facing} Facing
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        {FLOOR_PLATE_UNITS[selectedFloorUnit].features}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-400 leading-relaxed">
+                      <em>Select any unit number above to review its orientation, balcony placement, and layout specification.</em>
+                    </div>
+                  )}
+
+                  <div className="pt-2 flex flex-col gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(PROJECT_VISUALS[6])}
+                      className="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold transition-all shadow flex items-center justify-center gap-1.5 active:scale-95"
+                    >
+                      <Maximize2 size={14} />
+                      <span>Inspect Sanctioned Blueprint in Lightbox</span>
+                    </button>
+                    <a
+                      href="#enquiry-section"
+                      className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-center text-xs font-bold transition-all flex items-center justify-center gap-1.5"
+                    >
+                      <FileText size={14} className="text-amber-400" />
+                      <span>Request Individual Unit CAD / PDF Layout</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Floor Plan Verification Notice */}
@@ -1324,58 +1758,220 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 6. CLUBHOUSE & LIFESTYLE EXPERIENCE */}
+        {/* 6. CLUBHOUSE, ROOFTOP & BALCONY LIFESTYLE EXPERIENCE */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="clubhouse">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-7 sm:p-10 rounded-3xl bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950 border border-amber-500/30 shadow-2xl space-y-6">
-              <div className="text-center max-w-3xl mx-auto space-y-3">
-                <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
-                  Signature Lifestyle
-                </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-                  A Lifestyle Beyond Your Apartment
-                </h2>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                  Pavani Felicity incorporates a multi-level clubhouse conceived as an active social and wellness destination for the community&apos;s ~273 to 278 resident families.
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
+                Signature Lifestyle
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
+                A Lifestyle Beyond Your Apartment
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                Pavani Felicity combines an internal courtyard pool deck, multi-level clubhouse, and expansive sit-out balconies overlooking the lake.
+              </p>
+            </div>
+
+            {/* BALCONY & SKYLINE HIGHLIGHT CARD */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-amber-500/30 shadow-2xl">
+              <div className="grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7">
+                  <div
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[5])}
+                    className="relative rounded-xl overflow-hidden border border-amber-500/30 bg-slate-950 cursor-zoom-in group aspect-[16/10]"
+                  >
+                    <img
+                      src={felicityBalconyView}
+                      alt="Pavani Felicity spacious sit-out balcony view overlooking panoramic Nizampet lake and city skyline"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
+                      Panoramic Balcony Living
+                    </div>
+                    <div className="absolute top-3 right-3 p-1.5 rounded-lg bg-slate-950/80 border border-slate-700 text-slate-300">
+                      <Maximize2 size={15} />
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800">
+                      <h4 className="text-xs sm:text-sm font-bold text-white">Panoramic Horizon Sit-Out Balconies</h4>
+                      <p className="text-[11px] text-slate-400 mt-0.5">
+                        Deep recessed balconies designed for open-air tea sessions, morning sunrise views, and natural lake ventilation.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 space-y-4">
+                  <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400 block">
+                    Private Outdoor Living
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                    Unobstructed Skyline Views Over Nizampet
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Unlike congested mid-rise clusters, the 23-floor vantage point of Pavani Felicity affords high-altitude fresh breezes, zero common wall privacy, and sweeping panoramas toward Hill County and the tranquil lake.
+                  </p>
+                  <ul className="space-y-2.5 text-xs text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Continuous Cross-Ventilation:</strong> 3-side open apartment geometries ensuring abundant fresh airflow.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span><strong>Dedicated Utility Balconies:</strong> Separate laundry and utility zones keep sit-out balconies clutter-free.</span>
+                    </li>
+                  </ul>
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(PROJECT_VISUALS[5])}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-all shadow active:scale-95"
+                    >
+                      <Maximize2 size={14} />
+                      <span>View Full Balcony Experience</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3 Lifestyle Pillars */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                  <Users size={20} />
+                </div>
+                <h4 className="text-base font-bold text-white">Social &amp; Celebrations</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Air-conditioned banquet celebration hall, landscaped open terrace lawn, and resident community lounge for festivals and private family events.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 pt-4">
-                <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
-                    <Users size={20} />
-                  </div>
-                  <h4 className="text-base font-bold text-white">Social &amp; Celebrations</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Air-conditioned banquet celebration hall, landscaped open terrace lawn, and resident community lounge for festivals and private family events.
-                  </p>
+              <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                  <Briefcase size={20} />
                 </div>
+                <h4 className="text-base font-bold text-white">Co-Working &amp; Media</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Dedicated business hub with ergonomic workstations, high-speed Wi-Fi, and an acoustic mini-theatre screening room for weekend entertainment.
+                </p>
+              </div>
 
-                <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
-                    <Briefcase size={20} />
-                  </div>
-                  <h4 className="text-base font-bold text-white">Co-Working &amp; Media</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Dedicated business hub with ergonomic workstations, high-speed Wi-Fi, and an acoustic mini-theatre screening room for weekend entertainment.
-                  </p>
+              <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                  <Dumbbell size={20} />
                 </div>
-
-                <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
-                    <Dumbbell size={20} />
-                  </div>
-                  <h4 className="text-base font-bold text-white">Wellness &amp; Aquatics</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Resort-scale swimming pool with sunken lounge deck, safe kids splash pool, yoga and aerobics pavilions, and a modern gymnasium.
-                  </p>
-                </div>
+                <h4 className="text-base font-bold text-white">Wellness &amp; Aquatics</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Resort-scale swimming pool with sunken lounge deck, safe kids splash pool, yoga and aerobics pavilions, and a modern gymnasium.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 7. STRATEGIC LOCATION IN NIZAMPET */}
+        {/* 7. DEDICATED PROJECT GALLERY & ARCHITECTURAL SHOWCASE */}
+        <section className="py-16 lg:py-24 border-b border-slate-800/60" id="gallery">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+              <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
+                Visual Documentation
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
+                Project Gallery &amp; Architectural Showcase
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                Explore high-resolution visual documentation of Pavani Felicity, from twilight elevations and 3D courtyard aerials to the sanctioned typical floor plate.
+              </p>
+
+              {/* Gallery Filter Tabs */}
+              <div className="flex flex-wrap justify-center gap-2 pt-4">
+                {[
+                  { key: "all", label: "All Visuals (7)" },
+                  { key: "elevation", label: "Tower Elevations (3)" },
+                  { key: "aerial", label: "Aerial Perspectives (2)" },
+                  { key: "lifestyle", label: "Balcony & Views (1)" },
+                  { key: "masterplan", label: "Sanctioned Blueprint (1)" },
+                ].map((tab) => (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    onClick={() => setGalleryCategory(tab.key)}
+                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                      galleryCategory === tab.key
+                        ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                        : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Gallery Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {(galleryCategory === "all"
+                ? PROJECT_VISUALS
+                : PROJECT_VISUALS.filter((v) => v.category === galleryCategory)
+              ).map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => setSelectedImage(item)}
+                  className="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-amber-500/50 cursor-pointer shadow-xl transition-all duration-300 hover:scale-[1.01] flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+
+                    {/* Badges */}
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-amber-400/40 text-[10px] font-bold text-amber-300">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    {/* Tap to Enlarge pill */}
+                    <div className="absolute top-3 right-3 p-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-slate-700 text-slate-300 group-hover:text-amber-400 transition-colors">
+                      <Maximize2 size={15} />
+                    </div>
+                  </div>
+
+                  <div className="p-5 flex-1 flex flex-col justify-between bg-gradient-to-b from-slate-900/90 to-slate-950">
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">
+                          {item.tag}
+                        </span>
+                        <span className="text-[10px] text-slate-500">Official Release</span>
+                      </div>
+                      <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                        {item.subtitle}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform">
+                      <span>Inspect High-Resolution Render</span>
+                      <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 8. STRATEGIC LOCATION IN NIZAMPET */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="location">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
@@ -1399,18 +1995,7 @@ export const PavaniFelicityPage = () => {
                 <h3 className="text-base font-bold text-white mb-1">Miyapur &amp; JNTU Metro</h3>
                 <span className="text-xs font-bold text-amber-400 block mb-2">~10–12 Mins Drive</span>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Fast access to Miyapur Metro Terminal (Red Line) and JNTU Kukatpally Metro for traffic-free commuting across Hyderabad.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/40 transition-all">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-                  <Activity size={20} />
-                </div>
-                <h3 className="text-base font-bold text-white mb-1">Hospitals &amp; Healthcare</h3>
-                <span className="text-xs font-bold text-amber-400 block mb-2">~8–12 Mins Drive</span>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Close proximity to Pranaam Hospital Nizampet, SLG Hospital Bachupally, Sri Sri Holistic, and Mamata Academy of Medical Sciences.
+                  Direct arterial access to Red Line Metro stations for hassle-free transit to Ameerpet, HITEC City, and Secunderabad.
                 </p>
               </div>
 
@@ -1421,18 +2006,29 @@ export const PavaniFelicityPage = () => {
                 <h3 className="text-base font-bold text-white mb-1">Top Tier Schools</h3>
                 <span className="text-xs font-bold text-amber-400 block mb-2">~5–10 Mins Radius</span>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Surrounded by Silver Oaks, Kennedy High The Global School, Oakridge International, The Creek Planet, and Vikas The Concept School.
+                  Minutes from Silver Oaks, Kennedy High The Global School, Oakridge International, and Creek Planet School.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/40 transition-all">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-                  <Tv size={20} />
+                  <Activity size={20} />
                 </div>
-                <h3 className="text-base font-bold text-white mb-1">Malls &amp; Entertainment</h3>
+                <h3 className="text-base font-bold text-white mb-1">Hospitals &amp; Healthcare</h3>
+                <span className="text-xs font-bold text-amber-400 block mb-2">~8–15 Mins Drive</span>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Prompt medical access to SLG Hospitals, Pranaam Hospital, Apollo Clinic, and Relief Hospital Nizampet.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/40 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+                  <Building2 size={20} />
+                </div>
+                <h3 className="text-base font-bold text-white mb-1">Retail &amp; Entertainment</h3>
                 <span className="text-xs font-bold text-amber-400 block mb-2">~10–15 Mins Drive</span>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Quick reach to Forum Sujana Mall, Manjeera Trinity Mall, GSM Mall Miyapur, and local retail centers along Nizampet Road.
+                  Near Nexus Hyderabad Mall, GSM Mall, daily supermarkets, multiplexes, and fine dining along Nizampet Road.
                 </p>
               </div>
             </div>
@@ -1441,12 +2037,12 @@ export const PavaniFelicityPage = () => {
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80">
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Compass className="text-amber-400" size={18} />
-                <span>Regional Highway &amp; IT Corridor Links</span>
+                <span>Regional Connectivity &amp; Employment Corridors</span>
               </h3>
               <div className="grid sm:grid-cols-3 gap-4">
                 <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-                  <span className="text-xs font-bold text-amber-400 block">Outer Ring Road (ORR Exit 4A)</span>
-                  <span className="text-sm font-extrabold text-white block mt-0.5">~10 Mins</span>
+                  <span className="text-xs font-bold text-amber-400 block">Nehru Outer Ring Road (ORR)</span>
+                  <span className="text-sm font-extrabold text-white block mt-0.5">~10 Mins (Exit 4A/5)</span>
                   <p className="text-[11px] text-slate-400 mt-1">Direct access onto the 158 km ORR expressway toward Financial District &amp; Airport.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
@@ -1467,7 +2063,7 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 8. DEVELOPER PROFILE & RERA TRANSPARENCY */}
+        {/* 9. DEVELOPER PROFILE & RERA TRANSPARENCY */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="developer">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-stretch">
@@ -1555,7 +2151,7 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 9. INDEPENDENT BUYER ADVISORY & DUE DILIGENCE */}
+        {/* 10. INDEPENDENT BUYER ADVISORY & DUE DILIGENCE */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="advisory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
@@ -1675,7 +2271,7 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 10. FREQUENTLY ASKED QUESTIONS (12 FAQS) */}
+        {/* 11. FREQUENTLY ASKED QUESTIONS (12 FAQS) */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="faqs">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-12">
@@ -1709,7 +2305,7 @@ export const PavaniFelicityPage = () => {
           </div>
         </section>
 
-        {/* 11. MOBILE FIXED STICKY CTA BAR */}
+        {/* 12. MOBILE FIXED STICKY CTA BAR */}
         <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-xl border-t border-amber-500/30 p-2.5 grid grid-cols-3 gap-2 shadow-2xl">
           <a
             href={`tel:${PROJECT_CONFIG.phone}`}
@@ -1735,6 +2331,35 @@ export const PavaniFelicityPage = () => {
             <span className="text-[10px] font-bold mt-0.5">Request Price</span>
           </a>
         </div>
+
+        {/* LIGHTBOX MODAL FOR FULL-RESOLUTION INSPECTION */}
+        <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+          <DialogContent className="max-w-5xl bg-slate-950/95 border border-slate-800 text-slate-100 p-4 sm:p-6 backdrop-blur-2xl">
+            <DialogClose className="absolute right-4 top-4 p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-colors z-20">
+              <X size={18} />
+            </DialogClose>
+            {selectedImage && (
+              <div className="space-y-3">
+                <div className="relative max-h-[80vh] flex items-center justify-center p-2 bg-slate-950 rounded-xl overflow-hidden">
+                  <img
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    className="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+                  />
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div>
+                    <h4 className="text-sm font-bold text-white">{selectedImage.title}</h4>
+                    <p className="text-xs text-slate-400">{selectedImage.subtitle}</p>
+                  </div>
+                  <span className="text-[11px] font-bold text-amber-400 px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20 self-start sm:self-auto shrink-0">
+                    {selectedImage.badge}
+                  </span>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </>
   );

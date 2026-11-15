@@ -15,6 +15,7 @@ import linqHero from "@/assets/linq-by-raghava/linq-by-raghava-elevation-hero.jp
 import neoHero from "@/assets/neo-towers/tower.webp";
 import trumpHero from "@/assets/trump-towers/hero.jpg";
 import cannyHero from "@/assets/canny-aravindam/canny-aravindam-elevation.jpg";
+import felicityHero from "@/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp";
 
 export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove-hyderabad": prestigeElevation,
@@ -52,8 +53,8 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "canny-aravindam": cannyHero,
   "pavani-starlit-miyapur": "/og-pavani-starlit.jpg",
   "pavani-starlit": "/og-pavani-starlit.jpg",
-  "pavani-felicity-nizampet": "/og-pavani-felicity.jpg",
-  "pavani-felicity": "/og-pavani-felicity.jpg",
+  "pavani-felicity-nizampet": felicityHero,
+  "pavani-felicity": felicityHero,
 };
 
 export const DEFAULT_BUILDING_IMAGES = [
@@ -96,7 +97,7 @@ export function getMappedProjectImage(slug?: string | null, name?: string | null
     if (n.includes("team4") || n.includes("aria")) return team4Hero;
     if (n.includes("tridasa") || n.includes("rise")) return tridasaBlock;
     if (n.includes("canny") || n.includes("aravindam")) return cannyHero;
-    if (n.includes("felicity")) return "/og-pavani-felicity.jpg";
+    if (n.includes("felicity")) return felicityHero;
     if (n.includes("starlit")) return "/og-pavani-starlit.jpg";
   }
 

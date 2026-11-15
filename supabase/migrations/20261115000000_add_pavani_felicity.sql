@@ -71,9 +71,15 @@ VALUES (
     {"q": "What is the latest price of Pavani Felicity?", "a": "Pricing is dynamic and provided on request based on floor rise, facing, and current builder inventory. Contact Naani Projects at +91 94939 43946 for official pricing."}
   ]'::jsonb,
   ARRAY[
-    '/og-pavani-felicity.jpg'
+    '/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp',
+    '/assets/pavani-felicity/pavani-felicity-elevation-day.webp',
+    '/assets/pavani-felicity/pavani-felicity-tower.webp',
+    '/assets/pavani-felicity/pavani-felicity-aerial-courtyard.webp',
+    '/assets/pavani-felicity/pavani-felicity-drone-aerial.webp',
+    '/assets/pavani-felicity/pavani-felicity-balcony-view.webp',
+    '/assets/pavani-felicity/pavani-felicity-masterplan.jpg'
   ],
-  '/og-pavani-felicity.jpg',
+  '/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp',
   NULL,
   'https://www.google.com/maps?q=Nizampet+Hyderabad&output=embed',
   'Pavani Felicity Nizampet | 3 BHK Flats in Hyderabad',
