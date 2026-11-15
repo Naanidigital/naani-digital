@@ -261,6 +261,61 @@ const getFallbackProject = (slug: string): DBProject => {
     };
   }
 
+  if (slug.includes("pavani-felicity")) {
+    return {
+      id: "pavani-felicity-nizampet",
+      slug: "pavani-felicity-nizampet",
+      name: "Pavani Felicity",
+      builder: "Pavani Infra",
+      location: "Nizampet",
+      city: "Hyderabad",
+      configuration: "3 BHK Premium High-Rise Residences (1,561 – 2,514 Sq.Ft.)",
+      bhk_list: [3],
+      property_type: "Apartment",
+      price_range: "Contact for Latest Price",
+      min_price_inr: 0,
+      max_price_inr: 0,
+      status: "Under Construction",
+      possession: "October 2028 (Provisional RERA Target)",
+      usp: "~2.5 Acres · Single High-Rise Tower (2C+S+23F) · Exclusive 3 BHK Community · TG RERA P02200005477 · Near Hill County, Nizampet",
+      description: "Pavani Felicity is a premium high-rise residential apartment development by Pavani Infra (promoter Sai Sravanthi Infra Projects Private Limited), located opposite Sapthapadi Convention Centre and adjacent to Hill County in Nizampet, Hyderabad. Spanning approximately 2.16 to 2.5 acres, the project features a single 23-storey residential tower offering spacious 3 BHK apartments ranging from 1,561 to 2,514 sq. ft. with resort lifestyle amenities and ~65% open spaces.",
+      amenities: [
+        "Multi-Level Clubhouse & Banquet Hall",
+        "Modern Fully Equipped Gymnasium & Fitness Center",
+        "Swimming Pool & Safe Kids Splash Pool",
+        "Dedicated Co-Working Space & Business Lounge",
+        "Indoor Games Room (Table Tennis, Billiards, Chess)",
+        "Badminton Court & Half Basketball Practice Court",
+        "Cricket Practice Nets & Roller Skating Rink",
+        "Children Play Area with Impact Flooring",
+        "Landscaped Theme Gardens & Central Sculpture Court",
+        "Acupressure Reflexology Walking Path",
+        "2-Level Basement Parking with Directional Signage",
+        "100% DG Emergency Power Backup for Common Areas",
+        "24/7 Security Surveillance with Automated Boom Barriers"
+      ],
+      faqs: [
+        { q: "Where is Pavani Felicity located?", a: "Pavani Felicity is situated opposite Sapthapadi Convention Centre, adjacent to Hill County in Nizampet, Hyderabad, Telangana 500090, offering rapid connectivity to Bachupally, Miyapur Metro, and JNTU Kukatpally." },
+        { q: "Who is the developer of Pavani Felicity?", a: "The project is developed by Pavani Infra and promoted by Sai Sravanthi Infra Projects Private Limited, an established real estate firm in Hyderabad." },
+        { q: "What configurations are available at Pavani Felicity?", a: "Pavani Felicity exclusively offers 3 BHK premium apartment layouts ranging from 1,561 to 2,514 sq. ft." },
+        { q: "What is the RERA registration number of Pavani Felicity?", a: "Pavani Felicity is registered with Telangana RERA under registration ID TG RERA P02200005477." },
+        { q: "What is the expected possession timeline?", a: "The provisional RERA-linked completion timeline is October 2028. Prospective buyers are advised to inspect tower-wise milestones on the official TG RERA portal." },
+        { q: "What is the latest price of Pavani Felicity?", a: "Pricing is dynamic and provided on request based on floor rise, facing, and current builder inventory. Contact Naani Projects at +91 94939 43946 for official pricing." }
+      ],
+      gallery: [
+        "/og-pavani-felicity.jpg"
+      ],
+      hero_image: "/og-pavani-felicity.jpg",
+      brochure_url: null,
+      map_embed_url: "https://www.google.com/maps?q=Nizampet+Hyderabad&output=embed",
+      seo_title: "Pavani Felicity Nizampet | 3 BHK Flats in Hyderabad",
+      meta_description: "Explore Pavani Felicity Nizampet, Hyderabad. Discover spacious 3 BHK apartments, floor plans, clubhouse amenities, location advantages and project details.",
+      canonical_url: "https://www.naani.in/projects/pavani-felicity-nizampet",
+      custom_page_path: "/projects/pavani-felicity-nizampet",
+      featured: true,
+    };
+  }
+
   if (slug.includes("prestige-golden-grove")) {
     return {
       id: "prestige-golden-grove",

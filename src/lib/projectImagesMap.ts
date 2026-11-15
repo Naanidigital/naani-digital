@@ -50,6 +50,10 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "tridasa-rise": tridasaBlock,
   "sri-soho-interiors-designers-hyderabad": "/og/sri-soho-interiors.png",
   "canny-aravindam": cannyHero,
+  "pavani-starlit-miyapur": "/og-pavani-starlit.jpg",
+  "pavani-starlit": "/og-pavani-starlit.jpg",
+  "pavani-felicity-nizampet": "/og-pavani-felicity.jpg",
+  "pavani-felicity": "/og-pavani-felicity.jpg",
 };
 
 export const DEFAULT_BUILDING_IMAGES = [
@@ -92,6 +96,8 @@ export function getMappedProjectImage(slug?: string | null, name?: string | null
     if (n.includes("team4") || n.includes("aria")) return team4Hero;
     if (n.includes("tridasa") || n.includes("rise")) return tridasaBlock;
     if (n.includes("canny") || n.includes("aravindam")) return cannyHero;
+    if (n.includes("felicity")) return "/og-pavani-felicity.jpg";
+    if (n.includes("starlit")) return "/og-pavani-starlit.jpg";
   }
 
   return null;

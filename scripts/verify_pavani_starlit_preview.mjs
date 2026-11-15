@@ -63,7 +63,7 @@ async function getJson(endpoint) {
   });
 }
 
-async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
+async function getJsonWithRetry(endpoint, maxRetries = 25, delay = 500) {
   for (let i = 0; i < maxRetries; i++) {
     try {
       return await getJson(endpoint);
@@ -75,12 +75,12 @@ async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
 }
 
 server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
-  console.log(`Preview server running on http://127.0.0.1:${PREVIEW_PORT}`);
-  let browserProc = null;
+  console.log(`Production dist preview server running on http://127.0.0.1:${PREVIEW_PORT}`);
 
+  let browserProc = null;
   try {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cdp-pavani-profile-'));
-    console.log(`Starting headless browser with CDP on port ${CDP_PORT}...`);
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cdp-pavani-images-'));
+    console.log(`Launching browser on CDP port ${CDP_PORT}...`);
     browserProc = spawn(browserBinary, [
       `--remote-debugging-port=${CDP_PORT}`,
       `--user-data-dir=${tmpDir}`,
@@ -153,18 +153,18 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
 
     const title = await evalJs(`document.title`);
     const h1 = await evalJs(`document.querySelector('h1')?.innerText`);
-    const phoneLinks = await evalJs(`Array.from(document.querySelectorAll('a[href^="tel:"]')).map(a => a.href)`);
-    const consentDefault = await evalJs(`document.querySelector('input[type="checkbox"]')?.checked`);
-    const badges = await evalJs(`Array.from(document.querySelectorAll('.text-amber-400')).map(e => e.innerText).slice(0, 5)`);
+    const imgCount = await evalJs(`document.querySelectorAll('img[src*="pavani-starlit"]').length`);
+    const imagesLoaded = await evalJs(`Array.from(document.querySelectorAll('img[src*="pavani-starlit"]')).map(i => ({ src: i.src.split('/').pop().slice(0, 35), complete: i.complete, naturalWidth: i.naturalWidth }))`);
+    const floatingWa = await evalJs(`Boolean(document.querySelector('.naani-floating-whatsapp'))`);
 
-    console.log('\n--- PREVIEW VERIFICATION RESULTS ---');
+    console.log('\n--- VERIFICATION RESULTS ---');
     console.log('Title:', title);
     console.log('H1:', h1);
-    console.log('Phone Links:', phoneLinks);
-    console.log('Consent Checkbox Checked:', consentDefault);
-    console.log('Sample Amber Badges:', badges);
+    console.log('Pavani Starlit Image Elements Rendered:', imgCount);
+    console.log('Images Loaded Status:', JSON.stringify(imagesLoaded, null, 2));
+    console.log('Floating WhatsApp Present:', floatingWa);
 
-    // 1. Desktop 1440px Hero & Full
+    // 1. Desktop 1440px Hero with Interactive Visual Switcher
     await send('Emulation.setDeviceMetricsOverride', {
       width: 1440,
       height: 900,
@@ -172,30 +172,39 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
       mobile: false
     });
     await evalJs(`window.scrollTo(0, 0)`);
-    await wait(1000);
+    await wait(1200);
     await captureScreenshot('pavani-starlit-preview-desktop-1440px.png');
 
-    // Scroll to Overview & Highlights
+    // 2. Overview with 3D Township Aerial View
     await evalJs(`document.querySelector('#overview')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
     await captureScreenshot('pavani-starlit-desktop-overview.png');
 
-    // Scroll to Configurations
+    // 3. Configurations with Sanctioned Master Blueprint Feature
     await evalJs(`document.querySelector('#configurations')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
-    await captureScreenshot('pavani-starlit-desktop-configurations.png');
+    await captureScreenshot('pavani-starlit-desktop-blueprint.png');
 
-    // Scroll to Amenities
+    // 4. Amenities with Signature 45,000+ Sft Clubhouse Feature
     await evalJs(`document.querySelector('#amenities')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
     await captureScreenshot('pavani-starlit-desktop-amenities.png');
 
-    // Scroll to Advisory
-    await evalJs(`document.querySelector('#advisory')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
+    // 5. Project Gallery & Architectural Showcase
+    await evalJs(`document.querySelector('#gallery')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
-    await captureScreenshot('pavani-starlit-desktop-advisory.png');
+    await captureScreenshot('pavani-starlit-desktop-gallery.png');
 
-    // 2. Mobile 390px (iPhone 14/15)
+    // 6. Test Lightbox Open (Click on the first gallery card)
+    await evalJs(`document.querySelectorAll('#gallery [class*="cursor-pointer"]')[0]?.click();`);
+    await wait(1200);
+    await captureScreenshot('pavani-starlit-desktop-lightbox.png');
+
+    // Close Lightbox
+    await evalJs(`document.querySelector('button[aria-label="Close image"]')?.click();`);
+    await wait(500);
+
+    // 7. Mobile 390px (iPhone 14/15)
     await send('Emulation.setDeviceMetricsOverride', {
       width: 390,
       height: 844,
@@ -207,11 +216,11 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
     await captureScreenshot('pavani-starlit-preview-mobile-390px.png');
 
     // Mobile bottom bar & floating button clearance
-    await evalJs(`window.scrollTo(0, 800)`);
+    await evalJs(`window.scrollTo(0, 700)`);
     await wait(800);
     await captureScreenshot('pavani-starlit-preview-mobile-bottom-bar.png');
 
-    // 3. Mobile 360px (Compact Android)
+    // 8. Mobile 360px (Compact Android)
     await send('Emulation.setDeviceMetricsOverride', {
       width: 360,
       height: 740,
@@ -222,7 +231,7 @@ server.listen(PREVIEW_PORT, '127.0.0.1', async () => {
     await wait(1500);
     await captureScreenshot('pavani-starlit-preview-mobile-360px.png');
 
-    console.log('\nAll preview screenshots captured successfully.');
+    console.log('\nAll verification screenshots captured successfully.');
     ws.close();
   } catch (err) {
     console.error('Error during preview verification:', err);

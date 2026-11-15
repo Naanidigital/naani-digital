@@ -43,7 +43,7 @@ async function getJson(endpoint) {
   });
 }
 
-async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
+async function getJsonWithRetry(endpoint, maxRetries = 25, delay = 500) {
   for (let i = 0; i < maxRetries; i++) {
     try {
       return await getJson(endpoint);
@@ -58,19 +58,19 @@ async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
   console.log(`Polling production URL: ${targetUrl} for deployment update...`);
   
   let deployed = false;
-  for (let attempt = 1; attempt <= 30; attempt++) {
+  for (let attempt = 1; attempt <= 40; attempt++) {
     const res = await fetchLiveHtml();
-    if (res.status === 200 && res.data && res.data.includes('Pavani Starlit') && res.data.includes('P02400008769')) {
-      console.log(`Deployment detected on attempt ${attempt}! Production is live.`);
+    if (res.status === 200 && res.data && (res.data.includes('pavani-starlit-elevation') || res.data.includes('pavani-starlit-clubhouse') || res.data.includes('Visual Documentation'))) {
+      console.log(`Deployment detected on attempt ${attempt}! Production is updated with new images.`);
       deployed = true;
       break;
     }
-    console.log(`Attempt ${attempt}: Status ${res.status}. Waiting 5s for Vercel deployment...`);
-    await wait(5000);
+    console.log(`Attempt ${attempt}: Waiting 4s for Vercel deployment...`);
+    await wait(4000);
   }
 
   if (!deployed) {
-    console.log('Timeout waiting for deployment marker in HTML. Proceeding to inspect with live browser...');
+    console.log('Proceeding to inspect live browser directly...');
   }
 
   let browserProc = null;
@@ -145,20 +145,20 @@ async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
       if (hydrated) break;
       await wait(500);
     }
-    await wait(2000);
+    await wait(2500);
 
     const title = await evalJs(`document.title`);
     const h1 = await evalJs(`document.querySelector('h1')?.innerText`);
+    const imageCount = await evalJs(`document.querySelectorAll('img[src*="pavani-starlit"]').length`);
     const waButton = await evalJs(`Boolean(document.querySelector('.naani-floating-whatsapp'))`);
-    const phoneLinks = await evalJs(`Array.from(document.querySelectorAll('a[href^="tel:"]')).map(a => a.href)`);
 
     console.log('\n--- LIVE PRODUCTION VERIFICATION RESULTS ---');
     console.log('Title:', title);
     console.log('H1:', h1);
+    console.log('Pavani Starlit Image Elements Rendered:', imageCount);
     console.log('Floating WhatsApp Present:', waButton);
-    console.log('Phone Links:', phoneLinks);
 
-    // Desktop 1440px
+    // 1. Desktop 1440px - Hero Section with Interactive Switcher
     await send('Emulation.setDeviceMetricsOverride', {
       width: 1440,
       height: 900,
@@ -169,27 +169,36 @@ async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
     await wait(1200);
     await captureScreenshot('pavani-starlit-live-desktop-1440px.png');
 
-    // Section 1: Overview
+    // 2. Section: Overview with 3D Township Aerial View
     await evalJs(`document.querySelector('#overview')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
     await captureScreenshot('pavani-starlit-live-overview.png');
 
-    // Section 2: Configurations
+    // 3. Section: Configurations & Sanctioned Blueprint
     await evalJs(`document.querySelector('#configurations')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
     await captureScreenshot('pavani-starlit-live-configurations.png');
 
-    // Section 3: Amenities
+    // 4. Section: Amenities & Signature Clubhouse Architecture
     await evalJs(`document.querySelector('#amenities')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
     await captureScreenshot('pavani-starlit-live-amenities.png');
 
-    // Section 4: Advisory
-    await evalJs(`document.querySelector('#advisory')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
+    // 5. Section: Dedicated Project Gallery
+    await evalJs(`document.querySelector('#gallery')?.scrollIntoView({ behavior: 'instant', block: 'start' }); window.scrollBy(0, -60);`);
     await wait(800);
-    await captureScreenshot('pavani-starlit-live-advisory.png');
+    await captureScreenshot('pavani-starlit-live-gallery.png');
 
-    // Mobile 390px (iPhone 14/15)
+    // 6. Test Lightbox Open (Click on the first gallery card)
+    await evalJs(`document.querySelectorAll('#gallery [class*="cursor-pointer"]')[0]?.click();`);
+    await wait(1000);
+    await captureScreenshot('pavani-starlit-live-lightbox.png');
+
+    // Close Lightbox
+    await evalJs(`document.querySelector('button[aria-label="Close image"]')?.click();`);
+    await wait(500);
+
+    // 7. Mobile 390px (iPhone 14/15)
     await send('Emulation.setDeviceMetricsOverride', {
       width: 390,
       height: 844,
@@ -200,7 +209,7 @@ async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
     await wait(1500);
     await captureScreenshot('pavani-starlit-live-mobile-390px.png');
 
-    // Mobile 360px (Android)
+    // 8. Mobile 360px (Android)
     await send('Emulation.setDeviceMetricsOverride', {
       width: 360,
       height: 740,
@@ -211,7 +220,7 @@ async function getJsonWithRetry(endpoint, maxRetries = 20, delay = 500) {
     await wait(1500);
     await captureScreenshot('pavani-starlit-live-mobile-360px.png');
 
-    console.log('\nLive production screenshots captured successfully.');
+    console.log('\nAll live production screenshots captured successfully.');
     ws.close();
   } catch (err) {
     console.error('Error during live production check:', err);

@@ -2827,6 +2827,111 @@ const PAVANI_STARLIT_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const PAVANI_FELICITY_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/pavani-felicity-nizampet#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Nizampet", "item": "https://www.naani.in/projects-in-nizampet" },
+      { "@type": "ListItem", "position": 4, "name": "Pavani Felicity", "item": "https://www.naani.in/projects/pavani-felicity-nizampet" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/pavani-felicity-nizampet#project",
+    "name": "Pavani Felicity",
+    "url": "https://www.naani.in/projects/pavani-felicity-nizampet",
+    "description": "Pavani Felicity is a premium high-rise residential apartment development by Pavani Infra in Nizampet, Hyderabad. Featuring exclusive 3 BHK residences across ~2.5 acres with 23 residential floors. Registered under TG RERA ID P02200005477.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Opposite Sapthapadi Convention Centre, Near Hill County, Nizampet",
+      "addressLocality": "Nizampet",
+      "addressRegion": "Telangana",
+      "postalCode": "500090",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Pavani Infra"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/pavani-felicity-nizampet#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Pavani Felicity located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Felicity is located in Nizampet, Hyderabad, opposite Sapthapadi Convention Centre and adjacent to Hill County, offering quick access to Bachupally, JNTU, and Miyapur Metro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RERA registration number and expected possession?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Felicity is registered under TG RERA ID P02200005477. The provisional RERA-linked target date is October 2028."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What apartment configurations and sizes are available at Pavani Felicity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Felicity exclusively offers 3 BHK apartments with 12 published sizes ranging from 1,561 to 2,514 sq. ft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What amenities are featured at Pavani Felicity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pavani Felicity features a multi-level clubhouse, swimming pool, gymnasium, co-working space, yoga studio, sports courts, reflexology path, and 24/7 security."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#090D16] text-slate-100 font-sans">
+  <header class="w-full bg-[#090D16] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-nizampet" class="hover:text-amber-400">Nizampet</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#090D16]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P02200005477 • Nizampet, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Pavani Felicity – <span class="text-amber-400">Premium 3 BHK Apartments in Nizampet</span></h1>
+        <p class="text-lg text-slate-200">~2.5-Acre Community by Pavani Infra • Single Residential Tower (23 Floors) • Exclusive 3 BHK</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Thoughtfully Designed 1,561 – 2,514 Sq.Ft. Residences • ~65% Open Spaces • Multi-Level Clubhouse • Opposite Sapthapadi Convention Centre, Near Hill County
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Pavani%20Felicity%20Nizampet.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Latest Price &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -2962,6 +3067,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects-in-neopolis`,
     image: DEFAULT_OG,
     prerenderHtml: generateLocationPrerenderHtml('neopolis', 'Neopolis'),
+  },
+  {
+    path: '/projects-in-nizampet',
+    title: 'Projects in Nizampet, Hyderabad | Apartments & Homes | Naani Projects',
+    description: 'Compare residential projects, apartments, and gated layouts in Nizampet, Hyderabad. View floor plans, location advantages, and project details.',
+    url: `${SITE}/projects-in-nizampet`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateLocationPrerenderHtml('nizampet', 'Nizampet'),
   },
 
   // ===== SEO Hubs =====
@@ -3177,6 +3290,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/pavani-starlit-miyapur`,
     image: `${SITE}/og-pavani-starlit.jpg`,
     prerenderHtml: PAVANI_STARLIT_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/pavani-felicity-nizampet',
+    title: 'Pavani Felicity Nizampet | 3 BHK Flats in Hyderabad',
+    description: 'Explore Pavani Felicity Nizampet, Hyderabad. Discover spacious 3 BHK apartments, floor plans, clubhouse amenities, location advantages and project details.',
+    url: `${SITE}/projects/pavani-felicity-nizampet`,
+    image: `${SITE}/og-pavani-felicity.jpg`,
+    prerenderHtml: PAVANI_FELICITY_PRERENDER_HTML,
   },
 ];
 

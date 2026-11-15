@@ -76,6 +76,11 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://www.naani.in/projects/pavani-felicity-nizampet</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://www.naani.in/about-us</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
