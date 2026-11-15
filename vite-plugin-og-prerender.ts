@@ -3037,6 +3037,111 @@ const PAVANI_MIRAI_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const URBANRISE_CLOUD33_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/urbanrise-on-cloud-33-bachupally#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Bachupally", "item": "https://www.naani.in/projects-in-bachupally" },
+      { "@type": "ListItem", "position": 4, "name": "Urbanrise On Cloud 33", "item": "https://www.naani.in/projects/urbanrise-on-cloud-33-bachupally" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/urbanrise-on-cloud-33-bachupally#project",
+    "name": "Urbanrise On Cloud 33",
+    "url": "https://www.naani.in/projects/urbanrise-on-cloud-33-bachupally",
+    "description": "Urbanrise On Cloud 33 is an expansive 9.16-acre luxury high-rise gated community on 200-ft Miyapur-Bachupally Main Road, Hyderabad by Urbanrise. Featuring 5 towers of 33 floors, ~85,000 Sft Moroccan clubhouse, ~70,000 Sft rooftop amenities across 10 sky lounges, Urbanrise Genius learning hub, and 3 & 4 BHK residences. Registered under TG RERA P02200003724.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "200-ft Miyapur-Bachupally Main Road, Bachupally",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500090",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Urbanrise"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/urbanrise-on-cloud-33-bachupally#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Urbanrise On Cloud 33 located in Hyderabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Urbanrise On Cloud 33 is situated on the 200-ft Miyapur-Bachupally Main Road in Bachupally, Hyderabad, 10 minutes from Miyapur Metro Station and 8 minutes from Outer Ring Road (ORR Exits 4A/B)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the TG RERA registration number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project is registered with TG RERA under registration ID P02200003724."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations and sizes are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Urbanrise On Cloud 33 offers 3 BHK apartments (1,353 to 1,617 sq. ft.) and 4 BHK luxury residences (2,021 sq. ft.) across 5 high-rise towers of 33 floors each."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the key clubhouse and rooftop amenities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The development features an ~85,000 sq. ft. Moroccan-themed luxury clubhouse, ~70,000 sq. ft. of rooftop amenities across 10 sky lounges (sky yoga, BBQ party bar, co-working, sky dining), and the Urbanrise Genius children's learning hub."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#060911] text-slate-100 font-sans">
+  <header class="w-full bg-[#060911] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-bachupally" class="hover:text-amber-400">Bachupally</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#060911]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Ready to Move &amp; Under Construction • TG RERA P02200003724 • Bachupally, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Urbanrise On Cloud 33 – <span class="text-amber-400">3 &amp; 4 BHK Luxury High-Rise Residences</span></h1>
+        <p class="text-lg text-slate-200">5 Towers • 33 Floors • 200-ft Miyapur–Bachupally Main Road • 1,200+ Families Residing</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          9.16-Acre Gated Community • ~85,000 Sq.Ft. Moroccan Luxury Clubhouse • ~70,000 Sq.Ft. Rooftop Amenities across 10 Sky Lounges • Urbanrise Genius Learning Hub • Hammock Park &amp; Central Park
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Urbanrise%20On%20Cloud%2033%20Bachupally.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Live Price Sheet &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3411,6 +3516,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/pavani-mirai-financial-district`,
     image: `${SITE}/og-pavani-mirai.jpg`,
     prerenderHtml: PAVANI_MIRAI_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/urbanrise-on-cloud-33-bachupally',
+    title: 'Urbanrise On Cloud 33 Bachupally | 3 & 4 BHK Flats Hyderabad',
+    description: 'Explore Urbanrise On Cloud 33 Bachupally, Hyderabad. Discover 3 & 4 BHK apartments, Moroccan clubhouse, 70,000 Sft rooftop amenities, master layout and price details.',
+    url: `${SITE}/projects/urbanrise-on-cloud-33-bachupally`,
+    image: `${SITE}/og-urbanrise-cloud33.jpg`,
+    prerenderHtml: URBANRISE_CLOUD33_PRERENDER_HTML,
   },
 ];
 

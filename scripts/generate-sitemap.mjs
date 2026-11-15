@@ -55,6 +55,7 @@ const STATIC_URLS = [
   ["/projects/pavani-starlit-miyapur", "0.90", "weekly"],
   ["/projects/pavani-felicity-nizampet", "0.90", "weekly"],
   ["/projects/pavani-mirai-financial-district", "0.90", "weekly"],
+  ["/projects/urbanrise-on-cloud-33-bachupally", "0.90", "weekly"],
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],
