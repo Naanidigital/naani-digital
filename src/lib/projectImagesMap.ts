@@ -18,6 +18,7 @@ import cannyHero from "@/assets/canny-aravindam/canny-aravindam-elevation.jpg";
 import felicityHero from "@/assets/pavani-felicity/pavani-felicity-elevation-twilight.webp";
 import miraiHero from "@/assets/pavani-mirai/pavani-mirai-tower-elevation-sunset.webp";
 import cloud33Hero from "@/assets/urbanrise-cloud33/urbanrise-cloud33-elevation-twilight.jpg";
+import skyHabitatHero from "@/assets/urbanrise-sky-habitat/urbanrise-skyhabitat-elevation-day.webp";
 
 export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove-hyderabad": prestigeElevation,
@@ -61,6 +62,9 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "pavani-mirai": miraiHero,
   "urbanrise-on-cloud-33-bachupally": cloud33Hero,
   "urbanrise-on-cloud-33": cloud33Hero,
+  "urbanrise-sky-habitat-miyapur": skyHabitatHero,
+  "urbanrise-sky-habitat": skyHabitatHero,
+  "urbanrise-codename-sky-habitat": skyHabitatHero,
 };
 
 export const DEFAULT_BUILDING_IMAGES = [

@@ -3142,6 +3142,119 @@ const URBANRISE_CLOUD33_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const URBANRISE_SKYHABITAT_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/urbanrise-sky-habitat-miyapur#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Miyapur", "item": "https://www.naani.in/projects-in-miyapur" },
+      { "@type": "ListItem", "position": 4, "name": "Urbanrise Sky Habitat", "item": "https://www.naani.in/projects/urbanrise-sky-habitat-miyapur" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/urbanrise-sky-habitat-miyapur#project",
+    "name": "Urbanrise Sky Habitat",
+    "url": "https://www.naani.in/projects/urbanrise-sky-habitat-miyapur",
+    "description": "Urbanrise Sky Habitat is an ultra-luxury high-rise residential landmark spanning ~10.6 acres in Miyapur - Ameenpur, Hyderabad by Urbanrise (Alliance Group). Featuring 5 iconic towers rising 42 storeys (B+G+42), a signature 500-metre interconnected rooftop skywalk, 15 elevated sky lounges, ~1 Lakh Sft luxury clubhouse, ~70,000 Sft rooftop amenities, ~6 acres landscaped greens with Park by the Lake concept, Urbanrise Genius learning hub, and spacious 3 & 4 BHK residences. Registered under TG RERA P01100006655.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ameenpur Road, Near Miyapur Metro, Ameenpur",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "502032",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Urbanrise / Alliance Group"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/urbanrise-sky-habitat-miyapur#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Urbanrise Sky Habitat located in Hyderabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Urbanrise Sky Habitat is strategically located on Ameenpur Road in the Miyapur-Ameenpur corridor of Hyderabad, minutes from Miyapur Metro Station, NH-65, and ORR Exit 4A (Sultanpur)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the TG RERA registration number for Urbanrise Sky Habitat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project is registered under Telangana RERA registration number P01100006655."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the signature 500-metre rooftop skywalk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Urbanrise Sky Habitat features a signature 500-metre continuous skywalk physically interconnecting the crowns of all 5 42-storey residential towers, hosting 15 themed sky lounges and ~70,000 sq. ft. of rooftop amenities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What apartment configurations and sizes are available at Sky Habitat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project offers 3 BHK (1,333 to 1,839 sq. ft.) and 4 BHK (2,309 sq. ft.) luxury residences across 5 high-rise towers rising 42 storeys."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the scale and amenities of the clubhouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The development features an expansive ~1,00,000 sq. ft. (1 Lakh Sft) luxury clubhouse with resort-scale indoor sports, fitness centres, infinity pools, fine-dining lounges, and the Urbanrise Genius child development centre."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#070b14] text-slate-100 font-sans">
+  <header class="w-full bg-[#070b14] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-miyapur" class="hover:text-amber-400">Miyapur</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#070b14]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P01100006655 • Miyapur – Ameenpur, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Urbanrise Sky Habitat – <span class="text-amber-400">42-Floor Ultra-Luxury Residences</span></h1>
+        <p class="text-lg text-slate-200">5 Towers • 42 Storeys • 500m Interconnected Skywalk • ~1 Lakh Sq.Ft. Clubhouse • 3 &amp; 4 BHK</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          10.6-Acre Landmark Community • 15 Rooftop Sky Lounges • ~70,000 Sq.Ft. Rooftop Amenities • ~6 Acres Landscaped Greens (Park by the Lake) • Ameenpur Lake Vistas • Urbanrise Genius Hub
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Urbanrise%20Sky%20Habitat%20Miyapur.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Live Price Sheet &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3524,6 +3637,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/urbanrise-on-cloud-33-bachupally`,
     image: `${SITE}/og-urbanrise-cloud33.jpg`,
     prerenderHtml: URBANRISE_CLOUD33_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/urbanrise-sky-habitat-miyapur',
+    title: 'Urbanrise Sky Habitat Miyapur | 3 & 4 BHK Luxury Flats Hyderabad',
+    description: 'Explore Urbanrise Sky Habitat in Miyapur, Hyderabad. 42 floors, 500m interconnected rooftop skywalk, 15 sky lounges, 1 Lakh Sft clubhouse, lake-view greens, 3 & 4 BHK floor plans and price details.',
+    url: `${SITE}/projects/urbanrise-sky-habitat-miyapur`,
+    image: `${SITE}/og-urbanrise-sky-habitat.jpg`,
+    prerenderHtml: URBANRISE_SKYHABITAT_PRERENDER_HTML,
   },
 ];
 
