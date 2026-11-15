@@ -17,6 +17,7 @@ import {
   Compass,
   Home,
   ChevronRight,
+  ChevronLeft,
   ArrowRight,
   Dumbbell,
   Waves,
@@ -37,8 +38,18 @@ import {
   AlertTriangle,
   ExternalLink,
   Copy,
+  X,
+  Eye,
+  ZoomIn,
+  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog";
 import {
   Accordion,
   AccordionItem,
@@ -46,6 +57,12 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { sendLeadToSheet, type LeadProfile, type PageContext } from "@/lib/leadProfile";
+
+// High-resolution authentic project visual assets
+import starlitElevation from "@/assets/pavani-starlit/pavani-starlit-elevation.webp";
+import starlitClubhouse from "@/assets/pavani-starlit/pavani-starlit-clubhouse.webp";
+import starlitAerial from "@/assets/pavani-starlit/pavani-starlit-aerial.webp";
+import starlitMasterplan from "@/assets/pavani-starlit/pavani-starlit-masterplan.webp";
 
 // Centralized Project Configuration (Fact-Checked & Authoritative)
 export const PROJECT_CONFIG = {
@@ -76,6 +93,60 @@ export const PROJECT_CONFIG = {
   developerWebsite: "https://pavaniinfra.com/project",
   reraWebsite: "https://rera.telangana.gov.in/",
 };
+
+export interface ProjectVisual {
+  id: string;
+  title: string;
+  subtitle: string;
+  src: string;
+  badge: string;
+  tag: string;
+  category: "elevation" | "clubhouse" | "aerial" | "masterplan";
+  alt: string;
+}
+
+export const PROJECT_VISUALS: ProjectVisual[] = [
+  {
+    id: "elevation",
+    title: "Main Entrance & Street Elevation (G+10 Towers)",
+    subtitle: "Grand gated entrance boulevard, avenue landscaping, 24/7 security gatehouse, and 3 mid-rise residential towers",
+    src: starlitElevation,
+    badge: "Street Elevation",
+    tag: "G+10 Architecture",
+    category: "elevation",
+    alt: "Pavani Starlit main entrance gate, landscaped approach avenue and residential towers in Miyapur, Hyderabad",
+  },
+  {
+    id: "clubhouse",
+    title: "Signature 45,000+ Sq. Ft. Clubhouse Architecture",
+    subtitle: "Futuristic angular lattice geometric framework, panoramic glass facades, multi-level wellness lounges and terraces",
+    src: starlitClubhouse,
+    badge: "45,000+ Sft Clubhouse",
+    tag: "Clubhouse Landmark",
+    category: "clubhouse",
+    alt: "Pavani Starlit signature futuristic clubhouse with geometric lattice structure and glass facade",
+  },
+  {
+    id: "aerial",
+    title: "3D Master Township Aerial Perspective",
+    subtitle: "Drone perspective showcasing the 3 towers in U-formation, central landscaped courtyard, sports turf, and scenic natural lake backdrop",
+    src: starlitAerial,
+    badge: "Township Aerial View",
+    tag: "3-Acre Master Township",
+    category: "aerial",
+    alt: "Pavani Starlit 3D aerial view showing 3 residential towers, central courtyard, and lake view in Miyapur",
+  },
+  {
+    id: "masterplan",
+    title: "Official Sanctioned Master Plan Blueprint",
+    subtitle: "Sanctioned zoning layout showing Tower A, Tower B, Tower C, central clubhouse, pools, play courts, and exact unit floor areas",
+    src: starlitMasterplan,
+    badge: "Sanctioned Blueprint",
+    tag: "Master Layout",
+    category: "masterplan",
+    alt: "Pavani Starlit official master plan blueprint showing Tower A, Tower B, Tower C, clubhouse, and unit sizes",
+  },
+];
 
 interface ConfigPlan {
   id: string;
@@ -201,11 +272,14 @@ const AMENITY_GROUPS: AmenityGroup[] = [
 
 export const PavaniStarlitPage = () => {
   const formId = useId();
+  const [activeHeroTab, setActiveHeroTab] = useState<number>(0);
+  const [selectedImage, setSelectedImage] = useState<ProjectVisual | null>(null);
+  const [galleryCategory, setGalleryCategory] = useState<string>("all");
   const [selectedBhkTab, setSelectedBhkTab] = useState<"all" | "2bhk" | "2.5bhk" | "3bhk">("all");
   const [activeAmenityTab, setActiveAmenityTab] = useState<string>("fitness");
   const [copiedRera, setCopiedRera] = useState(false);
 
-  // Lead Form State
+  // Lead Form State (Consent UNCHECKED by default)
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -315,6 +389,12 @@ export const PavaniStarlitPage = () => {
     "@type": "ApartmentComplex",
     "name": PROJECT_CONFIG.name,
     "url": PROJECT_CONFIG.canonicalUrl,
+    "image": [
+      "https://www.naani.in/projects/pavani-starlit/pavani-starlit-elevation.webp",
+      "https://www.naani.in/projects/pavani-starlit/pavani-starlit-clubhouse.webp",
+      "https://www.naani.in/projects/pavani-starlit/pavani-starlit-aerial.webp",
+      "https://www.naani.in/projects/pavani-starlit/pavani-starlit-masterplan.webp",
+    ],
     "description": "Pavani Starlit is a premium residential apartment community by Sai Sravanthi Infra Projects in Maqtha Mahaboobpet, Miyapur, Hyderabad. Featuring 2, 2.5 and 3 BHK homes across ~3 acres with 45,000+ sq. ft. of amenities. Registered under TG RERA ID P02400008769.",
     "telephone": PROJECT_CONFIG.phone,
     "address": {
@@ -449,7 +529,7 @@ export const PavaniStarlitPage = () => {
     <>
       <SEOHead
         title="Pavani Starlit Miyapur | 2, 2.5 & 3 BHK Flats in Hyderabad"
-        description="Explore Pavani Starlit Miyapur, Hyderabad. Discover spacious 2, 2.5 & 3 BHK apartments, project details, amenities, location and floor plans."
+        description="Explore Pavani Starlit Miyapur, Hyderabad. Discover spacious 2, 2.5 & 3 BHK apartments, 45,000+ Sft clubhouse, official master plan, and verified project details."
         canonicalUrl={PROJECT_CONFIG.canonicalUrl}
         ogImage="https://www.naani.in/og-pavani-starlit.jpg"
         type="website"
@@ -469,8 +549,8 @@ export const PavaniStarlitPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaqs) }}
       />
 
-      <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200">
-        {/* 1. HERO SECTION */}
+      <div className="min-h-screen bg-[#090D16] text-slate-100 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200 pb-20 md:pb-0">
+        {/* 1. HERO SECTION WITH OFFICIAL INTERACTIVE VISUAL SHOWCASE */}
         <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-slate-800/80">
           {/* Subtle Ambient Background Lighting */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none">
@@ -496,8 +576,8 @@ export const PavaniStarlitPage = () => {
               <span className="text-amber-400 font-semibold truncate">Pavani Starlit</span>
             </nav>
 
-            <div className="grid lg:grid-cols-12 gap-12 items-start">
-              {/* Left Column: Headings & Value Badges */}
+            <div className="grid lg:grid-cols-12 gap-10 items-start">
+              {/* Left Column: Headings, Interactive Media Carousel, Badges & CTAs */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-wide uppercase">
                   <Sparkles size={14} className="text-amber-400 animate-pulse" />
@@ -514,6 +594,109 @@ export const PavaniStarlitPage = () => {
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
                   Discover thoughtfully planned 2, 2.5 &amp; 3 BHK residences in a well-connected residential neighbourhood of Hyderabad. Featuring mid-rise tower architecture, generous open spaces, and over 45,000 sq. ft. of clubhouse and wellness amenities.
                 </p>
+
+                {/* OFFICIAL INTERACTIVE HERO VISUAL SHOWCASE */}
+                <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-slate-900 shadow-2xl group">
+                  <div
+                    className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 overflow-hidden cursor-zoom-in"
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[activeHeroTab])}
+                  >
+                    <img
+                      src={PROJECT_VISUALS[activeHeroTab].src}
+                      alt={PROJECT_VISUALS[activeHeroTab].alt}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      fetchPriority="high"
+                      loading="eager"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+
+                    {/* Top Floating Badges */}
+                    <div className="absolute top-3 left-3 flex items-center gap-2">
+                      <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-amber-400/40 text-[11px] font-bold text-amber-300 shadow">
+                        {PROJECT_VISUALS[activeHeroTab].badge}
+                      </span>
+                      <span className="px-2 py-1 rounded-md bg-emerald-950/80 backdrop-blur-md border border-emerald-400/40 text-[10px] font-bold text-emerald-300 shadow">
+                        Official Project Visual
+                      </span>
+                    </div>
+
+                    {/* Zoom Action Icon */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedImage(PROJECT_VISUALS[activeHeroTab]);
+                      }}
+                      className="absolute top-3 right-3 p-2 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-700 text-slate-200 hover:text-amber-400 transition-colors z-10 shadow"
+                      aria-label="Enlarge image"
+                    >
+                      <Maximize2 size={16} />
+                    </button>
+
+                    {/* Desktop Prev / Next Navigation Arrows */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveHeroTab((prev) => (prev === 0 ? PROJECT_VISUALS.length - 1 : prev - 1));
+                      }}
+                      className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-white hover:text-amber-400 hover:border-amber-400/50 items-center justify-center transition-all z-10 shadow-lg"
+                      aria-label="Previous Visual"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveHeroTab((prev) => (prev === PROJECT_VISUALS.length - 1 ? 0 : prev + 1));
+                      }}
+                      className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-white hover:text-amber-400 hover:border-amber-400/50 items-center justify-center transition-all z-10 shadow-lg"
+                      aria-label="Next Visual"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+
+                    {/* Bottom Caption Overlay */}
+                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800 text-left">
+                      <p className="text-xs sm:text-sm font-bold text-white flex items-center justify-between">
+                        <span>{PROJECT_VISUALS[activeHeroTab].title}</span>
+                        <span className="text-[11px] text-amber-400 font-mono hidden sm:inline">
+                          {activeHeroTab + 1} / {PROJECT_VISUALS.length}
+                        </span>
+                      </p>
+                      <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
+                        {PROJECT_VISUALS[activeHeroTab].subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Quick Switcher Thumbnails */}
+                  <div className="grid grid-cols-4 p-2 bg-slate-950/90 border-t border-slate-800 gap-1.5">
+                    {PROJECT_VISUALS.map((vis, idx) => (
+                      <button
+                        key={vis.id}
+                        type="button"
+                        onClick={() => setActiveHeroTab(idx)}
+                        className={`flex items-center gap-2 p-1.5 rounded-lg text-left transition-all ${
+                          activeHeroTab === idx
+                            ? "bg-amber-500/15 border border-amber-500/40 text-amber-300"
+                            : "bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+                        }`}
+                      >
+                        <img
+                          src={vis.src}
+                          alt={vis.badge}
+                          className="w-10 h-8 sm:w-12 sm:h-9 object-cover rounded shrink-0"
+                        />
+                        <div className="min-w-0 hidden md:block">
+                          <span className="text-[10px] font-bold block truncate">{vis.badge}</span>
+                          <span className="text-[9px] text-slate-500 block truncate">{vis.tag}</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
                 {/* 6 Key Project Badges */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
@@ -823,17 +1006,53 @@ export const PavaniStarlitPage = () => {
               </p>
             </div>
 
-            {/* Narrative Context Card */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/40 border border-slate-800 mb-12 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-              <p>
-                Spread across approximately <strong>3 acres</strong>, the project is marketed with <strong>2 BHK, 2.5 BHK and 3 BHK</strong> apartment configurations thoughtfully engineered to accommodate diverse family requirements and lifestyle aspirations.
-              </p>
-              <p>
-                The development highlights spacious apartment layouts, dedicated clubhouse facilities, recreational amenities, and landscaped open spaces. With mid-rise towers designed with 2 Cellars, Stilt, and 10 Upper Floors, the project offers a low-density alternative to sprawling high-rises.
-              </p>
-              <p>
-                Its strategic location in Miyapur provides direct access to established educational institutions, multispecialty hospitals, shopping destinations like GSM Mall, and uninterrupted connectivity toward the Western Hyderabad employment corridors of HITEC City and Gachibowli.
-              </p>
+            {/* High-Impact 2-Column Overview with 3D Aerial Township Feature */}
+            <div className="grid lg:grid-cols-12 gap-8 items-center mb-12">
+              <div className="lg:col-span-6 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
+                  <p>
+                    Spread across approximately <strong>3 acres</strong>, the project is marketed with <strong>2 BHK, 2.5 BHK and 3 BHK</strong> apartment configurations thoughtfully engineered to accommodate diverse family requirements and lifestyle aspirations.
+                  </p>
+                  <p>
+                    The development highlights spacious apartment layouts, dedicated clubhouse facilities, recreational amenities, and landscaped open spaces. With mid-rise towers designed with 2 Cellars, Stilt, and 10 Upper Floors, the project offers a low-density alternative to sprawling high-rises.
+                  </p>
+                  <p>
+                    Its strategic location in Miyapur provides direct access to established educational institutions, multispecialty hospitals, shopping destinations like GSM Mall, and uninterrupted connectivity toward the Western Hyderabad employment corridors of HITEC City and Gachibowli.
+                  </p>
+                </div>
+              </div>
+
+              {/* 3D Master Township Aerial Card with Zoom */}
+              <div className="lg:col-span-6">
+                <div
+                  onClick={() => setSelectedImage(PROJECT_VISUALS[2])}
+                  className="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-slate-900 shadow-2xl cursor-zoom-in group"
+                >
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src={starlitAerial}
+                      alt="Pavani Starlit 3D aerial view showing 3 residential towers and lake"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-amber-400/40 text-[10px] font-bold text-amber-300">
+                      3-Acre Master Township
+                    </span>
+                  </div>
+                  <div className="absolute top-3 right-3 p-1.5 rounded-lg bg-slate-950/80 border border-slate-700 text-slate-300">
+                    <Maximize2 size={15} />
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800">
+                    <h4 className="text-xs sm:text-sm font-bold text-white">3D Master Township Aerial Perspective</h4>
+                    <p className="text-[11px] text-slate-400 mt-0.5">
+                      G+10 mid-rise towers wrapped around central courtyards with panoramic lake views. Tap to enlarge.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* 6 Attractive Highlight Cards */}
@@ -901,7 +1120,7 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 3. APARTMENT CONFIGURATIONS & DYNAMIC PRICING */}
+        {/* 3. APARTMENT CONFIGURATIONS & MASTER BLUEPRINT */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="configurations">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
@@ -1000,6 +1219,90 @@ export const PavaniStarlitPage = () => {
               ))}
             </div>
 
+            {/* MASTER PLAN LAYOUT & SANCTIONED BLUEPRINT FEATURE */}
+            <div className="mb-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-amber-500/30 shadow-2xl">
+              <div className="grid lg:grid-cols-12 gap-8 items-center">
+                {/* Blueprint Image Preview */}
+                <div className="lg:col-span-7">
+                  <div
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[3])}
+                    className="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 cursor-zoom-in group p-2 shadow-inner"
+                  >
+                    <img
+                      src={starlitMasterplan}
+                      alt="Pavani Starlit official master plan blueprint showing Tower A, Tower B, Tower C"
+                      className="w-full h-auto object-contain max-h-[460px] mx-auto rounded-lg group-hover:scale-[1.02] transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/90 text-[11px] font-bold text-amber-300 border border-slate-700 flex items-center gap-1.5 shadow-lg">
+                      <ZoomIn size={14} />
+                      <span>Tap to Inspect Blueprint</span>
+                    </div>
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
+                      Sanctioned Layout Blueprint
+                    </div>
+                  </div>
+                </div>
+
+                {/* Blueprint Breakdown Table */}
+                <div className="lg:col-span-5 space-y-4">
+                  <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400 block">
+                    Architectural Blueprint
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                    Sanctioned Floor Layout &amp; Tower Zoning
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    The official layout plan details 3 residential towers (Tower A, Tower B, Tower C) enclosing a central clubhouse, recreation lawns, swimming pool, and dedicated sports zones.
+                  </p>
+
+                  <div className="space-y-2 pt-1">
+                    <span className="text-xs font-bold text-slate-200 block">Sanctioned Unit Breakdown:</span>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
+                        <span className="text-[10px] text-amber-400 font-bold uppercase block">Tower B &amp; C Flexi</span>
+                        <span className="font-extrabold text-white">2 BHK + Study</span>
+                        <span className="text-[11px] text-slate-400 block">1,348 Sq. Ft.</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
+                        <span className="text-[10px] text-amber-400 font-bold uppercase block">Standard 3 BHK</span>
+                        <span className="font-extrabold text-white">1,469 – 1,767 Sft</span>
+                        <span className="text-[11px] text-slate-400 block">Towers A, B &amp; C</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
+                        <span className="text-[10px] text-amber-400 font-bold uppercase block">Large 3 BHK</span>
+                        <span className="font-extrabold text-white">1,898 – 1,999 Sft</span>
+                        <span className="text-[11px] text-slate-400 block">Tower B &amp; C Corner</span>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800">
+                        <span className="text-[10px] text-amber-400 font-bold uppercase block">Grand 3 BHK</span>
+                        <span className="font-extrabold text-white">2,109 – 2,115 Sft</span>
+                        <span className="text-[11px] text-slate-400 block">Tower A Premium</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex flex-wrap gap-2.5">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(PROJECT_VISUALS[3])}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-all shadow active:scale-95"
+                    >
+                      <Eye size={14} />
+                      <span>Inspect Sanctioned Blueprint</span>
+                    </button>
+                    <a
+                      href="#enquiry-section"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-xs transition-all active:scale-95"
+                    >
+                      <Download size={14} className="text-amber-400" />
+                      <span>Request Blueprint PDF</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Dynamic Price & Availability Advisory Section */}
             <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-950 border border-amber-500/30">
               <div className="grid lg:grid-cols-12 gap-8 items-center">
@@ -1056,7 +1359,7 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 4. CATEGORIZED AMENITIES (45,000+ SFT) */}
+        {/* 4. CATEGORIZED AMENITIES & SIGNATURE CLUBHOUSE SHOWCASE */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="amenities">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
@@ -1069,24 +1372,96 @@ export const PavaniStarlitPage = () => {
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 Carefully planned across dedicated indoor and outdoor zones to support fitness, remote business, and family recreation.
               </p>
+            </div>
 
-              {/* Amenity Category Tabs */}
-              <div className="flex flex-wrap justify-center gap-2 pt-4">
-                {AMENITY_GROUPS.map((grp) => (
-                  <button
-                    key={grp.id}
-                    onClick={() => setActiveAmenityTab(grp.id)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                      activeAmenityTab === grp.id
-                        ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
-                        : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
-                    }`}
+            {/* SIGNATURE CLUBHOUSE ARCHITECTURAL SHOWCASE */}
+            <div className="mb-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-amber-500/30 shadow-2xl">
+              <div className="grid lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7">
+                  <div
+                    onClick={() => setSelectedImage(PROJECT_VISUALS[1])}
+                    className="relative rounded-xl overflow-hidden border border-amber-500/30 bg-slate-950 cursor-zoom-in group aspect-[16/11]"
                   >
-                    {grp.icon}
-                    <span>{grp.name}</span>
-                  </button>
-                ))}
+                    <img
+                      src={starlitClubhouse}
+                      alt="Pavani Starlit signature clubhouse architecture"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
+                      Architectural Landmark
+                    </div>
+                    <div className="absolute top-3 right-3 p-1.5 rounded-lg bg-slate-950/80 border border-slate-700 text-slate-300">
+                      <Maximize2 size={15} />
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-slate-800">
+                      <h4 className="text-xs sm:text-sm font-bold text-white">45,000+ Sft Multi-Level Clubhouse</h4>
+                      <p className="text-[11px] text-slate-400 mt-0.5">
+                        Geometric lattice framing, glass wellness deck, banquet hall and infinity swimming pool. Tap to enlarge.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-5 space-y-4">
+                  <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400 block">
+                    Lifestyle Hub
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                    A Dedicated 45,000+ Sft Wellness &amp; Leisure Landmark
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Designed as an iconic architectural centerpiece, the standalone clubhouse combines modern geometric steel-and-glass design with 4 levels of lifestyle spaces.
+                  </p>
+                  <ul className="space-y-2.5 text-xs text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Ground &amp; Reception:</strong> Grand welcoming foyer, café, and administration desk.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Fitness Deck:</strong> Full-scale cardio gymnasium, yoga studio, and aerobics zone.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Co-Working &amp; Leisure:</strong> Business lounge, conference facilities, and indoor sports arena.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="text-amber-400 shrink-0 mt-0.5" />
+                      <span><strong>Celebration Zone:</strong> Air-conditioned banquet hall with adjoining party terrace.</span>
+                    </li>
+                  </ul>
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(PROJECT_VISUALS[1])}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition-all shadow active:scale-95"
+                    >
+                      <Maximize2 size={14} />
+                      <span>Inspect Clubhouse Architecture</span>
+                    </button>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* Amenity Category Tabs */}
+            <div className="flex flex-wrap justify-center gap-2 pt-2 mb-8">
+              {AMENITY_GROUPS.map((grp) => (
+                <button
+                  key={grp.id}
+                  onClick={() => setActiveAmenityTab(grp.id)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    activeAmenityTab === grp.id
+                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                      : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                  }`}
+                >
+                  {grp.icon}
+                  <span>{grp.name}</span>
+                </button>
+              ))}
             </div>
 
             {/* Active Amenity Group Details */}
@@ -1132,7 +1507,106 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 5. STRATEGIC LOCATION IN MIYAPUR */}
+        {/* 5. PROJECT GALLERY & ARCHITECTURAL SHOWCASE */}
+        <section className="py-16 lg:py-24 border-b border-slate-800/60" id="gallery">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+              <span className="text-xs font-extrabold tracking-widest uppercase text-amber-400">
+                Visual Documentation
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
+                Project Gallery &amp; Architectural Showcase
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                Explore high-resolution visual documentation of Pavani Starlit, from the grand street elevation and 45,000+ Sft clubhouse to the sanctioned master blueprint.
+              </p>
+
+              {/* Gallery Filter Tabs */}
+              <div className="flex flex-wrap justify-center gap-2 pt-4">
+                {[
+                  { key: "all", label: "All Visuals (4)" },
+                  { key: "elevation", label: "G+10 Elevation" },
+                  { key: "clubhouse", label: "Clubhouse Architecture" },
+                  { key: "aerial", label: "Township Aerial" },
+                  { key: "masterplan", label: "Sanctioned Blueprint" },
+                ].map((tab) => (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    onClick={() => setGalleryCategory(tab.key)}
+                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                      galleryCategory === tab.key
+                        ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                        : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Gallery Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              {(galleryCategory === "all"
+                ? PROJECT_VISUALS
+                : PROJECT_VISUALS.filter((v) => v.category === galleryCategory)
+              ).map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => setSelectedImage(item)}
+                  className="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-amber-500/50 cursor-pointer shadow-xl transition-all duration-300 hover:scale-[1.01] flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+
+                    {/* Badges */}
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-amber-400/40 text-[10px] font-bold text-amber-300">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    {/* Tap to Enlarge pill */}
+                    <div className="absolute top-3 right-3 p-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-slate-700 text-slate-300 group-hover:text-amber-400 transition-colors">
+                      <Maximize2 size={15} />
+                    </div>
+                  </div>
+
+                  <div className="p-5 flex-1 flex flex-col justify-between bg-gradient-to-b from-slate-900/90 to-slate-950">
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">
+                          {item.tag}
+                        </span>
+                        <span className="text-[10px] text-slate-500">Official Release</span>
+                      </div>
+                      <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                        {item.subtitle}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform">
+                      <span>Inspect High-Resolution Render</span>
+                      <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 6. STRATEGIC LOCATION IN MIYAPUR */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="location">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
@@ -1224,7 +1698,7 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 6. DEVELOPER PROFILE & RERA VERIFICATION */}
+        {/* 7. DEVELOPER PROFILE & RERA VERIFICATION */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="developer">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-stretch">
@@ -1312,7 +1786,7 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 7. INDEPENDENT BUYER ADVISORY & DUE DILIGENCE */}
+        {/* 8. INDEPENDENT BUYER ADVISORY & DUE DILIGENCE */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="advisory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
@@ -1432,7 +1906,7 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 8. FREQUENTLY ASKED QUESTIONS (12 FAQS) */}
+        {/* 9. FREQUENTLY ASKED QUESTIONS (12 FAQS) */}
         <section className="py-16 lg:py-24 border-b border-slate-800/60" id="faqs">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-12">
@@ -1466,7 +1940,7 @@ export const PavaniStarlitPage = () => {
           </div>
         </section>
 
-        {/* 9. MOBILE FIXED STICKY CTA BAR */}
+        {/* 10. MOBILE FIXED STICKY CTA BAR */}
         <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-xl border-t border-amber-500/30 p-2.5 grid grid-cols-3 gap-2 shadow-2xl">
           <a
             href={`tel:${PROJECT_CONFIG.phone}`}
@@ -1493,6 +1967,41 @@ export const PavaniStarlitPage = () => {
           </a>
         </div>
       </div>
+
+      {/* 11. FULLSCREEN IMAGE LIGHTBOX MODAL */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-5xl bg-slate-950/95 border-amber-500/30 p-2 sm:p-4 text-white">
+          <DialogTitle className="sr-only">
+            {selectedImage?.title || "Pavani Starlit Visual"}
+          </DialogTitle>
+          <DialogClose
+            aria-label="Close image"
+            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-900/90 text-amber-400 border border-amber-500/30 hover:bg-slate-800 transition-colors"
+          >
+            <X size={18} />
+          </DialogClose>
+          {selectedImage && (
+            <div className="space-y-3">
+              <div className="relative max-h-[80vh] flex items-center justify-center p-2 bg-slate-950 rounded-xl overflow-hidden">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+                />
+              </div>
+              <div className="px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <h4 className="text-sm font-bold text-white">{selectedImage.title}</h4>
+                  <p className="text-xs text-slate-400">{selectedImage.subtitle}</p>
+                </div>
+                <span className="text-[11px] font-bold text-amber-400 px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20 self-start sm:self-auto shrink-0">
+                  {selectedImage.badge}
+                </span>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
