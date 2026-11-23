@@ -60,6 +60,7 @@ const STATIC_URLS = [
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],
+  ["/privacy-policy", "0.5", "monthly"],
 ];
 
 

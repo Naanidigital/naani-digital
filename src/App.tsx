@@ -50,6 +50,7 @@ const OAuthConsentPage = lazy(() => import("./pages/OAuthConsentPage"));
 const HyderabadHubPage = lazy(() => import("./pages/HyderabadHubPage"));
 const BhkLandingPage = lazy(() => import("./pages/BhkLandingPage"));
 const BuyerGuidePage = lazy(() => import("./pages/BuyerGuidePage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 
 // Lazy-loaded CRM Pages (Stage 1 Foundation & Stage 2 Inbox)
 const CrmLoginPage = lazy(() => import("./pages/crm/CrmLoginPage").then(m => ({ default: m.CrmLoginPage })));
@@ -137,6 +138,8 @@ const App = () => (
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/tridasa-rise" element={<TridasaRisePage />} />
         <Route path="/projects/man-airport-residency-4bhk-villas-near-me-tukkuguda-hyderabad" element={<ManAirportResidencyPage />} />

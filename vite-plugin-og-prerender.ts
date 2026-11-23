@@ -3293,6 +3293,14 @@ const ogRoutes: OGRoute[] = [
     image: DEFAULT_OG,
     prerenderHtml: generateCategoryPrerenderHtml('/list-your-property', 'List Your Property in Hyderabad'),
   },
+  {
+    path: '/privacy-policy',
+    title: 'Privacy Policy | Naani Projects Hyderabad',
+    description: 'Read the Naani Projects Privacy Policy. Understand how we collect, use, protect, and process your property enquiry details, contact information, and WhatsApp communications.',
+    url: `${SITE}/privacy-policy`,
+    image: DEFAULT_OG,
+    prerenderHtml: generateCategoryPrerenderHtml('/privacy-policy', 'Privacy Policy – Naani Projects'),
+  },
 
   // ===== Location Hubs (Static Pre-render Targets) =====
   {

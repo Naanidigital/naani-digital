@@ -100,6 +100,7 @@ const Footer = () => {
                 { to: "/projects", label: "All Projects" },
                 { to: "/about-us", label: "About Us" },
                 { to: "/contact-us", label: "Contact" },
+                { to: "/privacy-policy", label: "Privacy Policy" },
               ].map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-foreground/80 font-bold hover:text-primary transition-colors">
@@ -177,7 +178,13 @@ const Footer = () => {
         {/* BOTTOM COPYRIGHT BAR */}
         <div className="pt-8 border-t border-amber-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs md:text-sm text-slate-400 font-medium">
-            <p>© {new Date().getFullYear()} Naani Projects. All rights reserved.</p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <p>© {new Date().getFullYear()} Naani Projects. All rights reserved.</p>
+              <span className="hidden sm:inline text-slate-600">•</span>
+              <Link to="/privacy-policy" className="text-slate-400 hover:text-amber-400 transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
             <p className="text-amber-400/90 font-bold">Find the Right Property, Smarter &amp; Faster on WhatsApp</p>
           </div>
         </div>
