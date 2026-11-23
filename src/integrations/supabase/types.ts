@@ -14,6 +14,166 @@ export type Database = {
   }
   public: {
     Tables: {
+      crm_conversations: {
+        Row: {
+          assigned_to: string | null
+          channel: string
+          created_at: string
+          customer_name: string | null
+          id: string
+          last_message_at: string
+          last_message_text: string | null
+          lead_id: string | null
+          status: string
+          unread_count: number
+          updated_at: string
+          wa_id: string
+        }
+        Insert: {
+          assigned_to?: string | null
+          channel?: string
+          created_at?: string
+          customer_name?: string | null
+          id?: string
+          last_message_at?: string
+          last_message_text?: string | null
+          lead_id?: string | null
+          status?: string
+          unread_count?: number
+          updated_at?: string
+          wa_id: string
+        }
+        Update: {
+          assigned_to?: string | null
+          channel?: string
+          created_at?: string
+          customer_name?: string | null
+          id?: string
+          last_message_at?: string
+          last_message_text?: string | null
+          lead_id?: string | null
+          status?: string
+          unread_count?: number
+          updated_at?: string
+          wa_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crm_conversations_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "crm_leads"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      crm_leads: {
+        Row: {
+          assigned_to: string | null
+          budget: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          last_contacted_at: string | null
+          looking_for: string | null
+          notes: string | null
+          phone: string
+          preferred_location: string | null
+          source: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          assigned_to?: string | null
+          budget?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          last_contacted_at?: string | null
+          looking_for?: string | null
+          notes?: string | null
+          phone: string
+          preferred_location?: string | null
+          source?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          assigned_to?: string | null
+          budget?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          last_contacted_at?: string | null
+          looking_for?: string | null
+          notes?: string | null
+          phone?: string
+          preferred_location?: string | null
+          source?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      crm_messages: {
+        Row: {
+          content: string | null
+          conversation_id: string
+          created_at: string
+          direction: string
+          error_message: string | null
+          id: string
+          media_url: string | null
+          message_type: string
+          raw_payload: Json | null
+          sender_id: string | null
+          sender_type: string
+          status: string
+          wa_message_id: string | null
+        }
+        Insert: {
+          content?: string | null
+          conversation_id: string
+          created_at?: string
+          direction: string
+          error_message?: string | null
+          id?: string
+          media_url?: string | null
+          message_type?: string
+          raw_payload?: Json | null
+          sender_id?: string | null
+          sender_type: string
+          status?: string
+          wa_message_id?: string | null
+        }
+        Update: {
+          content?: string | null
+          conversation_id?: string
+          created_at?: string
+          direction?: string
+          error_message?: string | null
+          id?: string
+          media_url?: string | null
+          message_type?: string
+          raw_payload?: Json | null
+          sender_id?: string | null
+          sender_type?: string
+          status?: string
+          wa_message_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crm_messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "crm_conversations"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       project_submissions: {
         Row: {
           created_at: string
@@ -204,6 +364,7 @@ export type Database = {
         Returns: boolean
       }
       is_valid_upload_ticket: { Args: { _ticket: string }; Returns: boolean }
+      normalize_phone: { Args: { phone_input: string }; Returns: string }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"

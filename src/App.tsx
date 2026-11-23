@@ -51,6 +51,17 @@ const HyderabadHubPage = lazy(() => import("./pages/HyderabadHubPage"));
 const BhkLandingPage = lazy(() => import("./pages/BhkLandingPage"));
 const BuyerGuidePage = lazy(() => import("./pages/BuyerGuidePage"));
 
+// Lazy-loaded CRM Pages (Stage 1 Foundation & Stage 2 Inbox)
+const CrmLoginPage = lazy(() => import("./pages/crm/CrmLoginPage").then(m => ({ default: m.CrmLoginPage })));
+const CrmOverviewPage = lazy(() => import("./pages/crm/CrmOverviewPage").then(m => ({ default: m.CrmOverviewPage })));
+const CrmLeadsPage = lazy(() => import("./pages/crm/CrmLeadsPage").then(m => ({ default: m.CrmLeadsPage })));
+const CrmInboxPage = lazy(() => import("./pages/crm/CrmInboxPage").then(m => ({ default: m.CrmInboxPage })));
+const CrmSettingsPage = lazy(() => import("./pages/crm/CrmSettingsPage").then(m => ({ default: m.CrmSettingsPage })));
+
+import { CrmAuthProvider } from "./contexts/CrmAuthContext";
+import { CrmGuard } from "./components/crm/CrmGuard";
+import { CrmLayout } from "./components/crm/CrmLayout";
+
 import { isBuilderSeoSlug } from "./lib/seoSlug";
 import MainLayout from "./components/layout/MainLayout";
 
@@ -92,6 +103,33 @@ const App = () => (
     <LeadGateProvider />
     <Suspense fallback={<PageLoader />}>
       <Routes>
+        {/* Isolated CRM Staff Portal Routes */}
+        <Route
+          path="/crm/login"
+          element={
+            <CrmAuthProvider>
+              <CrmLoginPage />
+            </CrmAuthProvider>
+          }
+        />
+        <Route
+          path="/crm"
+          element={
+            <CrmAuthProvider>
+              <CrmGuard />
+            </CrmAuthProvider>
+          }
+        >
+          <Route element={<CrmLayout />}>
+            <Route index element={<CrmOverviewPage />} />
+            <Route path="leads" element={<CrmLeadsPage />} />
+            <Route path="inbox" element={<CrmInboxPage />} />
+            <Route path="follow-ups" element={<CrmLeadsPage />} />
+            <Route path="analytics" element={<CrmOverviewPage />} />
+            <Route path="settings" element={<CrmSettingsPage />} />
+          </Route>
+        </Route>
+
         <Route element={<MainLayout />}>
           {/* Primary lowercase routes */}
           <Route path="/" element={<Index />} />
