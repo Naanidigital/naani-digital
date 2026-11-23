@@ -2,22 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import type { CrmConversation, CrmMessage } from "@/types/crm";
 import { formatPhone, formatMessageTime, getMessageDateDivider } from "@/lib/crmUtils";
 import {
+  getCustomerServiceWindow,
+  formatMetaError,
+} from "@/lib/crmWhatsApp";
+import {
   Send,
   ArrowLeft,
   Check,
   CheckCheck,
   AlertCircle,
+  AlertTriangle,
   Info,
-  Phone,
   Clock,
   FileText,
-  Image as ImageIcon,
   CheckCircle2,
-  Lock,
   RotateCcw,
-  Sparkles,
   ExternalLink,
-  ChevronUp
+  ChevronUp,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -33,6 +35,7 @@ interface ConversationViewerProps {
   onToggleStatus: (newStatus: "open" | "resolved") => Promise<void>;
   onToggleInfoPanel: () => void;
   showInfoPanel: boolean;
+  onSendMessage: (text: string) => Promise<{ success: boolean; error?: string }>;
 }
 
 export const ConversationViewer: React.FC<ConversationViewerProps> = ({
@@ -45,12 +48,18 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
   onToggleStatus,
   onToggleInfoPanel,
   showInfoPanel,
+  onSendMessage,
 }) => {
   const [draft, setDraft] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const [feedbackNotice, setFeedbackNotice] = useState<string | null>(null);
+  const [retryingMsgId, setRetryingMsgId] = useState<string | null>(null);
+  const [composerError, setComposerError] = useState<string | null>(null);
+  const [sendSuccessNotice, setSendSuccessNotice] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Compute 24-hour WhatsApp customer service window
+  const windowStatus = getCustomerServiceWindow(messages);
 
   // Auto-scroll to bottom on new messages or conversation change
   useEffect(() => {
@@ -59,22 +68,58 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
     }
   }, [conversation.id, messages.length]);
 
+  // Clear composer feedback when switching conversations
+  useEffect(() => {
+    setComposerError(null);
+    setSendSuccessNotice(null);
+  }, [conversation.id]);
+
   // Handle composer submission
   const handleSendMessage = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     const text = draft.trim();
     if (!text || isSending) return;
 
+    setComposerError(null);
+    setSendSuccessNotice(null);
     setIsSending(true);
-    // Explicit Stage 3 constraint check: Do NOT send via real API yet.
-    setTimeout(() => {
-      setFeedbackNotice(
-        "Stage 3 Preview: Outbound WhatsApp Cloud API sending activates in Stage 3. Outbound dispatch is held in preview mode."
-      );
+
+    try {
+      const res = await onSendMessage(text);
+      if (res.success) {
+        setDraft("");
+        setSendSuccessNotice("WhatsApp reply delivered to Meta Cloud API");
+        setTimeout(() => setSendSuccessNotice(null), 3500);
+      } else {
+        setComposerError(res.error || "Failed to dispatch WhatsApp message via Meta Cloud API.");
+      }
+    } catch (err: any) {
+      setComposerError(err.message || "An unexpected error occurred while sending message.");
+    } finally {
       setIsSending(false);
-      setDraft("");
-      setTimeout(() => setFeedbackNotice(null), 5000);
-    }, 400);
+    }
+  };
+
+  // Handle retry for failed message
+  const handleRetryMessage = async (msg: CrmMessage) => {
+    if (!msg.content || retryingMsgId || isSending) return;
+
+    setComposerError(null);
+    setRetryingMsgId(msg.id);
+
+    try {
+      const res = await onSendMessage(msg.content);
+      if (res.success) {
+        setSendSuccessNotice("Message successfully retried and accepted by Meta Cloud API.");
+        setTimeout(() => setSendSuccessNotice(null), 3500);
+      } else {
+        setComposerError(res.error || "Retry failed: Meta Cloud API rejected the message.");
+      }
+    } catch (err: any) {
+      setComposerError(err.message || "Retry failed due to an unexpected error.");
+    } finally {
+      setRetryingMsgId(null);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -84,7 +129,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
     }
   };
 
-  // Group messages by day
+  // Group messages chronologically by day
   const groupedMessages: { dateDivider: string; items: CrmMessage[] }[] = [];
   messages.forEach((msg) => {
     const divider = getMessageDateDivider(msg.created_at);
@@ -224,9 +269,10 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
                 </span>
               </div>
 
-              {/* Message Items in this date */}
+              {/* Message Items */}
               {group.items.map((msg) => {
                 const isInbound = msg.direction === "inbound";
+                const isFailed = msg.status === "failed";
 
                 return (
                   <div
@@ -239,6 +285,8 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
                       className={`max-w-[85%] md:max-w-[70%] rounded-2xl px-4 py-2.5 shadow-md relative text-sm ${
                         isInbound
                           ? "bg-slate-900 text-slate-100 border border-slate-800 rounded-tl-sm"
+                          : isFailed
+                          ? "bg-red-950/60 text-slate-100 border border-red-500/40 rounded-tr-sm"
                           : "bg-emerald-950/80 text-emerald-50 border border-emerald-600/30 rounded-tr-sm"
                       }`}
                     >
@@ -246,7 +294,11 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
                       <div className="flex items-center justify-between gap-3 text-[10px] mb-1">
                         <span
                           className={`font-semibold tracking-wide ${
-                            isInbound ? "text-slate-400" : "text-emerald-300"
+                            isInbound
+                              ? "text-slate-400"
+                              : isFailed
+                              ? "text-red-300"
+                              : "text-emerald-300"
                           }`}
                         >
                           {isInbound
@@ -300,10 +352,10 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
                               <CheckCheck className="w-3.5 h-3.5 text-slate-400" />
                             ) : msg.status === "sent" ? (
                               <Check className="w-3.5 h-3.5 text-slate-400" />
-                            ) : msg.status === "failed" ? (
+                            ) : isFailed ? (
                               <AlertCircle
                                 className="w-3.5 h-3.5 text-red-400"
-                                title={msg.error_message || "Message delivery failed"}
+                                title={formatMetaError(msg.error_message)}
                               />
                             ) : (
                               <Clock className="w-3 h-3 text-slate-500" />
@@ -311,12 +363,42 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
                           </span>
                         )}
                       </div>
+
+                      {/* Outbound Failure & Retry Action */}
+                      {isFailed && (
+                        <div className="flex items-center justify-between gap-2 mt-2 pt-2 border-t border-red-500/20 text-xs">
+                          <span className="text-[11px] text-red-300 font-medium">
+                            Delivery failed
+                          </span>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            disabled={retryingMsgId === msg.id || isSending}
+                            onClick={() => handleRetryMessage(msg)}
+                            className="h-6 px-2 text-[10px] bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 rounded"
+                            title="Retry sending this message to customer"
+                          >
+                            {retryingMsgId === msg.id ? (
+                              <>
+                                <Loader2 className="w-3 h-3 mr-1 animate-spin" />
+                                Retrying...
+                              </>
+                            ) : (
+                              <>
+                                <RotateCcw className="w-3 h-3 mr-1" />
+                                Retry
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      )}
                     </div>
 
-                    {msg.status === "failed" && msg.error_message && (
-                      <span className="text-[10px] text-red-400 mt-1 max-w-[70%] text-right font-mono">
-                        {msg.error_message}
-                      </span>
+                    {/* Detailed Meta Error Breakdown */}
+                    {isFailed && msg.error_message && (
+                      <div className="text-[10px] text-red-400/90 mt-1 max-w-[85%] md:max-w-[70%] text-right font-mono bg-red-950/40 border border-red-900/40 rounded px-2.5 py-1">
+                        {formatMetaError(msg.error_message)}
+                      </div>
                     )}
                   </div>
                 );
@@ -328,52 +410,121 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
         <div ref={messagesEndRef} />
       </div>
 
-      {/* 3. Stage 3 Integration Feedback Notice */}
-      {feedbackNotice && (
-        <div className="px-4 py-2 bg-amber-950/70 border-t border-amber-500/30 text-amber-200 text-xs flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Lock className="w-4 h-4 text-amber-400 shrink-0" />
-            <span>{feedbackNotice}</span>
+      {/* 3. Message Composer & Compliance Area */}
+      <div className="p-3 md:p-4 border-t border-slate-800 bg-slate-900/95 backdrop-blur shrink-0">
+        {/* Feedback / Success Notice */}
+        {sendSuccessNotice && (
+          <div className="mb-2 p-2.5 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-xs flex items-center justify-between gap-2 shadow-sm animate-in fade-in duration-150">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>{sendSuccessNotice}</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setSendSuccessNotice(null)}
+              className="text-emerald-400 hover:text-emerald-100 font-bold px-1.5 py-0.5 text-xs"
+            >
+              ✕
+            </button>
           </div>
-          <button
-            onClick={() => setFeedbackNotice(null)}
-            className="text-amber-400 hover:text-amber-100 text-xs font-bold px-2 py-0.5"
-          >
-            Dismiss
-          </button>
-        </div>
-      )}
+        )}
 
-      {/* 4. Message Composer */}
-      <div className="p-3 md:p-4 border-t border-slate-800 bg-slate-900/90 backdrop-blur shrink-0">
-        <div className="flex items-center justify-between text-[11px] text-slate-400 mb-2">
-          <span className="flex items-center gap-1.5 text-amber-400 font-mono text-[10px]">
-            <Lock className="w-3 h-3" />
-            Awaiting Stage 3: WhatsApp Cloud API Sending
-          </span>
-          <span className="text-[10px] text-slate-500 hidden sm:inline">
-            <kbd className="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">Enter</kbd> to send &bull; <kbd className="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">Shift+Enter</kbd> for new line
-          </span>
-        </div>
+        {/* Composer Error Notice */}
+        {composerError && (
+          <div className="mb-2 p-3 rounded-xl bg-red-950/90 border border-red-500/50 text-red-200 text-xs flex items-start justify-between gap-2 shadow-md animate-in fade-in duration-150">
+            <div className="flex items-start gap-2 min-w-0">
+              <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+              <div className="leading-relaxed break-words">
+                <span className="font-semibold block text-red-300 mb-0.5">Delivery Error</span>
+                <span>{composerError}</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setComposerError(null)}
+              className="text-red-400 hover:text-red-100 font-bold px-1.5 py-0.5 rounded text-xs shrink-0"
+              title="Dismiss error"
+            >
+              ✕
+            </button>
+          </div>
+        )}
 
+        {/* 24-Hour WhatsApp Compliance Status */}
+        {windowStatus.isOpen ? (
+          <div className="flex items-center justify-between text-[11px] mb-2 px-1">
+            <div className="flex items-center gap-1.5 text-emerald-400 font-mono text-[11px]">
+              <Clock className="w-3.5 h-3.5 text-emerald-400" />
+              <span>24h Service Window: Active ({windowStatus.formattedRemaining})</span>
+            </div>
+            <span className="text-[10px] text-slate-500 hidden sm:inline">
+              <kbd className="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">Enter</kbd> to send &bull; <kbd className="px-1 py-0.5 bg-slate-800 rounded border border-slate-700 text-slate-300">Shift+Enter</kbd> for new line
+            </span>
+          </div>
+        ) : (
+          <div className="mb-2.5 p-2.5 rounded-xl bg-amber-950/60 border border-amber-500/30 text-amber-200 text-xs flex items-start gap-2.5">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div className="flex-1 text-[11px] leading-relaxed">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-bold text-amber-300">
+                  24-Hour Customer Window Expired (Meta Policy)
+                </span>
+                <span className="text-[10px] font-mono text-amber-400/80 bg-amber-950 px-1.5 py-0.5 rounded border border-amber-800/40">
+                  Window Closed
+                </span>
+              </div>
+              <p className="text-slate-300 mt-1">
+                WhatsApp Cloud API policy restricts free-form text messages once 24 hours pass since the customer's last reply. Pre-approved templates are required to re-engage.
+              </p>
+              <div className="mt-2 pt-1.5 border-t border-amber-500/20 text-[10px] text-amber-300/90 flex flex-wrap items-center justify-between gap-2">
+                <span>Message Templates: None registered in account</span>
+                <a
+                  href={`https://wa.me/${conversation.wa_id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium"
+                >
+                  Direct WhatsApp Link
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Composer Form */}
         <form onSubmit={handleSendMessage} className="flex items-end gap-2">
           <Textarea
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type a WhatsApp reply to customer..."
+            disabled={isSending}
+            placeholder={
+              windowStatus.isOpen
+                ? "Type a WhatsApp reply to customer... (Enter to send, Shift+Enter for new line)"
+                : "Type message (Notice: free-form text outside 24h window will be rejected by Meta without approved template)..."
+            }
             rows={2}
-            className="flex-1 bg-slate-950/80 border-slate-800 focus-visible:ring-emerald-500 text-slate-100 placeholder:text-slate-500 text-xs rounded-xl resize-none py-2 px-3 min-h-[46px] max-h-32"
+            className="flex-1 bg-slate-950/80 border-slate-800 focus-visible:ring-emerald-500 text-slate-100 placeholder:text-slate-500 text-xs rounded-xl resize-none py-2 px-3 min-h-[46px] max-h-32 disabled:opacity-60"
           />
 
           <Button
             type="submit"
             disabled={!draft.trim() || isSending}
             className="bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold h-11 px-4 rounded-xl shadow-lg shadow-emerald-500/20 disabled:opacity-40 disabled:hover:bg-emerald-600 transition-all shrink-0"
-            title="Send WhatsApp message (Stage 3 preview)"
+            title="Send WhatsApp message"
           >
-            <Send className="w-4 h-4 mr-1.5" />
-            <span className="hidden sm:inline">Send</span>
+            {isSending ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-1.5 animate-spin" />
+                <span className="hidden sm:inline">Sending...</span>
+              </>
+            ) : (
+              <>
+                <Send className="w-4 h-4 mr-1.5" />
+                <span className="hidden sm:inline">Send</span>
+              </>
+            )}
           </Button>
         </form>
       </div>

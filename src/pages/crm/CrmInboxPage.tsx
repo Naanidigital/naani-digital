@@ -6,6 +6,8 @@ import { ConversationList } from "@/components/crm/inbox/ConversationList";
 import { ConversationViewer } from "@/components/crm/inbox/ConversationViewer";
 import { CustomerInfoPanel } from "@/components/crm/inbox/CustomerInfoPanel";
 import { MessageSquare, RefreshCw, AlertCircle } from "lucide-react";
+import { useCrmAuth } from "@/contexts/CrmAuthContext";
+import { sendWhatsAppMessage } from "@/lib/crmWhatsApp";
 
 // Demo mock data exclusively for DEV verification (?demo=true)
 const DEMO_CONVERSATIONS: CrmConversation[] = [
@@ -82,6 +84,20 @@ const DEMO_MESSAGES: CrmMessage[] = [
     error_message: null,
     created_at: new Date(Date.now() - 3600000 * 1).toISOString(),
   },
+  {
+    id: "demo-m-4",
+    conversation_id: "demo-conv-2",
+    wa_message_id: "wamid-demo-4",
+    direction: "inbound",
+    sender_type: "customer",
+    sender_id: "919123456789",
+    message_type: "text",
+    content: "Thank you for sharing the floor plan! Could you check if any east-facing units are available?",
+    media_url: null,
+    status: "received",
+    error_message: null,
+    created_at: new Date(Date.now() - 3600000 * 48).toISOString(),
+  },
 ];
 
 const DEMO_LEAD: CrmLead = {
@@ -105,6 +121,7 @@ export const CrmInboxPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialConvId = searchParams.get("id");
   const isDemo = import.meta.env.DEV && searchParams.get("demo") === "true";
+  const { user, isStaff } = useCrmAuth();
 
   // State
   const [conversations, setConversations] = useState<CrmConversation[]>([]);
@@ -137,12 +154,16 @@ export const CrmInboxPage: React.FC = () => {
 
     if (isDemo) {
       setConversations(DEMO_CONVERSATIONS);
-      const target = DEMO_CONVERSATIONS[0];
+      const matched = initialConvId
+        ? DEMO_CONVERSATIONS.find((c) => c.id === initialConvId)
+        : null;
+      const target = matched || DEMO_CONVERSATIONS[0];
       setActiveConversationId(target.id);
       setActiveConversation(target);
-      setMessages(DEMO_MESSAGES);
-      setActiveLead(DEMO_LEAD);
-      setShowInfoPanel(true);
+      const demoList = DEMO_MESSAGES.filter((m) => m.conversation_id === target.id);
+      setMessages(demoList);
+      setActiveLead(target.id === "demo-conv-1" ? DEMO_LEAD : null);
+      setShowInfoPanel(target.id === "demo-conv-1");
       setIsLoadingConversations(false);
       return;
     }
@@ -304,7 +325,7 @@ export const CrmInboxPage: React.FC = () => {
     setActiveConversationId(conv.id);
     setActiveConversation(conv);
     setMobileShowChat(true);
-    setSearchParams({ id: conv.id });
+    setSearchParams(isDemo ? { id: conv.id, demo: "true" } : { id: conv.id });
 
     // Mark as read in DB if unread_count > 0
     if (conv.unread_count > 0) {
@@ -356,6 +377,116 @@ export const CrmInboxPage: React.FC = () => {
       }
     } catch (err: any) {
       console.warn("[CRM Inbox] Status update exception:", err.message);
+    }
+  };
+
+  // 6b. Send WhatsApp Message via Edge Function
+  const handleSendMessage = async (
+    text: string
+  ): Promise<{ success: boolean; error?: string }> => {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return { success: false, error: "Message content cannot be empty." };
+    }
+    if (!activeConversation) {
+      return { success: false, error: "No active conversation selected." };
+    }
+
+    if (!user) {
+      return {
+        success: false,
+        error: "Authentication required. Please sign in with staff credentials.",
+      };
+    }
+    if (!isStaff) {
+      return {
+        success: false,
+        error: "Access denied: Admin or Moderator role required to send WhatsApp messages.",
+      };
+    }
+
+    // DEV demo mode handling
+    if (isDemo && activeConversation.id.startsWith("demo-")) {
+      const nowIso = new Date().toISOString();
+      const newDemoMsg: CrmMessage = {
+        id: `demo-msg-${Date.now()}`,
+        conversation_id: activeConversation.id,
+        wa_message_id: `wamid-demo-${Date.now()}`,
+        direction: "outbound",
+        sender_type: "agent",
+        sender_id: user.id || "demo-agent",
+        message_type: "text",
+        content: trimmed,
+        media_url: null,
+        status: "sent",
+        error_message: null,
+        created_at: nowIso,
+      };
+
+      setMessages((prev) => [...prev, newDemoMsg]);
+      setActiveConversation((curr) =>
+        curr
+          ? {
+              ...curr,
+              last_message_text: trimmed,
+              last_message_at: nowIso,
+              unread_count: 0,
+            }
+          : curr
+      );
+      setConversations((prev) =>
+        prev.map((c) =>
+          c.id === activeConversation.id
+            ? { ...c, last_message_text: trimmed, last_message_at: nowIso, unread_count: 0 }
+            : c
+        )
+      );
+      return { success: true };
+    }
+
+    try {
+      const res = await sendWhatsAppMessage({
+        toPhone: activeConversation.wa_id,
+        messageText: trimmed,
+        conversationId: activeConversation.id,
+      });
+
+      if (!res.success) {
+        // Query recent messages to retrieve any failed attempt recorded by the backend
+        fetchMessages(activeConversation.id);
+        return {
+          success: false,
+          error: res.error || "Failed to dispatch WhatsApp message via Meta Cloud API",
+        };
+      }
+
+      // Success: sync local state and fetch updated messages
+      const nowIso = new Date().toISOString();
+      setActiveConversation((curr) =>
+        curr
+          ? {
+              ...curr,
+              last_message_text: trimmed,
+              last_message_at: nowIso,
+              unread_count: 0,
+            }
+          : curr
+      );
+      setConversations((prev) =>
+        prev.map((c) =>
+          c.id === activeConversation.id
+            ? { ...c, last_message_text: trimmed, last_message_at: nowIso, unread_count: 0 }
+            : c
+        )
+      );
+
+      fetchMessages(activeConversation.id);
+      return { success: true };
+    } catch (err: any) {
+      return {
+        success: false,
+        error: err.message || "An unexpected error occurred during dispatch.",
+      };
     }
   };
 
@@ -462,6 +593,7 @@ export const CrmInboxPage: React.FC = () => {
               onToggleStatus={handleToggleStatus}
               onToggleInfoPanel={() => setShowInfoPanel(!showInfoPanel)}
               showInfoPanel={showInfoPanel}
+              onSendMessage={handleSendMessage}
             />
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-slate-500 bg-slate-950">
