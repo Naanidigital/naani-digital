@@ -14,6 +14,52 @@ import {
 // Curated collection of Meta-approved and review-state templates
 export const MOCK_WHATSAPP_TEMPLATES: WhatsAppTemplate[] = [
   {
+    id: 'tmpl_canny_aravindham1_00',
+    name: 'canny_aravindham1',
+    category: 'MARKETING',
+    defaultLanguage: 'en',
+    lastUpdated: '2026-11-25T10:00:00Z',
+    qualityScore: 'HIGH',
+    translations: [
+      {
+        code: 'en',
+        languageName: 'English (en)',
+        status: 'APPROVED',
+        components: [
+          {
+            type: 'HEADER',
+            format: 'IMAGE',
+            example: {
+              header_text: ['https://naani.in/assets/canny-aravindam-clubhouse.jpg'],
+            },
+          },
+          {
+            type: 'BODY',
+            text: 'Hello, welcome to Canny Aravindam by Naani Projects. Discover premium luxury 3 BHK apartments in Kompally with grand amenities and lush landscapes.',
+          },
+          {
+            type: 'FOOTER',
+            text: 'Naani Projects • Hyderabad',
+          },
+          {
+            type: 'BUTTONS',
+            buttons: [
+              {
+                type: 'QUICK_REPLY',
+                text: 'Schedule Site Visit',
+              },
+              {
+                type: 'URL',
+                text: 'View Project Details',
+                url: 'https://naani.in/canny-aravindam',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'tmpl_cascades_launch_01',
     name: 'cascades_launch_invitation',
     category: 'MARKETING',

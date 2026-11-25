@@ -317,14 +317,17 @@ export const CrmCampaignsPage: React.FC = () => {
     setActiveTab('create');
   };
 
-  const handleSelectTemplateForCampaign = (template: WhatsAppTemplate, languageCode: string) => {
+  const handleSelectTemplateForCampaign = (template: any, languageCode?: string) => {
+    const tmplName = template.template_name || template.name || 'campaign_template';
+    const tmplLang = languageCode || template.language || template.defaultLanguage || 'en';
+    const tmplCategory = template.category || 'MARKETING';
     setEditingDraft({
       id: `draft_${Date.now()}`,
-      name: `${template.name.replace(/_/g, ' ')} Campaign`,
-      objective: template.category === 'MARKETING' ? 'project_launch' : 'lead_reengagement',
-      templateId: template.id,
-      templateName: template.name,
-      languageCode,
+      name: `${tmplName.replace(/_/g, ' ')} Campaign`,
+      objective: tmplCategory === 'MARKETING' ? 'project_launch' : 'lead_reengagement',
+      templateId: template.id || tmplName,
+      templateName: tmplName,
+      languageCode: tmplLang,
       variableMappings: [],
       audienceFilters: { sourceType: 'all' },
       audienceStats: {
