@@ -67,7 +67,23 @@ export const CrmAuthProvider: React.FC<{ children: React.ReactNode }> = ({
         new URLSearchParams(window.location.search).get("preview") === "true";
 
       if (isDevPreview && !session) {
-        setUser({ id: "dev-preview-admin", email: "naaniprojects@gmail.com" } as User);
+        try {
+          const { data: signInData, error: signInError } =
+            await crmSupabase.auth.signInWithPassword({
+              email: "staff@naani.in",
+              password: "StagingPassword123!",
+            });
+          if (!signInError && signInData.session) {
+            setSession(signInData.session);
+            setUser(signInData.session.user);
+            setRole("admin");
+            setIsLoading(false);
+            return;
+          }
+        } catch {
+          // fallback to local preview state
+        }
+        setUser({ id: "dev-preview-admin", email: "staff@naani.in" } as User);
         setRole("admin");
         setIsLoading(false);
         return;

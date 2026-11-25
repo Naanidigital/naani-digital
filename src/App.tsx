@@ -57,6 +57,7 @@ const CrmLoginPage = lazy(() => import("./pages/crm/CrmLoginPage").then(m => ({ 
 const CrmOverviewPage = lazy(() => import("./pages/crm/CrmOverviewPage").then(m => ({ default: m.CrmOverviewPage })));
 const CrmLeadsPage = lazy(() => import("./pages/crm/CrmLeadsPage").then(m => ({ default: m.CrmLeadsPage })));
 const CrmInboxPage = lazy(() => import("./pages/crm/CrmInboxPage").then(m => ({ default: m.CrmInboxPage })));
+const CrmCampaignsPage = lazy(() => import("./pages/crm/CrmCampaignsPage").then(m => ({ default: m.CrmCampaignsPage })));
 const CrmSettingsPage = lazy(() => import("./pages/crm/CrmSettingsPage").then(m => ({ default: m.CrmSettingsPage })));
 
 import { CrmAuthProvider } from "./contexts/CrmAuthContext";
@@ -125,6 +126,7 @@ const App = () => (
             <Route index element={<CrmOverviewPage />} />
             <Route path="leads" element={<CrmLeadsPage />} />
             <Route path="inbox" element={<CrmInboxPage />} />
+            <Route path="campaigns" element={<CrmCampaignsPage />} />
             <Route path="follow-ups" element={<CrmLeadsPage />} />
             <Route path="analytics" element={<CrmOverviewPage />} />
             <Route path="settings" element={<CrmSettingsPage />} />

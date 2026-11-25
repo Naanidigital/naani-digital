@@ -97,6 +97,12 @@ export function formatMetaError(error: any): string {
       return "Message Undeliverable (#131026): Recipient is not registered on WhatsApp or has blocked incoming business messages.";
     case 130429:
       return "Rate Limit Exceeded (#130429): WhatsApp Cloud API throughput limit reached. Please retry in a few moments.";
+    case 131056:
+      return "Pair Rate Limit (#131056): Message frequency limit exceeded for this recipient. Please wait 60 seconds before sending another message.";
+    case 131048:
+      return "Spam / Quality Restriction (#131048): WhatsApp flagged messaging quality or spam activity. Sending paused for safety.";
+    case 131049:
+      return "Marketing Message Cap (#131049): Meta daily marketing message limit reached for this user.";
     case 131051:
       return "Unsupported Message Type (#131051): Unsupported message format.";
     default:
@@ -118,6 +124,10 @@ export interface SendWhatsAppResponse {
   messageId?: string;
   conversationId?: string;
   error?: string;
+  code?: string;
+  isCooldownBlocked?: boolean;
+  waitSecondsRemaining?: number;
+  previousSource?: string;
   details?: any;
 }
 
@@ -172,12 +182,20 @@ export async function sendWhatsAppMessage(
     if (error) {
       let extractedError = error.message;
       let errorDetails: any = null;
+      let isCooldownBlocked = false;
+      let waitSecondsRemaining: number | undefined = undefined;
+      let code: string | undefined = undefined;
+      let previousSource: string | undefined = undefined;
 
       // Extract JSON payload from FunctionsHttpError context if present
       if (error && "context" in error && error.context) {
         try {
           const body = await (error.context as Response).json();
           if (body.error) extractedError = body.error;
+          if (body.code) code = body.code;
+          if (body.isCooldownBlocked) isCooldownBlocked = true;
+          if (body.waitSecondsRemaining) waitSecondsRemaining = body.waitSecondsRemaining;
+          if (body.previousSource) previousSource = body.previousSource;
           if (body.details) {
             errorDetails = body.details;
             extractedError = formatMetaError(body.details);
@@ -190,15 +208,25 @@ export async function sendWhatsAppMessage(
       return {
         success: false,
         error: extractedError || "Failed to dispatch WhatsApp message via Edge Function",
+        code,
+        isCooldownBlocked,
+        waitSecondsRemaining,
+        previousSource,
         details: errorDetails,
       };
     }
 
     if (!data || !data.success) {
-      const errMsg = data?.error ? formatMetaError(data.details || data.error) : "Unexpected response from WhatsApp dispatch";
+      const errMsg = data?.error
+        ? (typeof data.error === "string" ? data.error : formatMetaError(data.details || data.error))
+        : "Unexpected response from WhatsApp dispatch";
       return {
         success: false,
         error: errMsg,
+        code: data?.code,
+        isCooldownBlocked: data?.isCooldownBlocked,
+        waitSecondsRemaining: data?.waitSecondsRemaining,
+        previousSource: data?.previousSource,
         details: data?.details,
       };
     }

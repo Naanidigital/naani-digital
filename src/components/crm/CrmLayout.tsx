@@ -15,7 +15,8 @@ import {
   X,
   ExternalLink,
   Shield,
-  CircleDot
+  CircleDot,
+  Send
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,6 +30,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: "Overview", path: "/crm", icon: LayoutDashboard },
   { label: "WhatsApp Inbox", path: "/crm/inbox", icon: MessageSquare },
+  { label: "Campaigns", path: "/crm/campaigns", icon: Send },
   { label: "Leads", path: "/crm/leads", icon: Users },
   { label: "Follow-ups", path: "/crm/follow-ups", icon: CalendarCheck },
   { label: "Analytics", path: "/crm/analytics", icon: BarChart3 },
@@ -77,6 +79,10 @@ export const CrmLayout: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
+  const crmUrl = import.meta.env.VITE_CRM_SUPABASE_URL || "https://lpbdwmpglwdedqdiovqu.supabase.co";
+  const isStaging = crmUrl.includes("bhwoenqfxbgkbrsmahjt");
+  const projectRef = isStaging ? "bhwoenqfxbgkbrsmahjt" : "lpbdwmpglwdedqdiovqu";
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col md:flex-row font-sans selection:bg-amber-500 selection:text-slate-950">
       {/* Mobile Top Header */}
@@ -87,9 +93,15 @@ export const CrmLayout: React.FC = () => {
           </div>
           <div>
             <span className="font-bold text-slate-100 text-sm">Naani CRM</span>
-            <span className="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-1.5 py-0.2 rounded ml-1.5 uppercase font-mono">
-              Staff
-            </span>
+            {isStaging ? (
+              <span className="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.2 rounded ml-1.5 uppercase font-mono font-bold">
+                STAGING
+              </span>
+            ) : (
+              <span className="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-1.5 py-0.2 rounded ml-1.5 uppercase font-mono">
+                Staff
+              </span>
+            )}
           </div>
         </Link>
         <button
@@ -115,12 +127,17 @@ export const CrmLayout: React.FC = () => {
                 <Building2 className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-bold text-slate-100 text-base leading-tight">
+                <div className="font-bold text-slate-100 text-base leading-tight flex items-center gap-1.5">
                   Naani CRM
+                  {isStaging && (
+                    <span className="text-[9px] font-mono bg-amber-500/20 text-amber-300 border border-amber-500/40 px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                      STAGING
+                    </span>
+                  )}
                 </div>
-                <div className="text-[11px] text-slate-400 flex items-center gap-1.5 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
-                  lpbdwmpglwdedqdiovqu
+                <div className="text-[10px] font-mono text-slate-400 flex items-center gap-1.5 mt-0.5">
+                  <span className={`w-1.5 h-1.5 rounded-full inline-block animate-pulse ${isStaging ? "bg-amber-400" : "bg-emerald-400"}`}></span>
+                  {projectRef}
                 </div>
               </div>
             </Link>

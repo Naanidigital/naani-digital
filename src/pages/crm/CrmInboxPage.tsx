@@ -383,7 +383,12 @@ export const CrmInboxPage: React.FC = () => {
   // 6b. Send WhatsApp Message via Edge Function
   const handleSendMessage = async (
     text: string
-  ): Promise<{ success: boolean; error?: string }> => {
+  ): Promise<{
+    success: boolean;
+    error?: string;
+    isCooldownBlocked?: boolean;
+    waitSecondsRemaining?: number;
+  }> => {
     const trimmed = text.trim();
     if (!trimmed) {
       return { success: false, error: "Message content cannot be empty." };
@@ -457,6 +462,8 @@ export const CrmInboxPage: React.FC = () => {
         return {
           success: false,
           error: res.error || "Failed to dispatch WhatsApp message via Meta Cloud API",
+          isCooldownBlocked: res.isCooldownBlocked,
+          waitSecondsRemaining: res.waitSecondsRemaining,
         };
       }
 

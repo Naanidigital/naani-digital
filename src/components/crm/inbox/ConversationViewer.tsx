@@ -35,7 +35,12 @@ interface ConversationViewerProps {
   onToggleStatus: (newStatus: "open" | "resolved") => Promise<void>;
   onToggleInfoPanel: () => void;
   showInfoPanel: boolean;
-  onSendMessage: (text: string) => Promise<{ success: boolean; error?: string }>;
+  onSendMessage: (text: string) => Promise<{
+    success: boolean;
+    error?: string;
+    isCooldownBlocked?: boolean;
+    waitSecondsRemaining?: number;
+  }>;
 }
 
 export const ConversationViewer: React.FC<ConversationViewerProps> = ({
@@ -54,6 +59,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
   const [isSending, setIsSending] = useState(false);
   const [retryingMsgId, setRetryingMsgId] = useState<string | null>(null);
   const [composerError, setComposerError] = useState<string | null>(null);
+  const [isCooldownBlocked, setIsCooldownBlocked] = useState(false);
   const [sendSuccessNotice, setSendSuccessNotice] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -71,6 +77,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
   // Clear composer feedback when switching conversations
   useEffect(() => {
     setComposerError(null);
+    setIsCooldownBlocked(false);
     setSendSuccessNotice(null);
   }, [conversation.id]);
 
@@ -81,6 +88,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
     if (!text || isSending) return;
 
     setComposerError(null);
+    setIsCooldownBlocked(false);
     setSendSuccessNotice(null);
     setIsSending(true);
 
@@ -91,6 +99,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
         setSendSuccessNotice("WhatsApp reply delivered to Meta Cloud API");
         setTimeout(() => setSendSuccessNotice(null), 3500);
       } else {
+        setIsCooldownBlocked(!!res.isCooldownBlocked);
         setComposerError(res.error || "Failed to dispatch WhatsApp message via Meta Cloud API.");
       }
     } catch (err: any) {
@@ -105,6 +114,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
     if (!msg.content || retryingMsgId || isSending) return;
 
     setComposerError(null);
+    setIsCooldownBlocked(false);
     setRetryingMsgId(msg.id);
 
     try {
@@ -113,6 +123,7 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
         setSendSuccessNotice("Message successfully retried and accepted by Meta Cloud API.");
         setTimeout(() => setSendSuccessNotice(null), 3500);
       } else {
+        setIsCooldownBlocked(!!res.isCooldownBlocked);
         setComposerError(res.error || "Retry failed: Meta Cloud API rejected the message.");
       }
     } catch (err: any) {
@@ -429,20 +440,43 @@ export const ConversationViewer: React.FC<ConversationViewerProps> = ({
           </div>
         )}
 
-        {/* Composer Error Notice */}
+        {/* Composer Error / Rate Limit Cooldown Notice */}
         {composerError && (
-          <div className="mb-2 p-3 rounded-xl bg-red-950/90 border border-red-500/50 text-red-200 text-xs flex items-start justify-between gap-2 shadow-md animate-in fade-in duration-150">
+          <div
+            className={`mb-2 p-3 rounded-xl ${
+              isCooldownBlocked
+                ? "bg-amber-950/90 border border-amber-500/50 text-amber-200"
+                : "bg-red-950/90 border border-red-500/50 text-red-200"
+            } text-xs flex items-start justify-between gap-2 shadow-md animate-in fade-in duration-150`}
+          >
             <div className="flex items-start gap-2 min-w-0">
-              <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+              {isCooldownBlocked ? (
+                <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              ) : (
+                <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+              )}
               <div className="leading-relaxed break-words">
-                <span className="font-semibold block text-red-300 mb-0.5">Delivery Error</span>
+                <span
+                  className={`font-semibold block ${
+                    isCooldownBlocked ? "text-amber-300" : "text-red-300"
+                  } mb-0.5`}
+                >
+                  {isCooldownBlocked ? "Recipient Pair Pacing Cooldown" : "Delivery Error"}
+                </span>
                 <span>{composerError}</span>
               </div>
             </div>
             <button
               type="button"
-              onClick={() => setComposerError(null)}
-              className="text-red-400 hover:text-red-100 font-bold px-1.5 py-0.5 rounded text-xs shrink-0"
+              onClick={() => {
+                setComposerError(null);
+                setIsCooldownBlocked(false);
+              }}
+              className={`${
+                isCooldownBlocked
+                  ? "text-amber-400 hover:text-amber-100"
+                  : "text-red-400 hover:text-red-100"
+              } font-bold px-1.5 py-0.5 rounded text-xs shrink-0`}
               title="Dismiss error"
             >
               ✕
