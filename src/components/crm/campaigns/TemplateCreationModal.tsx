@@ -34,7 +34,8 @@ import {
   HeaderFormat,
   validateTemplate,
   saveDraftTemplate,
-  submitTemplateToMeta
+  submitTemplateToMeta,
+  removeAndRenumberVariable
 } from '@/lib/templateManagementService';
 
 interface TemplateCreationModalProps {
@@ -127,6 +128,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
     const matches = [...bodyText.matchAll(/\{\{(\d+)\}\}/g)];
     const count = matches.length;
     setBodyExamples((prev) => {
+      if (prev.length === count) return prev;
       const next = [...prev];
       while (next.length < count) next.push('');
       return next.slice(0, count);
@@ -135,11 +137,27 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
 
   if (!isOpen) return null;
 
-  // Insert variable into body
+  // Insert variable into body ensuring strictly next sequential number
   const handleInsertVariable = () => {
     const matches = [...bodyText.matchAll(/\{\{(\d+)\}\}/g)];
-    const nextNum = matches.length + 1;
-    setBodyText((prev) => `${prev} {{${nextNum}}}`);
+    const existingIndices = matches.map((m) => parseInt(m[1], 10));
+    const nextNum = existingIndices.length > 0 ? Math.max(...existingIndices) + 1 : 1;
+    setBodyText((prev) => (prev ? `${prev} {{${nextNum}}}` : `{{${nextNum}}}`));
+  };
+
+  // Delete variable: removes placeholder, renumbers subsequent variables, and removes sample value
+  const handleDeleteVariable = (varIdxToDelete: number) => {
+    const varNumber = varIdxToDelete + 1; // 1-based index (e.g. 1 for {{1}}, 2 for {{2}})
+    
+    // 1. Remove and renumber body text
+    const updatedBodyText = removeAndRenumberVariable(bodyText, varNumber);
+    
+    // 2. Remove sample value at index varIdxToDelete
+    const updatedExamples = bodyExamples.filter((_, i) => i !== varIdxToDelete);
+    
+    // 3. Atomically update both bodyText and bodyExamples
+    setBodyText(updatedBodyText);
+    setBodyExamples(updatedExamples);
   };
 
   // Add Button
@@ -498,14 +516,22 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
 
               {/* Dynamic Sample Values Form for Variables */}
               {bodyExamples.length > 0 && (
-                <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80 space-y-2">
-                  <span className="text-[11px] font-bold text-slate-300 block">
-                    Meta Required Sample Values for Variables:
-                  </span>
+                <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80 space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-slate-300 block">
+                      Meta Required Sample Values for Variables:
+                    </span>
+                    <span className="text-[10px] text-slate-500 font-mono">
+                      {bodyExamples.length} variable{bodyExamples.length !== 1 ? 's' : ''} detected
+                    </span>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {bodyExamples.map((val, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <span className="text-[11px] font-mono text-amber-400 shrink-0 font-bold">
+                      <div
+                        key={idx}
+                        className="flex items-center gap-1.5 bg-slate-900/60 p-1.5 rounded-lg border border-slate-800/80 hover:border-slate-700/80 transition-colors"
+                      >
+                        <span className="text-[11px] font-mono text-amber-400 shrink-0 font-bold px-1">
                           {`{{${idx + 1}}}`}:
                         </span>
                         <Input
@@ -516,8 +542,17 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
                             next[idx] = e.target.value;
                             setBodyExamples(next);
                           }}
-                          className="h-7 text-xs bg-slate-900 border-slate-800 text-slate-200"
+                          className="h-7 text-xs bg-slate-950 border-slate-800 text-slate-200 flex-1 min-w-0"
                         />
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteVariable(idx)}
+                          title="Remove variable"
+                          aria-label={`Remove variable {{${idx + 1}}}`}
+                          className="p-1.5 text-slate-400 hover:text-red-400 hover:bg-red-500/10 rounded-md transition-colors shrink-0"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
                       </div>
                     ))}
                   </div>
@@ -544,11 +579,11 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
 
             {/* Section 5: Buttons */}
             <div className="space-y-3 pt-2 border-t border-slate-800/80">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300">
                   5. Interactive Buttons (Max 10)
                 </h4>
-                <div className="flex items-center gap-1.5">
+                <div className="flex flex-wrap items-center gap-1.5">
                   <Button
                     type="button"
                     size="sm"
@@ -749,7 +784,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
             <span>Target WABA: <code>1017083661443186</code></span>
           </div>
 
-          <div className="flex items-center gap-2.5 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
             <Button
               type="button"
               variant="outline"
@@ -764,7 +799,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
               type="button"
               onClick={handleSubmitToMeta}
               disabled={isSubmitting}
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs flex-1 sm:flex-initial shadow-lg shadow-amber-500/20"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs flex-1 sm:flex-initial shadow-lg shadow-amber-500/20 whitespace-nowrap"
             >
               {isSubmitting ? (
                 <>

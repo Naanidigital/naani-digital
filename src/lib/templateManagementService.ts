@@ -227,6 +227,39 @@ function saveLocalDrafts(drafts: CrmWhatsAppTemplate[]): void {
 }
 
 /**
+ * Removes a variable placeholder {{varIndex}} from the template body and automatically
+ * renumbers all subsequent variables down by 1 so the sequence remains strictly 1..N.
+ *
+ * Example:
+ *   Input: "{{1}} {{2}} {{3}}", varIndex: 2
+ *   Output: "{{1}} {{2}}"
+ */
+export function removeAndRenumberVariable(bodyText: string, varIndex: number): string {
+  if (!bodyText) return '';
+
+  // 1. Remove all occurrences of {{varIndex}}
+  let text = bodyText.replace(new RegExp(`\\{\\{${varIndex}\\}\\}`, 'g'), '');
+
+  // 2. Renumber any {{n}} where n > varIndex down to {{n - 1}}
+  text = text.replace(/\{\{(\d+)\}\}/g, (match, digits) => {
+    const n = parseInt(digits, 10);
+    if (n > varIndex) {
+      return `{{${n - 1}}}`;
+    }
+    return match;
+  });
+
+  // 3. Clean up spaces before punctuation (e.g. "welcome to ." -> "welcome to.")
+  text = text.replace(/ +([.,!?;:])/g, '$1');
+
+  // 4. Collapse multiple consecutive spaces into a single space
+  text = text.replace(/ {2,}/g, ' ');
+
+  // 5. Trim leading and trailing whitespace
+  return text.trim();
+}
+
+/**
  * Validates template components client-side before draft saving or Meta submission.
  */
 export function validateTemplate(template: Partial<CrmWhatsAppTemplate>): { valid: boolean; errors: string[] } {
@@ -272,6 +305,15 @@ export function validateTemplate(template: Partial<CrmWhatsAppTemplate>): { vali
       const examples = bodyComp.example?.body_text?.[0] || [];
       if (examples.length < indices.length) {
         errors.push(`Please provide sample values for all ${indices.length} variables.`);
+      } else if (examples.length > indices.length) {
+        errors.push(`Found ${examples.length - indices.length} orphaned sample value(s) with no matching variable placeholders in the template body.`);
+      } else if (examples.some((val) => !val || !val.trim())) {
+        errors.push('All variable placeholders must have non-empty sample values for Meta approval.');
+      }
+    } else {
+      const examples = bodyComp.example?.body_text?.[0] || [];
+      if (examples.length > 0) {
+        errors.push('Template body contains no variables, but sample values are present.');
       }
     }
   }
