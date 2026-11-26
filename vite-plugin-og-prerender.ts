@@ -3255,6 +3255,119 @@ const URBANRISE_SKYHABITAT_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+const SUNYUGA_VANTARA_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/sunyuga-vantara#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Kompally", "item": "https://www.naani.in/projects-in-kompally" },
+      { "@type": "ListItem", "position": 4, "name": "Sunyuga Vantara", "item": "https://www.naani.in/projects/sunyuga-vantara" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/sunyuga-vantara#project",
+    "name": "Sunyuga Vantara",
+    "url": "https://www.naani.in/projects/sunyuga-vantara",
+    "description": "Sunyuga Vantara is a 6.5-acre nature-centric residential gated community along Apparel Park Road in the Dullapally–Kompally corridor of North Hyderabad by Sunyuga Infra Pvt. Ltd. Comprising 3 towers of 10 residential floors over 2 parking levels (cellar and stilt), 575 apartments in 2, 2.5 & 3 BHK formats (1,351 to 2,413 sq. ft.), 33,000 Sft G+3 clubhouse, and direct proximity to the 5,000-hectare reserve forest. Registered under TG RERA P02200009418.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Apparel Park Road, Near DRS International School, Dullapally",
+      "addressLocality": "Kompally, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500014",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919493943946",
+    "developer": {
+      "@type": "Organization",
+      "name": "Sunyuga Infra Private Limited"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/sunyuga-vantara#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Sunyuga Vantara located in Hyderabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sunyuga Vantara is located on Apparel Park Road, near DRS International School in Dullapally, within the Kompally corridor of North Hyderabad, adjacent to the 5,000-hectare reserve forest area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the TG RERA registration number for Sunyuga Vantara?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project is registered with TG RERA under registration ID P02200009418 with validity through February 4, 2030."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the building structure and unit count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The community spans 6.5 acres and comprises 575 residential apartments across 3 towers with 10 residential floors over 2 parking levels (cellar and stilt), plus a 33,000 Sft G+3 clubhouse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What configurations and sizes are available at Sunyuga Vantara?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project offers 2 BHK (1,351 & 1,453 sq. ft.), 2.5 BHK (1,504 sq. ft.), 3 BHK with 2 Toilets (1,439 & 1,589 sq. ft.), and grand 3 BHK with 3 Toilets (1,612 to 2,413 sq. ft.)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the features of the clubhouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The standalone 33,000 sq. ft. G+3 clubhouse features a rooftop swimming pool, terrace bar lounge, gym, yoga studio, spa, banquet hall, co-working suites, conference room, and indoor games."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#070b14] text-slate-100 font-sans">
+  <header class="w-full bg-[#070b14] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-kompally" class="hover:text-amber-400">Kompally</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#070b14]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Under Construction • TG RERA P02200009418 • Kompally / Dullapally, Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Sunyuga Vantara – <span class="text-amber-400">2, 2.5 &amp; 3 BHK Nature-Centric Homes</span></h1>
+        <p class="text-lg text-slate-200">6.5 Acres • 3 Towers • 10 Floors (2 Parking Levels) • 575 Units • 33,000 Sft G+3 Clubhouse</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Low-Density Living (88 Units/Acre) • 50%+ Open Green Landscape • Next to 5,000-Hectare Reserve Forest • Terrace Swimming Pool • In-Campus Temple
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Sunyuga%20Vantara%20Kompally.%20Please%20share%20current%20pricing%20and%20floor%20plans." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Request Live Price Sheet &amp; Floor Plans</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3653,6 +3766,14 @@ const ogRoutes: OGRoute[] = [
     url: `${SITE}/projects/urbanrise-sky-habitat-miyapur`,
     image: `${SITE}/og-urbanrise-sky-habitat.jpg`,
     prerenderHtml: URBANRISE_SKYHABITAT_PRERENDER_HTML,
+  },
+  {
+    path: '/projects/sunyuga-vantara',
+    title: 'Sunyuga Vantara Kompally | 2, 2.5 & 3 BHK Flats in Hyderabad',
+    description: 'Explore Sunyuga Vantara in Kompally / Dullapally, Hyderabad by Sunyuga Infra. 6.5 acres, 3 towers, 575 units, 33,000 Sft clubhouse, 2, 2.5 & 3 BHK floor plans and TG RERA P02200009418 details.',
+    url: `${SITE}/projects/sunyuga-vantara`,
+    image: `${SITE}/og-sunyuga-vantara.jpg`,
+    prerenderHtml: SUNYUGA_VANTARA_PRERENDER_HTML,
   },
 ];
 

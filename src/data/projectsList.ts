@@ -34,4 +34,5 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   { name: "Vasavi Atlantis", slug: "/projects/vasavi-atlantis", location: "Narsingi" },
   { name: "Pavani Starlit", slug: "/projects/pavani-starlit-miyapur", location: "Miyapur" },
   { name: "Pavani Felicity", slug: "/projects/pavani-felicity-nizampet", location: "Nizampet" },
+  { name: "Sunyuga Vantara", slug: "/projects/sunyuga-vantara", location: "Kompally" },
 ];

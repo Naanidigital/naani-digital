@@ -57,6 +57,7 @@ const STATIC_URLS = [
   ["/projects/pavani-mirai-financial-district", "0.90", "weekly"],
   ["/projects/urbanrise-on-cloud-33-bachupally", "0.90", "weekly"],
   ["/projects/urbanrise-sky-habitat-miyapur", "0.90", "weekly"],
+  ["/projects/sunyuga-vantara", "0.90", "weekly"],
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],

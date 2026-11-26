@@ -19,6 +19,7 @@ import felicityHero from "@/assets/pavani-felicity/pavani-felicity-elevation-twi
 import miraiHero from "@/assets/pavani-mirai/pavani-mirai-tower-elevation-sunset.webp";
 import cloud33Hero from "@/assets/urbanrise-cloud33/urbanrise-cloud33-elevation-twilight.jpg";
 import skyHabitatHero from "@/assets/urbanrise-sky-habitat/urbanrise-skyhabitat-elevation-day.webp";
+import vantaraHero from "@/assets/sunyuga-vantara/sunyuga-vantara-aerial-drone-day.jpg";
 
 export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "prestige-golden-grove-hyderabad": prestigeElevation,
@@ -65,6 +66,9 @@ export const STATIC_PROJECT_IMAGES: Record<string, string> = {
   "urbanrise-sky-habitat-miyapur": skyHabitatHero,
   "urbanrise-sky-habitat": skyHabitatHero,
   "urbanrise-codename-sky-habitat": skyHabitatHero,
+  "sunyuga-vantara": vantaraHero,
+  "sunyuga-vantara-kompally": vantaraHero,
+  "vantara-kompally": vantaraHero,
 };
 
 export const DEFAULT_BUILDING_IMAGES = [
@@ -109,6 +113,7 @@ export function getMappedProjectImage(slug?: string | null, name?: string | null
     if (n.includes("canny") || n.includes("aravindam")) return cannyHero;
     if (n.includes("felicity")) return felicityHero;
     if (n.includes("starlit")) return "/og-pavani-starlit.jpg";
+    if (n.includes("vantara") || n.includes("sunyuga")) return vantaraHero;
   }
 
   return null;

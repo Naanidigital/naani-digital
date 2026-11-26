@@ -39,6 +39,7 @@ const PavaniFelicityPage = lazy(() => import("./pages/PavaniFelicityPage"));
 const PavaniMiraiPage = lazy(() => import("./pages/PavaniMiraiPage"));
 const UrbanriseOnCloud33Page = lazy(() => import("./pages/UrbanriseOnCloud33Page"));
 const UrbanriseSkyHabitatPage = lazy(() => import("./pages/UrbanriseSkyHabitatPage"));
+const SunyugaVantaraPage = lazy(() => import("./pages/SunyugaVantaraPage"));
 const ProjectDetailDynamic = lazy(() => import("./pages/ProjectDetailDynamic"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ThankYouPage = lazy(() => import("./pages/ThankYouPage"));
@@ -188,6 +189,9 @@ const App = () => (
         <Route path="/projects/urbanrise-sky-habitat-miyapur" element={<UrbanriseSkyHabitatPage />} />
         <Route path="/projects/urbanrise-sky-habitat" element={<Navigate to="/projects/urbanrise-sky-habitat-miyapur" replace />} />
         <Route path="/projects/urbanrise-codename-sky-habitat" element={<Navigate to="/projects/urbanrise-sky-habitat-miyapur" replace />} />
+        <Route path="/projects/sunyuga-vantara" element={<SunyugaVantaraPage />} />
+        <Route path="/projects/sunyuga-vantara-kompally" element={<Navigate to="/projects/sunyuga-vantara" replace />} />
+        <Route path="/projects/vantara-kompally" element={<Navigate to="/projects/sunyuga-vantara" replace />} />
         {/* Dynamic catch-all for DB-driven projects (must come AFTER all custom project routes) */}
         <Route path="/projects/:slug" element={<ProjectDetailDynamic />} />
         {/* User-submitted property pages share the same renderer */}
