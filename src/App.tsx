@@ -40,6 +40,7 @@ const PavaniMiraiPage = lazy(() => import("./pages/PavaniMiraiPage"));
 const UrbanriseOnCloud33Page = lazy(() => import("./pages/UrbanriseOnCloud33Page"));
 const UrbanriseSkyHabitatPage = lazy(() => import("./pages/UrbanriseSkyHabitatPage"));
 const SunyugaVantaraPage = lazy(() => import("./pages/SunyugaVantaraPage"));
+const BrigadeKompallyPage = lazy(() => import("./pages/BrigadeKompallyPage"));
 const ProjectDetailDynamic = lazy(() => import("./pages/ProjectDetailDynamic"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ThankYouPage = lazy(() => import("./pages/ThankYouPage"));
@@ -97,6 +98,14 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
+};
+
+import { PROJECT_PUBLICATION_GATES } from "./config/projectGates";
+
+const isBrigadeKompallyAccessible = () => {
+  if (PROJECT_PUBLICATION_GATES.brigadeKompally) return true;
+  if (import.meta.env.DEV) return true;
+  return false;
 };
 
 const App = () => (
@@ -192,6 +201,14 @@ const App = () => (
         <Route path="/projects/sunyuga-vantara" element={<SunyugaVantaraPage />} />
         <Route path="/projects/sunyuga-vantara-kompally" element={<Navigate to="/projects/sunyuga-vantara" replace />} />
         <Route path="/projects/vantara-kompally" element={<Navigate to="/projects/sunyuga-vantara" replace />} />
+        <Route
+          path="/projects/brigade-kompally"
+          element={isBrigadeKompallyAccessible() ? <BrigadeKompallyPage /> : <Navigate to="/projects" replace />}
+        />
+        <Route
+          path="/projects/brigade-kompally-hyderabad"
+          element={<Navigate to={isBrigadeKompallyAccessible() ? "/projects/brigade-kompally" : "/projects"} replace />}
+        />
         {/* Dynamic catch-all for DB-driven projects (must come AFTER all custom project routes) */}
         <Route path="/projects/:slug" element={<ProjectDetailDynamic />} />
         {/* User-submitted property pages share the same renderer */}

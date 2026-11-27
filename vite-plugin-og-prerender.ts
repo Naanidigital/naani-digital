@@ -1,6 +1,7 @@
 import { Plugin } from 'vite';
 import fs from 'fs';
 import path from 'path';
+import { PROJECT_PUBLICATION_GATES } from './src/config/projectGates';
 
 interface OGRoute {
   path: string;
@@ -3368,6 +3369,120 @@ const SUNYUGA_VANTARA_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+// Static pre-rendered crawlable HTML content for /projects/brigade-kompally
+const BRIGADE_KOMPALLY_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/brigade-kompally#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Kompally", "item": "https://www.naani.in/projects-in-kompally" },
+      { "@type": "ListItem", "position": 4, "name": "Brigade Kompally", "item": "https://www.naani.in/projects/brigade-kompally" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/brigade-kompally#project",
+    "name": "Brigade Kompally",
+    "url": "https://www.naani.in/projects/brigade-kompally",
+    "description": "Brigade Kompally is an upcoming ~5.6-acre premium residential gated community in Kompally, North Hyderabad by Brigade Enterprises Limited. Planned to offer 2, 3 and 4 BHK high-rise residences in modern towers under a Joint Development Agreement. TG RERA registration is under process.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Brigade Enterprises Limited",
+      "alternateName": "Brigade Group",
+      "url": "https://www.brigadegroup.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kompally, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500014",
+      "addressCountry": "IN"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/brigade-kompally#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is developing Brigade Kompally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brigade Kompally is being developed by Brigade Enterprises Limited (Brigade Group), one of India's premier listed real estate developers founded in 1986."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Brigade Kompally located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project is located in Kompally, Medchal-Malkajgiri District, North Hyderabad along the high-growth NH-44 corridor with direct transit access toward Nehru Outer Ring Road (ORR Exit 6 at Kandlakoya)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the project land extent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brigade Enterprises Limited secured approximately 5.6 acres in Kompally under a Joint Development Agreement (JDA), as officially disclosed to the stock exchanges (BSE & NSE)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which configurations are planned?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The development is planned to offer premium 2 BHK, 3 BHK, and 4 BHK residential apartments in modern high-rise towers. Final typologies will be confirmed upon regulatory sanction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the current TG RERA status?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TG RERA registration is currently in process. In accordance with the Real Estate (Regulation and Development) Act, official marketing, sales, and bookings will commence only after the registration certificate and number are granted by the Telangana Real Estate Regulatory Authority."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#070b14] text-slate-100 font-sans">
+  <header class="w-full bg-[#070b14] border-b border-slate-800/80 py-4 px-4 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white">Naani Projects</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-amber-400">Home</a>
+        <a href="/projects" class="hover:text-amber-400">Projects</a>
+        <a href="/projects-in-kompally" class="hover:text-amber-400">Kompally</a>
+        <a href="/contact-us" class="hover:text-amber-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="py-16 lg:py-20 bg-[#070b14]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">Pre-Launch Planning • TG RERA Registration Awaited • Kompally, North Hyderabad</span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Brigade Kompally – <span class="text-amber-400">2, 3 &amp; 4 BHK Premium High-Rise Residences</span></h1>
+        <p class="text-lg text-slate-200">~5.6 Acres • Planned 2, 3 &amp; 4 BHK Residences • Developed by Brigade Enterprises Limited • Est. Project GDV ~₹850 Cr</p>
+        <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Premium High-Rise Living in North Hyderabad • NH-44 &amp; ORR Exit 6 Connectivity • Clubhouse &amp; Modern Lifestyle Amenities • Pre-Launch Intelligence &amp; Verified Statutory Updates
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Brigade%20Kompally.%20Please%20notify%20me%20when%20official%20RERA%20and%20plans%20are%20released." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">Register for Official Launch Updates</a>
+          <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3775,6 +3890,16 @@ const ogRoutes: OGRoute[] = [
     image: `${SITE}/og-sunyuga-vantara.jpg`,
     prerenderHtml: SUNYUGA_VANTARA_PRERENDER_HTML,
   },
+  ...(PROJECT_PUBLICATION_GATES.brigadeKompally
+    ? [{
+        path: '/projects/brigade-kompally',
+        title: 'Brigade Kompally Hyderabad | 2, 3 & 4 BHK by Brigade',
+        description: 'Explore Brigade Kompally in North Hyderabad. Discover its 5.6-acre development, planned configurations, developer details and latest TG RERA status.',
+        url: `${SITE}/projects/brigade-kompally`,
+        image: DEFAULT_OG,
+        prerenderHtml: BRIGADE_KOMPALLY_PRERENDER_HTML,
+      }]
+    : []),
 ];
 
 function escapeHtml(s: string) {

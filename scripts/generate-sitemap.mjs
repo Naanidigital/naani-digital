@@ -11,8 +11,11 @@
  * Runs at build time (predeploy). No runtime dependency on Supabase.
  */
 import { createClient } from "@supabase/supabase-js";
-import { mkdirSync, writeFileSync, rmSync } from "fs";
+import { mkdirSync, writeFileSync, rmSync, readFileSync, existsSync } from "fs";
 import { resolve } from "path";
+
+const gatesPath = resolve("src/config/projectGates.ts");
+const isBrigadeApproved = (existsSync(gatesPath) && /brigadeKompally:\s*true/.test(readFileSync(gatesPath, "utf8"))) || process.env.PUBLISH_BRIGADE_KOMPALLY === "true";
 
 const SITE = "https://www.naani.in";
 const URL = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || "https://hadxpgwzmvxqslcyykyw.supabase.co";
@@ -58,6 +61,7 @@ const STATIC_URLS = [
   ["/projects/urbanrise-on-cloud-33-bachupally", "0.90", "weekly"],
   ["/projects/urbanrise-sky-habitat-miyapur", "0.90", "weekly"],
   ["/projects/sunyuga-vantara", "0.90", "weekly"],
+  ...(isBrigadeApproved ? [["/projects/brigade-kompally", "0.90", "weekly"]] : []),
   ["/about-us", "0.7", "monthly"],
   ["/contact-us", "0.7", "monthly"],
   ["/list-your-property", "0.6", "monthly"],

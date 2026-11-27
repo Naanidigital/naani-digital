@@ -1,4 +1,6 @@
 // Single source of truth for all project pages used by Footer & Projects hub.
+import { PROJECT_PUBLICATION_GATES } from "../config/projectGates";
+
 export interface ProjectListItem {
   name: string;
   slug: string; // path
@@ -35,4 +37,7 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   { name: "Pavani Starlit", slug: "/projects/pavani-starlit-miyapur", location: "Miyapur" },
   { name: "Pavani Felicity", slug: "/projects/pavani-felicity-nizampet", location: "Nizampet" },
   { name: "Sunyuga Vantara", slug: "/projects/sunyuga-vantara", location: "Kompally" },
+  ...(PROJECT_PUBLICATION_GATES.brigadeKompally
+    ? [{ name: "Brigade Kompally", slug: "/projects/brigade-kompally", location: "Kompally" }]
+    : []),
 ];
