@@ -21,7 +21,9 @@
     { "source": "/services/branding", "destination": "/services/content-marketing-branding", "permanent": true },
     { "source": "/services/whatsapp", "destination": "/services/whatsapp-marketing", "permanent": true },
     { "source": "/services/influencer", "destination": "/services/influencer-marketing", "permanent": true },
-    { "source": "/project/jaycon-gateway-tirupati", "destination": "/projects/jaycon-gateway-tirupati", "permanent": true }
+    { "source": "/project/jaycon-gateway-tirupati", "destination": "/projects/jaycon-gateway-tirupati", "permanent": true },
+    { "source": "/projects/vantara-kompally", "destination": "/projects/sunyuga-vantara", "permanent": true },
+    { "source": "/projects/sunyuga-vantara-kompally", "destination": "/projects/sunyuga-vantara", "permanent": true }
   ],
   "rewrites": [
     {
