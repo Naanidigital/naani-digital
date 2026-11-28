@@ -15,4 +15,6 @@
 export const PROJECT_PUBLICATION_GATES = {
   // Brigade Kompally: Approved for publication
   brigadeKompally: true,
+  // Casagrand Evon: Approved for full public release
+  casagrandEvon: true,
 };

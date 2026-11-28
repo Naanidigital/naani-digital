@@ -51,7 +51,6 @@ const Header = () => {
                 width="32"
                 height="32"
                 loading="eager"
-                fetchPriority="high"
               />
             </div>
             <span className="text-xl font-bold text-foreground tracking-tight">

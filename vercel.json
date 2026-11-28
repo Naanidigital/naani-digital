@@ -24,6 +24,7 @@
     { "source": "/project/jaycon-gateway-tirupati", "destination": "/projects/jaycon-gateway-tirupati", "permanent": true },
     { "source": "/projects/vantara-kompally", "destination": "/projects/sunyuga-vantara", "permanent": true },
     { "source": "/projects/sunyuga-vantara-kompally", "destination": "/projects/sunyuga-vantara", "permanent": true },
+    { "source": "/projects/casagrand-evon", "destination": "/projects/casagrand-evon-kompally", "permanent": true },
     { "source": "/projects/brigade-kompally-hyderabad", "destination": "/projects/brigade-kompally", "permanent": true }
   ],
   "rewrites": [

@@ -16,7 +16,8 @@ import {
   ExternalLink,
   Shield,
   CircleDot,
-  Send
+  Send,
+  Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,6 +30,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Overview", path: "/crm", icon: LayoutDashboard },
+  { label: "Project Publishing", path: "/crm/publishing", icon: Globe },
   { label: "WhatsApp Inbox", path: "/crm/inbox", icon: MessageSquare },
   { label: "Campaigns", path: "/crm/campaigns", icon: Send },
   { label: "Leads", path: "/crm/leads", icon: Users },
@@ -116,7 +118,7 @@ export const CrmLayout: React.FC = () => {
       {/* Sidebar Navigation (Desktop Persistent & Mobile Slide) */}
       <aside
         className={`fixed md:sticky top-0 left-0 z-40 h-screen w-64 bg-slate-900/95 md:bg-slate-900 border-r border-slate-800 flex flex-col justify-between transition-transform duration-200 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+          mobileMenuOpen ? "translate-x-0 flex" : "-translate-x-full hidden md:flex md:translate-x-0"
         }`}
       >
         <div>

@@ -259,6 +259,134 @@ export function removeAndRenumberVariable(bodyText: string, varIndex: number): s
   return text.trim();
 }
 
+export interface MetaMediaUploadResult {
+  success: boolean;
+  handle?: string;
+  fileName?: string;
+  fileSize?: number;
+  fileType?: string;
+  error?: string;
+  missingConfig?: string;
+  metaError?: {
+    message?: string;
+    code?: number;
+    error_subcode?: number;
+    error_user_title?: string;
+    error_user_msg?: string;
+    details?: string;
+    fbtrace_id?: string;
+  };
+}
+
+/**
+ * Validates and uploads an image to the Meta Resumable Upload API via backend Edge Function.
+ * Enforces JPEG/PNG file types, max 5MB size limit, and verifies magic bytes.
+ */
+export async function uploadTemplateMedia(file: File): Promise<MetaMediaUploadResult> {
+  if (!file) {
+    return { success: false, error: 'No file selected for upload.' };
+  }
+
+  // 1. Size check: 5MB limit for WhatsApp template images
+  const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
+  if (file.size > MAX_IMAGE_SIZE) {
+    return {
+      success: false,
+      error: `File size exceeds the 5MB limit supported by Meta (file size: ${(file.size / (1024 * 1024)).toFixed(2)} MB). Please select a smaller JPG or PNG image.`,
+    };
+  }
+
+  // 2. MIME type check
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+  const ext = file.name.split('.').pop()?.toLowerCase();
+  const validExt = ['jpg', 'jpeg', 'png'].includes(ext || '');
+
+  if (!allowedTypes.includes(file.type.toLowerCase()) && !validExt) {
+    return {
+      success: false,
+      error: 'Unsupported file format. Only JPG, JPEG, and PNG images are supported for WhatsApp template headers.',
+    };
+  }
+
+  // 3. Inspect binary magic bytes
+  try {
+    const buffer = await file.slice(0, 8).arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    const isJpeg = bytes[0] === 0xFF && bytes[1] === 0xD8 && bytes[2] === 0xFF;
+    const isPng =
+      bytes.length >= 8 &&
+      bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4E && bytes[3] === 0x47 &&
+      bytes[4] === 0x0D && bytes[5] === 0x0A && bytes[6] === 0x1A && bytes[7] === 0x0A;
+
+    if (!isJpeg && !isPng) {
+      return {
+        success: false,
+        error: 'File content does not match a valid JPG or PNG image. Please upload a genuine image file.',
+      };
+    }
+  } catch (err: any) {
+    return {
+      success: false,
+      error: `Could not verify file contents: ${err.message}`,
+    };
+  }
+
+  // 4. Send authenticated multipart/form-data to manage-whatsapp-templates Edge Function
+  try {
+    const { data: sessionData } = await crmSupabase.auth.getSession();
+    const token = sessionData.session?.access_token;
+
+    const funcUrl = `${import.meta.env.VITE_CRM_SUPABASE_URL || 'https://lpbdwmpglwdedqdiovqu.supabase.co'}/functions/v1/manage-whatsapp-templates`;
+    const formData = new FormData();
+    formData.append('action', 'upload_media');
+    formData.append('file', file);
+
+    const res = await fetch(funcUrl, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    const resData = await res.json();
+    if (!res.ok || !resData.success) {
+      let formattedError = resData.error || 'Failed to upload image to Meta Resumable Upload API.';
+      if (resData.metaError) {
+        const parts: string[] = [];
+        if (resData.metaError.error_user_title) parts.push(resData.metaError.error_user_title);
+        if (resData.metaError.message) parts.push(resData.metaError.message);
+        if (resData.metaError.error_user_msg) parts.push(`(${resData.metaError.error_user_msg})`);
+        if (resData.metaError.details) parts.push(`Details: ${resData.metaError.details}`);
+        if (resData.metaError.code) {
+          parts.push(`[Meta Code: ${resData.metaError.code}${resData.metaError.error_subcode ? `, Subcode: ${resData.metaError.error_subcode}` : ''}]`);
+        }
+        if (parts.length > 0) formattedError = parts.join(' - ');
+      }
+
+      return {
+        success: false,
+        error: formattedError,
+        metaError: resData.metaError,
+        missingConfig: resData.missingConfig,
+      };
+    }
+
+    return {
+      success: true,
+      handle: resData.handle,
+      fileName: resData.fileName || file.name,
+      fileSize: resData.fileSize || file.size,
+      fileType: resData.fileType || file.type,
+    };
+  } catch (err: any) {
+    return {
+      success: false,
+      error: `Media upload network error: ${err.message}`,
+    };
+  }
+}
+
 /**
  * Validates template components client-side before draft saving or Meta submission.
  */
@@ -320,9 +448,19 @@ export function validateTemplate(template: Partial<CrmWhatsAppTemplate>): { vali
 
   // Header check
   const headerComp = components.find((c) => c.type === 'HEADER');
-  if (headerComp && headerComp.format === 'TEXT') {
-    if (headerComp.text && headerComp.text.length > 60) {
-      errors.push('Header text exceeds max 60 characters.');
+  if (headerComp) {
+    if (headerComp.format === 'TEXT') {
+      if (headerComp.text && headerComp.text.length > 60) {
+        errors.push('Header text exceeds max 60 characters.');
+      }
+    } else if (headerComp.format === 'IMAGE') {
+      const handles = headerComp.example?.header_handle;
+      if (!handles || !Array.isArray(handles) || handles.length === 0 || !handles[0] || !handles[0].trim()) {
+        errors.push('IMAGE header requires an uploaded image handle (header_handle). Please upload an image.');
+      }
+      if ((headerComp.example as any)?.header_text) {
+        errors.push('IMAGE header must not use header_text; use header_handle.');
+      }
     }
   }
 
@@ -519,7 +657,19 @@ export async function submitTemplateToMeta(
 
     const resData = await res.json();
     if (!res.ok || !resData.success) {
-      return { success: false, error: resData.error || 'Failed to submit template to Meta' };
+      let formattedError = resData.error || 'Failed to submit template to Meta';
+      if (resData.metaError) {
+        const parts: string[] = [];
+        if (resData.metaError.error_user_title) parts.push(resData.metaError.error_user_title);
+        if (resData.metaError.message) parts.push(resData.metaError.message);
+        if (resData.metaError.error_user_msg) parts.push(`(${resData.metaError.error_user_msg})`);
+        if (resData.metaError.details) parts.push(`Details: ${resData.metaError.details}`);
+        if (resData.metaError.code) {
+          parts.push(`[Meta Code: ${resData.metaError.code}${resData.metaError.error_subcode ? `, Subcode: ${resData.metaError.error_subcode}` : ''}]`);
+        }
+        if (parts.length > 0) formattedError = parts.join(' - ');
+      }
+      return { success: false, error: formattedError };
     }
 
     return {
@@ -528,19 +678,10 @@ export async function submitTemplateToMeta(
       status: resData.status,
     };
   } catch (err: any) {
-    // Fallback simulation mode for testing when Edge Function is not yet deployed
-    console.warn('[templateManagementService] Backend edge call failed, updating local state:', err.message);
-    const updated = {
-      ...template,
-      status: 'PENDING' as WhatsAppTemplateStatus,
-      meta_template_id: `meta_wamid_${Date.now()}`,
-      last_synced_at: new Date().toISOString(),
-    };
-    saveDraftTemplate(updated);
+    console.error('[templateManagementService] Submission exception:', err);
     return {
-      success: true,
-      metaTemplateId: updated.meta_template_id,
-      status: 'PENDING',
+      success: false,
+      error: `Network / backend error: ${err.message}`,
     };
   }
 }

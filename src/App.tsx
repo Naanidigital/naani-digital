@@ -41,6 +41,7 @@ const UrbanriseOnCloud33Page = lazy(() => import("./pages/UrbanriseOnCloud33Page
 const UrbanriseSkyHabitatPage = lazy(() => import("./pages/UrbanriseSkyHabitatPage"));
 const SunyugaVantaraPage = lazy(() => import("./pages/SunyugaVantaraPage"));
 const BrigadeKompallyPage = lazy(() => import("./pages/BrigadeKompallyPage"));
+const CasagrandEvonPage = lazy(() => import("./pages/CasagrandEvonPage"));
 const ProjectDetailDynamic = lazy(() => import("./pages/ProjectDetailDynamic"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ThankYouPage = lazy(() => import("./pages/ThankYouPage"));
@@ -61,6 +62,8 @@ const CrmLeadsPage = lazy(() => import("./pages/crm/CrmLeadsPage").then(m => ({ 
 const CrmInboxPage = lazy(() => import("./pages/crm/CrmInboxPage").then(m => ({ default: m.CrmInboxPage })));
 const CrmCampaignsPage = lazy(() => import("./pages/crm/CrmCampaignsPage").then(m => ({ default: m.CrmCampaignsPage })));
 const CrmSettingsPage = lazy(() => import("./pages/crm/CrmSettingsPage").then(m => ({ default: m.CrmSettingsPage })));
+const CrmPublishingPage = lazy(() => import("./pages/crm/CrmPublishingPage").then(m => ({ default: m.CrmPublishingPage })));
+const CrmProjectReviewPage = lazy(() => import("./pages/crm/CrmProjectReviewPage").then(m => ({ default: m.CrmProjectReviewPage })));
 
 import { CrmAuthProvider } from "./contexts/CrmAuthContext";
 import { CrmGuard } from "./components/crm/CrmGuard";
@@ -108,6 +111,12 @@ const isBrigadeKompallyAccessible = () => {
   return false;
 };
 
+const isCasagrandEvonAccessible = () => {
+  if (PROJECT_PUBLICATION_GATES.casagrandEvon) return true;
+  if (import.meta.env.DEV) return true;
+  return false;
+};
+
 const App = () => (
   <BrowserRouter>
     <Toaster />
@@ -139,6 +148,8 @@ const App = () => (
             <Route path="campaigns" element={<CrmCampaignsPage />} />
             <Route path="follow-ups" element={<CrmLeadsPage />} />
             <Route path="analytics" element={<CrmOverviewPage />} />
+            <Route path="publishing" element={<CrmPublishingPage />} />
+            <Route path="publishing/:slug" element={<CrmProjectReviewPage />} />
             <Route path="settings" element={<CrmSettingsPage />} />
           </Route>
         </Route>
@@ -208,6 +219,14 @@ const App = () => (
         <Route
           path="/projects/brigade-kompally-hyderabad"
           element={<Navigate to={isBrigadeKompallyAccessible() ? "/projects/brigade-kompally" : "/projects"} replace />}
+        />
+        <Route
+          path="/projects/casagrand-evon-kompally"
+          element={isCasagrandEvonAccessible() ? <CasagrandEvonPage /> : <Navigate to="/projects" replace />}
+        />
+        <Route
+          path="/projects/casagrand-evon"
+          element={<Navigate to={isCasagrandEvonAccessible() ? "/projects/casagrand-evon-kompally" : "/projects"} replace />}
         />
         {/* Dynamic catch-all for DB-driven projects (must come AFTER all custom project routes) */}
         <Route path="/projects/:slug" element={<ProjectDetailDynamic />} />

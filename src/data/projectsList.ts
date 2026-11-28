@@ -40,4 +40,7 @@ export const ALL_PROJECTS: ProjectListItem[] = [
   ...(PROJECT_PUBLICATION_GATES.brigadeKompally
     ? [{ name: "Brigade Kompally", slug: "/projects/brigade-kompally", location: "Kompally" }]
     : []),
+  ...(PROJECT_PUBLICATION_GATES.casagrandEvon
+    ? [{ name: "Casagrand Evon", slug: "/projects/casagrand-evon-kompally", location: "Kompally" }]
+    : []),
 ];

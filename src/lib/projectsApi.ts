@@ -28,6 +28,14 @@ export interface DBProject {
   canonical_url: string | null;
   custom_page_path: string | null;
   featured: boolean | null;
+  rera_registration_number?: string | null;
+  rera_authority?: string | null;
+  verification_status?: string | null;
+  rera_verification_date?: string | null;
+  official_verification_source?: string | null;
+  verified_promoter?: string | null;
+  registered_project_name?: string | null;
+  rera_verification_evidence?: string | null;
 }
 
 export const fetchProjects = async (): Promise<DBProject[]> => {

@@ -20,7 +20,10 @@ import {
   Tag,
   Phone,
   ExternalLink,
-  MessageSquare
+  MessageSquare,
+  Upload,
+  RefreshCw,
+  Check
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -35,7 +38,9 @@ import {
   validateTemplate,
   saveDraftTemplate,
   submitTemplateToMeta,
-  removeAndRenumberVariable
+  removeAndRenumberVariable,
+  uploadTemplateMedia,
+  MetaMediaUploadResult
 } from '@/lib/templateManagementService';
 
 interface TemplateCreationModalProps {
@@ -60,6 +65,17 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
   const [headerType, setHeaderType] = useState<HeaderFormat>('NONE');
   const [headerText, setHeaderText] = useState('');
   const [headerExampleUrl, setHeaderExampleUrl] = useState('');
+
+  // Image Header File Upload State
+  const [headerImageFile, setHeaderImageFile] = useState<File | null>(null);
+  const [headerImagePreviewUrl, setHeaderImagePreviewUrl] = useState<string | null>(null);
+  const [headerImageHandle, setHeaderImageHandle] = useState<string | null>(null);
+  const [headerImageFileName, setHeaderImageFileName] = useState<string | null>(null);
+  const [headerImageFileSize, setHeaderImageFileSize] = useState<number | null>(null);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [imageUploadError, setImageUploadError] = useState<string | null>(null);
+  const [isDraggingOver, setIsDraggingOver] = useState(false);
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   // Body State
   const [bodyText, setBodyText] = useState('');
@@ -90,6 +106,11 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
         setHeaderType(h.format || 'TEXT');
         setHeaderText(h.text || '');
         setHeaderExampleUrl(h.example?.header_text?.[0] || '');
+        if (h.format === 'IMAGE') {
+          setHeaderImageHandle(h.example?.header_handle?.[0] || null);
+          setHeaderImageFileName(h.example?.header_handle?.[0] ? 'Existing Meta Handle' : null);
+          setHeaderImagePreviewUrl(h.example?.header_text?.[0] || null);
+        }
       } else {
         setHeaderType('NONE');
       }
@@ -114,6 +135,12 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
       setHeaderType('NONE');
       setHeaderText('');
       setHeaderExampleUrl('');
+      setHeaderImageFile(null);
+      setHeaderImagePreviewUrl(null);
+      setHeaderImageHandle(null);
+      setHeaderImageFileName(null);
+      setHeaderImageFileSize(null);
+      setImageUploadError(null);
       setBodyText('');
       setBodyExamples([]);
       setFooterText('');
@@ -122,6 +149,62 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
     setValidationErrors([]);
     setSuccessMessage(null);
   }, [initialTemplate, isOpen]);
+
+  // Image Header File Upload Handlers
+  const processImageFile = async (file: File) => {
+    setImageUploadError(null);
+    setIsUploadingImage(true);
+
+    // Create immediate local object URL for instant preview
+    const localPreview = URL.createObjectURL(file);
+    setHeaderImagePreviewUrl(localPreview);
+    setHeaderImageFile(file);
+    setHeaderImageFileName(file.name);
+    setHeaderImageFileSize(file.size);
+    setHeaderImageHandle(null);
+
+    const res = await uploadTemplateMedia(file);
+    setIsUploadingImage(false);
+
+    if (!res.success || !res.handle) {
+      setImageUploadError(res.error || 'Failed to upload image to Meta.');
+      setHeaderImageHandle(null);
+    } else {
+      setHeaderImageHandle(res.handle);
+      setImageUploadError(null);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      processImageFile(file);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDraggingOver(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      processImageFile(file);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    if (headerImagePreviewUrl && headerImagePreviewUrl.startsWith('blob:')) {
+      URL.revokeObjectURL(headerImagePreviewUrl);
+    }
+    setHeaderImageFile(null);
+    setHeaderImagePreviewUrl(null);
+    setHeaderImageHandle(null);
+    setHeaderImageFileName(null);
+    setHeaderImageFileSize(null);
+    setImageUploadError(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
 
   // Keep variable examples array in sync with body variables count
   useEffect(() => {
@@ -192,7 +275,11 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
       if (headerType === 'TEXT' && headerText.trim()) {
         h.text = headerText.trim();
       }
-      if (['IMAGE', 'VIDEO', 'DOCUMENT'].includes(headerType) && headerExampleUrl.trim()) {
+      if (headerType === 'IMAGE') {
+        if (headerImageHandle) {
+          h.example = { header_handle: [headerImageHandle] };
+        }
+      } else if (['VIDEO', 'DOCUMENT'].includes(headerType) && headerExampleUrl.trim()) {
         h.example = { header_text: [headerExampleUrl.trim()] };
       }
       components.push(h);
@@ -261,6 +348,13 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
     setIsSubmitting(true);
 
     const tmpl = constructTemplate();
+
+    if (headerType === 'IMAGE' && !headerImageHandle) {
+      setValidationErrors(['Please upload a header image to generate a Meta handle before submitting.']);
+      setIsSubmitting(false);
+      return;
+    }
+
     const validation = validateTemplate(tmpl);
     if (!validation.valid) {
       setValidationErrors(validation.errors);
@@ -324,7 +418,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
 
           <div className="flex items-center gap-2">
             {/* Mobile Tab Switcher */}
-            <div className="sm:hidden flex bg-slate-800 p-0.5 rounded-lg text-xs">
+            <div className="md:hidden flex bg-slate-800 p-0.5 rounded-lg text-xs">
               <button
                 className={`px-2.5 py-1 rounded-md ${activeTab === 'editor' ? 'bg-amber-500 text-slate-950 font-bold' : 'text-slate-400'}`}
                 onClick={() => setActiveTab('editor')}
@@ -348,7 +442,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
         {/* Modal Body: Split Editor & Preview */}
         <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-slate-800">
           {/* Left: Editor Form (7 cols) */}
-          <div className={`md:col-span-7 p-5 space-y-5 overflow-y-auto ${activeTab === 'preview' ? 'hidden sm:block' : 'block'}`}>
+          <div className={`md:col-span-7 p-5 space-y-5 overflow-y-auto ${activeTab === 'preview' ? 'hidden md:block' : 'block'}`}>
             {validationErrors.length > 0 && (
               <div className="bg-rose-500/10 border border-rose-500/30 rounded-xl p-3.5 space-y-1">
                 <div className="flex items-center gap-2 text-rose-400 text-xs font-bold">
@@ -437,7 +531,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
                 2. Header (Optional)
               </h4>
 
-              <div className="grid grid-cols-5 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
                 {(['NONE', 'TEXT', 'IMAGE', 'VIDEO', 'DOCUMENT'] as HeaderFormat[]).map((fmt) => (
                   <button
                     key={fmt}
@@ -467,17 +561,158 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
                 </div>
               )}
 
-              {['IMAGE', 'VIDEO', 'DOCUMENT'].includes(headerType) && (
+              {headerType === 'IMAGE' && (
+                <div className="space-y-2">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/jpeg,image/png"
+                    className="hidden"
+                    onChange={handleFileSelect}
+                  />
+
+                  {/* 1. Drag & Drop Upload Area (when no image selected and not uploading) */}
+                  {!headerImageFile && !headerImageHandle && !isUploadingImage && (
+                    <div
+                      onDragOver={(e) => {
+                        e.preventDefault();
+                        setIsDraggingOver(true);
+                      }}
+                      onDragLeave={() => setIsDraggingOver(false)}
+                      onDrop={handleDrop}
+                      onClick={() => fileInputRef.current?.click()}
+                      className={`border-2 border-dashed rounded-xl p-4 text-center cursor-pointer transition-all ${
+                        isDraggingOver
+                          ? 'border-amber-500 bg-amber-500/10'
+                          : 'border-slate-800 hover:border-slate-700 bg-slate-950/60'
+                      }`}
+                    >
+                      <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center mx-auto mb-2 text-slate-400">
+                        <ImageIcon className="w-5 h-5 text-blue-400" />
+                      </div>
+                      <p className="text-xs font-semibold text-slate-200">
+                        Click to upload or drag & drop header image
+                      </p>
+                      <p className="text-[11px] text-slate-400 mt-0.5">
+                        Supports JPG, JPEG, and PNG (Meta limit: 5MB)
+                      </p>
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        className="mt-2.5 h-7 text-xs border-slate-700 text-slate-300 hover:text-slate-100 hover:bg-slate-800"
+                      >
+                        <Upload className="w-3.5 h-3.5 mr-1.5" />
+                        Select Image
+                      </Button>
+                    </div>
+                  )}
+
+                  {/* 2. Upload Progress Indicator */}
+                  {isUploadingImage && (
+                    <div className="border border-slate-800 rounded-xl p-4 text-center bg-slate-950/60 space-y-2">
+                      <Loader2 className="w-6 h-6 text-amber-500 animate-spin mx-auto" />
+                      <p className="text-xs font-semibold text-slate-200">
+                        Uploading to Meta Resumable Upload API...
+                      </p>
+                      <p className="text-[10px] text-slate-400 font-mono">
+                        Creating upload session & generating official header handle
+                      </p>
+                    </div>
+                  )}
+
+                  {/* 3. Upload Success / File Display Card */}
+                  {(headerImageHandle || headerImageFile) && !isUploadingImage && (
+                    <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col sm:flex-row items-center gap-3">
+                      {headerImagePreviewUrl ? (
+                        <img
+                          src={headerImagePreviewUrl}
+                          alt="Header Thumbnail"
+                          className="w-16 h-16 rounded-lg object-cover border border-slate-800 shrink-0"
+                        />
+                      ) : (
+                        <div className="w-16 h-16 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500 shrink-0">
+                          <ImageIcon className="w-6 h-6" />
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0 text-center sm:text-left">
+                        <p className="text-xs font-bold text-slate-200 truncate">
+                          {headerImageFileName || 'Header Image'}
+                        </p>
+                        {headerImageFileSize && (
+                          <p className="text-[10px] text-slate-400 font-mono">
+                            {(headerImageFileSize / 1024).toFixed(1)} KB
+                          </p>
+                        )}
+                        <div className="mt-1 flex items-center justify-center sm:justify-start gap-1.5">
+                          {headerImageHandle ? (
+                            <span className="inline-flex items-center gap-1 text-[10px] bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-mono">
+                              <CheckCircle2 className="w-3 h-3" /> Meta Handle Ready
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 text-[10px] bg-amber-500/15 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                              Upload Pending
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="outline"
+                          onClick={() => fileInputRef.current?.click()}
+                          className="h-7 text-xs border-slate-700 text-slate-300 hover:text-slate-100"
+                        >
+                          <RefreshCw className="w-3 h-3 mr-1" />
+                          Replace
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="ghost"
+                          onClick={handleRemoveImage}
+                          title="Remove image"
+                          className="h-7 w-7 p-0 text-slate-400 hover:text-red-400 hover:bg-red-500/10"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 4. Upload Error State */}
+                  {imageUploadError && (
+                    <div className="bg-rose-500/10 border border-rose-500/30 rounded-xl p-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-rose-400 text-xs">
+                      <div className="flex items-center gap-2">
+                        <AlertCircle className="w-4 h-4 shrink-0" />
+                        <span className="break-all">{imageUploadError}</span>
+                      </div>
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="h-6 text-[10px] border-rose-500/40 text-rose-300 hover:bg-rose-500/10 shrink-0"
+                      >
+                        Try Again
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {['VIDEO', 'DOCUMENT'].includes(headerType) && (
                 <div>
                   <Label className="text-xs text-slate-400">Sample Media URL for Meta Approval</Label>
                   <Input
-                    placeholder="https://naani.in/assets/preview.jpg"
+                    placeholder="https://naani.in/assets/preview.mp4"
                     value={headerExampleUrl}
                     onChange={(e) => setHeaderExampleUrl(e.target.value)}
                     className="mt-1 bg-slate-950 border-slate-800 text-xs text-slate-100"
                   />
                   <span className="text-[10px] text-slate-500">
-                    Meta requires an example sample URL to review image/document formatting
+                    Meta requires an example sample URL to review video/document formatting
                   </span>
                 </div>
               )}
@@ -682,7 +917,7 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
           </div>
 
           {/* Right: Live WhatsApp Preview (5 cols) */}
-          <div className={`md:col-span-5 p-5 bg-slate-950/40 flex flex-col items-center justify-center ${activeTab === 'editor' ? 'hidden sm:flex' : 'flex'}`}>
+          <div className={`md:col-span-5 p-5 bg-slate-950/40 flex flex-col items-center justify-center ${activeTab === 'editor' ? 'hidden md:flex' : 'flex'}`}>
             <div className="w-full max-w-[320px]">
               <div className="text-center mb-3">
                 <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-center gap-1.5">
@@ -716,8 +951,12 @@ export const TemplateCreationModal: React.FC<TemplateCreationModalProps> = ({
 
                   {headerType === 'IMAGE' && (
                     <div className="rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 aspect-video flex items-center justify-center">
-                      {headerExampleUrl ? (
-                        <img src={headerExampleUrl} alt="Header" className="w-full h-full object-cover" />
+                      {headerImagePreviewUrl || headerExampleUrl ? (
+                        <img
+                          src={headerImagePreviewUrl || headerExampleUrl}
+                          alt="Header Preview"
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
                         <div className="text-center p-3 text-slate-500 text-[10px]">
                           <ImageIcon className="w-6 h-6 mx-auto mb-1 text-slate-600" />

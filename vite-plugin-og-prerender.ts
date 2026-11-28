@@ -3483,6 +3483,139 @@ const BRIGADE_KOMPALLY_PRERENDER_HTML = `<script type="application/ld+json">
   </main>
 </div>`;
 
+// Static pre-rendered crawlable HTML content for /projects/casagrand-evon-kompally
+const CASAGRAND_EVON_PRERENDER_HTML = `<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.naani.in/projects/casagrand-evon-kompally#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.naani.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.naani.in/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Kompally", "item": "https://www.naani.in/projects-in-kompally" },
+      { "@type": "ListItem", "position": 4, "name": "Casagrand Evon", "item": "https://www.naani.in/projects/casagrand-evon-kompally" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    "@id": "https://www.naani.in/projects/casagrand-evon-kompally#project",
+    "name": "Casagrand Evon",
+    "url": "https://www.naani.in/projects/casagrand-evon-kompally",
+    "description": "Casagrand Evon is a Japanese-inspired luxury residential community in Kompally, North Hyderabad across approximately 6.84 acres. Comprising 579 apartments across 3 towers of 2B+G+11 floors, featuring 3 & 4 BHK residences and a ~34,860 SFT clubhouse. Sanctioned under TG RERA P02200009350.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Casagrand",
+      "legalName": "Casagrand Hyderwise Private Limited",
+      "url": "https://www.casagrand.co.in"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kompally, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500014",
+      "addressCountry": "IN"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.naani.in/projects/casagrand-evon-kompally#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the registered promoter of Casagrand Evon in Kompally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casagrand Evon is developed under the Casagrand brand, with Casagrand Hyderwise Private Limited registered as the official promoter entity on the Telangana RERA certificate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the TG RERA registration number and validity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Casagrand Evon is officially registered under TG RERA Registration Number P02200009350. The RERA certificate completion date is recorded as June 18, 2030."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the municipal building approval number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project has obtained HMDA building permission under Sanction Permit Number 013326/BP/HMDA/2977/MED/2023."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Casagrand Evon located in Kompally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The development is located in Kompally, Medchal-Malkajgiri District, North Hyderabad, situated near the NH-44 highway corridor with connectivity toward Nehru Outer Ring Road (ORR Exit 6 at Kandlakoya) and Suchitra Circle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the total land extent and apartment count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project spans approximately 6.84 acres as recorded in regulatory filings, comprising 579 residential apartments across 3 towers of 2 basements, ground floor, and 11 upper floors (2B + G + 11)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which apartment configurations and sizes are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project offers 3 BHK apartments (2,075 to 2,080 SFT developer-advertised super built-up area) and 4 BHK luxury residences (2,850 SFT developer-advertised super built-up area). Actual unit areas and sanctioned plans must be confirmed with the developer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the scale of the clubhouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The project features a dedicated resident clubhouse spanning approximately 34,860 SFT, planned to house indoor sports, fitness, and community recreation facilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the expected possession timeline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The developer's marketing literature cites an indicative target of early 2029 (unconfirmed guarantee), while the statutory TG RERA certificate validity extends through June 18, 2030."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Has official unit pricing been confirmed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Official unit pricing depends on the selected floor-rise, unit facing, and promotional phase. Naani Projects does not quote historical unconfirmed promotional rates as binding contractual prices; prospective buyers are advised to verify active price sheets directly with the sales desk."
+        }
+      }
+    ]
+  }
+]
+</script>
+<div class="min-h-screen bg-[#070b14] text-slate-100">
+  <main class="py-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-6">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">TG RERA Registered P02200009350 • HMDA Sanctioned • Kompally, North Hyderabad</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Casagrand Evon – <span class="text-amber-400">Japanese-Themed 3 &amp; 4 BHK Luxury Residences</span></h1>
+      <p class="text-lg text-slate-200">6.84 Acres • 579 Units across 3 Towers (2B + G + 11) • ~34,860 SFT Luxury Clubhouse</p>
+      <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Japanese-Inspired Luxury Gated Community in Kompally • 3 BHK (2,075–2,080 SFT Developer SBA) &amp; 4 BHK (2,850 SFT Developer SBA) • NH-44 &amp; ORR Exit 6 Connectivity • Promoter: Casagrand Hyderwise Private Limited • Statutory Completion: June 18, 2030
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/919493943946?text=Hi%20Naani%20Projects%2C%20I%20am%20interested%20in%20Casagrand%20Evon%20Kompally.%20Please%20share%20verified%20project%20details." class="bg-amber-500 text-slate-950 font-extrabold px-6 py-3 rounded-xl">WhatsApp Project Details</a>
+        <a href="tel:+919493943946" class="border border-amber-500/40 text-amber-400 font-bold px-6 py-3 rounded-xl">Call +91 94939 43946</a>
+      </div>
+    </section>
+  </main>
+</div>`;
+
 const ogRoutes: OGRoute[] = [
   // ===== Homepage (Static Pre-render Target) =====
   {
@@ -3898,6 +4031,16 @@ const ogRoutes: OGRoute[] = [
         url: `${SITE}/projects/brigade-kompally`,
         image: DEFAULT_OG,
         prerenderHtml: BRIGADE_KOMPALLY_PRERENDER_HTML,
+      }]
+    : []),
+  ...(PROJECT_PUBLICATION_GATES.casagrandEvon
+    ? [{
+        path: '/projects/casagrand-evon-kompally',
+        title: 'Casagrand Evon Kompally | 3 & 4 BHK Japanese-Themed Luxury Apartments',
+        description: 'Explore Casagrand Evon in Kompally, North Hyderabad. 6.84-acre Japanese-themed gated community with 579 luxury 3 & 4 BHK apartments, 34,860 SFT clubhouse. TG RERA P02200009350.',
+        url: `${SITE}/projects/casagrand-evon-kompally`,
+        image: `${SITE}/og-casagrand-evon.jpg`,
+        prerenderHtml: CASAGRAND_EVON_PRERENDER_HTML,
       }]
     : []),
 ];
